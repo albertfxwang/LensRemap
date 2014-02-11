@@ -31,6 +31,7 @@ __author__ = "Xin Wang (UCSB)"
 # IMPORTING MODULES
 import numpy as np
 import pyfits as pf
+import pylab as pl
 #-------------------------------------------------------------------------------------------------------------
 alpha1 = pf.open('./data.fits/RXJ1347.files_alpha1_rs_1.7.fits')[0].data.copy()
 alpha2 = pf.open('./data.fits/RXJ1347.files_alpha2_rs_1.7.fits')[0].data.copy()
@@ -45,6 +46,13 @@ jacob_D = 1-kappa+gamma1
 jacob_B = -1*gamma2
 jacob_C = jacob_B
 
+#import pyfits
+pf.PrimaryHDU(kappa).writeto('jacob_A.fits',clobber=True)
+
+# Show the image; note that the normalisations are arbitrary
+pl.imshow(kappa,origin='lower',interpolation='nearest')
+pl.colorbar()
+pl.show()
 
 #-------------------------------------------------------------------------------------------------------------
 #                                                      END
