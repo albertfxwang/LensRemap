@@ -49,22 +49,62 @@ jacob_D = 1-kappa+gamma1
 jacob_B = -1*gamma2
 jacob_C = jacob_B
 
+#-------------------------------------------------------------------------------------------------------------
+x1 = 3676.539
+y1 = 4759.3438
+rad1 = 30
+cut1 = img[y1-rad1:y1+rad1,x1-rad1:x1+rad1]
+pf.PrimaryHDU(cut1).writeto('img_cut_i1.fits',clobber=True)
+
+x2 = 4052.0352
+y2 = 3676.0942
+rad2 = 75
+cut2 = img[y2-rad2:y2+rad2,x2-rad2:x2+rad2]
+pf.PrimaryHDU(cut2).writeto('img_cut_i2.fits',clobber=True)
+
+x3 = 4410.6401
+y3 = 4802.8817
+rad3 = 45
+cut3 = img[y3-rad3:y3+rad3,x3-rad3:x3+rad3]
+pf.PrimaryHDU(cut3).writeto('img_cut_i3.fits',clobber=True)
+
+x4 = 2993.1057
+y4 = 4091.6058
+rad4 = 75
+cut4 = img[y4-rad4:y4+rad4,x4-rad4:x4+rad4]
+pf.PrimaryHDU(cut4).writeto('img_cut_i4.fits',clobber=True)
+
+x5 = 3093.3176
+y5 = 5917.4507
+rad5 = 55
+cut5 = img[y5-rad5:y5+rad5,x5-rad5:x5+rad5]
+pf.PrimaryHDU(cut5).writeto('img_cut_i5.fits',clobber=True)
+
 # Create fits file
-pf.PrimaryHDU(kappa).writeto('kappa.fits',clobber=True)
+#pf.PrimaryHDU(img).writeto('img_G.fits',clobber=True)
 
+#-------------------------------------------------------------------------------------------------------------
 # Show the image; note that the normalisations are arbitrary
-pl.figure()
-pl.imshow(kappa,origin='lower',interpolation='nearest')
+pl.figure(1)
+pl.imshow(cut1,origin='lower',interpolation='nearest')
 pl.colorbar()
-#pl.show()
 
-# Create fits file
-pf.PrimaryHDU(img).writeto('img_G.fits',clobber=True)
-
-# Show the image; note that the normalisations are arbitrary
-pl.figure()
-pl.imshow(img,origin='lower',interpolation='nearest')
+pl.figure(2)
+pl.imshow(cut2,origin='lower',interpolation='nearest')
 pl.colorbar()
+
+pl.figure(3)
+pl.imshow(cut3,origin='lower',interpolation='nearest')
+pl.colorbar()
+
+pl.figure(4)
+pl.imshow(cut4,origin='lower',interpolation='nearest')
+pl.colorbar()
+
+pl.figure(5)
+pl.imshow(cut5,origin='lower',interpolation='nearest')
+pl.colorbar()
+
 pl.show()
 
 #-------------------------------------------------------------------------------------------------------------
@@ -72,6 +112,12 @@ pl.show()
 #-------------------------------------------------------------------------------------------------------------
 """   tryout material 
 ----------------------------
+# Create fits file
+pf.PrimaryHDU(kappa).writeto('kappa.fits',clobber=True)
+# Show the image; note that the normalisations are arbitrary
+pl.figure()
+pl.imshow(kappa,origin='lower',interpolation='nearest')
+pl.colorbar()
 
 minus_one = np.zeros((1024,1024))
 minus_one[:,:] = -1.0
