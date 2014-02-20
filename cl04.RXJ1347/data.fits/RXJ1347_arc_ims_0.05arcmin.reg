@@ -1,0 +1,28 @@
+# Region file format: DS9 version 4.1
+global color=green dashlist=8 3 width=1 font="helvetica 10 normal roman" select=1 highlite=1 dash=0 fixed=0 edit=1 move=1 delete=1 include=1 source=1
+fk5
+circle(13:47:29.297,-11:45:39.86,0.05') # color=white font="helvetica 10 normal" text={a1}
+circle(13:47:31.831,-11:45:51.87,0.05') # color=white font="helvetica 10 normal" text={a2}
+circle(13:47:29.400,-11:44:47.29,0.05') # color=white font="helvetica 10 normal" text={b1}
+circle(13:47:29.081,-11:44:54.08,0.05') # color=white font="helvetica 10 normal" text={b2}
+circle(13:47:29.558,-11:44:44.92,0.05') # color=white font="helvetica 10 normal" text={b3}
+circle(13:47:29.815,-11:44:42.40,0.05') # color=white font="helvetica 10 normal" text={b4}
+circle(13:47:31.903,-11:44:28.36,0.05') # color=white font="helvetica 10 normal" text={c1}
+circle(13:47:32.196,-11:44:30.47,0.05') # color=white font="helvetica 10 normal" text={c2}
+circle(13:47:30.828,-11:44:57.12,0.05') # color=white font="helvetica 10 normal" text={d1}
+circle(13:47:30.799,-11:44:58.86,0.05') # color=white font="helvetica 10 normal" text={d2}
+circle(13:47:29.326,-11:45:54.94,0.05') # color=white font="helvetica 10 normal" text={e1}
+circle(13:47:29.774,-11:45:58.53,0.05') # color=white font="helvetica 10 normal" text={e2}
+circle(13:47:27.718,-11:45:51.13,0.05') # color=white font="helvetica 10 normal" text={f1}
+circle(13:47:27.986,-11:45:56.53,0.05') # color=white font="helvetica 10 normal" text={f2}
+circle(13:47:27.426,-11:45:19.61,0.05') # color=white font="helvetica 10 normal" text={f3}
+circle(13:47:29.657,-11:46:05.72,0.05') # color=white font="helvetica 10 normal" text={g2}
+circle(13:47:29.112,-11:46:01.51,0.05') # color=white font="helvetica 10 normal" text={g1}
+circle(13:47:31.411,-11:46:12.80,0.05') # color=white font="helvetica 10 normal" text={h2}
+circle(13:47:27.922,-11:46:01.20,0.05') # color=white font="helvetica 10 normal" text={h1}
+circle(13:47:28.114,-11:44:32.60,0.05') # color=white font="helvetica 10 normal" text={h3}
+circle(13:47:33.010,-11:45:27.28,0.05') # color=white font="helvetica 10 normal" text={i2}
+circle(13:47:32.431,-11:44:54.23,0.05') # color=white font="helvetica 10 normal" text={i4}
+circle(13:47:30.907,-11:45:12.14,0.05') # color=white font="helvetica 10 normal" text={i1}
+circle(13:47:30.636,-11:45:33.84,0.05') # color=white font="helvetica 10 normal" text={i3}
+circle(13:47:28.704,-11:44:50.54,0.05') # color=white font="helvetica 10 normal" text={i5}

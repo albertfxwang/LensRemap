@@ -32,6 +32,7 @@ __author__ = "Xin Wang (UCSB)"
 import numpy as np
 import pyfits as pf
 import pylab as pl
+import matplotlib.pyplot as plt
 #-------------------------------------------------------------------------------------------------------------
 alpha1 = pf.open('./data.fits/RXJ1347.files_alpha1_rs_1.7.fits')[0].data.copy()
 alpha2 = pf.open('./data.fits/RXJ1347.files_alpha2_rs_1.7.fits')[0].data.copy()
@@ -40,17 +41,29 @@ gamma2 = pf.open('./data.fits/RXJ1347.files_gamma2_rs_1.7.fits')[0].data.copy()
 kappa = pf.open('./data.fits/RXJ1347.files_kappa_rs_1.7.fits')[0].data.copy()
 mag = pf.open('./data.fits/RXJ1347.files_mag_rs_1.7.fits')[0].data.copy()
 
+img = pf.open('./data.fits/RXJ1347-1145_fullres_G.fits')[0].data.copy()
+
 #-------------------------------------------------------------------------------------------------------------
 jacob_A = 1-kappa-gamma1
 jacob_D = 1-kappa+gamma1
 jacob_B = -1*gamma2
 jacob_C = jacob_B
 
-#import pyfits
-pf.PrimaryHDU(kappa).writeto('jacob_A.fits',clobber=True)
+# Create fits file
+pf.PrimaryHDU(kappa).writeto('kappa.fits',clobber=True)
 
 # Show the image; note that the normalisations are arbitrary
+pl.figure()
 pl.imshow(kappa,origin='lower',interpolation='nearest')
+pl.colorbar()
+#pl.show()
+
+# Create fits file
+pf.PrimaryHDU(img).writeto('img_G.fits',clobber=True)
+
+# Show the image; note that the normalisations are arbitrary
+pl.figure()
+pl.imshow(img,origin='lower',interpolation='nearest')
 pl.colorbar()
 pl.show()
 
