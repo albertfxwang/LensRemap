@@ -58,25 +58,25 @@ pf.PrimaryHDU(cut1).writeto('img_cut_i1.fits',clobber=True)
 
 x2 = 4052.0352
 y2 = 3676.0942
-rad2 = 75
+rad2 = 70
 cut2 = img[y2-rad2:y2+rad2,x2-rad2:x2+rad2]
 pf.PrimaryHDU(cut2).writeto('img_cut_i2.fits',clobber=True)
 
 x3 = 4410.6401
 y3 = 4802.8817
-rad3 = 45
+rad3 = 40
 cut3 = img[y3-rad3:y3+rad3,x3-rad3:x3+rad3]
 pf.PrimaryHDU(cut3).writeto('img_cut_i3.fits',clobber=True)
 
 x4 = 2993.1057
 y4 = 4091.6058
-rad4 = 75
+rad4 = 60
 cut4 = img[y4-rad4:y4+rad4,x4-rad4:x4+rad4]
 pf.PrimaryHDU(cut4).writeto('img_cut_i4.fits',clobber=True)
 
 x5 = 3093.3176
 y5 = 5917.4507
-rad5 = 55
+rad5 = 50
 cut5 = img[y5-rad5:y5+rad5,x5-rad5:x5+rad5]
 pf.PrimaryHDU(cut5).writeto('img_cut_i5.fits',clobber=True)
 
@@ -88,23 +88,29 @@ pf.PrimaryHDU(cut5).writeto('img_cut_i5.fits',clobber=True)
 pl.figure(1)
 pl.imshow(cut1,origin='lower',interpolation='nearest')
 pl.colorbar()
+plt.savefig("img_cut_i1.png",dpi=200)
 
 pl.figure(2)
 pl.imshow(cut2,origin='lower',interpolation='nearest')
 pl.colorbar()
+plt.savefig("img_cut_i2.png",dpi=200)
 
 pl.figure(3)
 pl.imshow(cut3,origin='lower',interpolation='nearest')
 pl.colorbar()
+plt.savefig("img_cut_i3.png",dpi=200)
 
 pl.figure(4)
 pl.imshow(cut4,origin='lower',interpolation='nearest')
 pl.colorbar()
+plt.savefig("img_cut_i4.png",dpi=200)
 
 pl.figure(5)
 pl.imshow(cut5,origin='lower',interpolation='nearest')
 pl.colorbar()
+plt.savefig("img_cut_i5.png",dpi=200)
 
+pl.ion()
 pl.show()
 
 #-------------------------------------------------------------------------------------------------------------
