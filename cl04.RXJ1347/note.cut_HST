@@ -1,4 +1,8 @@
 
+在cut的时候，非整数的pixel是取了floor
+ds9中的pixel是从1开始的
+python读进来的pixel index是从0开始的
+
 #====================   i1
 center:
     (RA, DEC) = (206.87878, -11.753372)

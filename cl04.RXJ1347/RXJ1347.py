@@ -33,21 +33,25 @@ import numpy as np
 import pyfits as pf
 import pylab as pl
 import matplotlib.pyplot as plt
+from sonnentools import astrometry
+from sonnentools import fitstools
+
 #-------------------------------------------------------------------------------------------------------------
+img_name='./data.fits/RXJ1347-1145_fullres_G.fits'
+
 alpha1 = pf.open('./data.fits/RXJ1347.files_alpha1_rs_1.7.fits')[0].data.copy()
 alpha2 = pf.open('./data.fits/RXJ1347.files_alpha2_rs_1.7.fits')[0].data.copy()
 gamma1 = pf.open('./data.fits/RXJ1347.files_gamma1_rs_1.7.fits')[0].data.copy()
 gamma2 = pf.open('./data.fits/RXJ1347.files_gamma2_rs_1.7.fits')[0].data.copy()
 kappa = pf.open('./data.fits/RXJ1347.files_kappa_rs_1.7.fits')[0].data.copy()
 mag = pf.open('./data.fits/RXJ1347.files_mag_rs_1.7.fits')[0].data.copy()
+img = pf.open(img_name)[0].data.copy()
 
-img = pf.open('./data.fits/RXJ1347-1145_fullres_G.fits')[0].data.copy()
-
-#-------------------------------------------------------------------------------------------------------------
-jacob_A = 1-kappa-gamma1
-jacob_D = 1-kappa+gamma1
-jacob_B = -1*gamma2
-jacob_C = jacob_B
+##-------------------------------------------------------------------------------------------------------------
+#jacob_A = 1-kappa-gamma1
+#jacob_D = 1-kappa+gamma1
+#jacob_B = -1*gamma2
+#jacob_C = jacob_B
 
 #-------------------------------------------------------------------------------------------------------------
 x1 = 3676.539
@@ -56,6 +60,38 @@ rad1 = 30
 cut1 = img[y1-rad1:y1+rad1,x1-rad1:x1+rad1]
 pf.PrimaryHDU(cut1).writeto('img_cut_i1.fits',clobber=True)
 
+#-------------------------------------------------------------------------------------------------------------
+# to use Ale's code to output WCS info
+x_pix = np.arange(int(x1-rad1+1),int(x1+rad1+1))
+y_pix = np.arange(int(y1-rad1+1),int(y1+rad1+1))
+#X,Y = np.meshgrid(x_pix,y_pix)
+img_wcs=fitstools.pix2coords(filename,(x_pix,y_pix))
+
+#-------------------------------------------------------------------------------------------------------------
+# Show the image; note that the normalisations are arbitrary
+pl.figure(1)
+pl.imshow(cut1,origin='lower',interpolation='nearest')
+pl.colorbar()
+plt.savefig("img_cut_i1.png",dpi=200)
+pl.ion()
+pl.show()
+
+#-------------------------------------------------------------------------------------------------------------
+# output ASCII files for all relevant quantities to feed into matlab
+np.savetxt('cut1.dat',cut1,fmt='%s')
+np.savetxt('alpha1.dat',alpha1,fmt='%s') 
+np.savetxt('alpha2.dat',alpha2,fmt='%s')
+np.savetxt('gamma1.dat',gamma1,fmt='%s')
+np.savetxt('gamma2.dat',gamma2,fmt='%s')
+np.savetxt('kappa.dat',kappa,fmt='%s')  
+np.savetxt('mag.dat',mag,fmt='%s')   
+np.savetxt('img_ra.dat',img_wcs[0],fmt='%s')
+np.savetxt('img_dec.dat',img_wcs[1],fmt='%s')
+
+#-------------------------------------------------------------------------------------------------------------
+#                                                      END
+#-------------------------------------------------------------------------------------------------------------
+"""     codes for the other four images, temporarily here
 x2 = 4052.0352
 y2 = 3676.0942
 rad2 = 70
@@ -80,16 +116,6 @@ rad5 = 50
 cut5 = img[y5-rad5:y5+rad5,x5-rad5:x5+rad5]
 pf.PrimaryHDU(cut5).writeto('img_cut_i5.fits',clobber=True)
 
-# Create fits file
-#pf.PrimaryHDU(img).writeto('img_G.fits',clobber=True)
-
-#-------------------------------------------------------------------------------------------------------------
-# Show the image; note that the normalisations are arbitrary
-pl.figure(1)
-pl.imshow(cut1,origin='lower',interpolation='nearest')
-pl.colorbar()
-plt.savefig("img_cut_i1.png",dpi=200)
-
 pl.figure(2)
 pl.imshow(cut2,origin='lower',interpolation='nearest')
 pl.colorbar()
@@ -109,13 +135,8 @@ pl.figure(5)
 pl.imshow(cut5,origin='lower',interpolation='nearest')
 pl.colorbar()
 plt.savefig("img_cut_i5.png",dpi=200)
+"""
 
-pl.ion()
-pl.show()
-
-#-------------------------------------------------------------------------------------------------------------
-#                                                      END
-#-------------------------------------------------------------------------------------------------------------
 """   tryout material 
 ----------------------------
 # Create fits file
