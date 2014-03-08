@@ -71,9 +71,9 @@ img_wcs=fitstools.pix2coords(img_name,(img_x,img_y))
 lens_size=mag.shape
 if lens_size[0]!=lens_size[1]:
     print 'the lens model has odd dimensions'
-    break
+#    break
 lens_pix=np.arange(1,lens_size[0]+1)
-lens_wcs=fitstools.pix2coords(lens_name,(lens_pix,lens_pix))
+lens_wcs=fitstools.pix2coords(mag_name,(lens_pix,lens_pix))
 
 #-------------------------------------------------------------------------------------------------------------
 # Show the image; note that the normalisations are arbitrary
