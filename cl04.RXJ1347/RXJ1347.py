@@ -107,7 +107,7 @@ np.savetxt('lens_dec.dat',lens_wcs[1],fmt='%s')
 np.savetxt('img_ra.dat',img_wcs[0],fmt='%s')
 np.savetxt('img_dec.dat',img_wcs[1],fmt='%s')"""
 
-np.savetxt('cut2.dat',cut2,fmt='%s')
+np.savetxt('cut2.dat',cut2.flatten(),fmt='%s')
 np.savetxt('i2_ra.dat',img_wcs_tot[0],fmt='%s')
 np.savetxt('i2_dec.dat',img_wcs_tot[1],fmt='%s')
 
