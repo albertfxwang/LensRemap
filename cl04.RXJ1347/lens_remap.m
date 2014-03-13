@@ -3,7 +3,7 @@
 clear all; clc; tic
 
 %% load in data
-cut1=load('cut1.dat');
+img=load('cut1.dat');
 alpha1=load('alpha1.dat');
 alpha2=load('alpha2.dat');
 gamma1=load('gamma1.dat');
@@ -11,12 +11,12 @@ gamma2=load('gamma2.dat');
 kappa=load('kappa.dat');
 mag=load('mag.dat');
 
-img_ra=load('img_ra.dat');
-img_dec=load('img_dec.dat');
+img_ra=load('i1_ra.dat');
+img_dec=load('i1_dec.dat');
 lens_ra=load('lens_ra.dat');
 lens_dec=load('lens_dec.dat');
 
-N_img=length(cut1);
+N_img=length(img);
 N_lens=length(mag);
 
 RA0_img=zeros(N_img);
@@ -41,11 +41,11 @@ dpixel4=[0.5 0.5 -0.5 -0.5; 0.5 -0.5 0.5 -0.5];
 %% 2D interpolation to evaluate alpha, Jacobian-mat at each pixel's center
 
 % NB the transpose of img_dec, in order to make 2D interpolated results matrices
-alpha1_img=interp2(lens_ra,lens_dec,alpha1,img_ra,img_dec');     % default method: linear
-alpha2_img=interp2(lens_ra,lens_dec,alpha2,img_ra,img_dec');
-gamma1_img=interp2(lens_ra,lens_dec,gamma1,img_ra,img_dec');
-gamma2_img=interp2(lens_ra,lens_dec,gamma2,img_ra,img_dec');
-kappa_img=interp2(lens_ra,lens_dec,kappa,img_ra,img_dec');
+alpha1_img=interp2(lens_ra,lens_dec,alpha1,img_ra,img_dec(end:-1:1)');     % default method: linear
+alpha2_img=interp2(lens_ra,lens_dec,alpha2,img_ra,img_dec(end:-1:1)');
+gamma1_img=interp2(lens_ra,lens_dec,gamma1,img_ra,img_dec(end:-1:1)');
+gamma2_img=interp2(lens_ra,lens_dec,gamma2,img_ra,img_dec(end:-1:1)');
+kappa_img=interp2(lens_ra,lens_dec,kappa,img_ra,img_dec(end:-1:1)');
 
 % compute the elements of the Jacobian-mat
 jacob_11 = 1 - kappa_img - gamma1_img;
@@ -87,8 +87,8 @@ for j=1:N_img
             dDEC4_src(i,j,t)=temp_src(2);
             RA4_src(i,j,t)=RA0_src(i,j)+dRA4_src(i,j,t);
             DEC4_src(i,j,t)=DEC0_src(i,j)+dDEC4_src(i,j,t);
-            counts_src(i,j,t)=0.25*cut1(i,j);
-            fprintf('(i=%d, j=%d, t=%d) img(RA=%e,DEC=%e) => src(RA=%e,DEC=%e)\n',...
+            counts_src(i,j,t)=0.25*img(i,j);
+            fprintf('(%d, %d, %d) img(%5.3e,%5.3e) => src(%5.3e,%5.3e)\n',...
                 i,j,t,dRA4_img(i,j,t),dDEC4_img(i,j,t),dRA4_src(i,j,t),dDEC4_src(i,j,t))
             clear temp_img temp_src
         end
@@ -103,7 +103,7 @@ dot = {':b',':r',':m',':g',':c',':k'};
 dash = {'--b','--r','--m','--g','--c','--k'};
 lw1=2.5; lw2=1.7; lw3=0.8;
 
-figure(1)
+figure(2)
 scatter(RA4_src(1:N_img*N_img*4),DEC4_src(1:N_img*N_img*4),3,counts_src(1:N_img*N_img*4));
 colormap('jet');
 xlabel('RA','FontSize',lab_fontsize);
@@ -122,6 +122,7 @@ axes(ax);
 set(gcf, 'PaperUnits','inches');
 set(gcf, 'PaperPosition',[ 0 0 9 8]);
 % print -dpng src_i1.png;       % writing png takes much longer than you thought!
-print -dpsc2 src_i1.ps;
+print -dpsc2 src_i1_true.ps;
+% print -dpsc2 src_i2.ps;
 
 toc
