@@ -74,8 +74,12 @@ rad = rad2
 # to use Ale's code to output WCS info
 img_x = np.arange(int(x-rad+1),int(x+rad+1))
 img_y = np.arange(int(y-rad+1),int(y+rad+1))
-#X,Y = np.meshgrid(x_pix,y_pix)
-img_wcs=fitstools.pix2coords(img_name,(img_x,img_y))
+X,Y = np.meshgrid(img_x,img_y)
+img_x_tot=X.flatten()
+img_y_tot=Y.flatten()
+img_wcs = fitstools.pix2coords(img_name,(img_x_tot,img_y_tot))
+#img_wcs_x=fitstools.pix2coords(img_name,(img_x,img_y))     % this only gives WCS coord for the diagonal line
+#img_wcs_y=fitstools.pix2coords(img_name,(0,img_y))
 
 lens_size=mag.shape
 if lens_size[0]!=lens_size[1]:
@@ -110,9 +114,10 @@ np.savetxt('lens_dec.dat',lens_wcs[1],fmt='%s')"""
 np.savetxt('img_ra.dat',img_wcs[0],fmt='%s')
 np.savetxt('img_dec.dat',img_wcs[1],fmt='%s')"""
 
-np.savetxt('cut2.dat',cut2,fmt='%s')
-np.savetxt('i2_ra.dat',img_wcs[0],fmt='%s')
-np.savetxt('i2_dec.dat',img_wcs[1],fmt='%s')
+#np.savetxt('cut2.dat',cut2,fmt='%s')
+#np.savetxt('i2_wcs.dat',img_wcs,fmt='%s')
+#np.savetxt('i2_ra.dat',img_wcs[0],fmt='%s')
+#np.savetxt('i2_dec.dat',img_wcs[1],fmt='%s')
 
 
 #-------------------------------------------------------------------------------------------------------------
