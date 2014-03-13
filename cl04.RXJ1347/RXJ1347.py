@@ -55,16 +55,25 @@ img = pf.open(img_name)[0].data.copy()
 #jacob_C = jacob_B
 
 #-------------------------------------------------------------------------------------------------------------
-x1 = 3676.539
+"""x1 = 3676.539
 y1 = 4759.3438
 rad1 = 30
 cut1 = img[y1-rad1:y1+rad1,x1-rad1:x1+rad1]
-pf.PrimaryHDU(cut1).writeto('img_cut_i1.fits',clobber=True)
+pf.PrimaryHDU(cut1).writeto('img_cut_i1.fits',clobber=True)"""
+
+x2 = 4052.0352
+y2 = 3676.0942
+rad2 = 70
+cut2 = img[y2-rad2:y2+rad2,x2-rad2:x2+rad2]
+pf.PrimaryHDU(cut2).writeto('img_cut_i2.fits',clobber=True)
+x = x2
+y = y2
+rad = rad2
 
 #-------------------------------------------------------------------------------------------------------------
 # to use Ale's code to output WCS info
-img_x = np.arange(int(x1-rad1+1),int(x1+rad1+1))
-img_y = np.arange(int(y1-rad1+1),int(y1+rad1+1))
+img_x = np.arange(int(x-rad+1),int(x+rad+1))
+img_y = np.arange(int(y-rad+1),int(y+rad+1))
 #X,Y = np.meshgrid(x_pix,y_pix)
 img_wcs=fitstools.pix2coords(img_name,(img_x,img_y))
 
@@ -78,37 +87,38 @@ lens_wcs=fitstools.pix2coords(mag_name,(lens_pix,lens_pix))
 #-------------------------------------------------------------------------------------------------------------
 # Show the image; note that the normalisations are arbitrary
 pl.figure(1)
-pl.imshow(cut1,origin='lower',interpolation='nearest')
+#pl.imshow(cut1,origin='lower',interpolation='nearest')
+pl.imshow(cut2,origin='lower',interpolation='nearest')
 pl.colorbar()
-plt.savefig("img_cut_i1.png",dpi=200)
+#plt.savefig("img_cut_i1.png",dpi=200)
+plt.savefig("img_cut_i2.png",dpi=200)
 pl.ion()
 pl.show()
 
 #-------------------------------------------------------------------------------------------------------------
 # output ASCII files for all relevant quantities to feed into matlab
-np.savetxt('cut1.dat',cut1,fmt='%s')
-np.savetxt('alpha1.dat',alpha1,fmt='%s') 
+"""np.savetxt('alpha1.dat',alpha1,fmt='%s') 
 np.savetxt('alpha2.dat',alpha2,fmt='%s')
 np.savetxt('gamma1.dat',gamma1,fmt='%s')
 np.savetxt('gamma2.dat',gamma2,fmt='%s')
 np.savetxt('kappa.dat',kappa,fmt='%s')
 np.savetxt('mag.dat',mag,fmt='%s')
-
-np.savetxt('img_ra.dat',img_wcs[0],fmt='%s')
-np.savetxt('img_dec.dat',img_wcs[1],fmt='%s')
 np.savetxt('lens_ra.dat',lens_wcs[0],fmt='%s')
-np.savetxt('lens_dec.dat',lens_wcs[1],fmt='%s')
+np.savetxt('lens_dec.dat',lens_wcs[1],fmt='%s')"""
+
+"""np.savetxt('cut1.dat',cut1,fmt='%s')
+np.savetxt('img_ra.dat',img_wcs[0],fmt='%s')
+np.savetxt('img_dec.dat',img_wcs[1],fmt='%s')"""
+
+np.savetxt('cut2.dat',cut2,fmt='%s')
+np.savetxt('i2_ra.dat',img_wcs[0],fmt='%s')
+np.savetxt('i2_dec.dat',img_wcs[1],fmt='%s')
+
 
 #-------------------------------------------------------------------------------------------------------------
 #                                                      END
 #-------------------------------------------------------------------------------------------------------------
 """     codes for the other four images, temporarily here
-x2 = 4052.0352
-y2 = 3676.0942
-rad2 = 70
-cut2 = img[y2-rad2:y2+rad2,x2-rad2:x2+rad2]
-pf.PrimaryHDU(cut2).writeto('img_cut_i2.fits',clobber=True)
-
 x3 = 4410.6401
 y3 = 4802.8817
 rad3 = 40
@@ -126,11 +136,6 @@ y5 = 5917.4507
 rad5 = 50
 cut5 = img[y5-rad5:y5+rad5,x5-rad5:x5+rad5]
 pf.PrimaryHDU(cut5).writeto('img_cut_i5.fits',clobber=True)
-
-pl.figure(2)
-pl.imshow(cut2,origin='lower',interpolation='nearest')
-pl.colorbar()
-plt.savefig("img_cut_i2.png",dpi=200)
 
 pl.figure(3)
 pl.imshow(cut3,origin='lower',interpolation='nearest')
