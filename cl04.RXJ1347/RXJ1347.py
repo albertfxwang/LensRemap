@@ -48,12 +48,6 @@ kappa = pf.open('./data.fits/RXJ1347.files_kappa_rs_1.7.fits')[0].data.copy()
 mag = pf.open(mag_name)[0].data.copy()
 img = pf.open(img_name)[0].data.copy()
 
-##-------------------------------------------------------------------------------------------------------------
-#jacob_A = 1-kappa-gamma1
-#jacob_D = 1-kappa+gamma1
-#jacob_B = -1*gamma2
-#jacob_C = jacob_B
-
 #-------------------------------------------------------------------------------------------------------------
 """x1 = 3676.539
 y1 = 4759.3438
@@ -77,9 +71,8 @@ img_y = np.arange(int(y-rad+1),int(y+rad+1))
 X,Y = np.meshgrid(img_x,img_y)
 img_x_tot=X.flatten()
 img_y_tot=Y.flatten()
-img_wcs = fitstools.pix2coords(img_name,(img_x_tot,img_y_tot))
-#img_wcs_x=fitstools.pix2coords(img_name,(img_x,img_y))     % this only gives WCS coord for the diagonal line
-#img_wcs_y=fitstools.pix2coords(img_name,(0,img_y))
+img_wcs_tot = fitstools.pix2coords(img_name,(img_x_tot,img_y_tot))
+#img_wcs=fitstools.pix2coords(img_name,(img_x,img_y))     % this only gives WCS coord for the diagonal line
 
 lens_size=mag.shape
 if lens_size[0]!=lens_size[1]:
@@ -106,19 +99,17 @@ np.savetxt('alpha2.dat',alpha2,fmt='%s')
 np.savetxt('gamma1.dat',gamma1,fmt='%s')
 np.savetxt('gamma2.dat',gamma2,fmt='%s')
 np.savetxt('kappa.dat',kappa,fmt='%s')
-np.savetxt('mag.dat',mag,fmt='%s')
+np.savetxt('mag.dat',mag,fmt='%s')"""
 np.savetxt('lens_ra.dat',lens_wcs[0],fmt='%s')
-np.savetxt('lens_dec.dat',lens_wcs[1],fmt='%s')"""
+np.savetxt('lens_dec.dat',lens_wcs[1],fmt='%s')
 
 """np.savetxt('cut1.dat',cut1,fmt='%s')
 np.savetxt('img_ra.dat',img_wcs[0],fmt='%s')
 np.savetxt('img_dec.dat',img_wcs[1],fmt='%s')"""
 
-#np.savetxt('cut2.dat',cut2,fmt='%s')
-#np.savetxt('i2_wcs.dat',img_wcs,fmt='%s')
-#np.savetxt('i2_ra.dat',img_wcs[0],fmt='%s')
-#np.savetxt('i2_dec.dat',img_wcs[1],fmt='%s')
-
+np.savetxt('cut2.dat',cut2,fmt='%s')
+np.savetxt('i2_ra.dat',img_wcs_tot[0],fmt='%s')
+np.savetxt('i2_dec.dat',img_wcs_tot[1],fmt='%s')
 
 #-------------------------------------------------------------------------------------------------------------
 #                                                      END
@@ -156,6 +147,12 @@ pl.figure(5)
 pl.imshow(cut5,origin='lower',interpolation='nearest')
 pl.colorbar()
 plt.savefig("img_cut_i5.png",dpi=200)
+
+##-------------------------------------------------------------------------------------------------------------
+#jacob_A = 1-kappa-gamma1
+#jacob_D = 1-kappa+gamma1
+#jacob_B = -1*gamma2
+#jacob_C = jacob_B
 """
 
 """   tryout material 
