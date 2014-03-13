@@ -3,7 +3,7 @@
 clear all; clc; tic
 
 %% load in data
-img=load('cut1.dat');
+img=load('cut2.dat');
 alpha1=load('alpha1.dat');
 alpha2=load('alpha2.dat');
 gamma1=load('gamma1.dat');
@@ -11,17 +11,33 @@ gamma2=load('gamma2.dat');
 kappa=load('kappa.dat');
 mag=load('mag.dat');
 
-img_ra=load('i1_ra.dat');
-img_dec=load('i1_dec.dat');
-lens_ra=load('lens_ra.dat');
-lens_dec=load('lens_dec.dat');
+img_ra=load('i2_ra.dat');       % here image RA/DEC is NOT axis values
+img_dec=load('i2_dec.dat');     % you should interp to get value at each pair of them
+lens_ra=load('lens_ra.dat');        % lens RA/DEC can be treated as axis values
+lens_dec=load('lens_dec.dat');      % since there's a good alignment btw WCS coord and its axes
 
-N_img=length(img);
-N_lens=length(mag);
+N_img=length(img_ra);
+if length(img_dec)~= N_img
+    fprintf('dimensions of image''s RA DEC don''t get along!\n')
+    break
+end
+% the rotation-mat
+CD1_1   =   -1.01466245311E-06; % Degrees / Pixel                                
+CD2_1   =   -8.27140110712E-06; % Degrees / Pixel                                
+CD1_2   =   -8.27139425197E-06; % Degrees / Pixel                                
+CD2_2   =    1.01465256774E-06; % Degrees / Pixel                 
+CD=[CD1_1 CD1_2; CD2_1 CD2_2];
+dpixel4=[0.5 0.5 -0.5 -0.5; 0.5 -0.5 0.5 -0.5];
+
+alpha_img=zeros(N_img,2);   % 1 -> alpha_1, 2 -> alpha_2
+gamma_img=zeros(N_img,2);   % 1 -> gamma_1, 2 -> gamma_2
+kappa_img=zeros(N_img,1);
+
+
 
 RA0_img=zeros(N_img);
 DEC0_img=zeros(N_img);
-dRA4_img=zeros(N_img,N_img,4);
+dRA4_img=zeros(N_img,4);
 dDEC4_img=zeros(N_img,N_img,4);
 dRA4_src=zeros(N_img,N_img,4);
 dDEC4_src=zeros(N_img,N_img,4);
@@ -29,48 +45,25 @@ RA4_src=zeros(N_img,N_img,4);
 DEC4_src=zeros(N_img,N_img,4);
 counts_src=zeros(N_img,N_img,4);
 
-% the rotation-mat
-CD1_1   =   -1.01466245311E-06; % Degrees / Pixel                                
-CD2_1   =   -8.27140110712E-06; % Degrees / Pixel                                
-CD1_2   =   -8.27139425197E-06; % Degrees / Pixel                                
-CD2_2   =    1.01465256774E-06; % Degrees / Pixel                 
-CD=[CD1_1 CD1_2; CD2_1 CD2_2];
-
-dpixel4=[0.5 0.5 -0.5 -0.5; 0.5 -0.5 0.5 -0.5];
-
 %% 2D interpolation to evaluate alpha, Jacobian-mat at each pixel's center
-
-% NB the transpose of img_dec, in order to make 2D interpolated results matrices
-alpha1_img=interp2(lens_ra,lens_dec,alpha1,img_ra,img_dec(end:-1:1)');     % default method: linear
-alpha2_img=interp2(lens_ra,lens_dec,alpha2,img_ra,img_dec(end:-1:1)');
-gamma1_img=interp2(lens_ra,lens_dec,gamma1,img_ra,img_dec(end:-1:1)');
-gamma2_img=interp2(lens_ra,lens_dec,gamma2,img_ra,img_dec(end:-1:1)');
-kappa_img=interp2(lens_ra,lens_dec,kappa,img_ra,img_dec(end:-1:1)');
-
+for j=1:N_img
+    alpha_img(j,1)=interp2(lens_ra,lens_dec,alpha1,img_ra(j),img_dec(j));   % default method: linear
+    alpha_img(j,2)=interp2(lens_ra,lens_dec,alpha2,img_ra(j),img_dec(j));
+    gamma_img(j,1)=interp2(lens_ra,lens_dec,gamma1,img_ra(j),img_dec(j));
+    gamma_img(j,2)=interp2(lens_ra,lens_dec,gamma2,img_ra(j),img_dec(j));
+    kappa_img(j)=interp2(lens_ra,lens_dec,kappa,img_ra(j),img_dec(j));
+end
 % compute the elements of the Jacobian-mat
-jacob_11 = 1 - kappa_img - gamma1_img;
-jacob_22 = 1 - kappa_img + gamma1_img;
-jacob_12 = -gamma2_img;
+jacob_11 = 1 - kappa_img - gamma_img(:,1);
+jacob_22 = 1 - kappa_img + gamma_img(:,1);
+jacob_12 = -gamma_img(:,2);
 jacob_21 = jacob_12;
 
 %% Step 1: apply the deflection angle shift to the center of each pixel
 %          so now we need to specify two matrices of the same dimension to
 %          the img matrix, to record the RA, DEC for each grid cell
-for i=1:N_img
-    RA0_img(:,i)=img_ra(i);
-    DEC0_img(i,:)=img_dec(i);
-end
-
-% testing
-mag_img=interp2(lens_ra,lens_dec,mag,img_ra,img_dec');
-mag_img_p=interp2(lens_ra,lens_dec,mag,RA0_img,DEC0_img);
-if max(max(abs(mag_img-mag_img_p))) > 1e-8
-    fprintf('something wrong w/ matric indices!\n')
-    break
-end
-
-RA0_src=RA0_img-alpha1_img/60;
-DEC0_src=DEC0_img-alpha2_img/60;
+RA0_src=img_ra-alpha_img(:,1)/60;
+DEC0_src=img_dec-alpha_img(:,2)/60;
 
 %% Step 2: apply Jacobian-mat to 4 corner points of each pixel
 %          but even before that, you have to calc (RA,DEC) of them at
@@ -116,12 +109,13 @@ hbar = colorbar('EastOutside');
 axes(hbar);
 ylabel('counts','FontSize',lab_fontsize);
 set(gca,'FontSize',axes_fontsize);
-% fix_colorbar(hbar,ax);
+% fix_colorbar(hbar,ax);    only useful for matlab v7 or earlier
 axes(ax);
 
 set(gcf, 'PaperUnits','inches');
 set(gcf, 'PaperPosition',[ 0 0 9 8]);
-% print -dpng src_i1.png;       % writing png takes much longer than you thought!
+% print -dpng src_i1.png;   writing png takes much longer than you thought!
+
 print -dpsc2 src_i1_true.ps;
 % print -dpsc2 src_i2.ps;
 
