@@ -49,15 +49,30 @@ mag_tot = pf.open(mag_name)[0].data.copy()
 img = pf.open(img_name)[0].data.copy()
 
 #-------------------------------------------------------------------------------------------------------------
-# RXJ1347 - i1
+"""# RXJ1347 - i1
 x = 3676.539
 y = 4759.3438
-rad = 30
+rad = 30"""
 
 """# RXJ1347 - i2
 x = 4052.0352
 y = 3676.0942
 rad = 70"""
+
+"""# RXJ1347 - i3
+x = 4410.6401
+y = 4802.8817
+rad = 40"""
+
+"""# RXJ1347 - i4
+x = 2993.1057
+y = 4091.6058
+rad = 60"""
+
+# RXJ1347 - i5
+x = 3093.3176
+y = 5917.4507
+rad = 50
 
 cut = img[y-rad:y+rad,x-rad:x+rad]
 pf.PrimaryHDU(cut).writeto('img_cut.fits',clobber=True)
@@ -101,10 +116,8 @@ lens_wcs=fitstools.pix2coords(mag_name,(lens_x,lens_y))
 # Show the image; note that the normalisations are arbitrary
 pl.figure(1)
 pl.imshow(cut,origin='lower',interpolation='nearest')
-#pl.imshow(cut2,origin='lower',interpolation='nearest')
 pl.colorbar()
 plt.savefig("img_cut.png",dpi=200)
-#plt.savefig("img_cut_i2.png",dpi=200)
 pl.ion()
 pl.show()
 
@@ -122,54 +135,11 @@ np.savetxt('cut.dat',cut.flatten(),fmt='%s')
 np.savetxt('img_ra.dat',img_wcs_tot[0],fmt='%s')
 np.savetxt('img_dec.dat',img_wcs_tot[1],fmt='%s')
 
-"""np.savetxt('cut2.dat',cut2.flatten(),fmt='%s')
-np.savetxt('i2_ra.dat',img_wcs_tot[0],fmt='%s')
-np.savetxt('i2_dec.dat',img_wcs_tot[1],fmt='%s')"""
-
 #-------------------------------------------------------------------------------------------------------------
 #                                                      END
 #-------------------------------------------------------------------------------------------------------------
 """     codes for the other four images, temporarily here
-x3 = 4410.6401
-y3 = 4802.8817
-rad3 = 40
-cut3 = img[y3-rad3:y3+rad3,x3-rad3:x3+rad3]
-pf.PrimaryHDU(cut3).writeto('img_cut_i3.fits',clobber=True)
-
-x4 = 2993.1057
-y4 = 4091.6058
-rad4 = 60
-cut4 = img[y4-rad4:y4+rad4,x4-rad4:x4+rad4]
-pf.PrimaryHDU(cut4).writeto('img_cut_i4.fits',clobber=True)
-
-x5 = 3093.3176
-y5 = 5917.4507
-rad5 = 50
-cut5 = img[y5-rad5:y5+rad5,x5-rad5:x5+rad5]
-pf.PrimaryHDU(cut5).writeto('img_cut_i5.fits',clobber=True)
-
-pl.figure(3)
-pl.imshow(cut3,origin='lower',interpolation='nearest')
-pl.colorbar()
-plt.savefig("img_cut_i3.png",dpi=200)
-
-pl.figure(4)
-pl.imshow(cut4,origin='lower',interpolation='nearest')
-pl.colorbar()
-plt.savefig("img_cut_i4.png",dpi=200)
-
-pl.figure(5)
-pl.imshow(cut5,origin='lower',interpolation='nearest')
-pl.colorbar()
-plt.savefig("img_cut_i5.png",dpi=200)
-
-##-------------------------------------------------------------------------------------------------------------
-#jacob_A = 1-kappa-gamma1
-#jacob_D = 1-kappa+gamma1
-#jacob_B = -1*gamma2
-#jacob_C = jacob_B
 """
-
 """   tryout material 
 ----------------------------
 # Create fits file

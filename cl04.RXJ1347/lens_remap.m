@@ -3,17 +3,17 @@
 clear all; clc; tic
 
 %% load in data
-alpha1=load('i1_data/alpha1.dat');
-alpha2=load('i1_data/alpha2.dat');
-gamma1=load('i1_data/gamma1.dat');
-gamma2=load('i1_data/gamma2.dat');
-kappa=load('i1_data/kappa.dat');
+alpha1=load('i5_data/alpha1.dat');
+alpha2=load('i5_data/alpha2.dat');
+gamma1=load('i5_data/gamma1.dat');
+gamma2=load('i5_data/gamma2.dat');
+kappa=load('i5_data/kappa.dat');
 % mag=load('mag.dat');
-lens_ra=load('i1_data/lens_ra.dat');    % lens RA/DEC can be treated as axis values
-lens_dec=load('i1_data/lens_dec.dat');  % since there's a good alignment btw WCS coord and its axes
-img=load('i1_data/cut.dat');
-img_ra=load('i1_data/img_ra.dat');       % here image RA/DEC is NOT axis values
-img_dec=load('i1_data/img_dec.dat');     % you should interp to get value at each pair of them
+lens_ra=load('i5_data/lens_ra.dat');    % lens RA/DEC can be treated as axis values
+lens_dec=load('i5_data/lens_dec.dat');  % since there's a good alignment btw WCS coord and its axes
+img=load('i5_data/cut.dat');
+img_ra=load('i5_data/img_ra.dat');       % here image RA/DEC is NOT axis values
+img_dec=load('i5_data/img_dec.dat');     % you should interp to get value at each pair of them
 
 N_img=length(img_ra);
 if length(img_dec)~= N_img
@@ -29,7 +29,7 @@ CD1_2   =   -8.27139425197E-06; % Degrees / Pixel
 CD2_2   =    1.01465256774E-06; % Degrees / Pixel                 
 
 CD=[CD1_1 CD1_2; CD2_1 CD2_2];
-dpixel4=[0.5 0.5 -0.5 -0.5; 0.5 -0.5 0.5 -0.5];
+dpixel4=[0.5 0.5 -0.5 -0.5; 0.5 -0.5 -0.5 0.5]; % corners in upper-right, lower-right, lower-left, upper-left (clockwise)
 
 alpha1_img=zeros(N_img,1);
 alpha2_img=zeros(N_img,1);
@@ -116,6 +116,6 @@ set(gcf, 'PaperUnits','inches');
 set(gcf, 'PaperPosition',[ 0 0 9 8]);
 % print -dpng src_i1.png;   writing png takes much longer than you thought!
 
-print -dpsc2 i1_src.ps;
+print -dpsc2 i5_src.ps;
 
 toc
