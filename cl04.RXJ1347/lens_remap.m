@@ -3,18 +3,17 @@
 clear all; clc; tic
 
 %% load in data
-alpha1=load('alpha1.dat');
-alpha2=load('alpha2.dat');
-gamma1=load('gamma1.dat');
-gamma2=load('gamma2.dat');
-kappa=load('kappa.dat');
+alpha1=load('i1_data/alpha1.dat');
+alpha2=load('i1_data/alpha2.dat');
+gamma1=load('i1_data/gamma1.dat');
+gamma2=load('i1_data/gamma2.dat');
+kappa=load('i1_data/kappa.dat');
 % mag=load('mag.dat');
-lens_ra=load('lens_ra.dat');    % lens RA/DEC can be treated as axis values
-lens_dec=load('lens_dec.dat');  % since there's a good alignment btw WCS coord and its axes
-
-img=load('cut2.dat');
-img_ra=load('i2_ra.dat');       % here image RA/DEC is NOT axis values
-img_dec=load('i2_dec.dat');     % you should interp to get value at each pair of them
+lens_ra=load('i1_data/lens_ra.dat');    % lens RA/DEC can be treated as axis values
+lens_dec=load('i1_data/lens_dec.dat');  % since there's a good alignment btw WCS coord and its axes
+img=load('i1_data/cut.dat');
+img_ra=load('i1_data/img_ra.dat');       % here image RA/DEC is NOT axis values
+img_dec=load('i1_data/img_dec.dat');     % you should interp to get value at each pair of them
 
 N_img=length(img_ra);
 if length(img_dec)~= N_img
@@ -55,16 +54,6 @@ for j=1:N_img
     kappa_img(j)=interp2(lens_ra,lens_dec,kappa,img_ra(j),img_dec(j));
     fprintf('finished No.%d interpolation set!\n',j)
 end
-%alpha1_temp=interp2(lens_ra,lens_dec,alpha1,img_ra,img_dec);   % default method: linear
-%alpha2_temp=interp2(lens_ra,lens_dec,alpha2,img_ra,img_dec);
-%gamma1_temp=interp2(lens_ra,lens_dec,gamma1,img_ra,img_dec);
-%gamma2_temp=interp2(lens_ra,lens_dec,gamma2,img_ra,img_dec);
-%kappa_temp=interp2(lens_ra,lens_dec,kappa,img_ra,img_dec);
-%alpha1_img=diag(alpha1_temp);  
-%alpha2_img=diag(alpha2_temp);
-%gamma1_img=diag(gamma1_temp);
-%gamma2_img=diag(gamma1_temp);
-%kappa_img=diag(kappa_temp);        out of memory...
 
 % compute the elements of the Jacobian-mat
 jacob_11 = 1 - kappa_img - gamma1_img;
@@ -94,7 +83,7 @@ for i=1:N_img
             DEC4_src(i,t)=DEC0_src(i)+dDEC4_src(i,t);
             counts_src(i,t)=0.25*img(i);
             fprintf('(%d, %d) img(%5.3e,%5.3e) => src(%5.3e,%5.3e)\n',...
-                i,t,dRA4_img(i,t),dDEC4_img(i,t),dRA4_src(i,t),dDEC4_src(i,t))
+                i,t,dRA4_img(i,t)+img_ra(i),dDEC4_img(i,t)+img_dec(i),RA4_src(i,t),DEC4_src(i,t))
             clear temp_img temp_src
         end
 end
@@ -127,7 +116,6 @@ set(gcf, 'PaperUnits','inches');
 set(gcf, 'PaperPosition',[ 0 0 9 8]);
 % print -dpng src_i1.png;   writing png takes much longer than you thought!
 
-% print -dpsc2 src_i1_true.ps;
-% print -dpsc2 src_i2.ps;
+print -dpsc2 i1_src.ps;
 
 toc

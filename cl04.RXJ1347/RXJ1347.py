@@ -49,24 +49,28 @@ mag_tot = pf.open(mag_name)[0].data.copy()
 img = pf.open(img_name)[0].data.copy()
 
 #-------------------------------------------------------------------------------------------------------------
-"""x1 = 3676.539
-y1 = 4759.3438
-rad1 = 30
-cut1 = img[y1-rad1:y1+rad1,x1-rad1:x1+rad1]
-pf.PrimaryHDU(cut1).writeto('img_cut_i1.fits',clobber=True)"""
+# RXJ1347 - i1
+x = 3676.539
+y = 4759.3438
+rad = 30
 
-# RXJ1347 - i2
+"""# RXJ1347 - i2
 x = 4052.0352
 y = 3676.0942
-rad = 70
-cut2 = img[y-rad:y+rad,x-rad:x+rad]
-pf.PrimaryHDU(cut2).writeto('img_cut_i2.fits',clobber=True)
+rad = 70"""
 
+cut = img[y-rad:y+rad,x-rad:x+rad]
+pf.PrimaryHDU(cut).writeto('img_cut.fits',clobber=True)
 #-------------------------------------------------------------------------------------------------------------
 # to cut off a postage stamp from lens model as well
-lens_center=fitstools.pix2coords(img_name,(x,y))
-lens_xy=fitstools.coords2pix(mag_name,lens_center)
+img_WCS_center=fitstools.pix2coords(img_name,(x,y))
+lens_xy=fitstools.coords2pix(mag_name,img_WCS_center)
 
+print "center in HST image's pixel space: x=", x, "y=", y
+print "center in WCS coordinate (deg): RA=", img_WCS_center[0], "DEC=", img_WCS_center[1]
+print "center in lens model's pixel space: x=", lens_xy[0], "y=", lens_xy[1]
+
+# below is the chopped maps of lensing quantities for specific image cuts
 alpha1 = alpha1_tot[lens_xy[1]-rad:lens_xy[1]+rad,lens_xy[0]-rad:lens_xy[0]+rad]  
 alpha2 = alpha2_tot[lens_xy[1]-rad:lens_xy[1]+rad,lens_xy[0]-rad:lens_xy[0]+rad]
 gamma1 = gamma1_tot[lens_xy[1]-rad:lens_xy[1]+rad,lens_xy[0]-rad:lens_xy[0]+rad]
@@ -96,11 +100,11 @@ lens_wcs=fitstools.pix2coords(mag_name,(lens_x,lens_y))
 #-------------------------------------------------------------------------------------------------------------
 # Show the image; note that the normalisations are arbitrary
 pl.figure(1)
-#pl.imshow(cut1,origin='lower',interpolation='nearest')
-pl.imshow(cut2,origin='lower',interpolation='nearest')
+pl.imshow(cut,origin='lower',interpolation='nearest')
+#pl.imshow(cut2,origin='lower',interpolation='nearest')
 pl.colorbar()
-#plt.savefig("img_cut_i1.png",dpi=200)
-plt.savefig("img_cut_i2.png",dpi=200)
+plt.savefig("img_cut.png",dpi=200)
+#plt.savefig("img_cut_i2.png",dpi=200)
 pl.ion()
 pl.show()
 
@@ -114,14 +118,13 @@ np.savetxt('kappa.dat',kappa,fmt='%s')
 np.savetxt('mag.dat',mag,fmt='%s')
 np.savetxt('lens_ra.dat',lens_wcs[0],fmt='%s')
 np.savetxt('lens_dec.dat',lens_wcs[1],fmt='%s')
+np.savetxt('cut.dat',cut.flatten(),fmt='%s')
+np.savetxt('img_ra.dat',img_wcs_tot[0],fmt='%s')
+np.savetxt('img_dec.dat',img_wcs_tot[1],fmt='%s')
 
-"""np.savetxt('cut1.dat',cut1,fmt='%s')
-np.savetxt('img_ra.dat',img_wcs[0],fmt='%s')
-np.savetxt('img_dec.dat',img_wcs[1],fmt='%s')"""
-
-np.savetxt('cut2.dat',cut2.flatten(),fmt='%s')
+"""np.savetxt('cut2.dat',cut2.flatten(),fmt='%s')
 np.savetxt('i2_ra.dat',img_wcs_tot[0],fmt='%s')
-np.savetxt('i2_dec.dat',img_wcs_tot[1],fmt='%s')
+np.savetxt('i2_dec.dat',img_wcs_tot[1],fmt='%s')"""
 
 #-------------------------------------------------------------------------------------------------------------
 #                                                      END
