@@ -89,7 +89,7 @@ for i=1:N_img
 end
 
 %% plotting src image
-lab_fontsize =14; axes_fontsize =12;
+lab_fontsize =13; axes_fontsize =10;
 color = {'y','r','m','g','c','k','b'};
 solid = {'-b','-r','-m','-g','-c','-k','-y'};
 dot = {':b',':r',':m',':g',':c',':k'};
@@ -113,9 +113,8 @@ set(gca,'FontSize',axes_fontsize);
 axes(ax);
 
 set(gcf, 'PaperUnits','inches');
-set(gcf, 'PaperPosition',[ 0 0 9 8]);
-% print -dpng src_i1.png;   writing png takes much longer than you thought!
-
+set(gcf, 'PaperPosition',[ 0 0 8 6]);
+% print -dpng i5_src_try.png;   %writing png takes much longer than you thought!
 print -dpsc2 i5_src.ps;
 
 toc
