@@ -1,17 +1,19 @@
 % plotting the remapped images repeatedly
+% NOTE: set(gcf, 'PaperPosition',[ 0 0 8 6]) fits my laptop screen better, while [ 0 0 9 7] fits larger screen better
 
 clear all; clc; tic
 
 % color and linewidth schemes
-lab_fontsize =13; axes_fontsize =10;
+lab_fontsize =12; axes_fontsize =10;
 color = {'y','r','m','g','c','k','b'};
 solid = {'-b','-r','-m','-g','-c','-k','-y'};
 dot = {':b',':r',':m',':g',':c',':k'};
 dash = {'--b','--r','--m','--g','--c','--k'};
 lw1=2.5; lw2=1.7; lw3=0.8;
 
-ref_ra=206.8775;
-ref_dec=-11.7528;
+% HST image's reference pixel's WCS coord
+ref_ra=206.901315235;       % $ imhead RXJ1347-1145_fullres_G.fits | grep CRVAL1
+ref_dec=-11.7542487671;     % $ imhead RXJ1347-1145_fullres_G.fits | grep CRVAL2
 
 % getting results for i1
 load i1_remap.mat
@@ -159,7 +161,7 @@ set(gca,'FontSize',axes_fontsize);
 axes(ax);
 
 set(gcf, 'PaperUnits','inches');
-set(gcf, 'PaperPosition',[ 0 0 9 7]);
+set(gcf, 'PaperPosition',[ 0 0 8 6]);
 print -dpsc2 img_totno3_rg1.ps;
 
 
@@ -191,7 +193,7 @@ set(gca,'FontSize',axes_fontsize);
 axes(ax);
 
 set(gcf, 'PaperUnits','inches');
-set(gcf, 'PaperPosition',[ 0 0 9 7]);
+set(gcf, 'PaperPosition',[ 0 0 8 6]);
 print -dpsc2 img_totno3_rg2.ps;
 
 
@@ -223,7 +225,7 @@ set(gca,'FontSize',axes_fontsize);
 axes(ax);
 
 set(gcf, 'PaperUnits','inches');
-set(gcf, 'PaperPosition',[ 0 0 9 7]);
+set(gcf, 'PaperPosition',[ 0 0 8 6]);
 print -dpsc2 img_totno3_mag.ps;
 
 

@@ -1,20 +1,23 @@
 % regain my honor!
 
 clear all; clc; tic
-diary('i3_remap.diary');
+diary('i5_remap.diary');
+fprintf('----------------------------------------------\n')
+fprintf('| Now we are working on RXJ1347 - i5_remap ! |\n')
+fprintf('----------------------------------------------\n')
 
 %% load in data
-alpha1=load('i3_data/alpha1.dat');
-alpha2=load('i3_data/alpha2.dat');
-gamma1=load('i3_data/gamma1.dat');
-gamma2=load('i3_data/gamma2.dat');
-kappa=load('i3_data/kappa.dat');
-mag=load('i3_data/mag.dat');
-lens_ra=load('i3_data/lens_ra.dat');    % lens RA/DEC can be treated as axis values
-lens_dec=load('i3_data/lens_dec.dat');  % since there's a good alignment btw WCS coord and its axes
-img=load('i3_data/cut.dat');
-img_ra=load('i3_data/img_ra.dat');       % here image RA/DEC is NOT axis values
-img_dec=load('i3_data/img_dec.dat');     % you should interp to get value at each pair of them
+alpha1=load('i5_data/alpha1.dat');
+alpha2=load('i5_data/alpha2.dat');
+gamma1=load('i5_data/gamma1.dat');
+gamma2=load('i5_data/gamma2.dat');
+kappa=load('i5_data/kappa.dat');
+mag=load('i5_data/mag.dat');
+lens_ra=load('i5_data/lens_ra.dat');    % lens RA/DEC can be treated as axis values
+lens_dec=load('i5_data/lens_dec.dat');  % since there's a good alignment btw WCS coord and its axes
+img=load('i5_data/cut.dat');
+img_ra=load('i5_data/img_ra.dat');       % here image RA/DEC is NOT axis values
+img_dec=load('i5_data/img_dec.dat');     % you should interp to get value at each pair of them
 
 N_img=length(img_ra);
 if length(img_dec)~= N_img
@@ -93,7 +96,7 @@ for i=1:N_img
         end
 end
 
-save i3_remap.mat
+save i5_remap.mat
 toc
 diary off
 
@@ -123,7 +126,7 @@ diary off
 % 
 % set(gcf, 'PaperUnits','inches');
 % set(gcf, 'PaperPosition',[ 0 0 8 6]);
-% % print -dpng i3_src_try.png;   %writing png takes much longer than you thought!
-% print -dpsc2 i3_src.ps;
+% % print -dpng i5_src_try.png;   %writing png takes much longer than you thought!
+% print -dpsc2 i5_src.ps;
 
 
