@@ -29,6 +29,8 @@ CD2_1   =   -8.27140110712E-06; % Degrees / Pixel
 CD1_2   =   -8.27139425197E-06; % Degrees / Pixel                                
 CD2_2   =    1.01465256774E-06; % Degrees / Pixel                 
 
+ref_dec=-11.7542487671;         % can be obtained using:  imhead $your_header_file | grep CRVAL2
+
 CD=[CD1_1 CD1_2; CD2_1 CD2_2];
 dpixel4=[0.5 0.5 -0.5 -0.5; 0.5 -0.5 -0.5 0.5]; % corners in upper-right, lower-right, lower-left, upper-left (clockwise)
 
@@ -76,7 +78,7 @@ for i=1:N_img
         i,img_ra(i),img_dec(i),RA0_src(i),DEC0_src(i))
         for t=1:4
             temp_img=CD*dpixel4(:,t);                   % temp_img: [dalpha; dbeta]
-            dRA4_img(i,t)=temp_img(1)/cos(img_dec(i)/180*pi);
+            dRA4_img(i,t)=temp_img(1)/cos(ref_dec/180*pi);
             dDEC4_img(i,t)=temp_img(2);
             temp_src=[jacob_11(i) jacob_12(i); jacob_21(i) jacob_22(i)]...
                 *[dRA4_img(i,t); dDEC4_img(i,t)];       % temp_src: [dRA4_src; dDEC4_src]
