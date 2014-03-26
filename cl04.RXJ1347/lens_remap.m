@@ -1,23 +1,23 @@
 % regain my honor!
 
 clear all; clc; tic
-diary('i5_remap.diary');
+diary('i1_remap.diary');
 fprintf('----------------------------------------------\n')
-fprintf('| Now we are working on RXJ1347 - i5_remap ! |\n')
+fprintf('| Now we are working on RXJ1347 - i1_remap ! |\n')
 fprintf('----------------------------------------------\n')
 
 %% load in data
-alpha1=load('i5_data/alpha1.dat');
-alpha2=load('i5_data/alpha2.dat');
-gamma1=load('i5_data/gamma1.dat');
-gamma2=load('i5_data/gamma2.dat');
-kappa=load('i5_data/kappa.dat');
-mag=load('i5_data/mag.dat');
-lens_ra=load('i5_data/lens_ra.dat');    % lens RA/DEC can be treated as axis values
-lens_dec=load('i5_data/lens_dec.dat');  % since there's a good alignment btw WCS coord and its axes
-img=load('i5_data/cut.dat');
-img_ra=load('i5_data/img_ra.dat');       % here image RA/DEC is NOT axis values
-img_dec=load('i5_data/img_dec.dat');     % you should interp to get value at each pair of them
+alpha1=load('i1_data/alpha1.dat');
+alpha2=load('i1_data/alpha2.dat');
+gamma1=load('i1_data/gamma1.dat');
+gamma2=load('i1_data/gamma2.dat');
+kappa=load('i1_data/kappa.dat');
+mag=load('i1_data/mag.dat');
+lens_ra=load('i1_data/lens_ra.dat');    % lens RA/DEC can be treated as axis values
+lens_dec=load('i1_data/lens_dec.dat');  % since there's a good alignment btw WCS coord and its axes
+img=load('i1_data/cut.dat');
+img_ra=load('i1_data/img_ra.dat');       % here image RA/DEC is NOT axis values
+img_dec=load('i1_data/img_dec.dat');     % you should interp to get value at each pair of them
 
 N_img=length(img_ra);
 if length(img_dec)~= N_img
@@ -70,7 +70,7 @@ jacob_21 = jacob_12;
 %% Step 1: apply the deflection angle shift to the center of each pixel
 %          so now we need to specify two matrices of the same dimension to
 %          the img matrix, to record the RA, DEC for each grid cell
-RA0_src=img_ra-alpha1_img/60;
+RA0_src=img_ra+alpha1_img/60;       % Remember the RA-axis is inverted !!!
 DEC0_src=img_dec-alpha2_img/60;
 
 %% Step 2: apply Jacobian-mat to 4 corner points of each pixel
@@ -96,7 +96,7 @@ for i=1:N_img
         end
 end
 
-save i5_remap.mat
+save i1_remap.mat
 toc
 diary off
 
@@ -126,7 +126,7 @@ diary off
 % 
 % set(gcf, 'PaperUnits','inches');
 % set(gcf, 'PaperPosition',[ 0 0 8 6]);
-% % print -dpng i5_src_try.png;   %writing png takes much longer than you thought!
-% print -dpsc2 i5_src.ps;
+% % print -dpng i1_src_try.png;   %writing png takes much longer than you thought!
+% print -dpsc2 i1_src.ps;
 
 
