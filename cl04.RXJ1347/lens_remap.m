@@ -18,6 +18,7 @@ lens_dec=load('i1_data/lens_dec.dat');  % since there's a good alignment btw WCS
 img=load('i1_data/cut.dat');
 img_ra=load('i1_data/img_ra.dat');       % here image RA/DEC is NOT axis values
 img_dec=load('i1_data/img_dec.dat');     % you should interp to get value at each pair of them
+img_ctr=load('i1_data/img_WCS_ctr.dat');    % the 2nd line: RA DEC for the image center
 
 N_img=length(img_ra);
 if length(img_dec)~= N_img
@@ -32,7 +33,9 @@ CD2_1   =   -8.27140110712E-06; % Degrees / Pixel
 CD1_2   =   -8.27139425197E-06; % Degrees / Pixel                                
 CD2_2   =    1.01465256774E-06; % Degrees / Pixel                 
 
-ref_dec=-11.7542487671;         % can be obtained using:  imhead $your_header_file | grep CRVAL2
+% HST image's reference pixel's WCS coord
+ref_ra=206.901315235;       % $ imhead RXJ1347-1145_fullres_G.fits | grep CRVAL1
+ref_dec=-11.7542487671;     % $ imhead RXJ1347-1145_fullres_G.fits | grep CRVAL2
 
 CD=[CD1_1 CD1_2; CD2_1 CD2_2];
 dpixel4=[0.5 0.5 -0.5 -0.5; 0.5 -0.5 -0.5 0.5]; % corners in upper-right, lower-right, lower-left, upper-left (clockwise)
@@ -60,6 +63,8 @@ for j=1:N_img
     kappa_img(j)=interp2(lens_ra,lens_dec,kappa,img_ra(j),img_dec(j));
     fprintf('finished No.%d interpolation set!\n',j)
 end
+alpha1_ctr=interp2(lens_ra,lens_dec,alpha1,img_ctr(2,1),img_ctr(2,2));
+alpha2_ctr=interp2(lens_ra,lens_dec,alpha2,img_ctr(2,1),img_ctr(2,2));   % interp for the image center 
 
 % compute the elements of the Jacobian-mat
 jacob_11 = 1 - kappa_img - gamma1_img;
@@ -70,8 +75,10 @@ jacob_21 = jacob_12;
 %% Step 1: apply the deflection angle shift to the center of each pixel
 %          so now we need to specify two matrices of the same dimension to
 %          the img matrix, to record the RA, DEC for each grid cell
-RA0_src=img_ra+alpha1_img/60;       % Remember the RA-axis is inverted !!!
-DEC0_src=img_dec-alpha2_img/60;
+RA0_src=img_ra+alpha1_img/60.;       % Remember the RA-axis is inverted !!!
+DEC0_src=img_dec-alpha2_img/60.;
+ctr_ra=img_ctr(2,1)+alpha1_ctr/60.;
+ctr_dec=img_ctr(2,2)-alpha2_ctr/60.;
 
 %% Step 2: apply Jacobian-mat to 4 corner points of each pixel
 %          but even before that, you have to calc (RA,DEC) of them at
@@ -99,34 +106,4 @@ end
 save i1_remap.mat
 toc
 diary off
-
-%% plotting src image
-% lab_fontsize =13; axes_fontsize =10;
-% color = {'y','r','m','g','c','k','b'};
-% solid = {'-b','-r','-m','-g','-c','-k','-y'};
-% dot = {':b',':r',':m',':g',':c',':k'};
-% dash = {'--b','--r','--m','--g','--c','--k'};
-% lw1=2.5; lw2=1.7; lw3=0.8;
-% 
-% figure(1)
-% scatter(RA4_src(1:N_img*4),DEC4_src(1:N_img*4),3,counts_src(1:N_img*4));
-% colormap('jet');
-% xlabel('RA','FontSize',lab_fontsize);
-% ylabel('DEC','FontSize',lab_fontsize);
-% set(gca,'FontSize',axes_fontsize,'LineWidth',1.3,'XDir','Reverse'); 
-% 
-% ax = gca;
-% % hbar = colorbar('horiz'); 
-% hbar = colorbar('EastOutside');
-% axes(hbar);
-% ylabel('counts','FontSize',lab_fontsize);
-% set(gca,'FontSize',axes_fontsize);
-% % fix_colorbar(hbar,ax);    only useful for matlab v7 or earlier
-% axes(ax);
-% 
-% set(gcf, 'PaperUnits','inches');
-% set(gcf, 'PaperPosition',[ 0 0 8 6]);
-% % print -dpng i1_src_try.png;   %writing png takes much longer than you thought!
-% print -dpsc2 i1_src.ps;
-
 

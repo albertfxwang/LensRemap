@@ -1,4 +1,9 @@
 
+
+grep 'WCS' i*ta/i*term > itot_ctr.dat
+
+
+
 在cut的时候，非整数的pixel是取了floor
 ds9中的pixel是从1开始的
 python读进来的pixel index是从0开始的
@@ -94,8 +99,5 @@ Out[43]:
 array([[2, 3, 4],
        [6, 7, 8]])
 #--------------------------------------------------
-
-
-
 
 
