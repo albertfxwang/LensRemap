@@ -1,24 +1,24 @@
 % regain my honor!
 
 clear all; clc; tic
-diary('i5_remap.diary');
-fprintf('----------------------------------------------\n')
-fprintf('| Now we are working on RXJ1347 - i5_remap ! |\n')
-fprintf('----------------------------------------------\n')
+diary('i1_G_remap.diary');
+fprintf('------------------------------------------------\n')
+fprintf('| Now we are working on RXJ1347 - i1_G_remap ! |\n')
+fprintf('------------------------------------------------\n')
 
 %% load in data
-alpha1=load('i5_data/alpha1.dat');
-alpha2=load('i5_data/alpha2.dat');
-gamma1=load('i5_data/gamma1.dat');
-gamma2=load('i5_data/gamma2.dat');
-kappa=load('i5_data/kappa.dat');
-mag=load('i5_data/mag.dat');
-lens_ra=load('i5_data/lens_ra.dat');    % lens RA/DEC can be treated as axis values
-lens_dec=load('i5_data/lens_dec.dat');  % since there's a good alignment btw WCS coord and its axes
-img=load('i5_data/cut.dat');
-img_ra=load('i5_data/img_ra.dat');       % here image RA/DEC is NOT axis values
-img_dec=load('i5_data/img_dec.dat');     % you should interp to get value at each pair of them
-img_ctr=load('i5_data/img_WCS_ctr.dat');    % the 2nd line: RA DEC for the image center
+alpha1=load('i1_G_data/alpha1.dat');
+alpha2=load('i1_G_data/alpha2.dat');
+gamma1=load('i1_G_data/gamma1.dat');
+gamma2=load('i1_G_data/gamma2.dat');
+kappa=load('i1_G_data/kappa.dat');
+mag=load('i1_G_data/mag.dat');
+lens_ra=load('i1_G_data/lens_ra.dat');    % lens RA/DEC can be treated as axis values
+lens_dec=load('i1_G_data/lens_dec.dat');  % since there's a good alignment btw WCS coord and its axes
+img=load('i1_G_data/cut.dat');
+img_ra=load('i1_G_data/img_ra.dat');       % here image RA/DEC is NOT axis values
+img_dec=load('i1_G_data/img_dec.dat');     % you should interp to get value at each pair of them
+img_ctr=load('i1_G_data/img_WCS_ctr.dat');    % the 2nd line: RA DEC for the image center
 
 N_img=length(img_ra);
 if length(img_dec)~= N_img
@@ -103,7 +103,7 @@ for i=1:N_img
         end
 end
 
-save i5_remap.mat
+save i1_G_remap.mat
 toc
 diary off
 
