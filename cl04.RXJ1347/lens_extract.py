@@ -38,22 +38,32 @@ import fitstools
 #from sonnentools import fitstools
 
 #-------------------------------------------------------------------------------------------------------------
-img_name='./data.fits/RXJ1347-1145_fullres_G.fits'
-mag_name='./data.fits/RXJ1347.files_mag_rs_1.7.fits'
-
-alpha1_tot = pf.open('./data.fits/RXJ1347.files_alpha1_rs_1.7.fits')[0].data.copy()
-alpha2_tot = pf.open('./data.fits/RXJ1347.files_alpha2_rs_1.7.fits')[0].data.copy()
-gamma1_tot = pf.open('./data.fits/RXJ1347.files_gamma1_rs_1.7.fits')[0].data.copy()
-gamma2_tot = pf.open('./data.fits/RXJ1347.files_gamma2_rs_1.7.fits')[0].data.copy()
-kappa_tot = pf.open('./data.fits/RXJ1347.files_kappa_rs_1.7.fits')[0].data.copy()
-mag_tot = pf.open(mag_name)[0].data.copy()
+img_name='./data.fits/RXJ1347-1145_fullres_G.fits'  # this is the image data
 img = pf.open(img_name)[0].data.copy()
 
+file_dir='/data2/xinwang/workplace/cl04.RXJ1347.swunitedamr/Regu60_PosiErr1as_Ngrid25to27/'
+file_root='RXJ1347.PosiErr1as'
+z_src='1.7'     # RXJ1347 - system i
+
+alpha1_name = '%s%s_%s_%s%s' % (file_dir,file_root,'alpha1_rs',z_src,'.fits')
+alpha2_name = '%s%s_%s_%s%s' % (file_dir,file_root,'alpha2_rs',z_src,'.fits')
+gamma1_name = '%s%s_%s_%s%s' % (file_dir,file_root,'gamma1_rs',z_src,'.fits')
+gamma2_name = '%s%s_%s_%s%s' % (file_dir,file_root,'gamma2_rs',z_src,'.fits')
+kappa_name  = '%s%s_%s_%s%s' % (file_dir,file_root,'kappa_rs',z_src,'.fits')
+mag_name    = '%s%s_%s_%s%s' % (file_dir,file_root,'mag_rs',z_src,'.fits')
+
+alpha1_tot = pf.open(alpha1_name)[0].data.copy()
+alpha2_tot = pf.open(alpha2_name)[0].data.copy()
+gamma1_tot = pf.open(gamma1_name)[0].data.copy()
+gamma2_tot = pf.open(gamma2_name)[0].data.copy()
+kappa_tot  = pf.open(kappa_name)[0].data.copy()
+mag_tot    = pf.open(mag_name)[0].data.copy()
+
 #-------------------------------------------------------------------------------------------------------------
-"""# RXJ1347 - i1
+# RXJ1347 - i1
 x = 3676.539
 y = 4759.3438
-rad = 30"""
+rad = 30
 
 """# RXJ1347 - i2
 x = 4052.0352
@@ -70,13 +80,15 @@ x = 2993.1057
 y = 4091.6058
 rad = 60"""
 
-# RXJ1347 - i5
+"""# RXJ1347 - i5
 x = 3093.3176
 y = 5917.4507
-rad = 50
+rad = 50"""
 
 cut = img[y-rad:y+rad,x-rad:x+rad]
+# Create fits file
 pf.PrimaryHDU(cut).writeto('img_cut.fits',clobber=True)
+
 #-------------------------------------------------------------------------------------------------------------
 # to cut off a postage stamp from lens model as well
 img_WCS_center=fitstools.pix2coords(img_name,(x,y))
@@ -149,26 +161,13 @@ np.savetxt('img_dec.dat',img_wcs_tot[1],fmt='%s')
 """
 """   tryout material 
 ----------------------------
-# Create fits file
-pf.PrimaryHDU(kappa).writeto('kappa.fits',clobber=True)
-# Show the image; note that the normalisations are arbitrary
-pl.figure()
-pl.imshow(kappa,origin='lower',interpolation='nearest')
-pl.colorbar()
-
 minus_one = np.zeros((1024,1024))
 minus_one[:,:] = -1.0
-
 positive_one = np.zeros((1024,1024))
 positive_one[:,:] = 1.0
-
 minus_three = np.zeros((1024,1024))
 minus_three[:,:] = -3.0
-
 new=np.add(np.add(minus_one,positive_one),minus_three)
-
 print "new=", new
-np.savetxt('new', new, fmt='%s')
-
 ----------------------------
 """
