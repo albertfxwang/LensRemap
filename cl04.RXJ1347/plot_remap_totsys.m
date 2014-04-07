@@ -8,7 +8,7 @@ img_center=zeros(num_img,2);   % 1st column: RA. 2nd column: DEC.
 src_ctr=zeros(num_img,2);
 
 % getting results for i1
-load i1_remap.mat
+load i1_G_remap.mat
 i1_rg1=gamma1_img./(1-kappa_img);
 i1_rg2=gamma2_img./(1-kappa_img);
 i1_mag=1./(1-kappa_img.^2-(gamma1_img.^2+gamma2_img.^2));
@@ -26,7 +26,7 @@ src_ctr(num,1)=(ctr_ra-ref_ra)*3600.;
 src_ctr(num,2)=(ctr_dec-ref_dec)*3600.;
 
 % getting results for i2
-load i2_remap.mat
+load i2_G_remap.mat
 i2_rg1=gamma1_img./(1-kappa_img);
 i2_rg2=gamma2_img./(1-kappa_img);
 i2_mag=1./(1-kappa_img.^2-(gamma1_img.^2+gamma2_img.^2));
@@ -44,7 +44,7 @@ src_ctr(num,1)=(ctr_ra-ref_ra)*3600.;
 src_ctr(num,2)=(ctr_dec-ref_dec)*3600.;
 
 % getting results for i3
-load i3_remap.mat
+load i3_G_remap.mat
 i3_rg1=gamma1_img./(1-kappa_img);
 i3_rg2=gamma2_img./(1-kappa_img);
 i3_mag=1./(1-kappa_img.^2-(gamma1_img.^2+gamma2_img.^2));
@@ -62,7 +62,7 @@ src_ctr(num,1)=(ctr_ra-ref_ra)*3600.;
 src_ctr(num,2)=(ctr_dec-ref_dec)*3600.;
 
 % getting results for i4
-load i4_remap.mat
+load i4_G_remap.mat
 i4_rg1=gamma1_img./(1-kappa_img);
 i4_rg2=gamma2_img./(1-kappa_img);
 i4_mag=1./(1-kappa_img.^2-(gamma1_img.^2+gamma2_img.^2));
@@ -80,7 +80,7 @@ src_ctr(num,1)=(ctr_ra-ref_ra)*3600.;
 src_ctr(num,2)=(ctr_dec-ref_dec)*3600.;
 
 % getting results for i5
-load i5_remap.mat
+load i5_G_remap.mat
 i5_rg1=gamma1_img./(1-kappa_img);
 i5_rg2=gamma2_img./(1-kappa_img);
 i5_mag=1./(1-kappa_img.^2-(gamma1_img.^2+gamma2_img.^2));
@@ -134,7 +134,7 @@ axes(ax);
 axis tight
 set(gcf, 'PaperUnits','inches');
 set(gcf, 'PaperPosition',[ 0 0 8 6]);
-print -dpsc2 src_tot.ps;
+print -dpsc2 itot_G_src.ps;
 
 
 %% the original HST images in lens plane
@@ -166,27 +166,7 @@ axes(ax);
 axis tight
 set(gcf, 'PaperUnits','inches');
 set(gcf, 'PaperPosition',[ 0 0 8 6]);
-print -dpsc2 img_tot.ps;
-
-
-%% plotting the reduced shear vector map   ->  this should go into _single.m later
-num=5;
-figure(3)
-quiver(i5_img_ra,i5_img_dec,i5_rg1,i5_rg2)
-hold on
-plot(img_center(num,1),img_center(num,2),'ks','MarkerSize',10,'LineWidth',1)
-hold off
-xlabel('RA offset [arcsec]','FontSize',lab_fontsize);
-ylabel('DEC offset [arcsec]','FontSize',lab_fontsize);
-title('RXJ1347 i5_ reduced shear whisker at the lens plane')
-
-set(gca,'FontSize',axes_fontsize,'LineWidth',1.3,'XDir','Reverse'); 
-axis tight
-set(gcf, 'PaperUnits','inches');
-set(gcf, 'PaperPosition',[ 0 0 8 6]);
-print -dpsc2 i5_rgvec.ps;
-
-
+print -dpsc2 itot_G_img.ps;
 
 %--------------------------- below are dropouts ---------------------------
 % %% reduced shear g1 on img plane
