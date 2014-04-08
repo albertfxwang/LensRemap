@@ -2,7 +2,7 @@
 
 clear all; clc
 
-% getting results for i1
+% getting results for i1_
 load i1_G_remap.mat
 img_ra=(img_ra-ref_ra)*3600.;     % RA in arcsec
 img_dec=(img_dec-ref_dec)*3600.;  % DEC in arcsec

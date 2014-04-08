@@ -43,7 +43,7 @@ img = pf.open(img_name)[0].data.copy()
 
 file_dir='/data2/xinwang/workplace/cl04.RXJ1347.swunitedamr/Regu60_PosiErr1as_Ngrid25to27/'
 file_root='RXJ1347.PosiErr1as'
-z_src='1.7'     # RXJ1347 - system i
+z_src='1.8'     # RXJ1347 - system i
 
 alpha1_name = '%s%s_%s_%s%s' % (file_dir,file_root,'alpha1_rs',z_src,'.fits')
 alpha2_name = '%s%s_%s_%s%s' % (file_dir,file_root,'alpha2_rs',z_src,'.fits')
@@ -60,30 +60,34 @@ kappa_tot  = pf.open(kappa_name)[0].data.copy()
 mag_tot    = pf.open(mag_name)[0].data.copy()
 
 #-------------------------------------------------------------------------------------------------------------
-# RXJ1347 - i1
+"""# RXJ1347 - i1
 x = 3676.539
 y = 4759.3438
-rad = 30
-
+rad = 30"""
 """# RXJ1347 - i2
 x = 4052.0352
 y = 3676.0942
 rad = 70"""
-
 """# RXJ1347 - i3
 x = 4410.6401
 y = 4802.8817
 rad = 40"""
-
 """# RXJ1347 - i4
 x = 2993.1057
 y = 4091.6058
 rad = 60"""
-
 """# RXJ1347 - i5
 x = 3093.3176
 y = 5917.4507
 rad = 50"""
+"""# RXJ1347 - a1
+x = 4689.6758
+y = 5428.9874
+rad = 115"""
+# RXJ1347 - a2
+x = 4935.8924 
+y = 4149.0681
+rad = 45
 
 cut = img[y-rad:y+rad,x-rad:x+rad]
 # Create fits file
@@ -169,5 +173,9 @@ minus_three = np.zeros((1024,1024))
 minus_three[:,:] = -3.0
 new=np.add(np.add(minus_one,positive_one),minus_three)
 print "new=", new
+
+file_type = ('alpha1_rs','alpha2_rs','gamma1_rs','gamma2_rs','kappa_rs','mag_rs')
+num_type = len(file_type)
+for i in range(0,num_type):    
 ----------------------------
 """
