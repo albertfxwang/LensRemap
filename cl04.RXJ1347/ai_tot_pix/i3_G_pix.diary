@@ -1,0 +1,24 @@
+----------------------------------------------
+| Now we are working on RXJ1347 - i3_G_pix ! |  N_bin=sqrt(N_img)
+----------------------------------------------
+magnification at the center (RA= 206.87606, DEC= -11.75268) is    5.31715
+enter function: MakeVec
+fixed number of bins = 80
+the bin size = 2.120126e-02
+exit function: MakeVec
+enter function: MakeVec
+fixed number of bins = 80
+the bin size = 3.050949e-02
+exit function: MakeVec
+----------------------------------------------
+| Now we are working on RXJ1347 - i3_G_pix ! |  N_bin=0.5*sqrt(N_img) 
+----------------------------------------------
+magnification at the center (RA= 206.87606, DEC= -11.75268) is    5.31715
+enter function: MakeVec
+fixed number of bins = 40
+the bin size = 4.294615e-02
+exit function: MakeVec
+enter function: MakeVec
+fixed number of bins = 40
+the bin size = 6.180127e-02
+exit function: MakeVec
