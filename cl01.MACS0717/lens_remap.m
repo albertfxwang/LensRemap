@@ -1,4 +1,4 @@
-% regain my honor!
+% calculate source plane grids 
 
 clear all; clc; tic
 diary('a2_G_remap.diary');
@@ -52,7 +52,7 @@ dRA4_src=zeros(N_img,4);
 dDEC4_src=zeros(N_img,4);
 RA4_src=zeros(N_img,4);
 DEC4_src=zeros(N_img,4);
-counts_src=zeros(N_img,4);
+sb_src=zeros(N_img,4);
 
 %% 2D interpolation to evaluate alpha, Jacobian-mat at each pixel's center
 for j=1:N_img
@@ -97,7 +97,10 @@ for i=1:N_img
             dDEC4_src(i,t)=temp_src(2);
             RA4_src(i,t)=RA0_src(i)+dRA4_src(i,t);
             DEC4_src(i,t)=DEC0_src(i)+dDEC4_src(i,t);
-            counts_src(i,t)=0.25*img(i);
+%            counts_src(i,t)=0.25*img(i);
+            sb_src(i,t)=img(i);         
+            % It's the concept of conservation of surface brightness rather than photon counts
+            % actually there should also be an extra consts as well as taking log but dropped here for convenience
             fprintf('(%d, %d) img(%10.8e,%10.8e) => src(%10.8e,%10.8e)\n',...
                 i,t,dRA4_img(i,t)+img_ra(i),dDEC4_img(i,t)+img_dec(i),RA4_src(i,t),DEC4_src(i,t))
             clear temp_img temp_src

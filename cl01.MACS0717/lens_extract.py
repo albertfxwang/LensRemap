@@ -1,28 +1,8 @@
 """
 ----------------------------
-   NAME
+    PURPOSE/DESCRIPTION
 ----------------------------
- lens_extract.py
-----------------------------
-   PURPOSE/DESCRIPTION
-----------------------------
- using python to extract data of lens and SL multiple images
-----------------------------
-   COMMENTS
-----------------------------
-
-----------------------------
-   EXAMPLES/USAGE
-----------------------------
-
-----------------------------
-   BUGS
-----------------------------
-
-----------------------------
-   REVISION HISTORY
-----------------------------
- 2014-2-9  started by Xin Wang (UCSB)
+ using python to extract data of lens and SL multiple images, for MACS0717
 ----------------------------
 """
 #-------------------------------------------------------------------------------------------------------------
@@ -38,12 +18,14 @@ import fitstools
 #from sonnentools import fitstools
 
 #-------------------------------------------------------------------------------------------------------------
-img_name='./data.fits/RXJ1347-1145_fullres_G.fits'  # this is the image data
+# the following is the image data
+img_name='./data_rgb.fits_cat.reg/MACS0717_F814WF105WF140W_R.fits' 
 img = pf.open(img_name)[0].data.copy()
 
-file_dir='/data2/xinwang/workplace/cl04.RXJ1347.swunitedamr/Regu60_PosiErr1as_Ngrid25to27/'
-file_root='RXJ1347.PosiErr1as'
-z_src='1.8'     # RXJ1347 - system i
+file_dir='/home/albert/workplace/cl01.MACS0717/swunitedamrBEST/Refine5_PE0.9as_Ngrid30to35/'
+file_root='MACS0717_FoV5am.regu60'
+#z_src='1.9'     # systems 3,4,14
+z_src='1.7'     # system 12
 
 alpha1_name = '%s%s_%s_%s%s' % (file_dir,file_root,'alpha1_rs',z_src,'.fits')
 alpha2_name = '%s%s_%s_%s%s' % (file_dir,file_root,'alpha2_rs',z_src,'.fits')
@@ -60,34 +42,58 @@ kappa_tot  = pf.open(kappa_name)[0].data.copy()
 mag_tot    = pf.open(mag_name)[0].data.copy()
 
 #-------------------------------------------------------------------------------------------------------------
-"""# RXJ1347 - i1
-x = 3676.539
-y = 4759.3438
-rad = 30"""
-"""# RXJ1347 - i2
-x = 4052.0352
-y = 3676.0942
-rad = 70"""
-"""# RXJ1347 - i3
-x = 4410.6401
-y = 4802.8817
-rad = 40"""
-"""# RXJ1347 - i4
-x = 2993.1057
-y = 4091.6058
-rad = 60"""
-"""# RXJ1347 - i5
-x = 3093.3176
-y = 5917.4507
-rad = 50"""
-"""# RXJ1347 - a1
-x = 4689.6758
-y = 5428.9874
-rad = 115"""
-# RXJ1347 - a2
-x = 4935.8924 
-y = 4149.0681
-rad = 45
+# here images' postage stamps are cut according to their spatial extension at R band filter (F140W)
+"""# 3.1
+x = 3598.6099
+y = 2527.211
+rad = 20"""
+"""# 3.2
+x = 3714.4754
+y = 2788.6894
+rad = 20"""
+"""# 3.3
+x = 2832.472
+y = 1862.4514
+rad = 15"""
+
+"""# 4.1
+x = 2760.0487
+y = 3364.2453
+rad = 35"""
+"""# 4.2
+x = 3117.8948
+y = 3717.8672
+rad = 20"""
+"""# 4.3
+x = 1977.0057
+y = 2624.2185
+rad = 20"""
+
+"""# 14.1
+x = 2731.7342
+y = 2908.9482
+rad = 25"""
+"""# 14.2
+x = 3502.9053
+y = 3604.6515
+rad = 15"""
+"""# 14.3
+x = 2238.8085
+y = 2374.8719
+rad = 15"""
+
+"""# 12.1
+x = 2711.7556
+y = 3117.1252
+rad = 18"""
+"""# 12.2
+x = 3255.8415
+y = 3672.0838
+rad = 11"""
+# 12.3
+x = 2166.1345
+y = 2648.6497
+rad = 20
 
 cut = img[y-rad:y+rad,x-rad:x+rad]
 # Create fits file
