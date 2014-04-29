@@ -1,24 +1,24 @@
 % calculate source plane grids 
 
 clear all; clc; tic
-diary('a2_G_remap.diary');
-fprintf('------------------------------------------------\n')
-fprintf('| Now we are working on RXJ1347 - a2_G_remap ! |\n')
-fprintf('------------------------------------------------\n')
+diary('12.3_R_remap.diary');
+fprintf('---------------------------------------------------\n')
+fprintf('| Now we are working on MACS0717 - 12.3_R_remap ! |\n')
+fprintf('---------------------------------------------------\n')
 
 %% load in data
-alpha1=load('a2_G_data/alpha1.dat');
-alpha2=load('a2_G_data/alpha2.dat');
-gamma1=load('a2_G_data/gamma1.dat');
-gamma2=load('a2_G_data/gamma2.dat');
-kappa=load('a2_G_data/kappa.dat');
-mag=load('a2_G_data/mag.dat');
-lens_ra=load('a2_G_data/lens_ra.dat');    % lens RA/DEC can be treated as axis values
-lens_dec=load('a2_G_data/lens_dec.dat');  % since there's a good alignment btw WCS coord and its axes
-img=load('a2_G_data/cut.dat');
-img_ra=load('a2_G_data/img_ra.dat');       % here image RA/DEC is NOT axis values
-img_dec=load('a2_G_data/img_dec.dat');     % you should interp to get value at each pair of them
-img_ctr=load('a2_G_data/img_WCS_ctr.dat');    % the 2nd line: RA DEC for the image center
+alpha1=load('12.3_R_data/alpha1.dat');
+alpha2=load('12.3_R_data/alpha2.dat');
+gamma1=load('12.3_R_data/gamma1.dat');
+gamma2=load('12.3_R_data/gamma2.dat');
+kappa=load('12.3_R_data/kappa.dat');
+mag=load('12.3_R_data/mag.dat');
+lens_ra=load('12.3_R_data/lens_ra.dat');    % lens RA/DEC can be treated as axis values
+lens_dec=load('12.3_R_data/lens_dec.dat');  % since there's a good alignment btw WCS coord and its axes
+img=load('12.3_R_data/cut.dat');
+img_ra=load('12.3_R_data/img_ra.dat');       % here image RA/DEC is NOT axis values
+img_dec=load('12.3_R_data/img_dec.dat');     % you should interp to get value at each pair of them
+img_ctr=load('12.3_R_data/img_WCS_ctr.dat');    % the 2nd line: RA DEC for the image center
 
 N_img=length(img_ra);
 if length(img_dec)~= N_img
@@ -28,14 +28,15 @@ else
     fprintf('length of the image = %d, square size=%d\n',N_img,sqrt(N_img))
 end
 % the rotation-mat
-CD1_1   =   -1.01466245311E-06; % Degrees / Pixel                                
-CD2_1   =   -8.27140110712E-06; % Degrees / Pixel                                
-CD1_2   =   -8.27139425197E-06; % Degrees / Pixel                                
-CD2_2   =    1.01465256774E-06; % Degrees / Pixel                 
+CD1_1   =   2.88458365395E-06;      % Degrees / Pixel                                
+CD2_1   =   -1.35860373808E-05;     % Degrees / Pixel                                
+CD1_2   =   -1.35860367285E-05;     % Degrees / Pixel                                
+CD2_2   =   -2.88458536178E-06;     % Degrees / Pixel                                
 
 % HST image's reference pixel's WCS coord
-ref_ra=206.901315235;       % $ imhead RXJ1347-1145_fullres_G.fits | grep CRVAL1
-ref_dec=-11.7542487671;     % $ imhead RXJ1347-1145_fullres_G.fits | grep CRVAL2
+%$ imhead MACS0717_F814WF105WF140W_R.fits | grep CRVAL1 (->RA), CRVAL2 (->DEC)
+ref_ra=109.384564525;
+ref_dec=37.7496681474;
 
 CD=[CD1_1 CD1_2; CD2_1 CD2_2];
 dpixel4=[0.5 0.5 -0.5 -0.5; 0.5 -0.5 -0.5 0.5]; % corners in upper-right, lower-right, lower-left, upper-left (clockwise)
@@ -107,7 +108,7 @@ for i=1:N_img
         end
 end
 
-save a2_G_remap.mat
+save 12.3_R_remap.mat
 toc
 diary off
 
