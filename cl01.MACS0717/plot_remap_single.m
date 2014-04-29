@@ -3,13 +3,13 @@
 clear all; clc
 
 % getting results for i1_
-load i1_G_remap.mat
+load 4.1_R_remap.mat
 img_ra=(img_ra-ref_ra)*3600.;     % RA in arcsec
 img_dec=(img_dec-ref_dec)*3600.;  % DEC in arcsec
 img_cnt=img;
 src_ra=(reshape(RA4_src,N_img*4,1)-ref_ra)*3600.;     % RA in arcsec
 src_dec=(reshape(DEC4_src,N_img*4,1)-ref_dec)*3600.;  % DEC in arcsec
-src_cnt=reshape(counts_src,N_img*4,1);
+src_cnt=reshape(sb_src,N_img*4,1);
 rg1=gamma1_img./(1-kappa_img);
 rg2=gamma2_img./(1-kappa_img);
 ctr_img_ra=(img_ctr(2,1)-ref_ra)*3600.;
@@ -46,7 +46,7 @@ axes(ax);
 axis tight
 set(gcf, 'PaperUnits','inches');
 set(gcf, 'PaperPosition',[ 0 0 8 6]);
-print -dpsc2 i1_G_src.ps;
+% print -dpsc2 i1_G_src.ps;
 
 
 %% the original HST images in lens plane
@@ -70,7 +70,7 @@ axes(ax);
 axis tight
 set(gcf, 'PaperUnits','inches');
 set(gcf, 'PaperPosition',[ 0 0 8 6]);
-print -dpsc2 i1_G_img.ps;
+% print -dpsc2 i1_G_img.ps;
 
 
 %% plotting the reduced shear vector map   ->  this should go into _single.m later
@@ -87,4 +87,4 @@ set(gca,'FontSize',axes_fontsize,'LineWidth',1.3,'XDir','Reverse');
 axis tight
 set(gcf, 'PaperUnits','inches');
 set(gcf, 'PaperPosition',[ 0 0 8 6]);
-print -dpsc2 i1_rgvec.ps;
+% print -dpsc2 i1_rgvec.ps;
