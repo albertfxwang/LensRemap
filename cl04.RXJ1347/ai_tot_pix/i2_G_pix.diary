@@ -1,0 +1,12 @@
+----------------------------------------------
+| Now we are working on RXJ1347 - i2_G_pix ! |
+----------------------------------------------
+magnification at the center (RA= 206.87597, DEC= -11.75282) is    4.85581
+enter function: MakeVec
+fixed number of bins = 140
+the bin size = 2.790391e-02
+exit function: MakeVec
+enter function: MakeVec
+fixed number of bins = 140
+the bin size = 1.619824e-02
+exit function: MakeVec

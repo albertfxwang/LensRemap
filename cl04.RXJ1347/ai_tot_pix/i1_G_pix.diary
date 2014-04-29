@@ -1,0 +1,28 @@
+----------------------------------------------
+| Now we are working on RXJ1347 - i1_G_pix ! |
+----------------------------------------------
+{??? Undefined function or variable 'mag_ctr'.
+
+Error in ==> <a href="matlab: opentoline('/home/albert/workplace/lens_remap/cl04.RXJ1347/pix_src.m',16,0)">pix_src at 16</a>
+fprintf('magnification at the center (RA=%10.5f, DEC=%10.5f)
+is %10.5f\n',ctr_ra,ctr_dec,mag_ctr)
+} 
+uiopen('/home/albert/workplace/lens_remap/cl04.RXJ1347/lens_remap.m',1)
+% Modify expression to add input arguments.
+% Example:
+%   a = [1 2 3; 4 5 6]; 
+%   foo(a);
+
+pix_src
+----------------------------------------------
+| Now we are working on RXJ1347 - i1_G_pix ! |
+----------------------------------------------
+magnification at the center (RA= 206.87467, DEC= -11.75223) is    0.48715
+enter function: MakeVec
+fixed number of bins = 60
+the bin size = 5.575093e-02
+exit function: MakeVec
+enter function: MakeVec
+fixed number of bins = 60
+the bin size = 5.165427e-02
+exit function: MakeVec

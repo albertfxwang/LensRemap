@@ -1,18 +1,19 @@
 % pixelize the source plane
 
 clear all; clc
-diary('a1_G_pix.diary');
+diary('i4_G_pix.diary');
 fprintf('----------------------------------------------\n')
-fprintf('| Now we are working on RXJ1347 - a1_G_pix ! |\n')
+fprintf('| Now we are working on RXJ1347 - i4_G_pix ! |\n')
 fprintf('----------------------------------------------\n')
 
-% getting results for a1_
-load a1_G_remap.mat
+% getting results for i4_
+load i4_G_remap.mat
 src_ra =reshape(RA4_src,N_img*4,1)*3600.;   % RA in arcsec
 src_dec=reshape(DEC4_src,N_img*4,1)*3600.;  % DEC in arcsec
 src_cnt=reshape(counts_src,N_img*4,1);
 % ctr_src_ra=(ctr_ra-ref_ra)*3600.;
 % ctr_src_dec=(ctr_dec-ref_dec)*3600.;
+mag_ctr=interp2(lens_ra,lens_dec,mag,img_ctr(2,1),img_ctr(2,2));   % only useful for system i
 fprintf('magnification at the center (RA=%10.5f, DEC=%10.5f) is %10.5f\n',ctr_ra,ctr_dec,mag_ctr)
 % pix_scale_img=0.03;
 % pix_scale_src=0.03/mag_ctr;
@@ -21,6 +22,7 @@ indx_dec = zeros(N_img*4,1);
 
 N_bin=sqrt(N_img);
 src_cnt_pix = zeros(N_bin);
+times_pix = zeros(N_bin);
 [vec_ra,binsize_ra]=MakeVec(src_ra,2,N_bin);
 [vec_dec,binsize_dec]=MakeVec(src_dec,2,N_bin);
 
@@ -33,11 +35,16 @@ for i=1:N_img*4
         fprintf('this point sitting on boundary: i=%d',i)
     end
     src_cnt_pix(indx_dec(i),indx_ra(i))=src_cnt_pix(indx_dec(i),indx_ra(i))+src_cnt(i);
+    times_pix(indx_dec(i),indx_ra(i))=times_pix(indx_dec(i),indx_ra(i))+1;
 %     fprintf('finished putting the No.%d remapped corner points!\n',i)
     clear absdiff_ra absdiff_dec diff_ra diff_dec
 end
 src_ra_pix=vec_ra-ref_ra*3600.;
 src_dec_pix=vec_dec-ref_dec*3600.;
+src_cnt_pix(src_cnt_pix == 0) = NaN;
+src_SB_pix = src_cnt_pix./times_pix;    
+%%%%%%%%%%%%%%%% NOTE: it's the conservation of SB not of photon counts!!
+%%%%%%%%%%%%%%%% the counts on src plane is always < counts on img plane!
 
 % color and linewidth schemes
 lab_fontsize =12; axes_fontsize =10;
@@ -48,21 +55,20 @@ dash = {'--b','--r','--m','--g','--c','--k'};
 lw1=2.5; lw2=1.7; lw3=0.8;
 
 %% plotting figure
-src_cnt_pix(src_cnt_pix == 0) = NaN;
 
 figure(1)
-imagescwithnan(src_ra_pix,src_dec_pix,src_cnt_pix,jet,[1 1 1],false,[1 450])
+imagescwithnan(src_ra_pix,src_dec_pix,src_SB_pix,jet,[1 1 1],true)
 axis xy
 colorbar
 
 xlabel('RA offset [arcsec]','FontSize',lab_fontsize);
 ylabel('DEC offset [arcsec]','FontSize',lab_fontsize);
-title('RXJ1347 a1_{src} on the pixelized source plane')
+title('RXJ1347 i4_{src} on the pixelized source plane')
 set(gca,'FontSize',axes_fontsize,'LineWidth',1.3,'XDir','Reverse'); 
 % axis tight
 
 set(gcf, 'PaperUnits','inches');
 set(gcf, 'PaperPosition',[ 0 0 8 6]);
-print -dpsc2 a1_G_pix.ps;
+print -dpsc2 i4_G_pix.ps;
 
 diary off
