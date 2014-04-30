@@ -1,24 +1,24 @@
 % regain my honor!
 
 clear all; clc; tic
-diary('a2_G_remap.diary');
+diary('a1_G_remap.diary');
 fprintf('------------------------------------------------\n')
-fprintf('| Now we are working on RXJ1347 - a2_G_remap ! |\n')
+fprintf('| Now we are working on RXJ1347 - a1_G_remap ! |\n')
 fprintf('------------------------------------------------\n')
 
 %% load in data
-alpha1=load('a2_G_data/alpha1.dat');
-alpha2=load('a2_G_data/alpha2.dat');
-gamma1=load('a2_G_data/gamma1.dat');
-gamma2=load('a2_G_data/gamma2.dat');
-kappa=load('a2_G_data/kappa.dat');
-mag=load('a2_G_data/mag.dat');
-lens_ra=load('a2_G_data/lens_ra.dat');    % lens RA/DEC can be treated as axis values
-lens_dec=load('a2_G_data/lens_dec.dat');  % since there's a good alignment btw WCS coord and its axes
-img=load('a2_G_data/cut.dat');
-img_ra=load('a2_G_data/img_ra.dat');       % here image RA/DEC is NOT axis values
-img_dec=load('a2_G_data/img_dec.dat');     % you should interp to get value at each pair of them
-img_ctr=load('a2_G_data/img_WCS_ctr.dat');    % the 2nd line: RA DEC for the image center
+alpha1=load('a1_G_data/alpha1.dat');
+alpha2=load('a1_G_data/alpha2.dat');
+gamma1=load('a1_G_data/gamma1.dat');
+gamma2=load('a1_G_data/gamma2.dat');
+kappa=load('a1_G_data/kappa.dat');
+mag=load('a1_G_data/mag.dat');
+lens_ra=load('a1_G_data/lens_ra.dat');    % lens RA/DEC can be treated as axis values
+lens_dec=load('a1_G_data/lens_dec.dat');  % since there's a good alignment btw WCS coord and its axes
+img=load('a1_G_data/cut.dat');
+img_ra=load('a1_G_data/img_ra.dat');       % here image RA/DEC is NOT axis values
+img_dec=load('a1_G_data/img_dec.dat');     % you should interp to get value at each pair of them
+img_ctr=load('a1_G_data/img_WCS_ctr.dat');    % the 2nd line: RA DEC for the image center
 
 N_img=length(img_ra);
 if length(img_dec)~= N_img
@@ -32,12 +32,12 @@ CD1_1   =   -1.01466245311E-06; % Degrees / Pixel
 CD2_1   =   -8.27140110712E-06; % Degrees / Pixel                                
 CD1_2   =   -8.27139425197E-06; % Degrees / Pixel                                
 CD2_2   =    1.01465256774E-06; % Degrees / Pixel                 
+CD=[CD1_1 CD1_2; CD2_1 CD2_2];
 
 % HST image's reference pixel's WCS coord
 ref_ra=206.901315235;       % $ imhead RXJ1347-1145_fullres_G.fits | grep CRVAL1
 ref_dec=-11.7542487671;     % $ imhead RXJ1347-1145_fullres_G.fits | grep CRVAL2
 
-CD=[CD1_1 CD1_2; CD2_1 CD2_2];
 dpixel4=[0.5 0.5 -0.5 -0.5; 0.5 -0.5 -0.5 0.5]; % corners in upper-right, lower-right, lower-left, upper-left (clockwise)
 
 alpha1_img=zeros(N_img,1);
@@ -45,6 +45,7 @@ alpha2_img=zeros(N_img,1);
 gamma1_img=zeros(N_img,1);
 gamma2_img=zeros(N_img,1);
 kappa_img=zeros(N_img,1);
+mag_img=zeros(N_img,1);
 
 dRA4_img=zeros(N_img,4);
 dDEC4_img=zeros(N_img,4);
@@ -61,6 +62,7 @@ for j=1:N_img
     gamma1_img(j)=interp2(lens_ra,lens_dec,gamma1,img_ra(j),img_dec(j));
     gamma2_img(j)=interp2(lens_ra,lens_dec,gamma2,img_ra(j),img_dec(j));
     kappa_img(j)=interp2(lens_ra,lens_dec,kappa,img_ra(j),img_dec(j));
+    mag_img(j)=interp2(lens_ra,lens_dec,mag,img_ra(j),img_dec(j));
     fprintf('finished No.%d interpolation set!\n',j)
 end
 alpha1_ctr=interp2(lens_ra,lens_dec,alpha1,img_ctr(2,1),img_ctr(2,2));
@@ -97,14 +99,16 @@ for i=1:N_img
             dDEC4_src(i,t)=temp_src(2);
             RA4_src(i,t)=RA0_src(i)+dRA4_src(i,t);
             DEC4_src(i,t)=DEC0_src(i)+dDEC4_src(i,t);
-            counts_src(i,t)=0.25*img(i);
+            counts_src(i,t)=0.25*img(i)/mag_img(i);     
+            % added magnification factor to consider photon counts non-conservation!
+            % -------------- still not working!
             fprintf('(%d, %d) img(%10.8e,%10.8e) => src(%10.8e,%10.8e)\n',...
                 i,t,dRA4_img(i,t)+img_ra(i),dDEC4_img(i,t)+img_dec(i),RA4_src(i,t),DEC4_src(i,t))
             clear temp_img temp_src
         end
 end
 
-save a2_G_remap.mat
+save a1_G_remap_corrcnt.mat
 toc
 diary off
 

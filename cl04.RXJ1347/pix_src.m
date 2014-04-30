@@ -1,19 +1,20 @@
 % pixelize the source plane
 
 clear all; clc
-diary('i4_G_pix.diary');
+diary('a1_G_pix.diary');
 fprintf('----------------------------------------------\n')
-fprintf('| Now we are working on RXJ1347 - i4_G_pix ! |\n')
+fprintf('| Now we are working on RXJ1347 - a1_G_pix ! |\n')
 fprintf('----------------------------------------------\n')
+addpath ../mscripts/
 
-% getting results for i4_
-load i4_G_remap.mat
+% getting results for a1_
+load a1_G_remap_corrcnt.mat
 src_ra =reshape(RA4_src,N_img*4,1)*3600.;   % RA in arcsec
 src_dec=reshape(DEC4_src,N_img*4,1)*3600.;  % DEC in arcsec
 src_cnt=reshape(counts_src,N_img*4,1);
 % ctr_src_ra=(ctr_ra-ref_ra)*3600.;
 % ctr_src_dec=(ctr_dec-ref_dec)*3600.;
-mag_ctr=interp2(lens_ra,lens_dec,mag,img_ctr(2,1),img_ctr(2,2));   % only useful for system i
+% mag_ctr=interp2(lens_ra,lens_dec,mag,img_ctr(2,1),img_ctr(2,2));   % only useful for system i
 fprintf('magnification at the center (RA=%10.5f, DEC=%10.5f) is %10.5f\n',ctr_ra,ctr_dec,mag_ctr)
 % pix_scale_img=0.03;
 % pix_scale_src=0.03/mag_ctr;
@@ -42,9 +43,10 @@ end
 src_ra_pix=vec_ra-ref_ra*3600.;
 src_dec_pix=vec_dec-ref_dec*3600.;
 src_cnt_pix(src_cnt_pix == 0) = NaN;
-src_SB_pix = src_cnt_pix./times_pix;    
-%%%%%%%%%%%%%%%% NOTE: it's the conservation of SB not of photon counts!!
-%%%%%%%%%%%%%%%% the counts on src plane is always < counts on img plane!
+% src_SB_pix = src_cnt_pix./times_pix;    
+% %%%%%%%%%%%%%%%% NOTE: it's the conservation of SB not of photon counts!!
+% %%%%%%%%%%%%%%%% the counts on src plane is always < counts on img plane!
+% src_SB_pix = src_cnt_pix;  -------------- still not working!
 
 % color and linewidth schemes
 lab_fontsize =12; axes_fontsize =10;
@@ -63,12 +65,12 @@ colorbar
 
 xlabel('RA offset [arcsec]','FontSize',lab_fontsize);
 ylabel('DEC offset [arcsec]','FontSize',lab_fontsize);
-title('RXJ1347 i4_{src} on the pixelized source plane')
+title('RXJ1347 a1_{src} on the pixelized source plane')
 set(gca,'FontSize',axes_fontsize,'LineWidth',1.3,'XDir','Reverse'); 
 % axis tight
 
 set(gcf, 'PaperUnits','inches');
 set(gcf, 'PaperPosition',[ 0 0 8 6]);
-print -dpsc2 i4_G_pix.ps;
+print -dpsc2 a1_G_pix_corrcnt.ps;
 
 diary off

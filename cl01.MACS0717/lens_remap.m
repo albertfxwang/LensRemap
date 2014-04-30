@@ -25,21 +25,25 @@ if length(img_dec)~= N_img
     fprintf('dimensions of image''s RA DEC don''t get along!\n')
     break
 else
-    fprintf('length of the image = %d, square size=%d\n',N_img,sqrt(N_img))
+    fprintf('length of the image = %d, sa1_uare size=%d\n',N_img,sa1_rt(N_img))
 end
-% the rotation-mat
+
+%------------ the rotation-mat
 CD1_1   =   2.88458365395E-06;      % Degrees / Pixel                                
 CD2_1   =   -1.35860373808E-05;     % Degrees / Pixel                                
 CD1_2   =   -1.35860367285E-05;     % Degrees / Pixel                                
 CD2_2   =   -2.88458536178E-06;     % Degrees / Pixel                                
+CD=[CD1_1 CD1_2; CD2_1 CD2_2];
 
-% HST image's reference pixel's WCS coord
+%------------ HST image's reference pixel's WCS coord
 %$ imhead MACS0717_F814WF105WF140W_R.fits | grep CRVAL1 (->RA), CRVAL2 (->DEC)
 ref_ra=109.384564525;
 ref_dec=37.7496681474;
 
-CD=[CD1_1 CD1_2; CD2_1 CD2_2];
-dpixel4=[0.5 0.5 -0.5 -0.5; 0.5 -0.5 -0.5 0.5]; % corners in upper-right, lower-right, lower-left, upper-left (clockwise)
+%------------ the parameter controling how far away the corners to the
+%center of each pixel, similar to "pixelfrac", at the range of [0, 0.5]
+q=0.5;
+dpixel4=[q q -q -q; q -q -q q]; % corners in upper-right, lower-right, lower-left, upper-left (clockwise)
 
 alpha1_img=zeros(N_img,1);
 alpha2_img=zeros(N_img,1);
@@ -99,7 +103,7 @@ for i=1:N_img
             RA4_src(i,t)=RA0_src(i)+dRA4_src(i,t);
             DEC4_src(i,t)=DEC0_src(i)+dDEC4_src(i,t);
 %            counts_src(i,t)=0.25*img(i);
-            sb_src(i,t)=img(i);         
+            sb_src(i,t)=img(i);
             % It's the concept of conservation of surface brightness rather than photon counts
             % actually there should also be an extra consts as well as taking log but dropped here for convenience
             fprintf('(%d, %d) img(%10.8e,%10.8e) => src(%10.8e,%10.8e)\n',...
