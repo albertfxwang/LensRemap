@@ -66,6 +66,7 @@ for j=1:N_img
     gamma1_img(j)=interp2(lens_ra,lens_dec,gamma1,img_ra(j),img_dec(j));
     gamma2_img(j)=interp2(lens_ra,lens_dec,gamma2,img_ra(j),img_dec(j));
     kappa_img(j)=interp2(lens_ra,lens_dec,kappa,img_ra(j),img_dec(j));
+    mag_img(j)=interp2(lens_ra,lens_dec,mag,img_ra(j),img_dec(j));
     fprintf('finished No.%d interpolation set!\n',j)
 end
 alpha1_ctr=interp2(lens_ra,lens_dec,alpha1,img_ctr(2,1),img_ctr(2,2));

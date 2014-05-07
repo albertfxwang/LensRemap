@@ -1,0 +1,12 @@
+------------------------------------------------
+| Now we are working on MACS0717 - 12.3_R_pix ! |
+------------------------------------------------
+magnification at the center (RA= 109.38643, DEC=  37.75129) is    6.12053
+enter function: MakeVec
+fixed number of bins = 40
+the bin size = 5.015964e-02
+exit function: MakeVec
+enter function: MakeVec
+fixed number of bins = 40
+the bin size = 2.095752e-02
+exit function: MakeVec

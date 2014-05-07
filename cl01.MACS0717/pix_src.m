@@ -1,19 +1,19 @@
 % pixelize the source plane
 
 clear all; clc
-diary('i4_G_pix.diary');
-fprintf('----------------------------------------------\n')
-fprintf('| Now we are working on RXJ1347 - i4_G_pix ! |\n')
-fprintf('----------------------------------------------\n')
+diary('12.3_R_pix.diary');
+fprintf('------------------------------------------------\n')
+fprintf('| Now we are working on MACS0717 - 12.3_R_pix ! |\n')
+fprintf('------------------------------------------------\n')
+addpath ../mscripts/
 
-% getting results for i4_
-load i4_G_remap.mat
+% getting results for 12.3_
+load 12.3_R_remap.mat
 src_ra =reshape(RA4_src,N_img*4,1)*3600.;   % RA in arcsec
 src_dec=reshape(DEC4_src,N_img*4,1)*3600.;  % DEC in arcsec
-src_cnt=reshape(counts_src,N_img*4,1);
+src_cnt=reshape(sb_src,N_img*4,1);
 % ctr_src_ra=(ctr_ra-ref_ra)*3600.;
 % ctr_src_dec=(ctr_dec-ref_dec)*3600.;
-mag_ctr=interp2(lens_ra,lens_dec,mag,img_ctr(2,1),img_ctr(2,2));   % only useful for system i
 fprintf('magnification at the center (RA=%10.5f, DEC=%10.5f) is %10.5f\n',ctr_ra,ctr_dec,mag_ctr)
 % pix_scale_img=0.03;
 % pix_scale_src=0.03/mag_ctr;
@@ -63,12 +63,12 @@ colorbar
 
 xlabel('RA offset [arcsec]','FontSize',lab_fontsize);
 ylabel('DEC offset [arcsec]','FontSize',lab_fontsize);
-title('RXJ1347 i4_{src} on the pixelized source plane')
+title('MACS0717 12.3_{src} on the pixelized source plane')
 set(gca,'FontSize',axes_fontsize,'LineWidth',1.3,'XDir','Reverse'); 
 % axis tight
 
 set(gcf, 'PaperUnits','inches');
 set(gcf, 'PaperPosition',[ 0 0 8 6]);
-print -dpsc2 i4_G_pix.ps;
+print -dpsc2 12.3_R_pix.ps;
 
 diary off

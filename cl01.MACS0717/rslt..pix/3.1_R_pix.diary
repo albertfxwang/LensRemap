@@ -1,0 +1,42 @@
+------------------------------------------------
+| Now we are working on MACS0717 - 3.1_R_pix ! |
+------------------------------------------------
+{??? Undefined function or variable 'counts_src'.
+
+Error in ==> <a href="matlab: opentoline('/home/albert/workplace/lens_remap/cl01.MACS0717/pix_src.m',13,0)">pix_src at 13</a>
+src_cnt=reshape(counts_src,N_img*4,1);
+} 
+% Modify expression to add input arguments.
+% Example:
+%   a = [1 2 3; 4 5 6]; 
+%   foo(a);
+
+pix_src
+------------------------------------------------
+| Now we are working on MACS0717 - 3.1_R_pix ! |
+------------------------------------------------
+magnification at the center (RA= 109.39313, DEC=  37.74877) is   12.58701
+{??? Undefined function or method 'MakeVec' for input
+arguments of type 'double'.
+
+Error in ==> <a href="matlab: opentoline('/home/albert/workplace/lens_remap/cl01.MACS0717/pix_src.m',25,0)">pix_src at 25</a>
+[vec_ra,binsize_ra]=MakeVec(src_ra,2,N_bin);
+} 
+% Modify expression to add input arguments.
+% Example:
+%   a = [1 2 3; 4 5 6]; 
+%   foo(a);
+
+pix_src
+------------------------------------------------
+| Now we are working on MACS0717 - 3.1_R_pix ! |
+------------------------------------------------
+magnification at the center (RA= 109.39313, DEC=  37.74877) is   12.58701
+enter function: MakeVec
+fixed number of bins = 40
+the bin size = 2.582161e-02
+exit function: MakeVec
+enter function: MakeVec
+fixed number of bins = 40
+the bin size = 4.238389e-02
+exit function: MakeVec
