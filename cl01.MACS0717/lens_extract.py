@@ -22,10 +22,10 @@ import fitstools
 img_name='./data_rgb.fits_cat.reg/MACS0717_F814WF105WF140W_R.fits' 
 img = pf.open(img_name)[0].data.copy()
 
-file_dir='/home/albert/workplace/cl01.MACS0717/swunitedamrBEST/Refine5_PE0.9as_Ngrid30to35/'
-file_root='MACS0717_FoV5am.regu60'
-#z_src='1.9'     # systems 3,4,14
-z_src='1.7'     # system 12
+file_dir='/data2/xinwang/workplace/cl01.MACS0717.swunitedamr/Refine7_PE0.9as_Ngrid25to33_try1/'
+file_root='MACS0717_try1.regu100'
+z_src='1.855'     # systems 3,4,14
+#z_src='1.7'     # system 12
 
 alpha1_name = '%s%s_%s_%s%s' % (file_dir,file_root,'alpha1_rs',z_src,'.fits')
 alpha2_name = '%s%s_%s_%s%s' % (file_dir,file_root,'alpha2_rs',z_src,'.fits')
@@ -56,18 +56,9 @@ x = 2832.472
 y = 1862.4514
 rad = 15"""
 
-"""# 4.1
-x = 2760.0487
-y = 3364.2453
-rad = 35"""
-"""# 4.2
-x = 3117.8948
-y = 3717.8672
-rad = 20"""
-"""# 4.3
-x = 1977.0057
-y = 2624.2185
-rad = 20"""
+x = 2760.0487; y = 3364.2453; rad = 35;    # 4.1
+#x = 3117.8948; y = 3717.8672; rad = 20;    # 4.2
+#x = 1977.0057; y = 2624.2185; rad = 15;     # 4.3
 
 """# 14.1
 x = 2731.7342
@@ -90,12 +81,17 @@ rad = 18"""
 x = 3255.8415
 y = 3672.0838
 rad = 11"""
-# 12.3
+"""# 12.3
 x = 2166.1345
 y = 2648.6497
-rad = 20
+rad = 20"""
 
 cut = img[y-rad:y+rad,x-rad:x+rad]
+
+# clean some noises
+#cut[:,23:rad*2]=0       # 4.3
+cut[49:57+1,55:64+1]=0      # 4.1
+
 # Create fits file
 pf.PrimaryHDU(cut).writeto('img_cut.fits',clobber=True)
 

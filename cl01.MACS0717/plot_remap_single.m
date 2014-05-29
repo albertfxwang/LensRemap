@@ -2,8 +2,8 @@
 
 clear all; clc
 
-% getting results for 12.3_
-load 12.3_R_remap.mat
+% getting results for 4.1_
+load 4.1_R_remap.mat
 img_ra=(img_ra-ref_ra)*3600.;     % RA in arcsec
 img_dec=(img_dec-ref_dec)*3600.;  % DEC in arcsec
 img_cnt=img;
@@ -35,7 +35,7 @@ hold off
 
 xlabel('RA offset [arcsec]','FontSize',lab_fontsize);
 ylabel('DEC offset [arcsec]','FontSize',lab_fontsize);
-title('MACS0717 Obj 12.3_{src} w.r.t. the reference pixel''s RA/DEC')
+title('MACS0717 Obj 4.1_{src} w.r.t. the reference pixel''s RA/DEC')
 set(gca,'FontSize',axes_fontsize,'LineWidth',1.3,'XDir','Reverse'); 
 ax = gca;
 hbar = colorbar('EastOutside');
@@ -46,7 +46,7 @@ axes(ax);
 axis tight
 set(gcf, 'PaperUnits','inches');
 set(gcf, 'PaperPosition',[ 0 0 8 6]);
-print -dpsc2 12.3_R_src.ps;
+print -dpsc2 4.1_R_src.ps;
 
 
 %% the original HST images in lens plane
@@ -59,7 +59,7 @@ hold off
 
 xlabel('RA offset [arcsec]','FontSize',lab_fontsize);
 ylabel('DEC offset [arcsec]','FontSize',lab_fontsize);
-title('MACS0717 Obj 12.3_{img} w.r.t. the reference pixel''s RA/DEC')
+title('MACS0717 Obj 4.1_{img} w.r.t. the reference pixel''s RA/DEC')
 set(gca,'FontSize',axes_fontsize,'LineWidth',1.3,'XDir','Reverse'); 
 ax = gca;
 hbar = colorbar('EastOutside');
@@ -70,7 +70,7 @@ axes(ax);
 axis tight
 set(gcf, 'PaperUnits','inches');
 set(gcf, 'PaperPosition',[ 0 0 8 6]);
-print -dpsc2 12.3_R_img.ps;
+print -dpsc2 4.1_R_img.ps;
 
 
 %% plotting the reduced shear vector map   ->  this should go into _single.m later
@@ -82,10 +82,10 @@ hold off
 
 xlabel('RA offset [arcsec]','FontSize',lab_fontsize);
 ylabel('DEC offset [arcsec]','FontSize',lab_fontsize);
-title('MACS0717 Obj 12.3_ reduced shear whisker at the lens plane')
+title('MACS0717 Obj 4.1_ reduced shear whisker at the lens plane')
 set(gca,'FontSize',axes_fontsize,'LineWidth',1.3,'XDir','Reverse'); 
 axis tight
 set(gcf, 'PaperUnits','inches');
 set(gcf, 'PaperPosition',[ 0 0 8 6]);
-print -dpsc2 12.3_rgvec.ps;
+print -dpsc2 4.1_rgvec.ps;
 

@@ -43,3 +43,6 @@ circle(109.35945,37.758799,3") # color=red font="helvetica 10 normal" text={17.2
 circle(109.35823,37.753585,3") # color=red font="helvetica 10 normal" text={17.3}
 circle(109.36426,37.768637,3") # color=red font="helvetica 10 normal" text={18.1}
 circle(109.36122,37.764327,3") # color=red font="helvetica 10 normal" text={18.2} 
+circle(07:17:38.18,37:45:16.9,3") # color=red font="helvetica 10 normal" text={V - 859} 
+circle(07:17:37.85,37:44:33.7,3") # color=red font="helvetica 10 normal" text={V - 1730} 
+#circle(109.3982,37.745778,1") # color=magenta font="helvetica 10 normal" text={REF}

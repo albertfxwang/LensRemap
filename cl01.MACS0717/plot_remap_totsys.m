@@ -7,7 +7,7 @@ num_img=3;
 img_center=zeros(num_img,2);   % 1st column: RA. 2nd column: DEC.
 src_ctr=zeros(num_img,2);
 
-load  14.1_R_remap.mat
+load  4.1_R_remap.mat
 a1_rg1=gamma1_img./(1-kappa_img);
 a1_rg2=gamma2_img./(1-kappa_img);
 a1_mag=1./(1-kappa_img.^2-(gamma1_img.^2+gamma2_img.^2));
@@ -24,7 +24,7 @@ img_center(num,2)=(img_ctr(2,2)-ref_dec)*3600.;
 src_ctr(num,1)=(ctr_ra-ref_ra)*3600.;
 src_ctr(num,2)=(ctr_dec-ref_dec)*3600.;
 
-load  14.2_R_remap.mat
+load  4.2_R_remap.mat
 a2_rg1=gamma1_img./(1-kappa_img);
 a2_rg2=gamma2_img./(1-kappa_img);
 a2_mag=1./(1-kappa_img.^2-(gamma1_img.^2+gamma2_img.^2));
@@ -41,7 +41,7 @@ img_center(num,2)=(img_ctr(2,2)-ref_dec)*3600.;
 src_ctr(num,1)=(ctr_ra-ref_ra)*3600.;
 src_ctr(num,2)=(ctr_dec-ref_dec)*3600.;
 
-load  14.3_R_remap.mat
+load  4.3_R_remap.mat
 a3_rg1=gamma1_img./(1-kappa_img);
 a3_rg2=gamma2_img./(1-kappa_img);
 a3_mag=1./(1-kappa_img.^2-(gamma1_img.^2+gamma2_img.^2));
@@ -76,13 +76,13 @@ colormap('jet');
 plot(src_ctr(:,1),src_ctr(:,2),'ko','MarkerSize',15,'LineWidth',2)
 hold off
 for i=1:num_img
-    text(src_ctr(i,1),src_ctr(i,2)+0.5,['  14.',num2str(i),' src'],...
+    text(src_ctr(i,1),src_ctr(i,2)+1,['  4.',num2str(i),' src'],...
         'HorizontalAlignment','center','FontSize',axes_fontsize)
 end
 
 xlabel('RA offset [arcsec]','FontSize',lab_fontsize);
 ylabel('DEC offset [arcsec]','FontSize',lab_fontsize);
-title('MACS0717  14.system w.r.t. the reference pixel''s RA/DEC')
+title('MACS0717  4.system w.r.t. the reference pixel''s RA/DEC')
 set(gca,'FontSize',axes_fontsize,'LineWidth',1.3,'XDir','Reverse'); 
 ax = gca;
 hbar = colorbar('EastOutside');
@@ -93,7 +93,7 @@ axes(ax);
 axis tight
 set(gcf, 'PaperUnits','inches');
 set(gcf, 'PaperPosition',[ 0 0 8 6]);
-print -dpsc2  14.tot_R_src.ps;
+print -dpsc2  4.tot_R_src.ps;
 
 
 %% the original HST images in lens plane
@@ -106,13 +106,13 @@ colormap('jet');
 plot(img_center(:,1),img_center(:,2),'ks','MarkerSize',10,'LineWidth',1)
 hold off
 for i=1:num_img
-    text(img_center(i,1),img_center(i,2)+3,['  14.',num2str(i),' img'],...
+    text(img_center(i,1),img_center(i,2)+3,['  4.',num2str(i),' img'],...
         'HorizontalAlignment','center','FontSize',axes_fontsize)
 end
 
 xlabel('RA offset [arcsec]','FontSize',lab_fontsize);
 ylabel('DEC offset [arcsec]','FontSize',lab_fontsize);
-title('MACS0717  14.system w.r.t. the reference pixel''s RA/DEC')
+title('MACS0717  4.system w.r.t. the reference pixel''s RA/DEC')
 set(gca,'FontSize',axes_fontsize,'LineWidth',1.3,'XDir','Reverse'); 
 ax = gca;
 hbar = colorbar('EastOutside');
@@ -123,7 +123,7 @@ axes(ax);
 axis tight
 set(gcf, 'PaperUnits','inches');
 set(gcf, 'PaperPosition',[ 0 0 8 6]);
-print -dpsc2  14.tot_R_img.ps;
+print -dpsc2  4.tot_R_img.ps;
 
 %--------------------------- below are dropouts ---------------------------
 % %% reduced shear g1 on img plane

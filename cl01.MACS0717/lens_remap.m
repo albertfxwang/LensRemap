@@ -1,31 +1,31 @@
 % calculate source plane grids 
 
 clear all; clc; tic
-diary('12.3_R_remap.diary');
+diary('4.1_R_remap.diary');
 fprintf('---------------------------------------------------\n')
-fprintf('| Now we are working on MACS0717 - 12.3_R_remap ! |\n')
+fprintf('| Now we are working on MACS0717 - 4.1_R_remap ! |\n')
 fprintf('---------------------------------------------------\n')
 
 %% load in data
-alpha1=load('12.3_R_data/alpha1.dat');
-alpha2=load('12.3_R_data/alpha2.dat');
-gamma1=load('12.3_R_data/gamma1.dat');
-gamma2=load('12.3_R_data/gamma2.dat');
-kappa=load('12.3_R_data/kappa.dat');
-mag=load('12.3_R_data/mag.dat');
-lens_ra=load('12.3_R_data/lens_ra.dat');    % lens RA/DEC can be treated as axis values
-lens_dec=load('12.3_R_data/lens_dec.dat');  % since there's a good alignment btw WCS coord and its axes
-img=load('12.3_R_data/cut.dat');
-img_ra=load('12.3_R_data/img_ra.dat');       % here image RA/DEC is NOT axis values
-img_dec=load('12.3_R_data/img_dec.dat');     % you should interp to get value at each pair of them
-img_ctr=load('12.3_R_data/img_WCS_ctr.dat');    % the 2nd line: RA DEC for the image center
+alpha1=load('4.1_R_data_clean/alpha1.dat');
+alpha2=load('4.1_R_data_clean/alpha2.dat');
+gamma1=load('4.1_R_data_clean/gamma1.dat');
+gamma2=load('4.1_R_data_clean/gamma2.dat');
+kappa=load('4.1_R_data_clean/kappa.dat');
+mag=load('4.1_R_data_clean/mag.dat');
+lens_ra=load('4.1_R_data_clean/lens_ra.dat');    % lens RA/DEC can be treated as axis values
+lens_dec=load('4.1_R_data_clean/lens_dec.dat');  % since there's a good alignment btw WCS coord and its axes
+img=load('4.1_R_data_clean/cut.dat');
+img_ra=load('4.1_R_data_clean/img_ra.dat');       % here image RA/DEC is NOT axis values
+img_dec=load('4.1_R_data_clean/img_dec.dat');     % you should interp to get value at each pair of them
+img_ctr=load('4.1_R_data_clean/img_WCS_ctr.dat');    % the 2nd line: RA DEC for the image center
 
 N_img=length(img_ra);
 if length(img_dec)~= N_img
     fprintf('dimensions of image''s RA DEC don''t get along!\n')
     break
 else
-    fprintf('length of the image = %d, sa1_uare size=%d\n',N_img,sa1_rt(N_img))
+    fprintf('length of the image = %d, square size=%d\n',N_img,sqrt(N_img))
 end
 
 %------------ the rotation-mat
@@ -50,6 +50,7 @@ alpha2_img=zeros(N_img,1);
 gamma1_img=zeros(N_img,1);
 gamma2_img=zeros(N_img,1);
 kappa_img=zeros(N_img,1);
+mag_img=zeros(N_img,1);
 
 dRA4_img=zeros(N_img,4);
 dDEC4_img=zeros(N_img,4);
@@ -82,9 +83,9 @@ jacob_21 = jacob_12;
 %% Step 1: apply the deflection angle shift to the center of each pixel
 %          so now we need to specify two matrices of the same dimension to
 %          the img matrix, to record the RA, DEC for each grid cell
-RA0_src=img_ra+alpha1_img/60.;       % Remember the RA-axis is inverted !!!
+RA0_src=img_ra+alpha1_img/60./cos(ref_dec/180.*pi);       % Remember the RA-axis is inverted, AND  the cos-factor !!!
 DEC0_src=img_dec-alpha2_img/60.;
-ctr_ra=img_ctr(2,1)+alpha1_ctr/60.;
+ctr_ra=img_ctr(2,1)+alpha1_ctr/60./cos(ref_dec/180.*pi);
 ctr_dec=img_ctr(2,2)-alpha2_ctr/60.;
 
 %% Step 2: apply Jacobian-mat to 4 corner points of each pixel
@@ -113,7 +114,7 @@ for i=1:N_img
         end
 end
 
-save 12.3_R_remap.mat
+save 4.1_R_remap.mat
 toc
 diary off
 
