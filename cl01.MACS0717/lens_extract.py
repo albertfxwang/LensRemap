@@ -19,11 +19,11 @@ import fitstools
 
 #-------------------------------------------------------------------------------------------------------------
 # the following is the image data
-img_name='./data_rgb.fits_cat.reg/MACS0717_F814WF105WF140W_R.fits' 
+img_name='./data_rgb.fits_cat.reg/MACS0717_F814WF105WF140W_R.fits'
 img = pf.open(img_name)[0].data.copy()
 
-file_dir='/data2/xinwang/workplace/cl01.MACS0717.swunitedamr/Refine7_PE0.9as_Ngrid25to33_try1/'
-file_root='MACS0717_try1.regu100'
+file_dir='/data2/xinwang/workplace/cl01.MACS0717.swunitedamr/LMa0Ra1SL3_N25to28/reserve_sys4/'
+file_root='MACS0717_lm8'
 z_src='1.855'     # systems 3,4,14
 #z_src='1.7'     # system 12
 
@@ -43,54 +43,17 @@ mag_tot    = pf.open(mag_name)[0].data.copy()
 
 #-------------------------------------------------------------------------------------------------------------
 # here images' postage stamps are cut according to their spatial extension at R band filter (F140W)
-"""# 3.1
-x = 3598.6099
-y = 2527.211
-rad = 20"""
-"""# 3.2
-x = 3714.4754
-y = 2788.6894
-rad = 20"""
-"""# 3.3
-x = 2832.472
-y = 1862.4514
-rad = 15"""
+#<<<140607>>> I have an idea for this: should write this part to read in info from the strong lensing catalog
+#         *** the essence of programming is just to minimize human labor in a iterative fashion
 
-x = 2760.0487; y = 3364.2453; rad = 35;    # 4.1
-#x = 3117.8948; y = 3717.8672; rad = 20;    # 4.2
-#x = 1977.0057; y = 2624.2185; rad = 15;     # 4.3
-
-"""# 14.1
-x = 2731.7342
-y = 2908.9482
-rad = 25"""
-"""# 14.2
-x = 3502.9053
-y = 3604.6515
-rad = 15"""
-"""# 14.3
-x = 2238.8085
-y = 2374.8719
-rad = 15"""
-
-"""# 12.1
-x = 2711.7556
-y = 3117.1252
-rad = 18"""
-"""# 12.2
-x = 3255.8415
-y = 3672.0838
-rad = 11"""
-"""# 12.3
-x = 2166.1345
-y = 2648.6497
-rad = 20"""
+#x = 2766.2917; y = 3366.735; rad = 35;    # 4.1
+#x = 3120.7598; y = 3717.8938; rad = 20;    # 4.2
+x = 1982.5423; y = 2628.303; rad = 20;     # 4.3
 
 cut = img[y-rad:y+rad,x-rad:x+rad]
 
 # clean some noises
-#cut[:,23:rad*2]=0       # 4.3
-cut[49:57+1,55:64+1]=0      # 4.1
+cut[0:34,24:rad*2]=0       # 4.3
 
 # Create fits file
 pf.PrimaryHDU(cut).writeto('img_cut.fits',clobber=True)
@@ -180,4 +143,42 @@ file_type = ('alpha1_rs','alpha2_rs','gamma1_rs','gamma2_rs','kappa_rs','mag_rs'
 num_type = len(file_type)
 for i in range(0,num_type):    
 ----------------------------
+# 3.1
+x = 3598.6099
+y = 2527.211
+rad = 20
+# 3.2
+x = 3714.4754
+y = 2788.6894
+rad = 20
+# 3.3
+x = 2832.472
+y = 1862.4514
+rad = 15
+
+# 14.1
+x = 2731.7342
+y = 2908.9482
+rad = 25
+# 14.2
+x = 3502.9053
+y = 3604.6515
+rad = 15
+# 14.3
+x = 2238.8085
+y = 2374.8719
+rad = 15
+
+# 12.1
+x = 2711.7556
+y = 3117.1252
+rad = 18
+# 12.2
+x = 3255.8415
+y = 3672.0838
+rad = 11
+# 12.3
+x = 2166.1345
+y = 2648.6497
+rad = 20
 """

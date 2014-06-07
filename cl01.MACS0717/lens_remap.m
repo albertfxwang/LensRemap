@@ -1,24 +1,24 @@
 % calculate source plane grids 
 
 clear all; clc; tic
-diary('4.1_R_remap.diary');
+diary('4.3_R_remap.diary');
 fprintf('---------------------------------------------------\n')
-fprintf('| Now we are working on MACS0717 - 4.1_R_remap ! |\n')
+fprintf('| Now we are working on MACS0717 - 4.3_R_remap ! |\n')
 fprintf('---------------------------------------------------\n')
 
 %% load in data
-alpha1=load('4.1_R_data_clean/alpha1.dat');
-alpha2=load('4.1_R_data_clean/alpha2.dat');
-gamma1=load('4.1_R_data_clean/gamma1.dat');
-gamma2=load('4.1_R_data_clean/gamma2.dat');
-kappa=load('4.1_R_data_clean/kappa.dat');
-mag=load('4.1_R_data_clean/mag.dat');
-lens_ra=load('4.1_R_data_clean/lens_ra.dat');    % lens RA/DEC can be treated as axis values
-lens_dec=load('4.1_R_data_clean/lens_dec.dat');  % since there's a good alignment btw WCS coord and its axes
-img=load('4.1_R_data_clean/cut.dat');
-img_ra=load('4.1_R_data_clean/img_ra.dat');       % here image RA/DEC is NOT axis values
-img_dec=load('4.1_R_data_clean/img_dec.dat');     % you should interp to get value at each pair of them
-img_ctr=load('4.1_R_data_clean/img_WCS_ctr.dat');    % the 2nd line: RA DEC for the image center
+alpha1=load('4.3_R_data/alpha1.dat');
+alpha2=load('4.3_R_data/alpha2.dat');
+gamma1=load('4.3_R_data/gamma1.dat');
+gamma2=load('4.3_R_data/gamma2.dat');
+kappa=load('4.3_R_data/kappa.dat');
+mag=load('4.3_R_data/mag.dat');
+lens_ra=load('4.3_R_data/lens_ra.dat');    % lens RA/DEC can be treated as axis values
+lens_dec=load('4.3_R_data/lens_dec.dat');  % since there's a good alignment btw WCS coord and its axes
+img=load('4.3_R_data/cut.dat');
+img_ra=load('4.3_R_data/img_ra.dat');       % here image RA/DEC is NOT axis values
+img_dec=load('4.3_R_data/img_dec.dat');     % you should interp to get value at each pair of them
+img_ctr=load('4.3_R_data/img_WCS_ctr.dat');    % the 2nd line: RA DEC for the image center
 
 N_img=length(img_ra);
 if length(img_dec)~= N_img
@@ -114,7 +114,7 @@ for i=1:N_img
         end
 end
 
-save 4.1_R_remap.mat
+save 4.3_R_remap.mat
 toc
 diary off
 
