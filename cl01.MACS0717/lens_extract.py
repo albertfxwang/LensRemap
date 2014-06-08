@@ -41,19 +41,23 @@ gamma2_tot = pf.open(gamma2_name)[0].data.copy()
 kappa_tot  = pf.open(kappa_name)[0].data.copy()
 mag_tot    = pf.open(mag_name)[0].data.copy()
 
+#<<<140607>>> the following should be uncommented only when high-resol remapped alpha maps are used
+#alpha1_tot = alpha1_tot/1000.
+#alpha2_tot = alpha2_tot/1000.
+
 #-------------------------------------------------------------------------------------------------------------
 # here images' postage stamps are cut according to their spatial extension at R band filter (F140W)
 #<<<140607>>> I have an idea for this: should write this part to read in info from the strong lensing catalog
 #         *** the essence of programming is just to minimize human labor in a iterative fashion
 
 #x = 2766.2917; y = 3366.735; rad = 35;    # 4.1
-#x = 3120.7598; y = 3717.8938; rad = 20;    # 4.2
-x = 1982.5423; y = 2628.303; rad = 20;     # 4.3
+x = 3120.7598; y = 3717.8938; rad = 15;    # 4.2
+#x = 1982.5423; y = 2628.303; rad = 20;    # 4.3
 
 cut = img[y-rad:y+rad,x-rad:x+rad]
 
 # clean some noises
-cut[0:34,24:rad*2]=0       # 4.3
+#cut[0:34,24:rad*2]=0       # 4.3
 
 # Create fits file
 pf.PrimaryHDU(cut).writeto('img_cut.fits',clobber=True)
@@ -74,6 +78,7 @@ f.write("%s  %s\n" % (lens_xy[0], lens_xy[1]))
 f.close()
 
 # below is the chopped maps of lensing quantities for specific image cuts
+#<<<140607>>> the chopped size (2*rad) is plausible as long as the lens fitting pixel is larger than the HST image pixel
 alpha1 = alpha1_tot[lens_xy[1]-rad:lens_xy[1]+rad,lens_xy[0]-rad:lens_xy[0]+rad]  
 alpha2 = alpha2_tot[lens_xy[1]-rad:lens_xy[1]+rad,lens_xy[0]-rad:lens_xy[0]+rad]
 gamma1 = gamma1_tot[lens_xy[1]-rad:lens_xy[1]+rad,lens_xy[0]-rad:lens_xy[0]+rad]

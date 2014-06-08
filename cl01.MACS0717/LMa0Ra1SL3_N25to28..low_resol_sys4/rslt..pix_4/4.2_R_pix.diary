@@ -3,10 +3,10 @@
 ------------------------------------------------
 magnification at the center (RA= 109.38186, DEC=  37.75332) is   12.38294
 enter function: MakeVec
-fixed number of bins = 40
-the bin size = 5.566232e-02
+fixed number of bins = 30
+the bin size = 5.694979e-02
 exit function: MakeVec
 enter function: MakeVec
-fixed number of bins = 40
-the bin size = 1.587257e-02
+fixed number of bins = 30
+the bin size = 1.574768e-02
 exit function: MakeVec

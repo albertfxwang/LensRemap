@@ -1,14 +1,14 @@
 % pixelize the source plane
 
 clear all; clc
-diary('4.3_R_pix.diary');
+diary('4.2_R_pix.diary');
 fprintf('------------------------------------------------\n')
-fprintf('| Now we are working on MACS0717 - 4.3_R_pix ! |\n')
+fprintf('| Now we are working on MACS0717 - 4.2_R_pix ! |\n')
 fprintf('------------------------------------------------\n')
 addpath ../mscripts/
 
-% getting results for 4.3_
-load 4.3_R_remap.mat
+% getting results for 4.2_
+load 4.2_R_remap.mat
 src_ra =reshape(RA4_src,N_img*4,1)*3600.;   % RA in arcsec
 src_dec=reshape(DEC4_src,N_img*4,1)*3600.;  % DEC in arcsec
 src_cnt=reshape(sb_src,N_img*4,1);
@@ -63,12 +63,12 @@ colorbar
 
 xlabel('RA offset [arcsec]','FontSize',lab_fontsize);
 ylabel('DEC offset [arcsec]','FontSize',lab_fontsize);
-title('MACS0717 4.3_{src} on the pixelized source plane')
+title('MACS0717 4.2_{src} on the pixelized source plane')
 set(gca,'FontSize',axes_fontsize,'LineWidth',1.3,'XDir','Reverse'); 
 % axis tight
 
 set(gcf, 'PaperUnits','inches');
 set(gcf, 'PaperPosition',[ 0 0 8 6]);
-print -dpsc2 4.3_R_pix.ps;
+print -dpsc2 4.2_R_pix.ps;
 
 diary off
