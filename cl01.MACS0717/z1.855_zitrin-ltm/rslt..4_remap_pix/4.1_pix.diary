@@ -1,0 +1,60 @@
+------------------------------------------------
+|  Now we are working on MACS0717 - 4.1_pix!   |
+------------------------------------------------
+magnification at the center (RA= 109.38341, DEC=  37.75270) is   10.31152
+enter function: MakeVec
+fixed number of bins = 70
+the bin size = 4.376571e-02
+exit function: MakeVec
+enter function: MakeVec
+fixed number of bins = 70
+the bin size = 3.013069e-02
+exit function: MakeVec
+{??? Error using ==> getappdata
+Invalid object handle
+
+Error in ==> <a href="matlab: opentoline('/usr/local/etc/R2011a/toolbox/matlab/scribe/@scribe/@colorbar/methods.m',731,0)">scribe.colorbar.methods>setConfiguration at 731</a>
+t = getappdata(img,'colormapt');
+
+Error in ==> <a href="matlab: opentoline('/usr/local/etc/R2011a/toolbox/matlab/scribe/@scribe/@colorbar/methods.m',19,0)">scribe.colorbar.methods at 19</a>
+    feval(args{:});
+
+Error in ==> <a href="matlab: opentoline('/usr/local/etc/R2011a/toolbox/matlab/scribe/@scribe/@colorbar/init.m',102,0)">scribe.colorbar.init>changedOrientationI at 102</a>
+methods(cbar,'setConfiguration', cbar.Axes);
+} 
+{Warning: Error occurred while evaluating listener callback.} 
+> In <a href="matlab: opentoline('/usr/local/etc/R2011a/toolbox/matlab/scribe/@scribe/@colorbar/setprivateprop.m',2,1)">scribe.colorbar.setprivateprop at 2</a>
+  In <a href="matlab: opentoline('/usr/local/etc/R2011a/toolbox/matlab/scribe/@scribe/@colorbar/init.m',157,1)">scribe.colorbar.init>changedYAxisLocation at 157</a>
+  In <a href="matlab: opentoline('/usr/local/etc/R2011a/toolbox/matlab/graphics/private/clo.m',83,1)">graphics/private/clo at 83</a>
+  In <a href="matlab: opentoline('/usr/local/etc/R2011a/toolbox/matlab/graphics/cla.m',29,1)">cla at 29</a>
+  In <a href="matlab: opentoline('/usr/local/etc/R2011a/toolbox/matlab/graphics/newplot.m',125,1)">newplot>ObserveAxesNextPlot at 125</a>
+  In <a href="matlab: opentoline('/usr/local/etc/R2011a/toolbox/matlab/graphics/newplot.m',74,1)">newplot at 74</a>
+  In <a href="matlab: opentoline('/usr/local/etc/R2011a/toolbox/matlab/specgraph/imagesc.m',21,1)">imagesc at 21</a>
+  In <a href="matlab: opentoline('/data2/xinwang/workplace/lens_remap/mscripts/imagescwithnan.m',37,1)">imagescwithnan at 37</a>
+  In <a href="matlab: opentoline('/data2/xinwang/workplace/lens_remap/cl01.MACS0717/pix_src.m',60,1)">pix_src at 60</a>
+{??? Error using ==> setappdata
+Invalid object handle
+
+Error in ==> <a href="matlab: opentoline('/usr/local/etc/R2011a/toolbox/matlab/scribe/@scribe/@colorbar/init.m',143,0)">scribe.colorbar.init>changedLimits at 143</a>
+            setappdata(img,'colormaplim',eventData.NewValue);
+} 
+{Warning: Error occurred while evaluating listener callback.} 
+> In <a href="matlab: opentoline('/usr/local/etc/R2011a/toolbox/matlab/graphics/private/clo.m',83,1)">graphics/private/clo at 83</a>
+  In <a href="matlab: opentoline('/usr/local/etc/R2011a/toolbox/matlab/graphics/cla.m',29,1)">cla at 29</a>
+  In <a href="matlab: opentoline('/usr/local/etc/R2011a/toolbox/matlab/graphics/newplot.m',125,1)">newplot>ObserveAxesNextPlot at 125</a>
+  In <a href="matlab: opentoline('/usr/local/etc/R2011a/toolbox/matlab/graphics/newplot.m',74,1)">newplot at 74</a>
+  In <a href="matlab: opentoline('/usr/local/etc/R2011a/toolbox/matlab/specgraph/imagesc.m',21,1)">imagesc at 21</a>
+  In <a href="matlab: opentoline('/data2/xinwang/workplace/lens_remap/mscripts/imagescwithnan.m',37,1)">imagescwithnan at 37</a>
+  In <a href="matlab: opentoline('/data2/xinwang/workplace/lens_remap/cl01.MACS0717/pix_src.m',60,1)">pix_src at 60</a>
+------------------------------------------------
+|  Now we are working on MACS0717 - 4.1_pix!   |
+------------------------------------------------
+magnification at the center (RA= 109.38341, DEC=  37.75270) is   10.31152
+enter function: MakeVec
+fixed number of bins = 70
+the bin size = 4.376571e-02
+exit function: MakeVec
+enter function: MakeVec
+fixed number of bins = 70
+the bin size = 3.013069e-02
+exit function: MakeVec

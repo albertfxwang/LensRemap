@@ -1,0 +1,26 @@
+------------------------------------------------
+|  Now we are working on MACS0717 - 4.3_pix!   |
+------------------------------------------------
+{??? Undefined function or variable 'sb_src'.
+
+Error in ==> <a href="matlab: opentoline('/data2/xinwang/workplace/lens_remap/cl01.MACS0717/pix_deflect_src.m',14,0)">pix_deflect_src at 14</a>
+src_cnt=reshape(sb_src,N_img,1);
+} 
+% Modify expression to add input arguments.
+% Example:
+%   a = [1 2 3; 4 5 6]; 
+%   foo(a);
+
+pix_deflect_src
+------------------------------------------------
+|  Now we are working on MACS0717 - 4.3_pix!   |
+------------------------------------------------
+magnification at the center (RA= 109.38169, DEC=  37.75480) is    4.22541
+enter function: MakeVec
+fixed number of bins = 40
+the bin size = 4.152772e-02
+exit function: MakeVec
+enter function: MakeVec
+fixed number of bins = 40
+the bin size = 2.750018e-02
+exit function: MakeVec

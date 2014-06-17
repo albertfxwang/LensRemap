@@ -22,28 +22,28 @@ import fitstools
 img_name='./data_rgb.fits_cat.reg/MACS0717_F814WF105WF140W_R.fits'
 img = pf.open(img_name)[0].data.copy()
 
-file_dir='/data2/xinwang/workplace/cl01.MACS0717.swunitedamr/LMa0Ra1SL3_N25to28/reserve_sys4/'
-file_root='MACS0717_lm8'
+file_dir='/data2/xinwang/workplace/cl01.MACS0717.ff_others/cats/'
+file_root='hlsp_frontier_model_macs0717_cats_v1'
 z_src='1.855'     # systems 3,4,14
 #z_src='1.7'     # system 12
 
-alpha1_name = '%s%s_%s_%s%s' % (file_dir,file_root,'alpha1_rs',z_src,'.fits')
-alpha2_name = '%s%s_%s_%s%s' % (file_dir,file_root,'alpha2_rs',z_src,'.fits')
-gamma1_name = '%s%s_%s_%s%s' % (file_dir,file_root,'gamma1_rs',z_src,'.fits')
-gamma2_name = '%s%s_%s_%s%s' % (file_dir,file_root,'gamma2_rs',z_src,'.fits')
-kappa_name  = '%s%s_%s_%s%s' % (file_dir,file_root,'kappa_rs',z_src,'.fits')
-mag_name    = '%s%s_%s_%s%s' % (file_dir,file_root,'mag_rs',z_src,'.fits')
+alpha1_name = '%s%s_%s_%s.fits' % (file_dir,file_root,'alpha1_rs',z_src)
+alpha2_name = '%s%s_%s_%s.fits' % (file_dir,file_root,'alpha2_rs',z_src)
+#gamma1_name = '%s%s_%s_%s.fits' % (file_dir,file_root,'gamma1_rs',z_src)
+#gamma2_name = '%s%s_%s_%s.fits' % (file_dir,file_root,'gamma2_rs',z_src)
+#kappa_name  = '%s%s_%s_%s.fits' % (file_dir,file_root,'kappa_rs',z_src)
+mag_name    = '%s%s_%s_%s.fits' % (file_dir,file_root,'mag_rs',z_src)
 
 alpha1_tot = pf.open(alpha1_name)[0].data.copy()
 alpha2_tot = pf.open(alpha2_name)[0].data.copy()
-gamma1_tot = pf.open(gamma1_name)[0].data.copy()
-gamma2_tot = pf.open(gamma2_name)[0].data.copy()
-kappa_tot  = pf.open(kappa_name)[0].data.copy()
+#gamma1_tot = pf.open(gamma1_name)[0].data.copy()
+#gamma2_tot = pf.open(gamma2_name)[0].data.copy()
+#kappa_tot  = pf.open(kappa_name)[0].data.copy()
 mag_tot    = pf.open(mag_name)[0].data.copy()
 
-#<<<140607>>> the following should be uncommented only when high-resol remapped alpha maps are used
-#alpha1_tot = alpha1_tot/1000.
-#alpha2_tot = alpha2_tot/1000.
+##<<<140607>>> the following should be uncommented only when high-resol remapped alpha maps are used
+##alpha1_tot = alpha1_tot/1000.
+##alpha2_tot = alpha2_tot/1000.      uncertain how alpha is defined in remap.c
 
 #-------------------------------------------------------------------------------------------------------------
 # here images' postage stamps are cut according to their spatial extension at R band filter (F140W)
@@ -51,8 +51,16 @@ mag_tot    = pf.open(mag_name)[0].data.copy()
 #         *** the essence of programming is just to minimize human labor in a iterative fashion
 
 #x = 2766.2917; y = 3366.735; rad = 35;    # 4.1
-x = 3120.7598; y = 3717.8938; rad = 15;    # 4.2
+#x = 3120.7598; y = 3717.8938; rad = 15;    # 4.2
 #x = 1982.5423; y = 2628.303; rad = 20;    # 4.3
+
+#x = 3598.6099; y = 2527.211; rad = 15;      # 3.1
+#x = 3714.4754; y = 2788.6894; rad = 15;     # 3.2
+#x = 2832.472; y = 1862.4514; rad = 15;      # 3.3
+
+#x = 2731.7342; y = 2908.9482; rad = 25;     # 14.1
+#x = 3502.9053; y = 3604.6515; rad = 12;     # 14.2
+x = 2238.8085; y = 2374.8719; rad = 15;     # 14.3
 
 cut = img[y-rad:y+rad,x-rad:x+rad]
 
@@ -81,9 +89,9 @@ f.close()
 #<<<140607>>> the chopped size (2*rad) is plausible as long as the lens fitting pixel is larger than the HST image pixel
 alpha1 = alpha1_tot[lens_xy[1]-rad:lens_xy[1]+rad,lens_xy[0]-rad:lens_xy[0]+rad]  
 alpha2 = alpha2_tot[lens_xy[1]-rad:lens_xy[1]+rad,lens_xy[0]-rad:lens_xy[0]+rad]
-gamma1 = gamma1_tot[lens_xy[1]-rad:lens_xy[1]+rad,lens_xy[0]-rad:lens_xy[0]+rad]
-gamma2 = gamma2_tot[lens_xy[1]-rad:lens_xy[1]+rad,lens_xy[0]-rad:lens_xy[0]+rad]
-kappa  =  kappa_tot[lens_xy[1]-rad:lens_xy[1]+rad,lens_xy[0]-rad:lens_xy[0]+rad]
+#gamma1 = gamma1_tot[lens_xy[1]-rad:lens_xy[1]+rad,lens_xy[0]-rad:lens_xy[0]+rad]
+#gamma2 = gamma2_tot[lens_xy[1]-rad:lens_xy[1]+rad,lens_xy[0]-rad:lens_xy[0]+rad]
+#kappa  =  kappa_tot[lens_xy[1]-rad:lens_xy[1]+rad,lens_xy[0]-rad:lens_xy[0]+rad]
 mag    =    mag_tot[lens_xy[1]-rad:lens_xy[1]+rad,lens_xy[0]-rad:lens_xy[0]+rad]
 
 #-------------------------------------------------------------------------------------------------------------
@@ -94,7 +102,7 @@ X,Y = np.meshgrid(img_x,img_y)
 img_x_tot=X.flatten()
 img_y_tot=Y.flatten()
 img_wcs_tot = fitstools.pix2coords(img_name,(img_x_tot,img_y_tot))
-#img_wcs=fitstools.pix2coords(img_name,(img_x,img_y))     % this only gives WCS coord for the diagonal line
+##img_wcs=fitstools.pix2coords(img_name,(img_x,img_y))     % this only gives WCS coord for the diagonal line
 
 #lens_size=mag.shape
 #if lens_size[0]!=lens_size[1]:
@@ -118,9 +126,9 @@ pl.show()
 # output ASCII files for all relevant quantities to feed into matlab
 np.savetxt('alpha1.dat',alpha1,fmt='%s') 
 np.savetxt('alpha2.dat',alpha2,fmt='%s')
-np.savetxt('gamma1.dat',gamma1,fmt='%s')
-np.savetxt('gamma2.dat',gamma2,fmt='%s')
-np.savetxt('kappa.dat',kappa,fmt='%s')
+#np.savetxt('gamma1.dat',gamma1,fmt='%s')
+#np.savetxt('gamma2.dat',gamma2,fmt='%s')
+#np.savetxt('kappa.dat',kappa,fmt='%s')
 np.savetxt('mag.dat',mag,fmt='%s')
 np.savetxt('lens_ra.dat',lens_wcs[0],fmt='%s')
 np.savetxt('lens_dec.dat',lens_wcs[1],fmt='%s')
@@ -148,32 +156,6 @@ file_type = ('alpha1_rs','alpha2_rs','gamma1_rs','gamma2_rs','kappa_rs','mag_rs'
 num_type = len(file_type)
 for i in range(0,num_type):    
 ----------------------------
-# 3.1
-x = 3598.6099
-y = 2527.211
-rad = 20
-# 3.2
-x = 3714.4754
-y = 2788.6894
-rad = 20
-# 3.3
-x = 2832.472
-y = 1862.4514
-rad = 15
-
-# 14.1
-x = 2731.7342
-y = 2908.9482
-rad = 25
-# 14.2
-x = 3502.9053
-y = 3604.6515
-rad = 15
-# 14.3
-x = 2238.8085
-y = 2374.8719
-rad = 15
-
 # 12.1
 x = 2711.7556
 y = 3117.1252
