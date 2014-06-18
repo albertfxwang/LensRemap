@@ -1,0 +1,26 @@
+Overwriting existing file '4.1_cut.fits'.
+Overwriting existing file '4.2_cut.fits'.
+Overwriting existing file '4.3_cut.fits'.
+Overwriting existing file '3.1_cut.fits'.
+Overwriting existing file '3.2_cut.fits'.
+Overwriting existing file '3.3_cut.fits'.
+Overwriting existing file '14.1_cut.fits'.
+Overwriting existing file '14.2_cut.fits'.
+Overwriting existing file '14.3_cut.fits'.
+
+:: ./cutimg.py :: -- START OF PROGRAM -- 
+
+The HST fits image to be cut is MACS0717_F814WF105WF140W_R.fits
+processing img 4.1: (RA=109.38107, DEC=37.75038)  <=>  (x=2766.29489486, y=3366.73767047), with rad=35.0
+processing img 4.2: (RA=109.37633, DEC=37.744551)  <=>  (x=3120.78673786, y=3717.8663225), with rad=15.0
+processing img 4.3: (RA=109.3909, DEC=37.763158)  <=>  (x=1982.56791427, y=2628.24125654), with rad=20.0
+contamination on 4.3 is cleaned
+processing img 3.1: (RA=109.39853, DEC=37.741493)  <=>  (x=3598.64965217, y=2527.30928015), with rad=15.0
+processing img 3.2: (RA=109.39446, DEC=37.739165)  <=>  (x=3714.48794263, y=2788.77377543), with rad=15.0
+processing img 3.3: (RA=109.40716, DEC=37.753818)  <=>  (x=2832.63893222, y=1862.41312209), with rad=15.0
+processing img 14.1: (RA=109.38881, DEC=37.75217)  <=>  (x=2731.74122716, y=2908.94134506), with rad=25.0
+processing img 14.2: (RA=109.37967, DEC=37.739686)  <=>  (x=3502.9201916, y=3604.61628968), with rad=12.0
+processing img 14.3: (RA=109.39619, DEC=37.760407)  <=>  (x=2238.86868639, y=2374.7865034), with rad=15.0
+
+:: ./cutimg.py :: -- END OF PROGRAM -- 
+
