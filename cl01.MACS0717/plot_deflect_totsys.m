@@ -15,8 +15,8 @@ a1_src_ra=(RA0_src-ref_ra)*3600.;     % RA in arcsec
 a1_src_dec=(DEC0_src-ref_dec)*3600.;  % DEC in arcsec
 a1_src_cnt=img;
 num=1;
-img_center(num,1)=(img_ctr(2,1)-ref_ra)*3600.;
-img_center(num,2)=(img_ctr(2,2)-ref_dec)*3600.;
+img_center(num,1)=(img_ctr(1)-ref_ra)*3600.;
+img_center(num,2)=(img_ctr(2)-ref_dec)*3600.;
 src_ctr(num,1)=(ctr_ra-ref_ra)*3600.;
 src_ctr(num,2)=(ctr_dec-ref_dec)*3600.;
 
@@ -28,8 +28,8 @@ a2_src_ra=(RA0_src-ref_ra)*3600.;     % RA in arcsec
 a2_src_dec=(DEC0_src-ref_dec)*3600.;  % DEC in arcsec
 a2_src_cnt=img;
 num=2;
-img_center(num,1)=(img_ctr(2,1)-ref_ra)*3600.;
-img_center(num,2)=(img_ctr(2,2)-ref_dec)*3600.;
+img_center(num,1)=(img_ctr(1)-ref_ra)*3600.;
+img_center(num,2)=(img_ctr(2)-ref_dec)*3600.;
 src_ctr(num,1)=(ctr_ra-ref_ra)*3600.;
 src_ctr(num,2)=(ctr_dec-ref_dec)*3600.;
 
@@ -41,8 +41,8 @@ a3_src_ra=(RA0_src-ref_ra)*3600.;     % RA in arcsec
 a3_src_dec=(DEC0_src-ref_dec)*3600.;  % DEC in arcsec
 a3_src_cnt=img;
 num=3;
-img_center(num,1)=(img_ctr(2,1)-ref_ra)*3600.;
-img_center(num,2)=(img_ctr(2,2)-ref_dec)*3600.;
+img_center(num,1)=(img_ctr(1)-ref_ra)*3600.;
+img_center(num,2)=(img_ctr(2)-ref_dec)*3600.;
 src_ctr(num,1)=(ctr_ra-ref_ra)*3600.;
 src_ctr(num,2)=(ctr_dec-ref_dec)*3600.;
 
