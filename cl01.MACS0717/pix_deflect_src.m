@@ -1,20 +1,20 @@
 % pixelize the source plane
 
 clear all; clc
-diary('14.3_pix.diary');
+diary('4.1_pix.diary');
 fprintf('------------------------------------------------\n')
-fprintf('|  Now we are working on MACS0717 - 14.3_pix!   |\n')
+fprintf('|  Now we are working on MACS0717 - 4.1_pix!   |\n')
 fprintf('------------------------------------------------\n')
 addpath ../mscripts/
 
-% getting results for 14.3_
-load 14.3_deflect.mat
+% getting results for 4.1_
+load 4.1_deflect.mat
 src_ra =reshape(RA0_src,N_img,1)*3600.;   % RA in arcsec
 src_dec=reshape(DEC0_src,N_img,1)*3600.;  % DEC in arcsec
 src_cnt=reshape(img,N_img,1);
 % ctr_src_ra=(ctr_ra-ref_ra)*3600.;
 % ctr_src_dec=(ctr_dec-ref_dec)*3600.;
-fprintf('magnification at the center (RA=%10.5f, DEC=%10.5f) is %10.5f\n',ctr_ra,ctr_dec,mag_ctr)
+%fprintf('magnification at the center (RA=%10.5f, DEC=%10.5f) is %10.5f\n',ctr_ra,ctr_dec,mag_ctr)
 % pix_scale_img=0.03;
 % pix_scale_src=0.03/mag_ctr;
 indx_ra = zeros(N_img,1);     % records the indices of which src plane pixels cnts go into
@@ -63,12 +63,12 @@ colorbar
 
 xlabel('RA offset [arcsec]','FontSize',lab_fontsize);
 ylabel('DEC offset [arcsec]','FontSize',lab_fontsize);
-title('MACS0717 14.3_{src} on the pixelized source plane')
+title('MACS0717 4.1_{src} on the pixelized source plane')
 set(gca,'FontSize',axes_fontsize,'LineWidth',1.3,'XDir','Reverse'); 
 % axis tight
 
 set(gcf, 'PaperUnits','inches');
 set(gcf, 'PaperPosition',[ 0 0 8 6]);
-print -dpsc2 14.3_pix.ps;
+print -dpsc2 4.1_pix.ps;
 
 diary off

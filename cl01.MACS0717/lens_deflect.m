@@ -4,7 +4,7 @@ clear all; clc; tic
 diary('14.3_deflect.diary');
 fprintf('---------------------------------------------------\n')
 fprintf('|       MACS0717   -   14.3_deflect                |\n')
-fprintf('|       Lens Model: z1.855_sharon/                |\n')
+fprintf('|       Lens Model: z1.855_bradac/                |\n')
 fprintf('|       Observed HST image: imgF140W/             |\n')
 fprintf('---------------------------------------------------\n')
 
@@ -49,7 +49,7 @@ for j=1:N_img
 end
 alpha1_ctr=interp2(lens_ra,lens_dec,alpha1,img_ctr(1),img_ctr(2));
 alpha2_ctr=interp2(lens_ra,lens_dec,alpha2,img_ctr(1),img_ctr(2));
-mag_ctr=interp2(lens_ra,lens_dec,mag,img_ctr(2),img_ctr(2));   % interp for the image center
+%mag_ctr=interp2(lens_ra,lens_dec,mag,img_ctr(2),img_ctr(2));   % interp for the image center
 
 %% Step 1: apply the deflection angle shift to the center of each pixel
 %          so now we need to specify two matrices of the same dimension to

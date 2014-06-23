@@ -7,7 +7,7 @@ num_img=3;
 img_center=zeros(num_img,2);   % 1st column: RA. 2nd column: DEC.
 src_ctr=zeros(num_img,2);
 
-load  14.1_deflect.mat
+load  4.1_deflect.mat
 a1_img_ra=(img_ra-ref_ra)*3600.;     % RA in arcsec
 a1_img_dec=(img_dec-ref_dec)*3600.;  % DEC in arcsec
 a1_img_cnt=img;
@@ -20,7 +20,7 @@ img_center(num,2)=(img_ctr(2)-ref_dec)*3600.;
 src_ctr(num,1)=(ctr_ra-ref_ra)*3600.;
 src_ctr(num,2)=(ctr_dec-ref_dec)*3600.;
 
-load  14.2_deflect.mat
+load  4.2_deflect.mat
 a2_img_ra=(img_ra-ref_ra)*3600.;     % RA in arcsec
 a2_img_dec=(img_dec-ref_dec)*3600.;  % DEC in arcsec
 a2_img_cnt=img;
@@ -33,7 +33,7 @@ img_center(num,2)=(img_ctr(2)-ref_dec)*3600.;
 src_ctr(num,1)=(ctr_ra-ref_ra)*3600.;
 src_ctr(num,2)=(ctr_dec-ref_dec)*3600.;
 
-load  14.3_deflect.mat
+load  4.3_deflect.mat
 a3_img_ra=(img_ra-ref_ra)*3600.;     % RA in arcsec
 a3_img_dec=(img_dec-ref_dec)*3600.;  % DEC in arcsec
 a3_img_cnt=img;
@@ -64,13 +64,13 @@ colormap('jet');
 plot(src_ctr(:,1),src_ctr(:,2),'ko','MarkerSize',15,'LineWidth',2)
 hold off
 for i=1:num_img
-    text(src_ctr(i,1),src_ctr(i,2)+0.5,['  14.',num2str(i),' src'],...
+    text(src_ctr(i,1),src_ctr(i,2)+0.5,['  4.',num2str(i),' src'],...
         'HorizontalAlignment','center','FontSize',axes_fontsize)
 end
 
 xlabel('RA offset [arcsec]','FontSize',lab_fontsize);
 ylabel('DEC offset [arcsec]','FontSize',lab_fontsize);
-title('MACS0717  14.system w.r.t. the reference pixel''s RA/DEC')
+title('MACS0717  4.system w.r.t. the reference pixel''s RA/DEC')
 set(gca,'FontSize',axes_fontsize,'LineWidth',1.3,'XDir','Reverse'); 
 ax = gca;
 hbar = colorbar('EastOutside');
@@ -81,7 +81,7 @@ axes(ax);
 axis tight
 set(gcf, 'PaperUnits','inches');
 set(gcf, 'PaperPosition',[ 0 0 8 6]);
-print -dpsc2  14.tot_src.ps;
+print -dpsc2  4.tot_src.ps;
 
 
 %% the original HST images in lens plane
@@ -94,13 +94,13 @@ colormap('jet');
 plot(img_center(:,1),img_center(:,2),'ks','MarkerSize',10,'LineWidth',1)
 hold off
 for i=1:num_img
-    text(img_center(i,1),img_center(i,2)+3,['  14.',num2str(i),' img'],...
+    text(img_center(i,1),img_center(i,2)+3,['  4.',num2str(i),' img'],...
         'HorizontalAlignment','center','FontSize',axes_fontsize)
 end
 
 xlabel('RA offset [arcsec]','FontSize',lab_fontsize);
 ylabel('DEC offset [arcsec]','FontSize',lab_fontsize);
-title('MACS0717  14.system w.r.t. the reference pixel''s RA/DEC')
+title('MACS0717  4.system w.r.t. the reference pixel''s RA/DEC')
 set(gca,'FontSize',axes_fontsize,'LineWidth',1.3,'XDir','Reverse'); 
 ax = gca;
 hbar = colorbar('EastOutside');
@@ -111,5 +111,5 @@ axes(ax);
 axis tight
 set(gcf, 'PaperUnits','inches');
 set(gcf, 'PaperPosition',[ 0 0 8 6]);
-print -dpsc2  14.tot_img.ps;
+print -dpsc2  4.tot_img.ps;
 
