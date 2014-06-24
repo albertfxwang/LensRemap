@@ -18,10 +18,10 @@ import fitstools
 
 #-------------------------------------------------------------------------------------------------------------
 # some input/output file names
-file_dir='/data2/xinwang/workplace/cl01.MACS0717.ff/bradac/alpha_z100/'
-file_root='MACS0717.bradac'
+file_dir='/data2/xinwang/workplace/cl01.MACS0717.swunitedamr/LMa3Ra4SL4_N25to30/'
+file_root='MACS0717'
 z_src='1.855'     # systems 3,4,14
-loc = './z1.855_bradac/'
+loc = './LMa3Ra4SL4_N25to30/'
 
 img_coord = 'z1.855_SLimg.cat'
 #-------------------------------------------------------------------------------------------------------------
