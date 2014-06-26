@@ -11,8 +11,8 @@
 #----------------------------
 #   INPUTS:
 #----------------------------
-# img_coord     : file containing magnifications
-# img_obsfits      : file containing magnifications
+# img_coord        : file containing WCS coord info of multiple images
+# img_obsfits      : the RGB fits image to be cut from
 #----------------------------
 #   OPTIONAL INPUTS:
 #----------------------------
