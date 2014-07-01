@@ -111,6 +111,7 @@ for i=1:N_img
             dRA4_src(i,t)=temp_src(1);
             dDEC4_src(i,t)=temp_src(2);
             RA4_src(i,t)=RA0_src(i)+dRA4_src(i,t);
+%<<<140701>>> here adding dRA like this is wrong!
             DEC4_src(i,t)=DEC0_src(i)+dDEC4_src(i,t);
 %            counts_src(i,t)=0.25*img(i);
             sb_src(i,t)=img(i);
