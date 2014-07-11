@@ -3,6 +3,9 @@
 
 clear all; clc; tic
 
+addpath ~/Dropbox/matlab/plotting/
+PlotParams
+
 num_img=3;
 img_center=zeros(num_img,2);   % 1st column: RA. 2nd column: DEC.
 src_ctr=zeros(num_img,2);
@@ -58,13 +61,6 @@ img_center(num,2)=(img_ctr(2)-ref_dec)*3600.;
 src_ctr(num,1)=(ctr_ra-ref_ra)*3600.;
 src_ctr(num,2)=(ctr_dec-ref_dec)*3600.;
 
-%% color and linewidth schemes
-lab_fontsize =12; axes_fontsize =10;
-color = {'y','r','m','g','c','k','b'};
-solid = {'-b','-r','-m','-g','-c','-k','-y'};
-dot = {':b',':r',':m',':g',':c',':k'};
-dash = {'--b','--r','--m','--g','--c','--k'};
-lw1=2.5; lw2=1.7; lw3=0.8;
 
 %% the remapped images in src plane
 figure(1)  

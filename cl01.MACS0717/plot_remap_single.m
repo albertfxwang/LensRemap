@@ -2,6 +2,9 @@
 
 clear all; clc
 
+addpath ~/Dropbox/matlab/plotting/
+PlotParams
+
 % getting results for 14.3_
 load 14.3_remap.mat
 img_ra=(img_ra-ref_ra)*3600.;     % RA in arcsec

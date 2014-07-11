@@ -1,6 +1,10 @@
 % pixelize the source plane
 
 clear all; clc
+
+addpath ~/Dropbox/matlab/plotting/
+PlotParams;
+
 diary('4.3_pix.diary');
 fprintf('------------------------------------------------\n')
 fprintf('|  Now we are working on MACS0717 - 4.3_pix!   |\n')
@@ -46,14 +50,6 @@ src_SB_pix = src_cnt_pix./times_pix;
 %%%%%%%%%%%%%%%% NOTE: it's the conservation of SB not of photon counts!!
 %%%%%%%%%%%%%%%% the counts on src plane is always < counts on img plane!
 
-% color and linewidth schemes
-lab_fontsize =12; axes_fontsize =10;
-color = {'y','r','m','g','c','k','b'};
-solid = {'-b','-r','-m','-g','-c','-k','-y'};
-dot = {':b',':r',':m',':g',':c',':k'};
-dash = {'--b','--r','--m','--g','--c','--k'};
-lw1=2.5; lw2=1.7; lw3=0.8;
-
 %% plotting figure
 
 figure(1)
@@ -65,7 +61,7 @@ xlabel('RA offset [arcsec]','FontSize',lab_fontsize);
 ylabel('DEC offset [arcsec]','FontSize',lab_fontsize);
 title('MACS0717 4.3_{src} on the pixelized source plane')
 set(gca,'FontSize',axes_fontsize,'LineWidth',1.3,'XDir','Reverse'); 
-% axis tight
+axis(ar);
 
 set(gcf, 'PaperUnits','inches');
 set(gcf, 'PaperPosition',[ 0 0 8 6]);

@@ -3,6 +3,9 @@
 
 clear all; clc; tic
 
+addpath ~/Dropbox/matlab/plotting/
+PlotParams;
+
 num_img=3;
 img_center=zeros(num_img,2);   % 1st column: RA. 2nd column: DEC.
 src_ctr=zeros(num_img,2);
@@ -46,14 +49,6 @@ img_center(num,2)=(img_ctr(2)-ref_dec)*3600.;
 src_ctr(num,1)=(ctr_ra-ref_ra)*3600.;
 src_ctr(num,2)=(ctr_dec-ref_dec)*3600.;
 
-%% color and linewidth schemes
-lab_fontsize =12; axes_fontsize =10;
-color = {'y','r','m','g','c','k','b'};
-solid = {'-b','-r','-m','-g','-c','-k','-y'};
-dot = {':b',':r',':m',':g',':c',':k'};
-dash = {'--b','--r','--m','--g','--c','--k'};
-lw1=2.5; lw2=1.7; lw3=0.8;
-
 %% the remapped images in src plane
 figure(1)  
 scatter(a1_src_ra,a1_src_dec,3,a1_src_cnt)
@@ -64,7 +59,7 @@ colormap('jet');
 plot(src_ctr(:,1),src_ctr(:,2),'ko','MarkerSize',15,'LineWidth',2)
 hold off
 for i=1:num_img
-    text(src_ctr(i,1),src_ctr(i,2)+0.5,['  4.',num2str(i),' src'],...
+    text(src_ctr(i,1),src_ctr(i,2)+0.75,['  4.',num2str(i),' src'],...
         'HorizontalAlignment','center','FontSize',axes_fontsize)
 end
 
@@ -78,7 +73,8 @@ axes(hbar);
 ylabel('Counts','FontSize',lab_fontsize);
 set(gca,'FontSize',axes_fontsize);
 axes(ax);
-axis tight
+% axis([-Inf,Inf,-Inf,Inf]);  <=>  axis tight
+axis(ar);
 set(gcf, 'PaperUnits','inches');
 set(gcf, 'PaperPosition',[ 0 0 8 6]);
 print -dpsc2  4.tot_src.ps;
