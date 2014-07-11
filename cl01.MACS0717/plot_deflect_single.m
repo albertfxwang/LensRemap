@@ -2,7 +2,7 @@
 
 clear all; clc
 
-addpath ~/Dropbox/matlab/plotting/
+addpath ../mscripts/
 PlotParams;
 
 % getting results for 4.3_

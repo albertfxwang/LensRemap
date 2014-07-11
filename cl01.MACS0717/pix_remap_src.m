@@ -1,11 +1,14 @@
 % pixelize the source plane
 
 clear all; clc
+
+addpath ../mscripts/
+PlotParams;
+
 diary('4.1_pix.diary');
 fprintf('------------------------------------------------\n')
 fprintf('|  Now we are working on MACS0717 - 4.1_pix!   |\n')
 fprintf('------------------------------------------------\n')
-addpath ../mscripts/
 
 % getting results for 4.1_
 load 4.1_remap.mat
@@ -45,14 +48,6 @@ src_cnt_pix(src_cnt_pix == 0) = NaN;
 src_SB_pix = src_cnt_pix./times_pix;    
 %%%%%%%%%%%%%%%% NOTE: it's the conservation of SB not of photon counts!!
 %%%%%%%%%%%%%%%% the counts on src plane is always < counts on img plane!
-
-% color and linewidth schemes
-lab_fontsize =12; axes_fontsize =10;
-color = {'y','r','m','g','c','k','b'};
-solid = {'-b','-r','-m','-g','-c','-k','-y'};
-dot = {':b',':r',':m',':g',':c',':k'};
-dash = {'--b','--r','--m','--g','--c','--k'};
-lw1=2.5; lw2=1.7; lw3=0.8;
 
 %% plotting figure
 

@@ -9,14 +9,14 @@
 #----------------------------
 # bash> ./cut_img.py ../z1.855_SLimg.cat MACS0717_F814WF105WF140W_R.fits -v
 #----------------------------
-#   INPUTS:
+#   INPUTS
 #----------------------------
 # img_coord        : file containing WCS coord info of multiple images
 # img_obsfits      : the RGB fits image to be cut from
 #----------------------------
-#   OPTIONAL INPUTS:
+#   OPTIONAL INPUTS
 #----------------------------
-# --verbose        : set -verbose to get info/messages printed to the screen
+# --verbose        : set "-v" to get info/messages printed to the screen
 # --stop           : stoppping program before end for de-bugging
 # --help           : Printing help menu
 #----------------------------
@@ -75,7 +75,8 @@ for ii in xrange(Nobj):
     decname  = str(id)+'_dec.dat'
     plotname = str(id)+'_cut.png'
     fitsname = str(id)+'_cut.fits'
-    #-------------------------------------------------------------------------- make .dat files
+    #-------------------------------------------------------------------------- 
+    # make .dat files
     (x,y)=fitstools.coords2pix(img_name,(ra,dec))   # NOTE this usage - tuple !!
     print 'processing img %s: (RA=%s, DEC=%s)  <=>  (x=%s, y=%s), with rad=%s' % (str(id), str(ra), str(dec), str(x), str(y), 
     str(rad))
@@ -93,7 +94,8 @@ for ii in xrange(Nobj):
     np.savetxt(stampname,cut.flatten(),fmt='%s')
     np.savetxt(raname,img_wcs_tot[0],fmt='%s')
     np.savetxt(decname,img_wcs_tot[1],fmt='%s')
-    #-------------------------------------------------------------------------- plot
+    #-------------------------------------------------------------------------- 
+    # plot .png files
     plt.figure()    # create a figure object
     plt.clf()       # clearing figure
     pl.imshow(cut,origin='lower',interpolation='nearest')
@@ -101,8 +103,9 @@ for ii in xrange(Nobj):
     plt.savefig(plotname,dpi=200)
 #    pl.ion()
 #    pl.show()
-    #-------------------------------------------------------------------------- write fits
-    pf.PrimaryHDU(cut).writeto(fitsname,clobber=True)
+    #-------------------------------------------------------------------------- 
+    # write fits files, but useless since no valid header information
+#    pf.PrimaryHDU(cut).writeto(fitsname,clobber=True)
 
 #-------------------------------------------------------------------------------------------------------------
 if args.stop: pdb.set_trace()

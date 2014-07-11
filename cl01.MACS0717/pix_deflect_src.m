@@ -2,14 +2,13 @@
 
 clear all; clc
 
-addpath ~/Dropbox/matlab/plotting/
+addpath ../mscripts/
 PlotParams;
 
 diary('4.3_pix.diary');
 fprintf('------------------------------------------------\n')
 fprintf('|  Now we are working on MACS0717 - 4.3_pix!   |\n')
 fprintf('------------------------------------------------\n')
-addpath ../mscripts/
 
 % getting results for 4.3_
 load 4.3_deflect.mat

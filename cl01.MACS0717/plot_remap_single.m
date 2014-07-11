@@ -2,8 +2,8 @@
 
 clear all; clc
 
-addpath ~/Dropbox/matlab/plotting/
-PlotParams
+addpath ../mscripts/
+PlotParams;
 
 % getting results for 14.3_
 load 14.3_remap.mat
@@ -19,14 +19,6 @@ ctr_img_ra=(img_ctr(2,1)-ref_ra)*3600.;
 ctr_img_dec=(img_ctr(2,2)-ref_dec)*3600.;
 ctr_src_ra=(ctr_ra-ref_ra)*3600.;
 ctr_src_dec=(ctr_dec-ref_dec)*3600.;
-
-% color and linewidth schemes
-lab_fontsize =12; axes_fontsize =10;
-color = {'y','r','m','g','c','k','b'};
-solid = {'-b','-r','-m','-g','-c','-k','-y'};
-dot = {':b',':r',':m',':g',':c',':k'};
-dash = {'--b','--r','--m','--g','--c','--k'};
-lw1=2.5; lw2=1.7; lw3=0.8;
 
 %% the remapped images in src plane
 figure(1)  
@@ -76,7 +68,7 @@ set(gcf, 'PaperPosition',[ 0 0 8 6]);
 print -dpsc2 14.3_img.ps;
 
 
-%% plotting the reduced shear vector map   ->  this should go into _single.m later
+%% plotting the reduced shear vector map   ->  this is problematic, since shear is NOT vector!
 figure(3)
 quiver(img_ra,img_dec,rg1,rg2)
 hold on

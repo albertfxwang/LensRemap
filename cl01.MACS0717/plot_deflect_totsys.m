@@ -3,7 +3,7 @@
 
 clear all; clc; tic
 
-addpath ~/Dropbox/matlab/plotting/
+addpath ../mscripts/
 PlotParams;
 
 num_img=3;

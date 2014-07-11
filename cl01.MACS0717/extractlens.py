@@ -3,8 +3,16 @@
     PURPOSE/DESCRIPTION
 ----------------------------
  using python to extract data of lens and SL multiple images, for MACS0717
- NOTE: all lensing quantity maps should have the same pixel size and dimensions!
+ NOTES: all lensing quantity maps should have the same pixel size and dimensions!
 ----------------------------
+   EXAMPLES/USAGE
+----------------------------
+ bash> python extractlens.py
+----------------------------
+   INPUTS
+----------------------------
+ you will need to modify the path/file name variables at "some input/output file names"
+ to run this script successfully
 """
 #-------------------------------------------------------------------------------------------------------------
 __author__ = "Xin Wang (UCSB)"
