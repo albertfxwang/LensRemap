@@ -10,6 +10,6 @@ lw1=2.5;
 lw2=2.0; 
 lw3=1.5;
 
-%% <<<140710>>> remapping MACS0717 system 4
-ar = [1, 4.6, 9.5, 12];
+%% <<<140727>>> remapping MACS0717 system 4
+macs0717.sys4ar = [0.75, 3.75, 9.5, 12];
 

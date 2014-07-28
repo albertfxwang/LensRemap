@@ -7,11 +7,11 @@ PlotParams;
 
 % getting results for 4.3_
 load 4.3_deflect.mat
-img_ra=(img_ra-ref_ra)*3600.;     % RA in arcsec
-img_dec=(img_dec-ref_dec)*3600.;  % DEC in arcsec
+img_ra=(img_ra-ref_ra)*3600.;     % img (RA-RA_ref) in arcsec, this is actually not a widely accepted notation
+img_dec=(img_dec-ref_dec)*3600.;  % img (DEC-DEC_ref) in arcsec
 img_cnt=img;
-src_ra=(RA0_src-ref_ra)*3600.;     % RA in arcsec
-src_dec=(DEC0_src-ref_dec)*3600.;  % DEC in arcsec
+src_ra=(RA0_src-ref_ra)*3600.;     % src (RA-RA_ref) in arcsec, not so appropriately defined
+src_dec=(DEC0_src-ref_dec)*3600.;  % src (DEC-DEC_ref) in arcsec
 src_cnt=img;
 ctr_img_ra=(img_ctr(1)-ref_ra)*3600.;
 ctr_img_dec=(img_ctr(2)-ref_dec)*3600.;
@@ -64,5 +64,3 @@ axis tight
 set(gcf, 'PaperUnits','inches');
 set(gcf, 'PaperPosition',[ 0 0 8 6]);
 print -dpsc2 4.3_img.ps;
-
-

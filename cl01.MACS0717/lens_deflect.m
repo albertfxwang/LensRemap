@@ -52,15 +52,13 @@ alpha1_ctr=interp2(lens_ra,lens_dec,alpha1,img_ctr(1),img_ctr(2));
 alpha2_ctr=interp2(lens_ra,lens_dec,alpha2,img_ctr(1),img_ctr(2));
 mag_ctr=interp2(lens_ra,lens_dec,mag,img_ctr(1),img_ctr(2));   % interp for the image center
 
-%% Step 1: apply the deflection angle shift to the center of each pixel
-%          so now we need to specify two matrices of the same dimension to
-%          the img matrix, to record the RA, DEC for each grid cell
+%% apply the deflection angle shift to the center of each pixel
 RA0_src=img_ra+alpha1_img/60./cos(ref_dec/180.*pi);       % Remember the RA-axis is inverted, AND  the cos-factor !!!
 DEC0_src=img_dec-alpha2_img/60.;
 ctr_ra=img_ctr(1)+alpha1_ctr/60./cos(ref_dec/180.*pi);
 ctr_dec=img_ctr(2)-alpha2_ctr/60.;
+fprintf('magnification at the center (RA=%10.5f, DEC=%10.5f) is %10.5f\n',ctr_ra,ctr_dec,mag_ctr)
 
 save 4.3_deflect.mat
 toc
 diary off
-
