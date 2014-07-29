@@ -1,7 +1,7 @@
 %: vim: linebreak smartindent formatoptions+=twa
 
 remapping multiple images detected in the field of MACS0717
-==========
+===================
 
 naming conventions:
 
@@ -28,7 +28,8 @@ scaling records:
         scale=[2.4 2.9; 1.3 1.6; 2.6 2.2];  scale_tot=[3.0 2.7];
 
 7/29/2014
---------- how to fine-tune scales
+---------
+how to fine-tune scales
 
     first pick the same value for both alpha,beta (x,y) binsizes, see how img is pixelized and how many bins there are.  
     If the resulted y direction has much more bins, it means the count drops are more spread out and a small binsize is 
