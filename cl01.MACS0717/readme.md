@@ -30,13 +30,13 @@ scaling records:
 
 7/29/2014
 ---------
-    how to fine-tune scales
+how to fine-tune scales
 
     first pick the same value for both alpha,beta (x,y) binsizes, see how img is pixelized and how many bins there are.  
     If the resulted y direction has much more bins, it means the count drops are more spread out and a small binsize is 
     more probable to lead to hollow pixels (along x direction!!!). As a result, tune down the y-scale a little bit.
 
-    when tuning the _rot plot:
+when tuning the _rot plot:
     
     1. before this whole process, do not use the same axial ranges. 1st of all, try to obtain the appropriate ar. when 
     doing this, you can comment out the ylabel of 2nd subplot
