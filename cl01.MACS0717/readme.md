@@ -18,6 +18,7 @@ naming conventions:
     4. if there is no _fin.ps figures, use _fin with the biggest number as the final result
 
 scaling records:
+
     scales for sys3 fin
         scale=[2.4 2.4; 3.0 3.0; 1.2 2.4];  scale_tot=[3.7 3.7];
     scales for sys4 fin
@@ -29,13 +30,14 @@ scaling records:
 
 7/29/2014
 ---------
-how to fine-tune scales
+    how to fine-tune scales
 
     first pick the same value for both alpha,beta (x,y) binsizes, see how img is pixelized and how many bins there are.  
     If the resulted y direction has much more bins, it means the count drops are more spread out and a small binsize is 
     more probable to lead to hollow pixels (along x direction!!!). As a result, tune down the y-scale a little bit.
 
-             when tuning the _rot plot:
+    when tuning the _rot plot:
+    
     1. before this whole process, do not use the same axial ranges. 1st of all, try to obtain the appropriate ar. when 
     doing this, you can comment out the ylabel of 2nd subplot
     2. tuning the rotation!
