@@ -8,7 +8,7 @@ function [vector,output]=MakeVec(x,index,variab)
 %     By : Xin Wang                     July 2014
 % Reliable: 1
 %------------------------------------------------------------------------------
-fprintf('#-------------------------------- enter MakeVec\n')
+fprintf('#------------ enter MakeVec\n')
 xmin=min(x);
 xmax=max(x);
 if index == 1;
@@ -31,5 +31,5 @@ else fprintf('nothing to do!\n')
     output=NaN;
 
 end
-fprintf('#================================ exit MakeVec\n')
-%-------------------------------- end ------------------------------
+fprintf('#============ exit MakeVec\n')
+

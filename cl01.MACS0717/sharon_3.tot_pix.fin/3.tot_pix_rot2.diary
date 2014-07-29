@@ -1,0 +1,3608 @@
+----------------------------------------------------------
+|  This is the diary for plotting 3.tot_pix_rot2.ps!    |
+|  Now we are working on MACS0717 - srcpix for totsys 3! |
+----------------------------------------------------------
+#------------ below doing srcpix for img 3.3!
+#------------ enter MakeVecCtr
+fixed bin size = 4.166666e-02
+the number of bins = 30
+#============ exit MakeVecCtr
+#------------ enter MakeVecCtr
+fixed bin size = 2.083333e-02
+the number of bins = 31
+#============ exit MakeVecCtr
+#------------ below doing srcpix for img 3.2!
+#------------ enter shift
+#============ exit shift
+#------------ enter JacobiRot
+kappa_ext = 0, gamma_ext=0, phi=0 (deg)
+now phi looks more normal =0 (RAD)
+#============ exit JacobiRot
+#------------ enter MakeVecCtr
+fixed bin size = 1.515151e-02
+the number of bins = 39
+#============ exit MakeVecCtr
+#------------ enter MakeVecCtr
+fixed bin size = 1.515151e-02
+the number of bins = 42
+#============ exit MakeVecCtr
+#------------ below doing srcpix for img 3.1!
+#------------ enter shift
+#============ exit shift
+#------------ enter JacobiRot
+kappa_ext = 0, gamma_ext=0, phi=0 (deg)
+now phi looks more normal =0 (RAD)
+#============ exit JacobiRot
+#------------ enter MakeVecCtr
+fixed bin size = 1.851852e-02
+the number of bins = 31
+#============ exit MakeVecCtr
+#------------ enter MakeVecCtr
+fixed bin size = 1.851852e-02
+the number of bins = 47
+#============ exit MakeVecCtr
+Elapsed time is 2.287339 seconds.
+----------------------------------------------------------
+|  This is the diary for plotting 3.tot_pix_rot2.ps!    |
+|  Now we are working on MACS0717 - srcpix for totsys 3! |
+----------------------------------------------------------
+#------------ below doing srcpix for img 3.3!
+#------------ enter MakeVecCtr
+fixed bin size = 4.166666e-02
+the number of bins = 30
+#============ exit MakeVecCtr
+#------------ enter MakeVecCtr
+fixed bin size = 2.083333e-02
+the number of bins = 31
+#============ exit MakeVecCtr
+#------------ below doing srcpix for img 3.2!
+#------------ enter shift
+#============ exit shift
+#------------ enter JacobiRot
+kappa_ext = 1, gamma_ext=1, phi=30 (deg)
+now phi looks more normal =0.523599 (RAD)
+#============ exit JacobiRot
+#------------ enter MakeVecCtr
+fixed bin size = 1.515151e-02
+the number of bins = 27
+#============ exit MakeVecCtr
+#------------ enter MakeVecCtr
+fixed bin size = 1.515151e-02
+the number of bins = 53
+#============ exit MakeVecCtr
+#------------ below doing srcpix for img 3.1!
+#------------ enter shift
+#============ exit shift
+#------------ enter JacobiRot
+kappa_ext = 0, gamma_ext=0, phi=0 (deg)
+now phi looks more normal =0 (RAD)
+#============ exit JacobiRot
+#------------ enter MakeVecCtr
+fixed bin size = 1.851852e-02
+the number of bins = 31
+#============ exit MakeVecCtr
+#------------ enter MakeVecCtr
+fixed bin size = 1.851852e-02
+the number of bins = 47
+#============ exit MakeVecCtr
+Elapsed time is 1.945666 seconds.
+----------------------------------------------------------
+|  This is the diary for plotting 3.tot_pix_rot2.ps!    |
+|  Now we are working on MACS0717 - srcpix for totsys 3! |
+----------------------------------------------------------
+#------------ below doing srcpix for img 3.3!
+#------------ enter MakeVecCtr
+fixed bin size = 4.166666e-02
+the number of bins = 30
+#============ exit MakeVecCtr
+#------------ enter MakeVecCtr
+fixed bin size = 2.083333e-02
+the number of bins = 31
+#============ exit MakeVecCtr
+#------------ below doing srcpix for img 3.2!
+#------------ enter shift
+#============ exit shift
+#------------ enter JacobiRot
+kappa_ext = 1, gamma_ext=1, phi=60 (deg)
+now phi looks more normal =1.0472 (RAD)
+#============ exit JacobiRot
+#------------ enter MakeVecCtr
+fixed bin size = 1.515151e-02
+the number of bins = 55
+#============ exit MakeVecCtr
+#------------ enter MakeVecCtr
+fixed bin size = 1.515151e-02
+the number of bins = 20
+#============ exit MakeVecCtr
+#------------ below doing srcpix for img 3.1!
+#------------ enter shift
+#============ exit shift
+#------------ enter JacobiRot
+kappa_ext = 0, gamma_ext=0, phi=0 (deg)
+now phi looks more normal =0 (RAD)
+#============ exit JacobiRot
+#------------ enter MakeVecCtr
+fixed bin size = 1.851852e-02
+the number of bins = 31
+#============ exit MakeVecCtr
+#------------ enter MakeVecCtr
+fixed bin size = 1.851852e-02
+the number of bins = 47
+#============ exit MakeVecCtr
+Elapsed time is 1.946037 seconds.
+----------------------------------------------------------
+|  This is the diary for plotting 3.tot_pix_rot2.ps!    |
+|  Now we are working on MACS0717 - srcpix for totsys 3! |
+----------------------------------------------------------
+#------------ below doing srcpix for img 3.3!
+#------------ enter MakeVecCtr
+fixed bin size = 4.166666e-02
+the number of bins = 30
+#============ exit MakeVecCtr
+#------------ enter MakeVecCtr
+fixed bin size = 2.083333e-02
+the number of bins = 31
+#============ exit MakeVecCtr
+#------------ below doing srcpix for img 3.2!
+#------------ enter shift
+#============ exit shift
+#------------ enter JacobiRot
+kappa_ext = 1, gamma_ext=0.8, phi=70 (deg)
+now phi looks more normal =1.22173 (RAD)
+#============ exit JacobiRot
+#------------ enter MakeVecCtr
+fixed bin size = 1.515151e-02
+the number of bins = 45
+#============ exit MakeVecCtr
+#------------ enter MakeVecCtr
+fixed bin size = 1.515151e-02
+the number of bins = 21
+#============ exit MakeVecCtr
+#------------ below doing srcpix for img 3.1!
+#------------ enter shift
+#============ exit shift
+#------------ enter JacobiRot
+kappa_ext = 0, gamma_ext=0, phi=0 (deg)
+now phi looks more normal =0 (RAD)
+#============ exit JacobiRot
+#------------ enter MakeVecCtr
+fixed bin size = 1.851852e-02
+the number of bins = 31
+#============ exit MakeVecCtr
+#------------ enter MakeVecCtr
+fixed bin size = 1.851852e-02
+the number of bins = 47
+#============ exit MakeVecCtr
+Elapsed time is 1.885375 seconds.
+----------------------------------------------------------
+|  This is the diary for plotting 3.tot_pix_rot2.ps!    |
+|  Now we are working on MACS0717 - srcpix for totsys 3! |
+----------------------------------------------------------
+#------------ below doing srcpix for img 3.3!
+#------------ enter MakeVecCtr
+fixed bin size = 4.166666e-02
+the number of bins = 30
+#============ exit MakeVecCtr
+#------------ enter MakeVecCtr
+fixed bin size = 2.083333e-02
+the number of bins = 31
+#============ exit MakeVecCtr
+#------------ below doing srcpix for img 3.2!
+#------------ enter shift
+#============ exit shift
+#------------ enter JacobiRot
+kappa_ext = 1, gamma_ext=0.5, phi=70 (deg)
+now phi looks more normal =1.22173 (RAD)
+#============ exit JacobiRot
+#------------ enter MakeVecCtr
+fixed bin size = 1.515151e-02
+the number of bins = 28
+#============ exit MakeVecCtr
+#------------ enter MakeVecCtr
+fixed bin size = 1.515151e-02
+the number of bins = 14
+#============ exit MakeVecCtr
+#------------ below doing srcpix for img 3.1!
+#------------ enter shift
+#============ exit shift
+#------------ enter JacobiRot
+kappa_ext = 0, gamma_ext=0, phi=0 (deg)
+now phi looks more normal =0 (RAD)
+#============ exit JacobiRot
+#------------ enter MakeVecCtr
+fixed bin size = 1.851852e-02
+the number of bins = 31
+#============ exit MakeVecCtr
+#------------ enter MakeVecCtr
+fixed bin size = 1.851852e-02
+the number of bins = 47
+#============ exit MakeVecCtr
+Elapsed time is 1.930001 seconds.
+----------------------------------------------------------
+|  This is the diary for plotting 3.tot_pix_rot2.ps!    |
+|  Now we are working on MACS0717 - srcpix for totsys 3! |
+----------------------------------------------------------
+#------------ below doing srcpix for img 3.3!
+#------------ enter MakeVecCtr
+fixed bin size = 4.166666e-02
+the number of bins = 30
+#============ exit MakeVecCtr
+#------------ enter MakeVecCtr
+fixed bin size = 2.083333e-02
+the number of bins = 31
+#============ exit MakeVecCtr
+#------------ below doing srcpix for img 3.2!
+#------------ enter shift
+#============ exit shift
+#------------ enter JacobiRot
+kappa_ext = 1, gamma_ext=1.1, phi=70 (deg)
+now phi looks more normal =1.22173 (RAD)
+#============ exit JacobiRot
+#------------ enter MakeVecCtr
+fixed bin size = 1.515151e-02
+the number of bins = 61
+#============ exit MakeVecCtr
+#------------ enter MakeVecCtr
+fixed bin size = 1.515151e-02
+the number of bins = 28
+#============ exit MakeVecCtr
+#------------ below doing srcpix for img 3.1!
+#------------ enter shift
+#============ exit shift
+#------------ enter JacobiRot
+kappa_ext = 0, gamma_ext=0, phi=0 (deg)
+now phi looks more normal =0 (RAD)
+#============ exit JacobiRot
+#------------ enter MakeVecCtr
+fixed bin size = 1.851852e-02
+the number of bins = 31
+#============ exit MakeVecCtr
+#------------ enter MakeVecCtr
+fixed bin size = 1.851852e-02
+the number of bins = 47
+#============ exit MakeVecCtr
+Elapsed time is 1.903650 seconds.
+----------------------------------------------------------
+|  This is the diary for plotting 3.tot_pix_rot2.ps!    |
+|  Now we are working on MACS0717 - srcpix for totsys 3! |
+----------------------------------------------------------
+#------------ below doing srcpix for img 3.3!
+#------------ enter MakeVecCtr
+fixed bin size = 4.166666e-02
+the number of bins = 30
+#============ exit MakeVecCtr
+#------------ enter MakeVecCtr
+fixed bin size = 2.083333e-02
+the number of bins = 31
+#============ exit MakeVecCtr
+#------------ below doing srcpix for img 3.2!
+#------------ enter shift
+#============ exit shift
+#------------ enter JacobiRot
+kappa_ext = 1, gamma_ext=1.05, phi=70 (deg)
+now phi looks more normal =1.22173 (RAD)
+#============ exit JacobiRot
+#------------ enter MakeVecCtr
+fixed bin size = 1.515151e-02
+the number of bins = 58
+#============ exit MakeVecCtr
+#------------ enter MakeVecCtr
+fixed bin size = 1.515151e-02
+the number of bins = 27
+#============ exit MakeVecCtr
+#------------ below doing srcpix for img 3.1!
+#------------ enter shift
+#============ exit shift
+#------------ enter JacobiRot
+kappa_ext = 0, gamma_ext=0, phi=0 (deg)
+now phi looks more normal =0 (RAD)
+#============ exit JacobiRot
+#------------ enter MakeVecCtr
+fixed bin size = 1.851852e-02
+the number of bins = 31
+#============ exit MakeVecCtr
+#------------ enter MakeVecCtr
+fixed bin size = 1.851852e-02
+the number of bins = 47
+#============ exit MakeVecCtr
+Elapsed time is 1.939920 seconds.
+----------------------------------------------------------
+|  This is the diary for plotting 3.tot_pix_rot2.ps!    |
+|  Now we are working on MACS0717 - srcpix for totsys 3! |
+----------------------------------------------------------
+#------------ below doing srcpix for img 3.3!
+#------------ enter MakeVecCtr
+fixed bin size = 4.166666e-02
+the number of bins = 30
+#============ exit MakeVecCtr
+#------------ enter MakeVecCtr
+fixed bin size = 2.083333e-02
+the number of bins = 31
+#============ exit MakeVecCtr
+#------------ below doing srcpix for img 3.2!
+#------------ enter shift
+#============ exit shift
+#------------ enter JacobiRot
+kappa_ext = 1, gamma_ext=1, phi=70 (deg)
+now phi looks more normal =1.22173 (RAD)
+#============ exit JacobiRot
+#------------ enter MakeVecCtr
+fixed bin size = 1.515151e-02
+the number of bins = 55
+#============ exit MakeVecCtr
+#------------ enter MakeVecCtr
+fixed bin size = 1.515151e-02
+the number of bins = 25
+#============ exit MakeVecCtr
+#------------ below doing srcpix for img 3.1!
+#------------ enter shift
+#============ exit shift
+#------------ enter JacobiRot
+kappa_ext = 0, gamma_ext=0, phi=0 (deg)
+now phi looks more normal =0 (RAD)
+#============ exit JacobiRot
+#------------ enter MakeVecCtr
+fixed bin size = 1.851852e-02
+the number of bins = 31
+#============ exit MakeVecCtr
+#------------ enter MakeVecCtr
+fixed bin size = 1.851852e-02
+the number of bins = 47
+#============ exit MakeVecCtr
+Elapsed time is 1.922670 seconds.
+----------------------------------------------------------
+|  This is the diary for plotting 3.tot_pix_rot2.ps!    |
+|  Now we are working on MACS0717 - srcpix for totsys 3! |
+----------------------------------------------------------
+#------------ below doing srcpix for img 3.3!
+#------------ enter MakeVecCtr
+fixed bin size = 4.166666e-02
+the number of bins = 30
+#============ exit MakeVecCtr
+#------------ enter MakeVecCtr
+fixed bin size = 2.083333e-02
+the number of bins = 31
+#============ exit MakeVecCtr
+#------------ below doing srcpix for img 3.2!
+#------------ enter shift
+#============ exit shift
+#------------ enter JacobiRot
+kappa_ext = 1.05, gamma_ext=1, phi=70 (deg)
+now phi looks more normal =1.22173 (RAD)
+#============ exit JacobiRot
+#------------ enter MakeVecCtr
+fixed bin size = 1.515151e-02
+the number of bins = 53
+#============ exit MakeVecCtr
+#------------ enter MakeVecCtr
+fixed bin size = 1.515151e-02
+the number of bins = 27
+#============ exit MakeVecCtr
+#------------ below doing srcpix for img 3.1!
+#------------ enter shift
+#============ exit shift
+#------------ enter JacobiRot
+kappa_ext = 0, gamma_ext=0, phi=0 (deg)
+now phi looks more normal =0 (RAD)
+#============ exit JacobiRot
+#------------ enter MakeVecCtr
+fixed bin size = 1.851852e-02
+the number of bins = 31
+#============ exit MakeVecCtr
+#------------ enter MakeVecCtr
+fixed bin size = 1.851852e-02
+the number of bins = 47
+#============ exit MakeVecCtr
+Elapsed time is 1.909548 seconds.
+----------------------------------------------------------
+|  This is the diary for plotting 3.tot_pix_rot2.ps!    |
+|  Now we are working on MACS0717 - srcpix for totsys 3! |
+----------------------------------------------------------
+#------------ below doing srcpix for img 3.3!
+#------------ enter MakeVecCtr
+fixed bin size = 4.166666e-02
+the number of bins = 30
+#============ exit MakeVecCtr
+#------------ enter MakeVecCtr
+fixed bin size = 2.083333e-02
+the number of bins = 31
+#============ exit MakeVecCtr
+#------------ below doing srcpix for img 3.2!
+#------------ enter shift
+#============ exit shift
+#------------ enter JacobiRot
+kappa_ext = 1.05, gamma_ext=1, phi=-70 (deg)
+now phi looks more normal =-1.22173 (RAD)
+#============ exit JacobiRot
+#------------ enter MakeVecCtr
+fixed bin size = 1.515151e-02
+the number of bins = 22
+#============ exit MakeVecCtr
+#------------ enter MakeVecCtr
+fixed bin size = 1.515151e-02
+the number of bins = 57
+#============ exit MakeVecCtr
+#------------ below doing srcpix for img 3.1!
+#------------ enter shift
+#============ exit shift
+#------------ enter JacobiRot
+kappa_ext = 0, gamma_ext=0, phi=0 (deg)
+now phi looks more normal =0 (RAD)
+#============ exit JacobiRot
+#------------ enter MakeVecCtr
+fixed bin size = 1.851852e-02
+the number of bins = 31
+#============ exit MakeVecCtr
+#------------ enter MakeVecCtr
+fixed bin size = 1.851852e-02
+the number of bins = 47
+#============ exit MakeVecCtr
+Elapsed time is 1.942437 seconds.
+----------------------------------------------------------
+|  This is the diary for plotting 3.tot_pix_rot2.ps!    |
+|  Now we are working on MACS0717 - srcpix for totsys 3! |
+----------------------------------------------------------
+#------------ below doing srcpix for img 3.3!
+#------------ enter MakeVecCtr
+fixed bin size = 4.166666e-02
+the number of bins = 30
+#============ exit MakeVecCtr
+#------------ enter MakeVecCtr
+fixed bin size = 2.083333e-02
+the number of bins = 31
+#============ exit MakeVecCtr
+#------------ below doing srcpix for img 3.2!
+#------------ enter shift
+#============ exit shift
+#------------ enter JacobiRot
+kappa_ext = 1.05, gamma_ext=1, phi=70 (deg)
+now phi looks more normal =1.22173 (RAD)
+#============ exit JacobiRot
+#------------ enter MakeVecCtr
+fixed bin size = 1.515151e-02
+the number of bins = 53
+#============ exit MakeVecCtr
+#------------ enter MakeVecCtr
+fixed bin size = 1.515151e-02
+the number of bins = 27
+#============ exit MakeVecCtr
+#------------ below doing srcpix for img 3.1!
+#------------ enter shift
+#============ exit shift
+#------------ enter JacobiRot
+kappa_ext = 0, gamma_ext=0, phi=0 (deg)
+now phi looks more normal =0 (RAD)
+#============ exit JacobiRot
+#------------ enter MakeVecCtr
+fixed bin size = 1.851852e-02
+the number of bins = 31
+#============ exit MakeVecCtr
+#------------ enter MakeVecCtr
+fixed bin size = 1.851852e-02
+the number of bins = 47
+#============ exit MakeVecCtr
+Elapsed time is 1.993598 seconds.
+----------------------------------------------------------
+|  This is the diary for plotting 3.tot_pix_rot2.ps!    |
+|  Now we are working on MACS0717 - srcpix for totsys 3! |
+----------------------------------------------------------
+#------------ below doing srcpix for img 3.3!
+#------------ enter MakeVecCtr
+fixed bin size = 4.166666e-02
+the number of bins = 30
+#============ exit MakeVecCtr
+#------------ enter MakeVecCtr
+fixed bin size = 2.083333e-02
+the number of bins = 31
+#============ exit MakeVecCtr
+#------------ below doing srcpix for img 3.2!
+#------------ enter shift
+#============ exit shift
+#------------ enter JacobiRot
+kappa_ext = 1.1, gamma_ext=1, phi=70 (deg)
+now phi looks more normal =1.22173 (RAD)
+#============ exit JacobiRot
+#------------ enter MakeVecCtr
+fixed bin size = 1.515151e-02
+the number of bins = 51
+#============ exit MakeVecCtr
+#------------ enter MakeVecCtr
+fixed bin size = 1.515151e-02
+the number of bins = 29
+#============ exit MakeVecCtr
+#------------ below doing srcpix for img 3.1!
+#------------ enter shift
+#============ exit shift
+#------------ enter JacobiRot
+kappa_ext = 0, gamma_ext=0, phi=0 (deg)
+now phi looks more normal =0 (RAD)
+#============ exit JacobiRot
+#------------ enter MakeVecCtr
+fixed bin size = 1.851852e-02
+the number of bins = 31
+#============ exit MakeVecCtr
+#------------ enter MakeVecCtr
+fixed bin size = 1.851852e-02
+the number of bins = 47
+#============ exit MakeVecCtr
+Elapsed time is 1.937041 seconds.
+----------------------------------------------------------
+|  This is the diary for plotting 3.tot_pix_rot2.ps!    |
+|  Now we are working on MACS0717 - srcpix for totsys 3! |
+----------------------------------------------------------
+#------------ below doing srcpix for img 3.3!
+#------------ enter MakeVecCtr
+fixed bin size = 4.166666e-02
+the number of bins = 30
+#============ exit MakeVecCtr
+#------------ enter MakeVecCtr
+fixed bin size = 2.083333e-02
+the number of bins = 31
+#============ exit MakeVecCtr
+#------------ below doing srcpix for img 3.2!
+#------------ enter shift
+#============ exit shift
+#------------ enter JacobiRot
+kappa_ext = 1.07, gamma_ext=1.02, phi=70 (deg)
+now phi looks more normal =1.22173 (RAD)
+#============ exit JacobiRot
+#------------ enter MakeVecCtr
+fixed bin size = 1.515151e-02
+the number of bins = 53
+#============ exit MakeVecCtr
+#------------ enter MakeVecCtr
+fixed bin size = 1.515151e-02
+the number of bins = 27
+#============ exit MakeVecCtr
+#------------ below doing srcpix for img 3.1!
+#------------ enter shift
+#============ exit shift
+#------------ enter JacobiRot
+kappa_ext = 0, gamma_ext=0, phi=0 (deg)
+now phi looks more normal =0 (RAD)
+#============ exit JacobiRot
+#------------ enter MakeVecCtr
+fixed bin size = 1.851852e-02
+the number of bins = 31
+#============ exit MakeVecCtr
+#------------ enter MakeVecCtr
+fixed bin size = 1.851852e-02
+the number of bins = 47
+#============ exit MakeVecCtr
+Elapsed time is 1.931369 seconds.
+----------------------------------------------------------
+|  This is the diary for plotting 3.tot_pix_rot2.ps!    |
+|  Now we are working on MACS0717 - srcpix for totsys 3! |
+----------------------------------------------------------
+#------------ below doing srcpix for img 3.3!
+#------------ enter MakeVecCtr
+fixed bin size = 4.166666e-02
+the number of bins = 30
+#============ exit MakeVecCtr
+#------------ enter MakeVecCtr
+fixed bin size = 2.083333e-02
+the number of bins = 31
+#============ exit MakeVecCtr
+#------------ below doing srcpix for img 3.2!
+#------------ enter shift
+#============ exit shift
+#------------ enter JacobiRot
+kappa_ext = 1.07, gamma_ext=1.02, phi=70 (deg)
+now phi looks more normal =1.22173 (RAD)
+#============ exit JacobiRot
+#------------ enter MakeVecCtr
+fixed bin size = 1.562500e-02
+the number of bins = 53
+#============ exit MakeVecCtr
+#------------ enter MakeVecCtr
+fixed bin size = 1.562500e-02
+the number of bins = 27
+#============ exit MakeVecCtr
+#------------ below doing srcpix for img 3.1!
+#------------ enter shift
+#============ exit shift
+#------------ enter JacobiRot
+kappa_ext = 0, gamma_ext=0, phi=0 (deg)
+now phi looks more normal =0 (RAD)
+#============ exit JacobiRot
+#------------ enter MakeVecCtr
+fixed bin size = 1.851852e-02
+the number of bins = 31
+#============ exit MakeVecCtr
+#------------ enter MakeVecCtr
+fixed bin size = 1.851852e-02
+the number of bins = 47
+#============ exit MakeVecCtr
+Elapsed time is 1.996182 seconds.
+----------------------------------------------------------
+|  This is the diary for plotting 3.tot_pix_rot2.ps!    |
+|  Now we are working on MACS0717 - srcpix for totsys 3! |
+----------------------------------------------------------
+#------------ below doing srcpix for img 3.3!
+#------------ enter MakeVecCtr
+fixed bin size = 4.166666e-02
+the number of bins = 30
+#============ exit MakeVecCtr
+#------------ enter MakeVecCtr
+fixed bin size = 2.083333e-02
+the number of bins = 31
+#============ exit MakeVecCtr
+#------------ below doing srcpix for img 3.2!
+#------------ enter shift
+#============ exit shift
+#------------ enter JacobiRot
+kappa_ext = 1.1, gamma_ext=1.02, phi=70 (deg)
+now phi looks more normal =1.22173 (RAD)
+#============ exit JacobiRot
+#------------ enter MakeVecCtr
+fixed bin size = 1.666667e-02
+the number of bins = 48
+#============ exit MakeVecCtr
+#------------ enter MakeVecCtr
+fixed bin size = 1.666667e-02
+the number of bins = 27
+#============ exit MakeVecCtr
+#------------ below doing srcpix for img 3.1!
+#------------ enter shift
+#============ exit shift
+#------------ enter JacobiRot
+kappa_ext = 0, gamma_ext=0, phi=0 (deg)
+now phi looks more normal =0 (RAD)
+#============ exit JacobiRot
+#------------ enter MakeVecCtr
+fixed bin size = 1.851852e-02
+the number of bins = 31
+#============ exit MakeVecCtr
+#------------ enter MakeVecCtr
+fixed bin size = 1.851852e-02
+the number of bins = 47
+#============ exit MakeVecCtr
+Elapsed time is 1.970118 seconds.
+----------------------------------------------------------
+|  This is the diary for plotting 3.tot_pix_rot2.ps!    |
+|  Now we are working on MACS0717 - srcpix for totsys 3! |
+----------------------------------------------------------
+#------------ below doing srcpix for img 3.3!
+#------------ enter MakeVecCtr
+fixed bin size = 4.166666e-02
+the number of bins = 30
+#============ exit MakeVecCtr
+#------------ enter MakeVecCtr
+fixed bin size = 2.083333e-02
+the number of bins = 31
+#============ exit MakeVecCtr
+#------------ below doing srcpix for img 3.2!
+#------------ enter shift
+#============ exit shift
+#------------ enter JacobiRot
+kappa_ext = 1.2, gamma_ext=1.02, phi=70 (deg)
+now phi looks more normal =1.22173 (RAD)
+#============ exit JacobiRot
+#------------ enter MakeVecCtr
+fixed bin size = 1.666667e-02
+the number of bins = 45
+#============ exit MakeVecCtr
+#------------ enter MakeVecCtr
+fixed bin size = 1.666667e-02
+the number of bins = 29
+#============ exit MakeVecCtr
+#------------ below doing srcpix for img 3.1!
+#------------ enter shift
+#============ exit shift
+#------------ enter JacobiRot
+kappa_ext = 0, gamma_ext=0, phi=0 (deg)
+now phi looks more normal =0 (RAD)
+#============ exit JacobiRot
+#------------ enter MakeVecCtr
+fixed bin size = 1.851852e-02
+the number of bins = 31
+#============ exit MakeVecCtr
+#------------ enter MakeVecCtr
+fixed bin size = 1.851852e-02
+the number of bins = 47
+#============ exit MakeVecCtr
+Elapsed time is 1.890564 seconds.
+----------------------------------------------------------
+|  This is the diary for plotting 3.tot_pix_rot2.ps!    |
+|  Now we are working on MACS0717 - srcpix for totsys 3! |
+----------------------------------------------------------
+#------------ below doing srcpix for img 3.3!
+#------------ enter MakeVecCtr
+fixed bin size = 4.166666e-02
+the number of bins = 30
+#============ exit MakeVecCtr
+#------------ enter MakeVecCtr
+fixed bin size = 2.083333e-02
+the number of bins = 31
+#============ exit MakeVecCtr
+#------------ below doing srcpix for img 3.2!
+#------------ enter shift
+#============ exit shift
+#------------ enter JacobiRot
+kappa_ext = 1, gamma_ext=1.1, phi=70 (deg)
+now phi looks more normal =1.22173 (RAD)
+#============ exit JacobiRot
+#------------ enter MakeVecCtr
+fixed bin size = 1.666667e-02
+the number of bins = 55
+#============ exit MakeVecCtr
+#------------ enter MakeVecCtr
+fixed bin size = 1.666667e-02
+the number of bins = 25
+#============ exit MakeVecCtr
+#------------ below doing srcpix for img 3.1!
+#------------ enter shift
+#============ exit shift
+#------------ enter JacobiRot
+kappa_ext = 0, gamma_ext=0, phi=0 (deg)
+now phi looks more normal =0 (RAD)
+#============ exit JacobiRot
+#------------ enter MakeVecCtr
+fixed bin size = 1.851852e-02
+the number of bins = 31
+#============ exit MakeVecCtr
+#------------ enter MakeVecCtr
+fixed bin size = 1.851852e-02
+the number of bins = 47
+#============ exit MakeVecCtr
+Elapsed time is 1.946296 seconds.
+----------------------------------------------------------
+|  This is the diary for plotting 3.tot_pix_rot2.ps!    |
+|  Now we are working on MACS0717 - srcpix for totsys 3! |
+----------------------------------------------------------
+#------------ below doing srcpix for img 3.3!
+#------------ enter MakeVecCtr
+fixed bin size = 4.166666e-02
+the number of bins = 30
+#============ exit MakeVecCtr
+#------------ enter MakeVecCtr
+fixed bin size = 2.083333e-02
+the number of bins = 31
+#============ exit MakeVecCtr
+#------------ below doing srcpix for img 3.2!
+#------------ enter shift
+#============ exit shift
+#------------ enter JacobiRot
+kappa_ext = 1, gamma_ext=1.2, phi=70 (deg)
+now phi looks more normal =1.22173 (RAD)
+#============ exit JacobiRot
+#------------ enter MakeVecCtr
+fixed bin size = 1.666667e-02
+the number of bins = 60
+#============ exit MakeVecCtr
+#------------ enter MakeVecCtr
+fixed bin size = 1.666667e-02
+the number of bins = 27
+#============ exit MakeVecCtr
+#------------ below doing srcpix for img 3.1!
+#------------ enter shift
+#============ exit shift
+#------------ enter JacobiRot
+kappa_ext = 0, gamma_ext=0, phi=0 (deg)
+now phi looks more normal =0 (RAD)
+#============ exit JacobiRot
+#------------ enter MakeVecCtr
+fixed bin size = 1.851852e-02
+the number of bins = 31
+#============ exit MakeVecCtr
+#------------ enter MakeVecCtr
+fixed bin size = 1.851852e-02
+the number of bins = 47
+#============ exit MakeVecCtr
+Elapsed time is 1.953447 seconds.
+----------------------------------------------------------
+|  This is the diary for plotting 3.tot_pix_rot2.ps!    |
+|  Now we are working on MACS0717 - srcpix for totsys 3! |
+----------------------------------------------------------
+#------------ below doing srcpix for img 3.3!
+#------------ enter MakeVecCtr
+fixed bin size = 4.166666e-02
+the number of bins = 30
+#============ exit MakeVecCtr
+#------------ enter MakeVecCtr
+fixed bin size = 2.083333e-02
+the number of bins = 31
+#============ exit MakeVecCtr
+#------------ below doing srcpix for img 3.2!
+#------------ enter shift
+#============ exit shift
+#------------ enter JacobiRot
+kappa_ext = 1, gamma_ext=1.1, phi=70 (deg)
+now phi looks more normal =1.22173 (RAD)
+#============ exit JacobiRot
+#------------ enter MakeVecCtr
+fixed bin size = 1.666667e-02
+the number of bins = 55
+#============ exit MakeVecCtr
+#------------ enter MakeVecCtr
+fixed bin size = 1.666667e-02
+the number of bins = 25
+#============ exit MakeVecCtr
+#------------ below doing srcpix for img 3.1!
+#------------ enter shift
+#============ exit shift
+#------------ enter JacobiRot
+kappa_ext = 0, gamma_ext=0, phi=0 (deg)
+now phi looks more normal =0 (RAD)
+#============ exit JacobiRot
+#------------ enter MakeVecCtr
+fixed bin size = 1.851852e-02
+the number of bins = 31
+#============ exit MakeVecCtr
+#------------ enter MakeVecCtr
+fixed bin size = 1.851852e-02
+the number of bins = 47
+#============ exit MakeVecCtr
+Elapsed time is 1.929335 seconds.
+----------------------------------------------------------
+|  This is the diary for plotting 3.tot_pix_rot2.ps!    |
+|  Now we are working on MACS0717 - srcpix for totsys 3! |
+----------------------------------------------------------
+#------------ below doing srcpix for img 3.3!
+#------------ enter MakeVecCtr
+fixed bin size = 4.166666e-02
+the number of bins = 30
+#============ exit MakeVecCtr
+#------------ enter MakeVecCtr
+fixed bin size = 2.083333e-02
+the number of bins = 31
+#============ exit MakeVecCtr
+#------------ below doing srcpix for img 3.2!
+#------------ enter shift
+#============ exit shift
+#------------ enter JacobiRot
+kappa_ext = 2, gamma_ext=1.1, phi=70 (deg)
+now phi looks more normal =1.22173 (RAD)
+#============ exit JacobiRot
+#------------ enter MakeVecCtr
+fixed bin size = 1.666667e-02
+the number of bins = 22
+#============ exit MakeVecCtr
+#------------ enter MakeVecCtr
+fixed bin size = 1.666667e-02
+the number of bins = 51
+#============ exit MakeVecCtr
+#------------ below doing srcpix for img 3.1!
+#------------ enter shift
+#============ exit shift
+#------------ enter JacobiRot
+kappa_ext = 0, gamma_ext=0, phi=0 (deg)
+now phi looks more normal =0 (RAD)
+#============ exit JacobiRot
+#------------ enter MakeVecCtr
+fixed bin size = 1.851852e-02
+the number of bins = 31
+#============ exit MakeVecCtr
+#------------ enter MakeVecCtr
+fixed bin size = 1.851852e-02
+the number of bins = 47
+#============ exit MakeVecCtr
+Elapsed time is 1.919392 seconds.
+----------------------------------------------------------
+|  This is the diary for plotting 3.tot_pix_rot2.ps!    |
+|  Now we are working on MACS0717 - srcpix for totsys 3! |
+----------------------------------------------------------
+#------------ below doing srcpix for img 3.3!
+#------------ enter MakeVecCtr
+fixed bin size = 4.166666e-02
+the number of bins = 30
+#============ exit MakeVecCtr
+#------------ enter MakeVecCtr
+fixed bin size = 2.083333e-02
+the number of bins = 31
+#============ exit MakeVecCtr
+#------------ below doing srcpix for img 3.2!
+#------------ enter shift
+#============ exit shift
+#------------ enter JacobiRot
+kappa_ext = 1, gamma_ext=1.1, phi=70 (deg)
+now phi looks more normal =1.22173 (RAD)
+#============ exit JacobiRot
+#------------ enter MakeVecCtr
+fixed bin size = 1.666667e-02
+the number of bins = 55
+#============ exit MakeVecCtr
+#------------ enter MakeVecCtr
+fixed bin size = 1.666667e-02
+the number of bins = 25
+#============ exit MakeVecCtr
+#------------ below doing srcpix for img 3.1!
+#------------ enter shift
+#============ exit shift
+#------------ enter JacobiRot
+kappa_ext = 0, gamma_ext=0, phi=0 (deg)
+now phi looks more normal =0 (RAD)
+#============ exit JacobiRot
+#------------ enter MakeVecCtr
+fixed bin size = 1.851852e-02
+the number of bins = 31
+#============ exit MakeVecCtr
+#------------ enter MakeVecCtr
+fixed bin size = 1.851852e-02
+the number of bins = 47
+#============ exit MakeVecCtr
+Elapsed time is 1.920460 seconds.
+----------------------------------------------------------
+|  This is the diary for plotting 3.tot_pix_rot2.ps!    |
+|  Now we are working on MACS0717 - srcpix for totsys 3! |
+----------------------------------------------------------
+#------------ below doing srcpix for img 3.3!
+#------------ enter MakeVecCtr
+fixed bin size = 4.166666e-02
+the number of bins = 30
+#============ exit MakeVecCtr
+#------------ enter MakeVecCtr
+fixed bin size = 2.083333e-02
+the number of bins = 31
+#============ exit MakeVecCtr
+#------------ below doing srcpix for img 3.2!
+#------------ enter shift
+#============ exit shift
+#------------ enter JacobiRot
+kappa_ext = 1.05, gamma_ext=1.1, phi=70 (deg)
+now phi looks more normal =1.22173 (RAD)
+#============ exit JacobiRot
+#------------ enter MakeVecCtr
+fixed bin size = 1.666667e-02
+the number of bins = 53
+#============ exit MakeVecCtr
+#------------ enter MakeVecCtr
+fixed bin size = 1.666667e-02
+the number of bins = 27
+#============ exit MakeVecCtr
+#------------ below doing srcpix for img 3.1!
+#------------ enter shift
+#============ exit shift
+#------------ enter JacobiRot
+kappa_ext = 0, gamma_ext=0, phi=0 (deg)
+now phi looks more normal =0 (RAD)
+#============ exit JacobiRot
+#------------ enter MakeVecCtr
+fixed bin size = 1.851852e-02
+the number of bins = 31
+#============ exit MakeVecCtr
+#------------ enter MakeVecCtr
+fixed bin size = 1.851852e-02
+the number of bins = 47
+#============ exit MakeVecCtr
+Elapsed time is 2.192665 seconds.
+----------------------------------------------------------
+|  This is the diary for plotting 3.tot_pix_rot2.ps!    |
+|  Now we are working on MACS0717 - srcpix for totsys 3! |
+----------------------------------------------------------
+#------------ below doing srcpix for img 3.3!
+#------------ enter MakeVecCtr
+fixed bin size = 4.166666e-02
+the number of bins = 30
+#============ exit MakeVecCtr
+#------------ enter MakeVecCtr
+fixed bin size = 2.083333e-02
+the number of bins = 31
+#============ exit MakeVecCtr
+#------------ below doing srcpix for img 3.2!
+#------------ enter shift
+#============ exit shift
+#------------ enter JacobiRot
+kappa_ext = 1.5, gamma_ext=1.1, phi=70 (deg)
+now phi looks more normal =1.22173 (RAD)
+#============ exit JacobiRot
+#------------ enter MakeVecCtr
+fixed bin size = 1.666667e-02
+the number of bins = 38
+#============ exit MakeVecCtr
+#------------ enter MakeVecCtr
+fixed bin size = 1.666667e-02
+the number of bins = 38
+#============ exit MakeVecCtr
+#------------ below doing srcpix for img 3.1!
+#------------ enter shift
+#============ exit shift
+#------------ enter JacobiRot
+kappa_ext = 0, gamma_ext=0, phi=0 (deg)
+now phi looks more normal =0 (RAD)
+#============ exit JacobiRot
+#------------ enter MakeVecCtr
+fixed bin size = 1.851852e-02
+the number of bins = 31
+#============ exit MakeVecCtr
+#------------ enter MakeVecCtr
+fixed bin size = 1.851852e-02
+the number of bins = 47
+#============ exit MakeVecCtr
+Elapsed time is 1.931359 seconds.
+----------------------------------------------------------
+|  This is the diary for plotting 3.tot_pix_rot2.ps!    |
+|  Now we are working on MACS0717 - srcpix for totsys 3! |
+----------------------------------------------------------
+#------------ below doing srcpix for img 3.3!
+#------------ enter MakeVecCtr
+fixed bin size = 4.166666e-02
+the number of bins = 30
+#============ exit MakeVecCtr
+#------------ enter MakeVecCtr
+fixed bin size = 2.083333e-02
+the number of bins = 31
+#============ exit MakeVecCtr
+#------------ below doing srcpix for img 3.2!
+#------------ enter shift
+#============ exit shift
+#------------ enter JacobiRot
+kappa_ext = 0.8, gamma_ext=1.1, phi=70 (deg)
+now phi looks more normal =1.22173 (RAD)
+#============ exit JacobiRot
+#------------ enter MakeVecCtr
+fixed bin size = 1.666667e-02
+the number of bins = 62
+#============ exit MakeVecCtr
+#------------ enter MakeVecCtr
+fixed bin size = 1.666667e-02
+the number of bins = 20
+#============ exit MakeVecCtr
+#------------ below doing srcpix for img 3.1!
+#------------ enter shift
+#============ exit shift
+#------------ enter JacobiRot
+kappa_ext = 0, gamma_ext=0, phi=0 (deg)
+now phi looks more normal =0 (RAD)
+#============ exit JacobiRot
+#------------ enter MakeVecCtr
+fixed bin size = 1.851852e-02
+the number of bins = 31
+#============ exit MakeVecCtr
+#------------ enter MakeVecCtr
+fixed bin size = 1.851852e-02
+the number of bins = 47
+#============ exit MakeVecCtr
+Elapsed time is 1.974369 seconds.
+----------------------------------------------------------
+|  This is the diary for plotting 3.tot_pix_rot2.ps!    |
+|  Now we are working on MACS0717 - srcpix for totsys 3! |
+----------------------------------------------------------
+#------------ below doing srcpix for img 3.3!
+#------------ enter MakeVecCtr
+fixed bin size = 4.166666e-02
+the number of bins = 30
+#============ exit MakeVecCtr
+#------------ enter MakeVecCtr
+fixed bin size = 2.083333e-02
+the number of bins = 31
+#============ exit MakeVecCtr
+#------------ below doing srcpix for img 3.2!
+#------------ enter shift
+#============ exit shift
+#------------ enter JacobiRot
+kappa_ext = 0.5, gamma_ext=1.1, phi=70 (deg)
+now phi looks more normal =1.22173 (RAD)
+#============ exit JacobiRot
+#------------ enter MakeVecCtr
+fixed bin size = 1.666667e-02
+the number of bins = 72
+#============ exit MakeVecCtr
+#------------ enter MakeVecCtr
+fixed bin size = 1.666667e-02
+the number of bins = 15
+#============ exit MakeVecCtr
+#------------ below doing srcpix for img 3.1!
+#------------ enter shift
+#============ exit shift
+#------------ enter JacobiRot
+kappa_ext = 0, gamma_ext=0, phi=0 (deg)
+now phi looks more normal =0 (RAD)
+#============ exit JacobiRot
+#------------ enter MakeVecCtr
+fixed bin size = 1.851852e-02
+the number of bins = 31
+#============ exit MakeVecCtr
+#------------ enter MakeVecCtr
+fixed bin size = 1.851852e-02
+the number of bins = 47
+#============ exit MakeVecCtr
+Elapsed time is 1.930648 seconds.
+----------------------------------------------------------
+|  This is the diary for plotting 3.tot_pix_rot2.ps!    |
+|  Now we are working on MACS0717 - srcpix for totsys 3! |
+----------------------------------------------------------
+#------------ below doing srcpix for img 3.3!
+#------------ enter MakeVecCtr
+fixed bin size = 4.166666e-02
+the number of bins = 30
+#============ exit MakeVecCtr
+#------------ enter MakeVecCtr
+fixed bin size = 2.083333e-02
+the number of bins = 31
+#============ exit MakeVecCtr
+#------------ below doing srcpix for img 3.2!
+#------------ enter shift
+#============ exit shift
+#------------ enter JacobiRot
+kappa_ext = 0.9, gamma_ext=1.1, phi=70 (deg)
+now phi looks more normal =1.22173 (RAD)
+#============ exit JacobiRot
+#------------ enter MakeVecCtr
+fixed bin size = 1.666667e-02
+the number of bins = 59
+#============ exit MakeVecCtr
+#------------ enter MakeVecCtr
+fixed bin size = 1.666667e-02
+the number of bins = 23
+#============ exit MakeVecCtr
+#------------ below doing srcpix for img 3.1!
+#------------ enter shift
+#============ exit shift
+#------------ enter JacobiRot
+kappa_ext = 0, gamma_ext=0, phi=0 (deg)
+now phi looks more normal =0 (RAD)
+#============ exit JacobiRot
+#------------ enter MakeVecCtr
+fixed bin size = 1.851852e-02
+the number of bins = 31
+#============ exit MakeVecCtr
+#------------ enter MakeVecCtr
+fixed bin size = 1.851852e-02
+the number of bins = 47
+#============ exit MakeVecCtr
+Elapsed time is 1.896366 seconds.
+----------------------------------------------------------
+|  This is the diary for plotting 3.tot_pix_rot2.ps!    |
+|  Now we are working on MACS0717 - srcpix for totsys 3! |
+----------------------------------------------------------
+#------------ below doing srcpix for img 3.3!
+#------------ enter MakeVecCtr
+fixed bin size = 4.166666e-02
+the number of bins = 30
+#============ exit MakeVecCtr
+#------------ enter MakeVecCtr
+fixed bin size = 2.083333e-02
+the number of bins = 31
+#============ exit MakeVecCtr
+#------------ below doing srcpix for img 3.2!
+#------------ enter shift
+#============ exit shift
+#------------ enter JacobiRot
+kappa_ext = 0.8, gamma_ext=1.15, phi=70 (deg)
+now phi looks more normal =1.22173 (RAD)
+#============ exit JacobiRot
+#------------ enter MakeVecCtr
+fixed bin size = 1.666667e-02
+the number of bins = 64
+#============ exit MakeVecCtr
+#------------ enter MakeVecCtr
+fixed bin size = 1.666667e-02
+the number of bins = 22
+#============ exit MakeVecCtr
+#------------ below doing srcpix for img 3.1!
+#------------ enter shift
+#============ exit shift
+#------------ enter JacobiRot
+kappa_ext = 0, gamma_ext=0, phi=0 (deg)
+now phi looks more normal =0 (RAD)
+#============ exit JacobiRot
+#------------ enter MakeVecCtr
+fixed bin size = 1.851852e-02
+the number of bins = 31
+#============ exit MakeVecCtr
+#------------ enter MakeVecCtr
+fixed bin size = 1.851852e-02
+the number of bins = 47
+#============ exit MakeVecCtr
+Elapsed time is 1.901425 seconds.
+----------------------------------------------------------
+|  This is the diary for plotting 3.tot_pix_rot2.ps!    |
+|  Now we are working on MACS0717 - srcpix for totsys 3! |
+----------------------------------------------------------
+#------------ below doing srcpix for img 3.3!
+#------------ enter MakeVecCtr
+fixed bin size = 4.166666e-02
+the number of bins = 30
+#============ exit MakeVecCtr
+#------------ enter MakeVecCtr
+fixed bin size = 2.083333e-02
+the number of bins = 31
+#============ exit MakeVecCtr
+#------------ below doing srcpix for img 3.2!
+#------------ enter shift
+#============ exit shift
+#------------ enter JacobiRot
+kappa_ext = 0.8, gamma_ext=1.1, phi=70 (deg)
+now phi looks more normal =1.22173 (RAD)
+#============ exit JacobiRot
+#------------ enter MakeVecCtr
+fixed bin size = 1.666667e-02
+the number of bins = 62
+#============ exit MakeVecCtr
+#------------ enter MakeVecCtr
+fixed bin size = 1.666667e-02
+the number of bins = 20
+#============ exit MakeVecCtr
+#------------ below doing srcpix for img 3.1!
+#------------ enter shift
+#============ exit shift
+#------------ enter JacobiRot
+kappa_ext = 0, gamma_ext=0, phi=0 (deg)
+now phi looks more normal =0 (RAD)
+#============ exit JacobiRot
+#------------ enter MakeVecCtr
+fixed bin size = 1.851852e-02
+the number of bins = 31
+#============ exit MakeVecCtr
+#------------ enter MakeVecCtr
+fixed bin size = 1.851852e-02
+the number of bins = 47
+#============ exit MakeVecCtr
+Elapsed time is 1.888272 seconds.
+----------------------------------------------------------
+|  This is the diary for plotting 3.tot_pix_rot2.ps!    |
+|  Now we are working on MACS0717 - srcpix for totsys 3! |
+----------------------------------------------------------
+#------------ below doing srcpix for img 3.3!
+#------------ enter MakeVecCtr
+fixed bin size = 4.166666e-02
+the number of bins = 30
+#============ exit MakeVecCtr
+#------------ enter MakeVecCtr
+fixed bin size = 2.083333e-02
+the number of bins = 31
+#============ exit MakeVecCtr
+#------------ below doing srcpix for img 3.2!
+#------------ enter shift
+#============ exit shift
+#------------ enter JacobiRot
+kappa_ext = 1, gamma_ext=1.2, phi=70 (deg)
+now phi looks more normal =1.22173 (RAD)
+#============ exit JacobiRot
+#------------ enter MakeVecCtr
+fixed bin size = 1.785714e-02
+the number of bins = 57
+#============ exit MakeVecCtr
+#------------ enter MakeVecCtr
+fixed bin size = 1.785714e-02
+the number of bins = 26
+#============ exit MakeVecCtr
+#------------ below doing srcpix for img 3.1!
+#------------ enter shift
+#============ exit shift
+#------------ enter JacobiRot
+kappa_ext = 0, gamma_ext=0, phi=0 (deg)
+now phi looks more normal =0 (RAD)
+#============ exit JacobiRot
+#------------ enter MakeVecCtr
+fixed bin size = 1.851852e-02
+the number of bins = 31
+#============ exit MakeVecCtr
+#------------ enter MakeVecCtr
+fixed bin size = 1.851852e-02
+the number of bins = 47
+#============ exit MakeVecCtr
+Elapsed time is 1.911495 seconds.
+----------------------------------------------------------
+|  This is the diary for plotting 3.tot_pix_rot2.ps!    |
+|  Now we are working on MACS0717 - srcpix for totsys 3! |
+----------------------------------------------------------
+#------------ below doing srcpix for img 3.3!
+#------------ enter MakeVecCtr
+fixed bin size = 4.166666e-02
+the number of bins = 30
+#============ exit MakeVecCtr
+#------------ enter MakeVecCtr
+fixed bin size = 2.083333e-02
+the number of bins = 31
+#============ exit MakeVecCtr
+#------------ below doing srcpix for img 3.2!
+#------------ enter shift
+#============ exit shift
+#------------ enter JacobiRot
+kappa_ext = 1, gamma_ext=1.15, phi=70 (deg)
+now phi looks more normal =1.22173 (RAD)
+#============ exit JacobiRot
+#------------ enter MakeVecCtr
+fixed bin size = 1.785714e-02
+the number of bins = 54
+#============ exit MakeVecCtr
+#------------ enter MakeVecCtr
+fixed bin size = 1.785714e-02
+the number of bins = 25
+#============ exit MakeVecCtr
+#------------ below doing srcpix for img 3.1!
+#------------ enter shift
+#============ exit shift
+#------------ enter JacobiRot
+kappa_ext = 0, gamma_ext=0, phi=0 (deg)
+now phi looks more normal =0 (RAD)
+#============ exit JacobiRot
+#------------ enter MakeVecCtr
+fixed bin size = 1.851852e-02
+the number of bins = 31
+#============ exit MakeVecCtr
+#------------ enter MakeVecCtr
+fixed bin size = 1.851852e-02
+the number of bins = 47
+#============ exit MakeVecCtr
+Elapsed time is 1.897433 seconds.
+----------------------------------------------------------
+|  This is the diary for plotting 3.tot_pix_rot2.ps!    |
+|  Now we are working on MACS0717 - srcpix for totsys 3! |
+----------------------------------------------------------
+#------------ below doing srcpix for img 3.3!
+#------------ enter MakeVecCtr
+fixed bin size = 4.166666e-02
+the number of bins = 30
+#============ exit MakeVecCtr
+#------------ enter MakeVecCtr
+fixed bin size = 2.083333e-02
+the number of bins = 31
+#============ exit MakeVecCtr
+#------------ below doing srcpix for img 3.2!
+#------------ enter shift
+#============ exit shift
+#------------ enter JacobiRot
+kappa_ext = 0.9, gamma_ext=1.15, phi=70 (deg)
+now phi looks more normal =1.22173 (RAD)
+#============ exit JacobiRot
+#------------ enter MakeVecCtr
+fixed bin size = 1.785714e-02
+the number of bins = 57
+#============ exit MakeVecCtr
+#------------ enter MakeVecCtr
+fixed bin size = 1.785714e-02
+the number of bins = 23
+#============ exit MakeVecCtr
+#------------ below doing srcpix for img 3.1!
+#------------ enter shift
+#============ exit shift
+#------------ enter JacobiRot
+kappa_ext = 0, gamma_ext=0, phi=0 (deg)
+now phi looks more normal =0 (RAD)
+#============ exit JacobiRot
+#------------ enter MakeVecCtr
+fixed bin size = 1.851852e-02
+the number of bins = 31
+#============ exit MakeVecCtr
+#------------ enter MakeVecCtr
+fixed bin size = 1.851852e-02
+the number of bins = 47
+#============ exit MakeVecCtr
+Elapsed time is 1.951529 seconds.
+----------------------------------------------------------
+|  This is the diary for plotting 3.tot_pix_rot2.ps!    |
+|  Now we are working on MACS0717 - srcpix for totsys 3! |
+----------------------------------------------------------
+#------------ below doing srcpix for img 3.3!
+#------------ enter MakeVecCtr
+fixed bin size = 4.166666e-02
+the number of bins = 30
+#============ exit MakeVecCtr
+#------------ enter MakeVecCtr
+fixed bin size = 2.083333e-02
+the number of bins = 31
+#============ exit MakeVecCtr
+#------------ below doing srcpix for img 3.2!
+#------------ enter shift
+#============ exit shift
+#------------ enter JacobiRot
+kappa_ext = 0.9, gamma_ext=1.15, phi=70 (deg)
+now phi looks more normal =1.22173 (RAD)
+#============ exit JacobiRot
+#------------ enter MakeVecCtr
+fixed bin size = 1.785714e-02
+the number of bins = 57
+#============ exit MakeVecCtr
+#------------ enter MakeVecCtr
+fixed bin size = 1.515151e-02
+the number of bins = 27
+#============ exit MakeVecCtr
+#------------ below doing srcpix for img 3.1!
+#------------ enter shift
+#============ exit shift
+#------------ enter JacobiRot
+kappa_ext = 0, gamma_ext=0, phi=0 (deg)
+now phi looks more normal =0 (RAD)
+#============ exit JacobiRot
+#------------ enter MakeVecCtr
+fixed bin size = 1.851852e-02
+the number of bins = 31
+#============ exit MakeVecCtr
+#------------ enter MakeVecCtr
+fixed bin size = 1.851852e-02
+the number of bins = 47
+#============ exit MakeVecCtr
+Elapsed time is 1.928844 seconds.
+----------------------------------------------------------
+|  This is the diary for plotting 3.tot_pix_rot2.ps!    |
+|  Now we are working on MACS0717 - srcpix for totsys 3! |
+----------------------------------------------------------
+#------------ below doing srcpix for img 3.3!
+#------------ enter MakeVecCtr
+fixed bin size = 4.166666e-02
+the number of bins = 30
+#============ exit MakeVecCtr
+#------------ enter MakeVecCtr
+fixed bin size = 2.083333e-02
+the number of bins = 31
+#============ exit MakeVecCtr
+#------------ below doing srcpix for img 3.2!
+#------------ enter shift
+#============ exit shift
+#------------ enter JacobiRot
+kappa_ext = 0.9, gamma_ext=1.15, phi=70 (deg)
+now phi looks more normal =1.22173 (RAD)
+#============ exit JacobiRot
+#------------ enter MakeVecCtr
+fixed bin size = 1.666667e-02
+the number of bins = 61
+#============ exit MakeVecCtr
+#------------ enter MakeVecCtr
+fixed bin size = 1.666667e-02
+the number of bins = 24
+#============ exit MakeVecCtr
+#------------ below doing srcpix for img 3.1!
+#------------ enter shift
+#============ exit shift
+#------------ enter JacobiRot
+kappa_ext = 0, gamma_ext=0, phi=0 (deg)
+now phi looks more normal =0 (RAD)
+#============ exit JacobiRot
+#------------ enter MakeVecCtr
+fixed bin size = 1.851852e-02
+the number of bins = 31
+#============ exit MakeVecCtr
+#------------ enter MakeVecCtr
+fixed bin size = 1.851852e-02
+the number of bins = 47
+#============ exit MakeVecCtr
+Elapsed time is 1.941970 seconds.
+----------------------------------------------------------
+|  This is the diary for plotting 3.tot_pix_rot2.ps!    |
+|  Now we are working on MACS0717 - srcpix for totsys 3! |
+----------------------------------------------------------
+#------------ below doing srcpix for img 3.3!
+#------------ enter MakeVecCtr
+fixed bin size = 4.166666e-02
+the number of bins = 30
+#============ exit MakeVecCtr
+#------------ enter MakeVecCtr
+fixed bin size = 2.083333e-02
+the number of bins = 31
+#============ exit MakeVecCtr
+#------------ below doing srcpix for img 3.2!
+#------------ enter shift
+#============ exit shift
+#------------ enter JacobiRot
+kappa_ext = 0.9, gamma_ext=1.1, phi=70 (deg)
+now phi looks more normal =1.22173 (RAD)
+#============ exit JacobiRot
+#------------ enter MakeVecCtr
+fixed bin size = 1.666667e-02
+the number of bins = 59
+#============ exit MakeVecCtr
+#------------ enter MakeVecCtr
+fixed bin size = 1.666667e-02
+the number of bins = 23
+#============ exit MakeVecCtr
+#------------ below doing srcpix for img 3.1!
+#------------ enter shift
+#============ exit shift
+#------------ enter JacobiRot
+kappa_ext = 0, gamma_ext=0, phi=0 (deg)
+now phi looks more normal =0 (RAD)
+#============ exit JacobiRot
+#------------ enter MakeVecCtr
+fixed bin size = 1.851852e-02
+the number of bins = 31
+#============ exit MakeVecCtr
+#------------ enter MakeVecCtr
+fixed bin size = 1.851852e-02
+the number of bins = 47
+#============ exit MakeVecCtr
+Elapsed time is 1.964186 seconds.
+----------------------------------------------------------
+|  This is the diary for plotting 3.tot_pix_rot2.ps!    |
+|  Now we are working on MACS0717 - srcpix for totsys 3! |
+----------------------------------------------------------
+#------------ below doing srcpix for img 3.3!
+#------------ enter MakeVecCtr
+fixed bin size = 4.166666e-02
+the number of bins = 30
+#============ exit MakeVecCtr
+#------------ enter MakeVecCtr
+fixed bin size = 2.083333e-02
+the number of bins = 31
+#============ exit MakeVecCtr
+#------------ below doing srcpix for img 3.2!
+#------------ enter shift
+#============ exit shift
+#------------ enter JacobiRot
+kappa_ext = 0.9, gamma_ext=1.08, phi=70 (deg)
+now phi looks more normal =1.22173 (RAD)
+#============ exit JacobiRot
+#------------ enter MakeVecCtr
+fixed bin size = 1.666667e-02
+the number of bins = 58
+#============ exit MakeVecCtr
+#------------ enter MakeVecCtr
+fixed bin size = 1.666667e-02
+the number of bins = 23
+#============ exit MakeVecCtr
+#------------ below doing srcpix for img 3.1!
+#------------ enter shift
+#============ exit shift
+#------------ enter JacobiRot
+kappa_ext = 0, gamma_ext=0, phi=0 (deg)
+now phi looks more normal =0 (RAD)
+#============ exit JacobiRot
+#------------ enter MakeVecCtr
+fixed bin size = 1.851852e-02
+the number of bins = 31
+#============ exit MakeVecCtr
+#------------ enter MakeVecCtr
+fixed bin size = 1.851852e-02
+the number of bins = 47
+#============ exit MakeVecCtr
+Elapsed time is 1.922592 seconds.
+----------------------------------------------------------
+|  This is the diary for plotting 3.tot_pix_rot2.ps!    |
+|  Now we are working on MACS0717 - srcpix for totsys 3! |
+----------------------------------------------------------
+#------------ below doing srcpix for img 3.3!
+#------------ enter MakeVecCtr
+fixed bin size = 4.166666e-02
+the number of bins = 30
+#============ exit MakeVecCtr
+#------------ enter MakeVecCtr
+fixed bin size = 2.083333e-02
+the number of bins = 31
+#============ exit MakeVecCtr
+#------------ below doing srcpix for img 3.2!
+#------------ enter shift
+#============ exit shift
+#------------ enter JacobiRot
+kappa_ext = 0.9, gamma_ext=1.09, phi=70 (deg)
+now phi looks more normal =1.22173 (RAD)
+#============ exit JacobiRot
+#------------ enter MakeVecCtr
+fixed bin size = 1.666667e-02
+the number of bins = 58
+#============ exit MakeVecCtr
+#------------ enter MakeVecCtr
+fixed bin size = 1.666667e-02
+the number of bins = 23
+#============ exit MakeVecCtr
+#------------ below doing srcpix for img 3.1!
+#------------ enter shift
+#============ exit shift
+#------------ enter JacobiRot
+kappa_ext = 0, gamma_ext=0, phi=0 (deg)
+now phi looks more normal =0 (RAD)
+#============ exit JacobiRot
+#------------ enter MakeVecCtr
+fixed bin size = 1.851852e-02
+the number of bins = 31
+#============ exit MakeVecCtr
+#------------ enter MakeVecCtr
+fixed bin size = 1.851852e-02
+the number of bins = 47
+#============ exit MakeVecCtr
+Elapsed time is 1.895856 seconds.
+----------------------------------------------------------
+|  This is the diary for plotting 3.tot_pix_rot2.ps!    |
+|  Now we are working on MACS0717 - srcpix for totsys 3! |
+----------------------------------------------------------
+#------------ below doing srcpix for img 3.3!
+#------------ enter MakeVecCtr
+fixed bin size = 4.166666e-02
+the number of bins = 30
+#============ exit MakeVecCtr
+#------------ enter MakeVecCtr
+fixed bin size = 2.083333e-02
+the number of bins = 31
+#============ exit MakeVecCtr
+#------------ below doing srcpix for img 3.2!
+#------------ enter shift
+#============ exit shift
+#------------ enter JacobiRot
+kappa_ext = 0.9, gamma_ext=1.05, phi=70 (deg)
+now phi looks more normal =1.22173 (RAD)
+#============ exit JacobiRot
+#------------ enter MakeVecCtr
+fixed bin size = 1.666667e-02
+the number of bins = 56
+#============ exit MakeVecCtr
+#------------ enter MakeVecCtr
+fixed bin size = 1.666667e-02
+the number of bins = 22
+#============ exit MakeVecCtr
+#------------ below doing srcpix for img 3.1!
+#------------ enter shift
+#============ exit shift
+#------------ enter JacobiRot
+kappa_ext = 0, gamma_ext=0, phi=0 (deg)
+now phi looks more normal =0 (RAD)
+#============ exit JacobiRot
+#------------ enter MakeVecCtr
+fixed bin size = 1.851852e-02
+the number of bins = 31
+#============ exit MakeVecCtr
+#------------ enter MakeVecCtr
+fixed bin size = 1.851852e-02
+the number of bins = 47
+#============ exit MakeVecCtr
+Elapsed time is 1.911591 seconds.
+----------------------------------------------------------
+|  This is the diary for plotting 3.tot_pix_rot2.ps!    |
+|  Now we are working on MACS0717 - srcpix for totsys 3! |
+----------------------------------------------------------
+#------------ below doing srcpix for img 3.3!
+#------------ enter MakeVecCtr
+fixed bin size = 4.166666e-02
+the number of bins = 30
+#============ exit MakeVecCtr
+#------------ enter MakeVecCtr
+fixed bin size = 2.083333e-02
+the number of bins = 31
+#============ exit MakeVecCtr
+#------------ below doing srcpix for img 3.2!
+#------------ enter shift
+#============ exit shift
+#------------ enter JacobiRot
+kappa_ext = 0.8, gamma_ext=1.05, phi=70 (deg)
+now phi looks more normal =1.22173 (RAD)
+#============ exit JacobiRot
+#------------ enter MakeVecCtr
+fixed bin size = 1.666667e-02
+the number of bins = 60
+#============ exit MakeVecCtr
+#------------ enter MakeVecCtr
+fixed bin size = 1.666667e-02
+the number of bins = 20
+#============ exit MakeVecCtr
+#------------ below doing srcpix for img 3.1!
+#------------ enter shift
+#============ exit shift
+#------------ enter JacobiRot
+kappa_ext = 0, gamma_ext=0, phi=0 (deg)
+now phi looks more normal =0 (RAD)
+#============ exit JacobiRot
+#------------ enter MakeVecCtr
+fixed bin size = 1.851852e-02
+the number of bins = 31
+#============ exit MakeVecCtr
+#------------ enter MakeVecCtr
+fixed bin size = 1.851852e-02
+the number of bins = 47
+#============ exit MakeVecCtr
+Elapsed time is 1.943256 seconds.
+----------------------------------------------------------
+|  This is the diary for plotting 3.tot_pix_rot2.ps!    |
+|  Now we are working on MACS0717 - srcpix for totsys 3! |
+----------------------------------------------------------
+#------------ below doing srcpix for img 3.3!
+#------------ enter MakeVecCtr
+fixed bin size = 4.166666e-02
+the number of bins = 30
+#============ exit MakeVecCtr
+#------------ enter MakeVecCtr
+fixed bin size = 2.083333e-02
+the number of bins = 31
+#============ exit MakeVecCtr
+#------------ below doing srcpix for img 3.2!
+#------------ enter shift
+#============ exit shift
+#------------ enter JacobiRot
+kappa_ext = 0.8, gamma_ext=1.06, phi=70 (deg)
+now phi looks more normal =1.22173 (RAD)
+#============ exit JacobiRot
+#------------ enter MakeVecCtr
+fixed bin size = 1.666667e-02
+the number of bins = 60
+#============ exit MakeVecCtr
+#------------ enter MakeVecCtr
+fixed bin size = 1.666667e-02
+the number of bins = 20
+#============ exit MakeVecCtr
+#------------ below doing srcpix for img 3.1!
+#------------ enter shift
+#============ exit shift
+#------------ enter JacobiRot
+kappa_ext = 0, gamma_ext=0, phi=0 (deg)
+now phi looks more normal =0 (RAD)
+#============ exit JacobiRot
+#------------ enter MakeVecCtr
+fixed bin size = 1.851852e-02
+the number of bins = 31
+#============ exit MakeVecCtr
+#------------ enter MakeVecCtr
+fixed bin size = 1.851852e-02
+the number of bins = 47
+#============ exit MakeVecCtr
+Elapsed time is 1.919017 seconds.
+----------------------------------------------------------
+|  This is the diary for plotting 3.tot_pix_rot2.ps!    |
+|  Now we are working on MACS0717 - srcpix for totsys 3! |
+----------------------------------------------------------
+#------------ below doing srcpix for img 3.3!
+#------------ enter MakeVecCtr
+fixed bin size = 4.166666e-02
+the number of bins = 30
+#============ exit MakeVecCtr
+#------------ enter MakeVecCtr
+fixed bin size = 2.083333e-02
+the number of bins = 31
+#============ exit MakeVecCtr
+#------------ below doing srcpix for img 3.2!
+#------------ enter shift
+#============ exit shift
+#------------ enter JacobiRot
+kappa_ext = 0.8, gamma_ext=1.08, phi=70 (deg)
+now phi looks more normal =1.22173 (RAD)
+#============ exit JacobiRot
+#------------ enter MakeVecCtr
+fixed bin size = 1.666667e-02
+the number of bins = 61
+#============ exit MakeVecCtr
+#------------ enter MakeVecCtr
+fixed bin size = 1.666667e-02
+the number of bins = 20
+#============ exit MakeVecCtr
+#------------ below doing srcpix for img 3.1!
+#------------ enter shift
+#============ exit shift
+#------------ enter JacobiRot
+kappa_ext = 0, gamma_ext=0, phi=0 (deg)
+now phi looks more normal =0 (RAD)
+#============ exit JacobiRot
+#------------ enter MakeVecCtr
+fixed bin size = 1.851852e-02
+the number of bins = 31
+#============ exit MakeVecCtr
+#------------ enter MakeVecCtr
+fixed bin size = 1.851852e-02
+the number of bins = 47
+#============ exit MakeVecCtr
+Elapsed time is 1.899498 seconds.
+----------------------------------------------------------
+|  This is the diary for plotting 3.tot_pix_rot2.ps!    |
+|  Now we are working on MACS0717 - srcpix for totsys 3! |
+----------------------------------------------------------
+#------------ below doing srcpix for img 3.3!
+#------------ enter MakeVecCtr
+fixed bin size = 4.166666e-02
+the number of bins = 30
+#============ exit MakeVecCtr
+#------------ enter MakeVecCtr
+fixed bin size = 2.083333e-02
+the number of bins = 31
+#============ exit MakeVecCtr
+#------------ below doing srcpix for img 3.2!
+#------------ enter shift
+#============ exit shift
+#------------ enter JacobiRot
+kappa_ext = 0.8, gamma_ext=1.09, phi=70 (deg)
+now phi looks more normal =1.22173 (RAD)
+#============ exit JacobiRot
+#------------ enter MakeVecCtr
+fixed bin size = 1.666667e-02
+the number of bins = 62
+#============ exit MakeVecCtr
+#------------ enter MakeVecCtr
+fixed bin size = 1.666667e-02
+the number of bins = 20
+#============ exit MakeVecCtr
+#------------ below doing srcpix for img 3.1!
+#------------ enter shift
+#============ exit shift
+#------------ enter JacobiRot
+kappa_ext = 0, gamma_ext=0, phi=0 (deg)
+now phi looks more normal =0 (RAD)
+#============ exit JacobiRot
+#------------ enter MakeVecCtr
+fixed bin size = 1.851852e-02
+the number of bins = 31
+#============ exit MakeVecCtr
+#------------ enter MakeVecCtr
+fixed bin size = 1.851852e-02
+the number of bins = 47
+#============ exit MakeVecCtr
+Elapsed time is 1.896028 seconds.
+----------------------------------------------------------
+|  This is the diary for plotting 3.tot_pix_rot2.ps!    |
+|  Now we are working on MACS0717 - srcpix for totsys 3! |
+----------------------------------------------------------
+#------------ below doing srcpix for img 3.3!
+#------------ enter MakeVecCtr
+fixed bin size = 4.166666e-02
+the number of bins = 30
+#============ exit MakeVecCtr
+#------------ enter MakeVecCtr
+fixed bin size = 2.083333e-02
+the number of bins = 31
+#============ exit MakeVecCtr
+#------------ below doing srcpix for img 3.2!
+#------------ enter shift
+#============ exit shift
+#------------ enter JacobiRot
+kappa_ext = 0.8, gamma_ext=1.07, phi=70 (deg)
+now phi looks more normal =1.22173 (RAD)
+#============ exit JacobiRot
+#------------ enter MakeVecCtr
+fixed bin size = 1.666667e-02
+the number of bins = 61
+#============ exit MakeVecCtr
+#------------ enter MakeVecCtr
+fixed bin size = 1.666667e-02
+the number of bins = 20
+#============ exit MakeVecCtr
+#------------ below doing srcpix for img 3.1!
+#------------ enter shift
+#============ exit shift
+#------------ enter JacobiRot
+kappa_ext = 0, gamma_ext=0, phi=0 (deg)
+now phi looks more normal =0 (RAD)
+#============ exit JacobiRot
+#------------ enter MakeVecCtr
+fixed bin size = 1.851852e-02
+the number of bins = 31
+#============ exit MakeVecCtr
+#------------ enter MakeVecCtr
+fixed bin size = 1.851852e-02
+the number of bins = 47
+#============ exit MakeVecCtr
+Elapsed time is 1.897032 seconds.
+----------------------------------------------------------
+|  This is the diary for plotting 3.tot_pix_rot2.ps!    |
+|  Now we are working on MACS0717 - srcpix for totsys 3! |
+----------------------------------------------------------
+#------------ below doing srcpix for img 3.3!
+#------------ enter MakeVecCtr
+fixed bin size = 4.166666e-02
+the number of bins = 30
+#============ exit MakeVecCtr
+#------------ enter MakeVecCtr
+fixed bin size = 2.083333e-02
+the number of bins = 31
+#============ exit MakeVecCtr
+#------------ below doing srcpix for img 3.2!
+#------------ enter shift
+#============ exit shift
+#------------ enter JacobiRot
+kappa_ext = 0.8, gamma_ext=1.06, phi=80 (deg)
+now phi looks more normal =1.39626 (RAD)
+#============ exit JacobiRot
+#------------ enter MakeVecCtr
+fixed bin size = 1.666667e-02
+the number of bins = 55
+#============ exit MakeVecCtr
+#------------ enter MakeVecCtr
+fixed bin size = 1.666667e-02
+the number of bins = 23
+#============ exit MakeVecCtr
+#------------ below doing srcpix for img 3.1!
+#------------ enter shift
+#============ exit shift
+#------------ enter JacobiRot
+kappa_ext = 0, gamma_ext=0, phi=0 (deg)
+now phi looks more normal =0 (RAD)
+#============ exit JacobiRot
+#------------ enter MakeVecCtr
+fixed bin size = 1.851852e-02
+the number of bins = 31
+#============ exit MakeVecCtr
+#------------ enter MakeVecCtr
+fixed bin size = 1.851852e-02
+the number of bins = 47
+#============ exit MakeVecCtr
+Elapsed time is 1.893855 seconds.
+----------------------------------------------------------
+|  This is the diary for plotting 3.tot_pix_rot2.ps!    |
+|  Now we are working on MACS0717 - srcpix for totsys 3! |
+----------------------------------------------------------
+#------------ below doing srcpix for img 3.3!
+#------------ enter MakeVecCtr
+fixed bin size = 4.166666e-02
+the number of bins = 30
+#============ exit MakeVecCtr
+#------------ enter MakeVecCtr
+fixed bin size = 2.083333e-02
+the number of bins = 31
+#============ exit MakeVecCtr
+#------------ below doing srcpix for img 3.2!
+#------------ enter shift
+#============ exit shift
+#------------ enter JacobiRot
+kappa_ext = 0.8, gamma_ext=1.06, phi=70 (deg)
+now phi looks more normal =1.22173 (RAD)
+#============ exit JacobiRot
+#------------ enter MakeVecCtr
+fixed bin size = 1.666667e-02
+the number of bins = 60
+#============ exit MakeVecCtr
+#------------ enter MakeVecCtr
+fixed bin size = 1.666667e-02
+the number of bins = 20
+#============ exit MakeVecCtr
+#------------ below doing srcpix for img 3.1!
+#------------ enter shift
+#============ exit shift
+#------------ enter JacobiRot
+kappa_ext = 0, gamma_ext=0, phi=0 (deg)
+now phi looks more normal =0 (RAD)
+#============ exit JacobiRot
+#------------ enter MakeVecCtr
+fixed bin size = 1.851852e-02
+the number of bins = 31
+#============ exit MakeVecCtr
+#------------ enter MakeVecCtr
+fixed bin size = 1.851852e-02
+the number of bins = 47
+#============ exit MakeVecCtr
+Elapsed time is 1.879094 seconds.
+----------------------------------------------------------
+|  This is the diary for plotting 3.tot_pix_rot2.ps!    |
+|  Now we are working on MACS0717 - srcpix for totsys 3! |
+----------------------------------------------------------
+#------------ below doing srcpix for img 3.3!
+#------------ enter MakeVecCtr
+fixed bin size = 4.166666e-02
+the number of bins = 30
+#============ exit MakeVecCtr
+#------------ enter MakeVecCtr
+fixed bin size = 2.083333e-02
+the number of bins = 31
+#============ exit MakeVecCtr
+#------------ below doing srcpix for img 3.2!
+#------------ enter shift
+#============ exit shift
+#------------ enter JacobiRot
+kappa_ext = 0.8, gamma_ext=1.06, phi=90 (deg)
+now phi looks more normal =1.5708 (RAD)
+#============ exit JacobiRot
+#------------ enter MakeVecCtr
+fixed bin size = 1.666667e-02
+the number of bins = 44
+#============ exit MakeVecCtr
+#------------ enter MakeVecCtr
+fixed bin size = 1.666667e-02
+the number of bins = 32
+#============ exit MakeVecCtr
+#------------ below doing srcpix for img 3.1!
+#------------ enter shift
+#============ exit shift
+#------------ enter JacobiRot
+kappa_ext = 0, gamma_ext=0, phi=0 (deg)
+now phi looks more normal =0 (RAD)
+#============ exit JacobiRot
+#------------ enter MakeVecCtr
+fixed bin size = 1.851852e-02
+the number of bins = 31
+#============ exit MakeVecCtr
+#------------ enter MakeVecCtr
+fixed bin size = 1.851852e-02
+the number of bins = 47
+#============ exit MakeVecCtr
+Elapsed time is 1.912450 seconds.
+----------------------------------------------------------
+|  This is the diary for plotting 3.tot_pix_rot2.ps!    |
+|  Now we are working on MACS0717 - srcpix for totsys 3! |
+----------------------------------------------------------
+#------------ below doing srcpix for img 3.3!
+#------------ enter MakeVecCtr
+fixed bin size = 4.166666e-02
+the number of bins = 30
+#============ exit MakeVecCtr
+#------------ enter MakeVecCtr
+fixed bin size = 2.083333e-02
+the number of bins = 31
+#============ exit MakeVecCtr
+#------------ below doing srcpix for img 3.2!
+#------------ enter shift
+#============ exit shift
+#------------ enter JacobiRot
+kappa_ext = 0.8, gamma_ext=1.06, phi=80 (deg)
+now phi looks more normal =1.39626 (RAD)
+#============ exit JacobiRot
+#------------ enter MakeVecCtr
+fixed bin size = 1.666667e-02
+the number of bins = 55
+#============ exit MakeVecCtr
+#------------ enter MakeVecCtr
+fixed bin size = 1.666667e-02
+the number of bins = 23
+#============ exit MakeVecCtr
+#------------ below doing srcpix for img 3.1!
+#------------ enter shift
+#============ exit shift
+#------------ enter JacobiRot
+kappa_ext = 0, gamma_ext=0, phi=0 (deg)
+now phi looks more normal =0 (RAD)
+#============ exit JacobiRot
+#------------ enter MakeVecCtr
+fixed bin size = 1.851852e-02
+the number of bins = 31
+#============ exit MakeVecCtr
+#------------ enter MakeVecCtr
+fixed bin size = 1.851852e-02
+the number of bins = 47
+#============ exit MakeVecCtr
+Elapsed time is 1.898560 seconds.
+----------------------------------------------------------
+|  This is the diary for plotting 3.tot_pix_rot2.ps!    |
+|  Now we are working on MACS0717 - srcpix for totsys 3! |
+----------------------------------------------------------
+#------------ below doing srcpix for img 3.3!
+#------------ enter MakeVecCtr
+fixed bin size = 4.166666e-02
+the number of bins = 30
+#============ exit MakeVecCtr
+#------------ enter MakeVecCtr
+fixed bin size = 2.083333e-02
+the number of bins = 31
+#============ exit MakeVecCtr
+#------------ below doing srcpix for img 3.2!
+#------------ enter shift
+#============ exit shift
+#------------ enter JacobiRot
+kappa_ext = 0.8, gamma_ext=1.06, phi=80 (deg)
+now phi looks more normal =1.39626 (RAD)
+#============ exit JacobiRot
+#------------ enter MakeVecCtr
+fixed bin size = 1.666667e-02
+the number of bins = 55
+#============ exit MakeVecCtr
+#------------ enter MakeVecCtr
+fixed bin size = 1.666667e-02
+the number of bins = 23
+#============ exit MakeVecCtr
+#------------ below doing srcpix for img 3.1!
+#------------ enter shift
+#============ exit shift
+#------------ enter JacobiRot
+kappa_ext = 1, gamma_ext=1.3, phi=30 (deg)
+now phi looks more normal =0.523599 (RAD)
+#============ exit JacobiRot
+#------------ enter MakeVecCtr
+fixed bin size = 1.851852e-02
+the number of bins = 37
+#============ exit MakeVecCtr
+#------------ enter MakeVecCtr
+fixed bin size = 1.851852e-02
+the number of bins = 60
+#============ exit MakeVecCtr
+Elapsed time is 1.904993 seconds.
+----------------------------------------------------------
+|  This is the diary for plotting 3.tot_pix_rot2.ps!    |
+|  Now we are working on MACS0717 - srcpix for totsys 3! |
+----------------------------------------------------------
+#------------ below doing srcpix for img 3.3!
+#------------ enter MakeVecCtr
+fixed bin size = 4.166666e-02
+the number of bins = 30
+#============ exit MakeVecCtr
+#------------ enter MakeVecCtr
+fixed bin size = 2.083333e-02
+the number of bins = 31
+#============ exit MakeVecCtr
+#------------ below doing srcpix for img 3.2!
+#------------ enter shift
+#============ exit shift
+#------------ enter JacobiRot
+kappa_ext = 0.8, gamma_ext=1.06, phi=80 (deg)
+now phi looks more normal =1.39626 (RAD)
+#============ exit JacobiRot
+#------------ enter MakeVecCtr
+fixed bin size = 1.666667e-02
+the number of bins = 55
+#============ exit MakeVecCtr
+#------------ enter MakeVecCtr
+fixed bin size = 1.666667e-02
+the number of bins = 23
+#============ exit MakeVecCtr
+#------------ below doing srcpix for img 3.1!
+#------------ enter shift
+#============ exit shift
+#------------ enter JacobiRot
+kappa_ext = 1, gamma_ext=1.1, phi=30 (deg)
+now phi looks more normal =0.523599 (RAD)
+#============ exit JacobiRot
+#------------ enter MakeVecCtr
+fixed bin size = 1.851852e-02
+the number of bins = 31
+#============ exit MakeVecCtr
+#------------ enter MakeVecCtr
+fixed bin size = 1.851852e-02
+the number of bins = 51
+#============ exit MakeVecCtr
+Elapsed time is 1.920221 seconds.
+----------------------------------------------------------
+|  This is the diary for plotting 3.tot_pix_rot2.ps!    |
+|  Now we are working on MACS0717 - srcpix for totsys 3! |
+----------------------------------------------------------
+#------------ below doing srcpix for img 3.3!
+#------------ enter MakeVecCtr
+fixed bin size = 4.166666e-02
+the number of bins = 30
+#============ exit MakeVecCtr
+#------------ enter MakeVecCtr
+fixed bin size = 2.083333e-02
+the number of bins = 31
+#============ exit MakeVecCtr
+#------------ below doing srcpix for img 3.2!
+#------------ enter shift
+#============ exit shift
+#------------ enter JacobiRot
+kappa_ext = 0.8, gamma_ext=1.06, phi=80 (deg)
+now phi looks more normal =1.39626 (RAD)
+#============ exit JacobiRot
+#------------ enter MakeVecCtr
+fixed bin size = 1.666667e-02
+the number of bins = 55
+#============ exit MakeVecCtr
+#------------ enter MakeVecCtr
+fixed bin size = 1.666667e-02
+the number of bins = 23
+#============ exit MakeVecCtr
+#------------ below doing srcpix for img 3.1!
+#------------ enter shift
+#============ exit shift
+#------------ enter JacobiRot
+kappa_ext = 1, gamma_ext=1, phi=70 (deg)
+now phi looks more normal =1.22173 (RAD)
+#============ exit JacobiRot
+#------------ enter MakeVecCtr
+fixed bin size = 1.851852e-02
+the number of bins = 50
+#============ exit MakeVecCtr
+#------------ enter MakeVecCtr
+fixed bin size = 1.851852e-02
+the number of bins = 22
+#============ exit MakeVecCtr
+Elapsed time is 1.909402 seconds.
+----------------------------------------------------------
+|  This is the diary for plotting 3.tot_pix_rot2.ps!    |
+|  Now we are working on MACS0717 - srcpix for totsys 3! |
+----------------------------------------------------------
+#------------ below doing srcpix for img 3.3!
+#------------ enter MakeVecCtr
+fixed bin size = 4.166666e-02
+the number of bins = 30
+#============ exit MakeVecCtr
+#------------ enter MakeVecCtr
+fixed bin size = 2.083333e-02
+the number of bins = 31
+#============ exit MakeVecCtr
+#------------ below doing srcpix for img 3.2!
+#------------ enter shift
+#============ exit shift
+#------------ enter JacobiRot
+kappa_ext = 0.8, gamma_ext=1.06, phi=80 (deg)
+now phi looks more normal =1.39626 (RAD)
+#============ exit JacobiRot
+#------------ enter MakeVecCtr
+fixed bin size = 1.666667e-02
+the number of bins = 55
+#============ exit MakeVecCtr
+#------------ enter MakeVecCtr
+fixed bin size = 1.666667e-02
+the number of bins = 23
+#============ exit MakeVecCtr
+#------------ below doing srcpix for img 3.1!
+#------------ enter shift
+#============ exit shift
+#------------ enter JacobiRot
+kappa_ext = 0.8, gamma_ext=1, phi=70 (deg)
+now phi looks more normal =1.22173 (RAD)
+#============ exit JacobiRot
+#------------ enter MakeVecCtr
+fixed bin size = 1.851852e-02
+the number of bins = 56
+#============ exit MakeVecCtr
+#------------ enter MakeVecCtr
+fixed bin size = 1.851852e-02
+the number of bins = 21
+#============ exit MakeVecCtr
+Elapsed time is 1.882452 seconds.
+----------------------------------------------------------
+|  This is the diary for plotting 3.tot_pix_rot2.ps!    |
+|  Now we are working on MACS0717 - srcpix for totsys 3! |
+----------------------------------------------------------
+#------------ below doing srcpix for img 3.3!
+#------------ enter MakeVecCtr
+fixed bin size = 4.166666e-02
+the number of bins = 30
+#============ exit MakeVecCtr
+#------------ enter MakeVecCtr
+fixed bin size = 2.083333e-02
+the number of bins = 31
+#============ exit MakeVecCtr
+#------------ below doing srcpix for img 3.2!
+#------------ enter shift
+#============ exit shift
+#------------ enter JacobiRot
+kappa_ext = 0.8, gamma_ext=1.06, phi=80 (deg)
+now phi looks more normal =1.39626 (RAD)
+#============ exit JacobiRot
+#------------ enter MakeVecCtr
+fixed bin size = 1.666667e-02
+the number of bins = 55
+#============ exit MakeVecCtr
+#------------ enter MakeVecCtr
+fixed bin size = 1.666667e-02
+the number of bins = 23
+#============ exit MakeVecCtr
+#------------ below doing srcpix for img 3.1!
+#------------ enter shift
+#============ exit shift
+#------------ enter JacobiRot
+kappa_ext = 0.8, gamma_ext=1, phi=80 (deg)
+now phi looks more normal =1.39626 (RAD)
+#============ exit JacobiRot
+#------------ enter MakeVecCtr
+fixed bin size = 1.851852e-02
+the number of bins = 46
+#============ exit MakeVecCtr
+#------------ enter MakeVecCtr
+fixed bin size = 1.851852e-02
+the number of bins = 27
+#============ exit MakeVecCtr
+Elapsed time is 1.924133 seconds.
+----------------------------------------------------------
+|  This is the diary for plotting 3.tot_pix_rot2.ps!    |
+|  Now we are working on MACS0717 - srcpix for totsys 3! |
+----------------------------------------------------------
+#------------ below doing srcpix for img 3.3!
+#------------ enter MakeVecCtr
+fixed bin size = 4.166666e-02
+the number of bins = 30
+#============ exit MakeVecCtr
+#------------ enter MakeVecCtr
+fixed bin size = 2.083333e-02
+the number of bins = 31
+#============ exit MakeVecCtr
+#------------ below doing srcpix for img 3.2!
+#------------ enter shift
+#============ exit shift
+#------------ enter JacobiRot
+kappa_ext = 0.8, gamma_ext=1.06, phi=80 (deg)
+now phi looks more normal =1.39626 (RAD)
+#============ exit JacobiRot
+#------------ enter MakeVecCtr
+fixed bin size = 1.666667e-02
+the number of bins = 55
+#============ exit MakeVecCtr
+#------------ enter MakeVecCtr
+fixed bin size = 1.666667e-02
+the number of bins = 23
+#============ exit MakeVecCtr
+#------------ below doing srcpix for img 3.1!
+#------------ enter shift
+#============ exit shift
+#------------ enter JacobiRot
+kappa_ext = 0.8, gamma_ext=1.03, phi=80 (deg)
+now phi looks more normal =1.39626 (RAD)
+#============ exit JacobiRot
+#------------ enter MakeVecCtr
+fixed bin size = 2.000000e-02
+the number of bins = 44
+#============ exit MakeVecCtr
+#------------ enter MakeVecCtr
+fixed bin size = 2.000000e-02
+the number of bins = 26
+#============ exit MakeVecCtr
+Elapsed time is 1.887103 seconds.
+----------------------------------------------------------
+|  This is the diary for plotting 3.tot_pix_rot2.ps!    |
+|  Now we are working on MACS0717 - srcpix for totsys 3! |
+----------------------------------------------------------
+#------------ below doing srcpix for img 3.3!
+#------------ enter MakeVecCtr
+fixed bin size = 4.166666e-02
+the number of bins = 30
+#============ exit MakeVecCtr
+#------------ enter MakeVecCtr
+fixed bin size = 2.083333e-02
+the number of bins = 31
+#============ exit MakeVecCtr
+#------------ below doing srcpix for img 3.2!
+#------------ enter shift
+#============ exit shift
+#------------ enter JacobiRot
+kappa_ext = 0.8, gamma_ext=1.06, phi=80 (deg)
+now phi looks more normal =1.39626 (RAD)
+#============ exit JacobiRot
+#------------ enter MakeVecCtr
+fixed bin size = 1.666667e-02
+the number of bins = 55
+#============ exit MakeVecCtr
+#------------ enter MakeVecCtr
+fixed bin size = 1.666667e-02
+the number of bins = 23
+#============ exit MakeVecCtr
+#------------ below doing srcpix for img 3.1!
+#------------ enter shift
+#============ exit shift
+#------------ enter JacobiRot
+kappa_ext = 0.8, gamma_ext=1.02, phi=80 (deg)
+now phi looks more normal =1.39626 (RAD)
+#============ exit JacobiRot
+#------------ enter MakeVecCtr
+fixed bin size = 2.000000e-02
+the number of bins = 44
+#============ exit MakeVecCtr
+#------------ enter MakeVecCtr
+fixed bin size = 2.000000e-02
+the number of bins = 25
+#============ exit MakeVecCtr
+Elapsed time is 1.906614 seconds.
+----------------------------------------------------------
+|  This is the diary for plotting 3.tot_pix_rot2.ps!    |
+|  Now we are working on MACS0717 - srcpix for totsys 3! |
+----------------------------------------------------------
+#------------ below doing srcpix for img 3.3!
+#------------ enter MakeVecCtr
+fixed bin size = 4.166666e-02
+the number of bins = 30
+#============ exit MakeVecCtr
+#------------ enter MakeVecCtr
+fixed bin size = 2.083333e-02
+the number of bins = 31
+#============ exit MakeVecCtr
+#------------ below doing srcpix for img 3.2!
+#------------ enter shift
+#============ exit shift
+#------------ enter JacobiRot
+kappa_ext = 0.8, gamma_ext=1.06, phi=80 (deg)
+now phi looks more normal =1.39626 (RAD)
+#============ exit JacobiRot
+#------------ enter MakeVecCtr
+fixed bin size = 1.666667e-02
+the number of bins = 55
+#============ exit MakeVecCtr
+#------------ enter MakeVecCtr
+fixed bin size = 1.666667e-02
+the number of bins = 23
+#============ exit MakeVecCtr
+#------------ below doing srcpix for img 3.1!
+#------------ enter shift
+#============ exit shift
+#------------ enter JacobiRot
+kappa_ext = 0.9, gamma_ext=1.02, phi=80 (deg)
+now phi looks more normal =1.39626 (RAD)
+#============ exit JacobiRot
+#------------ enter MakeVecCtr
+fixed bin size = 2.000000e-02
+the number of bins = 42
+#============ exit MakeVecCtr
+#------------ enter MakeVecCtr
+fixed bin size = 2.000000e-02
+the number of bins = 30
+#============ exit MakeVecCtr
+Elapsed time is 1.908723 seconds.
+----------------------------------------------------------
+|  This is the diary for plotting 3.tot_pix_rot2.ps!    |
+|  Now we are working on MACS0717 - srcpix for totsys 3! |
+----------------------------------------------------------
+#------------ below doing srcpix for img 3.3!
+#------------ enter MakeVecCtr
+fixed bin size = 4.166666e-02
+the number of bins = 30
+#============ exit MakeVecCtr
+#------------ enter MakeVecCtr
+fixed bin size = 2.083333e-02
+the number of bins = 31
+#============ exit MakeVecCtr
+#------------ below doing srcpix for img 3.2!
+#------------ enter shift
+#============ exit shift
+#------------ enter JacobiRot
+kappa_ext = 0.8, gamma_ext=1.06, phi=80 (deg)
+now phi looks more normal =1.39626 (RAD)
+#============ exit JacobiRot
+#------------ enter MakeVecCtr
+fixed bin size = 1.666667e-02
+the number of bins = 55
+#============ exit MakeVecCtr
+#------------ enter MakeVecCtr
+fixed bin size = 1.666667e-02
+the number of bins = 23
+#============ exit MakeVecCtr
+#------------ below doing srcpix for img 3.1!
+#------------ enter shift
+#============ exit shift
+#------------ enter JacobiRot
+kappa_ext = 0.9, gamma_ext=1.03, phi=80 (deg)
+now phi looks more normal =1.39626 (RAD)
+#============ exit JacobiRot
+#------------ enter MakeVecCtr
+fixed bin size = 2.000000e-02
+the number of bins = 42
+#============ exit MakeVecCtr
+#------------ enter MakeVecCtr
+fixed bin size = 2.000000e-02
+the number of bins = 30
+#============ exit MakeVecCtr
+Elapsed time is 1.893509 seconds.
+----------------------------------------------------------
+|  This is the diary for plotting 3.tot_pix_rot2.ps!    |
+|  Now we are working on MACS0717 - srcpix for totsys 3! |
+----------------------------------------------------------
+#------------ below doing srcpix for img 3.3!
+#------------ enter MakeVecCtr
+fixed bin size = 4.166666e-02
+the number of bins = 30
+#============ exit MakeVecCtr
+#------------ enter MakeVecCtr
+fixed bin size = 2.083333e-02
+the number of bins = 31
+#============ exit MakeVecCtr
+#------------ below doing srcpix for img 3.2!
+#------------ enter shift
+#============ exit shift
+#------------ enter JacobiRot
+kappa_ext = 0.8, gamma_ext=1.06, phi=80 (deg)
+now phi looks more normal =1.39626 (RAD)
+#============ exit JacobiRot
+#------------ enter MakeVecCtr
+fixed bin size = 1.666667e-02
+the number of bins = 55
+#============ exit MakeVecCtr
+#------------ enter MakeVecCtr
+fixed bin size = 1.666667e-02
+the number of bins = 23
+#============ exit MakeVecCtr
+#------------ below doing srcpix for img 3.1!
+#------------ enter shift
+#============ exit shift
+#------------ enter JacobiRot
+kappa_ext = 0.9, gamma_ext=1.04, phi=80 (deg)
+now phi looks more normal =1.39626 (RAD)
+#============ exit JacobiRot
+#------------ enter MakeVecCtr
+fixed bin size = 2.000000e-02
+the number of bins = 42
+#============ exit MakeVecCtr
+#------------ enter MakeVecCtr
+fixed bin size = 2.000000e-02
+the number of bins = 30
+#============ exit MakeVecCtr
+Elapsed time is 1.887410 seconds.
+----------------------------------------------------------
+|  This is the diary for plotting 3.tot_pix_rot2.ps!    |
+|  Now we are working on MACS0717 - srcpix for totsys 3! |
+----------------------------------------------------------
+#------------ below doing srcpix for img 3.3!
+#------------ enter MakeVecCtr
+fixed bin size = 4.166666e-02
+the number of bins = 30
+#============ exit MakeVecCtr
+#------------ enter MakeVecCtr
+fixed bin size = 2.083333e-02
+the number of bins = 31
+#============ exit MakeVecCtr
+#------------ below doing srcpix for img 3.2!
+#------------ enter shift
+#============ exit shift
+#------------ enter JacobiRot
+kappa_ext = 0.8, gamma_ext=1.06, phi=80 (deg)
+now phi looks more normal =1.39626 (RAD)
+#============ exit JacobiRot
+#------------ enter MakeVecCtr
+fixed bin size = 1.666667e-02
+the number of bins = 55
+#============ exit MakeVecCtr
+#------------ enter MakeVecCtr
+fixed bin size = 1.666667e-02
+the number of bins = 23
+#============ exit MakeVecCtr
+#------------ below doing srcpix for img 3.1!
+#------------ enter shift
+#============ exit shift
+#------------ enter JacobiRot
+kappa_ext = 0.85, gamma_ext=1.04, phi=80 (deg)
+now phi looks more normal =1.39626 (RAD)
+#============ exit JacobiRot
+#------------ enter MakeVecCtr
+fixed bin size = 2.000000e-02
+the number of bins = 44
+#============ exit MakeVecCtr
+#------------ enter MakeVecCtr
+fixed bin size = 2.000000e-02
+the number of bins = 28
+#============ exit MakeVecCtr
+Elapsed time is 1.897331 seconds.
+----------------------------------------------------------
+|  This is the diary for plotting 3.tot_pix_rot2.ps!    |
+|  Now we are working on MACS0717 - srcpix for totsys 3! |
+----------------------------------------------------------
+#------------ below doing srcpix for img 3.3!
+#------------ enter MakeVecCtr
+fixed bin size = 4.166666e-02
+the number of bins = 30
+#============ exit MakeVecCtr
+#------------ enter MakeVecCtr
+fixed bin size = 2.083333e-02
+the number of bins = 31
+#============ exit MakeVecCtr
+#------------ below doing srcpix for img 3.2!
+#------------ enter shift
+#============ exit shift
+#------------ enter JacobiRot
+kappa_ext = 0.8, gamma_ext=1.06, phi=80 (deg)
+now phi looks more normal =1.39626 (RAD)
+#============ exit JacobiRot
+#------------ enter MakeVecCtr
+fixed bin size = 1.666667e-02
+the number of bins = 55
+#============ exit MakeVecCtr
+#------------ enter MakeVecCtr
+fixed bin size = 1.666667e-02
+the number of bins = 23
+#============ exit MakeVecCtr
+#------------ below doing srcpix for img 3.1!
+#------------ enter shift
+#============ exit shift
+#------------ enter JacobiRot
+kappa_ext = 0.85, gamma_ext=1.04, phi=80 (deg)
+now phi looks more normal =1.39626 (RAD)
+#============ exit JacobiRot
+#------------ enter MakeVecCtr
+fixed bin size = 2.083333e-02
+the number of bins = 42
+#============ exit MakeVecCtr
+#------------ enter MakeVecCtr
+fixed bin size = 2.083333e-02
+the number of bins = 27
+#============ exit MakeVecCtr
+Elapsed time is 1.905071 seconds.
+----------------------------------------------------------
+|  This is the diary for plotting 3.tot_pix_rot2.ps!    |
+|  Now we are working on MACS0717 - srcpix for totsys 3! |
+----------------------------------------------------------
+#------------ below doing srcpix for img 3.3!
+#------------ enter MakeVecCtr
+fixed bin size = 4.166666e-02
+the number of bins = 30
+#============ exit MakeVecCtr
+#------------ enter MakeVecCtr
+fixed bin size = 2.083333e-02
+the number of bins = 31
+#============ exit MakeVecCtr
+#------------ below doing srcpix for img 3.2!
+#------------ enter shift
+#============ exit shift
+#------------ enter JacobiRot
+kappa_ext = 0.8, gamma_ext=1.06, phi=80 (deg)
+now phi looks more normal =1.39626 (RAD)
+#============ exit JacobiRot
+#------------ enter MakeVecCtr
+fixed bin size = 1.666667e-02
+the number of bins = 55
+#============ exit MakeVecCtr
+#------------ enter MakeVecCtr
+fixed bin size = 1.666667e-02
+the number of bins = 23
+#============ exit MakeVecCtr
+#------------ below doing srcpix for img 3.1!
+#------------ enter shift
+#============ exit shift
+#------------ enter JacobiRot
+kappa_ext = 0.8, gamma_ext=1.04, phi=80 (deg)
+now phi looks more normal =1.39626 (RAD)
+#============ exit JacobiRot
+#------------ enter MakeVecCtr
+fixed bin size = 2.083333e-02
+the number of bins = 42
+#============ exit MakeVecCtr
+#------------ enter MakeVecCtr
+fixed bin size = 2.083333e-02
+the number of bins = 25
+#============ exit MakeVecCtr
+Elapsed time is 1.926695 seconds.
+----------------------------------------------------------
+|  This is the diary for plotting 3.tot_pix_rot2.ps!    |
+|  Now we are working on MACS0717 - srcpix for totsys 3! |
+----------------------------------------------------------
+#------------ below doing srcpix for img 3.3!
+#------------ enter MakeVecCtr
+fixed bin size = 4.166666e-02
+the number of bins = 30
+#============ exit MakeVecCtr
+#------------ enter MakeVecCtr
+fixed bin size = 2.083333e-02
+the number of bins = 31
+#============ exit MakeVecCtr
+#------------ below doing srcpix for img 3.2!
+#------------ enter shift
+#============ exit shift
+#------------ enter JacobiRot
+kappa_ext = 0.8, gamma_ext=1.06, phi=80 (deg)
+now phi looks more normal =1.39626 (RAD)
+#============ exit JacobiRot
+#------------ enter MakeVecCtr
+fixed bin size = 1.666667e-02
+the number of bins = 55
+#============ exit MakeVecCtr
+#------------ enter MakeVecCtr
+fixed bin size = 1.666667e-02
+the number of bins = 23
+#============ exit MakeVecCtr
+#------------ below doing srcpix for img 3.1!
+#------------ enter shift
+#============ exit shift
+#------------ enter JacobiRot
+kappa_ext = 0.8, gamma_ext=1.03, phi=80 (deg)
+now phi looks more normal =1.39626 (RAD)
+#============ exit JacobiRot
+#------------ enter MakeVecCtr
+fixed bin size = 2.083333e-02
+the number of bins = 42
+#============ exit MakeVecCtr
+#------------ enter MakeVecCtr
+fixed bin size = 2.083333e-02
+the number of bins = 25
+#============ exit MakeVecCtr
+Elapsed time is 1.915670 seconds.
+----------------------------------------------------------
+|  This is the diary for plotting 3.tot_pix_rot2.ps!    |
+|  Now we are working on MACS0717 - srcpix for totsys 3! |
+----------------------------------------------------------
+#------------ below doing srcpix for img 3.3!
+#------------ enter MakeVecCtr
+fixed bin size = 4.166666e-02
+the number of bins = 30
+#============ exit MakeVecCtr
+#------------ enter MakeVecCtr
+fixed bin size = 2.083333e-02
+the number of bins = 31
+#============ exit MakeVecCtr
+#------------ below doing srcpix for img 3.2!
+#------------ enter shift
+#============ exit shift
+#------------ enter JacobiRot
+kappa_ext = 0.8, gamma_ext=1.06, phi=80 (deg)
+now phi looks more normal =1.39626 (RAD)
+#============ exit JacobiRot
+#------------ enter MakeVecCtr
+fixed bin size = 1.666667e-02
+the number of bins = 55
+#============ exit MakeVecCtr
+#------------ enter MakeVecCtr
+fixed bin size = 1.666667e-02
+the number of bins = 23
+#============ exit MakeVecCtr
+#------------ below doing srcpix for img 3.1!
+#------------ enter shift
+#============ exit shift
+#------------ enter JacobiRot
+kappa_ext = 0.8, gamma_ext=1.01, phi=80 (deg)
+now phi looks more normal =1.39626 (RAD)
+#============ exit JacobiRot
+#------------ enter MakeVecCtr
+fixed bin size = 2.083333e-02
+the number of bins = 42
+#============ exit MakeVecCtr
+#------------ enter MakeVecCtr
+fixed bin size = 2.083333e-02
+the number of bins = 24
+#============ exit MakeVecCtr
+Elapsed time is 1.885746 seconds.
+----------------------------------------------------------
+|  This is the diary for plotting 3.tot_pix_rot2.ps!    |
+|  Now we are working on MACS0717 - srcpix for totsys 3! |
+----------------------------------------------------------
+#------------ below doing srcpix for img 3.3!
+#------------ enter MakeVecCtr
+fixed bin size = 4.166666e-02
+the number of bins = 30
+#============ exit MakeVecCtr
+#------------ enter MakeVecCtr
+fixed bin size = 2.083333e-02
+the number of bins = 31
+#============ exit MakeVecCtr
+#------------ below doing srcpix for img 3.2!
+#------------ enter shift
+#============ exit shift
+#------------ enter JacobiRot
+kappa_ext = 0.8, gamma_ext=1.06, phi=80 (deg)
+now phi looks more normal =1.39626 (RAD)
+#============ exit JacobiRot
+#------------ enter MakeVecCtr
+fixed bin size = 1.666667e-02
+the number of bins = 55
+#============ exit MakeVecCtr
+#------------ enter MakeVecCtr
+fixed bin size = 1.666667e-02
+the number of bins = 23
+#============ exit MakeVecCtr
+#------------ below doing srcpix for img 3.1!
+#------------ enter shift
+#============ exit shift
+#------------ enter JacobiRot
+kappa_ext = 0.8, gamma_ext=0.95, phi=80 (deg)
+now phi looks more normal =1.39626 (RAD)
+#============ exit JacobiRot
+#------------ enter MakeVecCtr
+fixed bin size = 2.083333e-02
+the number of bins = 40
+#============ exit MakeVecCtr
+#------------ enter MakeVecCtr
+fixed bin size = 2.083333e-02
+the number of bins = 23
+#============ exit MakeVecCtr
+Elapsed time is 1.931962 seconds.
+----------------------------------------------------------
+|  This is the diary for plotting 3.tot_pix_rot2.ps!    |
+|  Now we are working on MACS0717 - srcpix for totsys 3! |
+----------------------------------------------------------
+#------------ below doing srcpix for img 3.3!
+#------------ enter MakeVecCtr
+fixed bin size = 4.166666e-02
+the number of bins = 30
+#============ exit MakeVecCtr
+#------------ enter MakeVecCtr
+fixed bin size = 2.083333e-02
+the number of bins = 31
+#============ exit MakeVecCtr
+#------------ below doing srcpix for img 3.2!
+#------------ enter shift
+#============ exit shift
+#------------ enter JacobiRot
+kappa_ext = 0.8, gamma_ext=1.06, phi=80 (deg)
+now phi looks more normal =1.39626 (RAD)
+#============ exit JacobiRot
+#------------ enter MakeVecCtr
+fixed bin size = 1.666667e-02
+the number of bins = 55
+#============ exit MakeVecCtr
+#------------ enter MakeVecCtr
+fixed bin size = 1.666667e-02
+the number of bins = 23
+#============ exit MakeVecCtr
+#------------ below doing srcpix for img 3.1!
+#------------ enter shift
+#============ exit shift
+#------------ enter JacobiRot
+kappa_ext = 0.8, gamma_ext=0.95, phi=80 (deg)
+now phi looks more normal =1.39626 (RAD)
+#============ exit JacobiRot
+#------------ enter MakeVecCtr
+fixed bin size = 2.000000e-02
+the number of bins = 42
+#============ exit MakeVecCtr
+#------------ enter MakeVecCtr
+fixed bin size = 2.000000e-02
+the number of bins = 23
+#============ exit MakeVecCtr
+Elapsed time is 1.909186 seconds.
+----------------------------------------------------------
+|  This is the diary for plotting 3.tot_pix_rot2.ps!    |
+|  Now we are working on MACS0717 - srcpix for totsys 3! |
+----------------------------------------------------------
+#------------ below doing srcpix for img 3.3!
+#------------ enter MakeVecCtr
+fixed bin size = 4.166666e-02
+the number of bins = 30
+#============ exit MakeVecCtr
+#------------ enter MakeVecCtr
+fixed bin size = 2.083333e-02
+the number of bins = 31
+#============ exit MakeVecCtr
+#------------ below doing srcpix for img 3.2!
+#------------ enter shift
+#============ exit shift
+#------------ enter JacobiRot
+kappa_ext = 0.8, gamma_ext=1.06, phi=80 (deg)
+now phi looks more normal =1.39626 (RAD)
+#============ exit JacobiRot
+#------------ enter MakeVecCtr
+fixed bin size = 1.666667e-02
+the number of bins = 55
+#============ exit MakeVecCtr
+#------------ enter MakeVecCtr
+fixed bin size = 1.666667e-02
+the number of bins = 23
+#============ exit MakeVecCtr
+#------------ below doing srcpix for img 3.1!
+#------------ enter shift
+#============ exit shift
+#------------ enter JacobiRot
+kappa_ext = 0.8, gamma_ext=0.9, phi=80 (deg)
+now phi looks more normal =1.39626 (RAD)
+#============ exit JacobiRot
+#------------ enter MakeVecCtr
+fixed bin size = 2.000000e-02
+the number of bins = 40
+#============ exit MakeVecCtr
+#------------ enter MakeVecCtr
+fixed bin size = 2.000000e-02
+the number of bins = 22
+#============ exit MakeVecCtr
+Elapsed time is 1.905823 seconds.
+----------------------------------------------------------
+|  This is the diary for plotting 3.tot_pix_rot2.ps!    |
+|  Now we are working on MACS0717 - srcpix for totsys 3! |
+----------------------------------------------------------
+#------------ below doing srcpix for img 3.3!
+#------------ enter MakeVecCtr
+fixed bin size = 4.166666e-02
+the number of bins = 30
+#============ exit MakeVecCtr
+#------------ enter MakeVecCtr
+fixed bin size = 2.083333e-02
+the number of bins = 31
+#============ exit MakeVecCtr
+#------------ below doing srcpix for img 3.2!
+#------------ enter shift
+#============ exit shift
+#------------ enter JacobiRot
+kappa_ext = 0.8, gamma_ext=1.06, phi=80 (deg)
+now phi looks more normal =1.39626 (RAD)
+#============ exit JacobiRot
+#------------ enter MakeVecCtr
+fixed bin size = 1.666667e-02
+the number of bins = 55
+#============ exit MakeVecCtr
+#------------ enter MakeVecCtr
+fixed bin size = 1.666667e-02
+the number of bins = 23
+#============ exit MakeVecCtr
+#------------ below doing srcpix for img 3.1!
+#------------ enter shift
+#============ exit shift
+#------------ enter JacobiRot
+kappa_ext = 0.8, gamma_ext=1.03, phi=80 (deg)
+now phi looks more normal =1.39626 (RAD)
+#============ exit JacobiRot
+#------------ enter MakeVecCtr
+fixed bin size = 2.000000e-02
+the number of bins = 44
+#============ exit MakeVecCtr
+#------------ enter MakeVecCtr
+fixed bin size = 2.000000e-02
+the number of bins = 26
+#============ exit MakeVecCtr
+Elapsed time is 1.920391 seconds.
+----------------------------------------------------------
+|  This is the diary for plotting 3.tot_pix_rot2.ps!    |
+|  Now we are working on MACS0717 - srcpix for totsys 3! |
+----------------------------------------------------------
+#------------ below doing srcpix for img 3.3!
+#------------ enter MakeVecCtr
+fixed bin size = 4.166666e-02
+the number of bins = 30
+#============ exit MakeVecCtr
+#------------ enter MakeVecCtr
+fixed bin size = 2.083333e-02
+the number of bins = 31
+#============ exit MakeVecCtr
+#------------ below doing srcpix for img 3.2!
+#------------ enter shift
+#============ exit shift
+#------------ enter JacobiRot
+kappa_ext = 0.8, gamma_ext=1.06, phi=80 (deg)
+now phi looks more normal =1.39626 (RAD)
+#============ exit JacobiRot
+#------------ enter MakeVecCtr
+fixed bin size = 1.666667e-02
+the number of bins = 55
+#============ exit MakeVecCtr
+#------------ enter MakeVecCtr
+fixed bin size = 1.666667e-02
+the number of bins = 23
+#============ exit MakeVecCtr
+#------------ below doing srcpix for img 3.1!
+#------------ enter shift
+#============ exit shift
+#------------ enter JacobiRot
+kappa_ext = 0.8, gamma_ext=1.02, phi=80 (deg)
+now phi looks more normal =1.39626 (RAD)
+#============ exit JacobiRot
+#------------ enter MakeVecCtr
+fixed bin size = 2.000000e-02
+the number of bins = 44
+#============ exit MakeVecCtr
+#------------ enter MakeVecCtr
+fixed bin size = 2.000000e-02
+the number of bins = 25
+#============ exit MakeVecCtr
+Elapsed time is 1.907765 seconds.
+----------------------------------------------------------
+|  This is the diary for plotting 3.tot_pix_rot2.ps!    |
+|  Now we are working on MACS0717 - srcpix for totsys 3! |
+----------------------------------------------------------
+#------------ below doing srcpix for img 3.3!
+#------------ enter MakeVecCtr
+fixed bin size = 4.166666e-02
+the number of bins = 30
+#============ exit MakeVecCtr
+#------------ enter MakeVecCtr
+fixed bin size = 2.083333e-02
+the number of bins = 31
+#============ exit MakeVecCtr
+#------------ below doing srcpix for img 3.2!
+#------------ enter shift
+#============ exit shift
+#------------ enter JacobiRot
+kappa_ext = 0.8, gamma_ext=1.06, phi=80 (deg)
+now phi looks more normal =1.39626 (RAD)
+#============ exit JacobiRot
+#------------ enter MakeVecCtr
+fixed bin size = 1.666667e-02
+the number of bins = 55
+#============ exit MakeVecCtr
+#------------ enter MakeVecCtr
+fixed bin size = 1.666667e-02
+the number of bins = 23
+#============ exit MakeVecCtr
+#------------ below doing srcpix for img 3.1!
+#------------ enter shift
+#============ exit shift
+#------------ enter JacobiRot
+kappa_ext = 0.8, gamma_ext=1.01, phi=80 (deg)
+now phi looks more normal =1.39626 (RAD)
+#============ exit JacobiRot
+#------------ enter MakeVecCtr
+fixed bin size = 2.000000e-02
+the number of bins = 44
+#============ exit MakeVecCtr
+#------------ enter MakeVecCtr
+fixed bin size = 2.000000e-02
+the number of bins = 25
+#============ exit MakeVecCtr
+Elapsed time is 1.904474 seconds.
+----------------------------------------------------------
+|  This is the diary for plotting 3.tot_pix_rot2.ps!    |
+|  Now we are working on MACS0717 - srcpix for totsys 3! |
+----------------------------------------------------------
+#------------ below doing srcpix for img 3.3!
+#------------ enter MakeVecCtr
+fixed bin size = 4.166666e-02
+the number of bins = 30
+#============ exit MakeVecCtr
+#------------ enter MakeVecCtr
+fixed bin size = 2.083333e-02
+the number of bins = 31
+#============ exit MakeVecCtr
+#------------ below doing srcpix for img 3.2!
+#------------ enter shift
+#============ exit shift
+#------------ enter JacobiRot
+kappa_ext = 0.8, gamma_ext=1.06, phi=80 (deg)
+now phi looks more normal =1.39626 (RAD)
+#============ exit JacobiRot
+#------------ enter MakeVecCtr
+fixed bin size = 1.666667e-02
+the number of bins = 55
+#============ exit MakeVecCtr
+#------------ enter MakeVecCtr
+fixed bin size = 1.666667e-02
+the number of bins = 23
+#============ exit MakeVecCtr
+#------------ below doing srcpix for img 3.1!
+#------------ enter shift
+#============ exit shift
+#------------ enter JacobiRot
+kappa_ext = 0.8, gamma_ext=0.98, phi=80 (deg)
+now phi looks more normal =1.39626 (RAD)
+#============ exit JacobiRot
+#------------ enter MakeVecCtr
+fixed bin size = 2.000000e-02
+the number of bins = 42
+#============ exit MakeVecCtr
+#------------ enter MakeVecCtr
+fixed bin size = 2.000000e-02
+the number of bins = 24
+#============ exit MakeVecCtr
+Elapsed time is 1.913676 seconds.
+----------------------------------------------------------
+|  This is the diary for plotting 3.tot_pix_rot2.ps!    |
+|  Now we are working on MACS0717 - srcpix for totsys 3! |
+----------------------------------------------------------
+#------------ below doing srcpix for img 3.3!
+#------------ enter MakeVecCtr
+fixed bin size = 4.166666e-02
+the number of bins = 30
+#============ exit MakeVecCtr
+#------------ enter MakeVecCtr
+fixed bin size = 2.083333e-02
+the number of bins = 31
+#============ exit MakeVecCtr
+#------------ below doing srcpix for img 3.2!
+#------------ enter shift
+#============ exit shift
+#------------ enter JacobiRot
+kappa_ext = 0.8, gamma_ext=1.06, phi=80 (deg)
+now phi looks more normal =1.39626 (RAD)
+#============ exit JacobiRot
+#------------ enter MakeVecCtr
+fixed bin size = 1.666667e-02
+the number of bins = 55
+#============ exit MakeVecCtr
+#------------ enter MakeVecCtr
+fixed bin size = 1.666667e-02
+the number of bins = 23
+#============ exit MakeVecCtr
+#------------ below doing srcpix for img 3.1!
+#------------ enter shift
+#============ exit shift
+#------------ enter JacobiRot
+kappa_ext = 0.8, gamma_ext=0.97, phi=80 (deg)
+now phi looks more normal =1.39626 (RAD)
+#============ exit JacobiRot
+#------------ enter MakeVecCtr
+fixed bin size = 2.000000e-02
+the number of bins = 42
+#============ exit MakeVecCtr
+#------------ enter MakeVecCtr
+fixed bin size = 2.000000e-02
+the number of bins = 24
+#============ exit MakeVecCtr
+Elapsed time is 1.887549 seconds.
+----------------------------------------------------------
+|  This is the diary for plotting 3.tot_pix_rot2.ps!    |
+|  Now we are working on MACS0717 - srcpix for totsys 3! |
+----------------------------------------------------------
+#------------ below doing srcpix for img 3.3!
+#------------ enter MakeVecCtr
+fixed bin size = 4.166666e-02
+the number of bins = 30
+#============ exit MakeVecCtr
+#------------ enter MakeVecCtr
+fixed bin size = 2.083333e-02
+the number of bins = 31
+#============ exit MakeVecCtr
+#------------ below doing srcpix for img 3.2!
+#------------ enter shift
+#============ exit shift
+#------------ enter JacobiRot
+kappa_ext = 0.8, gamma_ext=1.06, phi=80 (deg)
+now phi looks more normal =1.39626 (RAD)
+#============ exit JacobiRot
+#------------ enter MakeVecCtr
+fixed bin size = 1.666667e-02
+the number of bins = 55
+#============ exit MakeVecCtr
+#------------ enter MakeVecCtr
+fixed bin size = 1.666667e-02
+the number of bins = 23
+#============ exit MakeVecCtr
+#------------ below doing srcpix for img 3.1!
+#------------ enter shift
+#============ exit shift
+#------------ enter JacobiRot
+kappa_ext = 0.7, gamma_ext=0.97, phi=80 (deg)
+now phi looks more normal =1.39626 (RAD)
+#============ exit JacobiRot
+#------------ enter MakeVecCtr
+fixed bin size = 2.000000e-02
+the number of bins = 44
+#============ exit MakeVecCtr
+#------------ enter MakeVecCtr
+fixed bin size = 2.000000e-02
+the number of bins = 20
+#============ exit MakeVecCtr
+Elapsed time is 1.891986 seconds.
+----------------------------------------------------------
+|  This is the diary for plotting 3.tot_pix_rot2.ps!    |
+|  Now we are working on MACS0717 - srcpix for totsys 3! |
+----------------------------------------------------------
+#------------ below doing srcpix for img 3.3!
+#------------ enter MakeVecCtr
+fixed bin size = 4.166666e-02
+the number of bins = 30
+#============ exit MakeVecCtr
+#------------ enter MakeVecCtr
+fixed bin size = 2.083333e-02
+the number of bins = 31
+#============ exit MakeVecCtr
+#------------ below doing srcpix for img 3.2!
+#------------ enter shift
+#============ exit shift
+#------------ enter JacobiRot
+kappa_ext = 0.8, gamma_ext=1.06, phi=80 (deg)
+now phi looks more normal =1.39626 (RAD)
+#============ exit JacobiRot
+#------------ enter MakeVecCtr
+fixed bin size = 1.666667e-02
+the number of bins = 55
+#============ exit MakeVecCtr
+#------------ enter MakeVecCtr
+fixed bin size = 1.666667e-02
+the number of bins = 23
+#============ exit MakeVecCtr
+#------------ below doing srcpix for img 3.1!
+#------------ enter shift
+#============ exit shift
+#------------ enter JacobiRot
+kappa_ext = 0.9, gamma_ext=0.97, phi=80 (deg)
+now phi looks more normal =1.39626 (RAD)
+#============ exit JacobiRot
+#------------ enter MakeVecCtr
+fixed bin size = 2.000000e-02
+the number of bins = 40
+#============ exit MakeVecCtr
+#------------ enter MakeVecCtr
+fixed bin size = 2.000000e-02
+the number of bins = 28
+#============ exit MakeVecCtr
+Elapsed time is 1.913929 seconds.
+----------------------------------------------------------
+|  This is the diary for plotting 3.tot_pix_rot2.ps!    |
+|  Now we are working on MACS0717 - srcpix for totsys 3! |
+----------------------------------------------------------
+#------------ below doing srcpix for img 3.3!
+#------------ enter MakeVecCtr
+fixed bin size = 4.166666e-02
+the number of bins = 30
+#============ exit MakeVecCtr
+#------------ enter MakeVecCtr
+fixed bin size = 2.083333e-02
+the number of bins = 31
+#============ exit MakeVecCtr
+#------------ below doing srcpix for img 3.2!
+#------------ enter shift
+#============ exit shift
+#------------ enter JacobiRot
+kappa_ext = 0.8, gamma_ext=1.06, phi=80 (deg)
+now phi looks more normal =1.39626 (RAD)
+#============ exit JacobiRot
+#------------ enter MakeVecCtr
+fixed bin size = 1.666667e-02
+the number of bins = 55
+#============ exit MakeVecCtr
+#------------ enter MakeVecCtr
+fixed bin size = 1.666667e-02
+the number of bins = 23
+#============ exit MakeVecCtr
+#------------ below doing srcpix for img 3.1!
+#------------ enter shift
+#============ exit shift
+#------------ enter JacobiRot
+kappa_ext = 0.8, gamma_ext=0.97, phi=80 (deg)
+now phi looks more normal =1.39626 (RAD)
+#============ exit JacobiRot
+#------------ enter MakeVecCtr
+fixed bin size = 2.000000e-02
+the number of bins = 42
+#============ exit MakeVecCtr
+#------------ enter MakeVecCtr
+fixed bin size = 2.000000e-02
+the number of bins = 24
+#============ exit MakeVecCtr
+Elapsed time is 1.864406 seconds.
+----------------------------------------------------------
+|  This is the diary for plotting 3.tot_pix_rot2.ps!    |
+|  Now we are working on MACS0717 - srcpix for totsys 3! |
+----------------------------------------------------------
+#------------ below doing srcpix for img 3.3!
+#------------ enter MakeVecCtr
+fixed bin size = 4.166666e-02
+the number of bins = 30
+#============ exit MakeVecCtr
+#------------ enter MakeVecCtr
+fixed bin size = 2.083333e-02
+the number of bins = 31
+#============ exit MakeVecCtr
+#------------ below doing srcpix for img 3.2!
+#------------ enter shift
+#============ exit shift
+#------------ enter JacobiRot
+kappa_ext = 0.8, gamma_ext=1.06, phi=80 (deg)
+now phi looks more normal =1.39626 (RAD)
+#============ exit JacobiRot
+#------------ enter MakeVecCtr
+fixed bin size = 1.666667e-02
+the number of bins = 55
+#============ exit MakeVecCtr
+#------------ enter MakeVecCtr
+fixed bin size = 1.666667e-02
+the number of bins = 23
+#============ exit MakeVecCtr
+#------------ below doing srcpix for img 3.1!
+#------------ enter shift
+#============ exit shift
+#------------ enter JacobiRot
+kappa_ext = 0.9, gamma_ext=0.97, phi=80 (deg)
+now phi looks more normal =1.39626 (RAD)
+#============ exit JacobiRot
+#------------ enter MakeVecCtr
+fixed bin size = 2.000000e-02
+the number of bins = 40
+#============ exit MakeVecCtr
+#------------ enter MakeVecCtr
+fixed bin size = 2.000000e-02
+the number of bins = 28
+#============ exit MakeVecCtr
+Elapsed time is 1.900978 seconds.
+----------------------------------------------------------
+|  This is the diary for plotting 3.tot_pix_rot2.ps!    |
+|  Now we are working on MACS0717 - srcpix for totsys 3! |
+----------------------------------------------------------
+#------------ below doing srcpix for img 3.3!
+#------------ enter MakeVecCtr
+fixed bin size = 4.166666e-02
+the number of bins = 30
+#============ exit MakeVecCtr
+#------------ enter MakeVecCtr
+fixed bin size = 2.083333e-02
+the number of bins = 31
+#============ exit MakeVecCtr
+#------------ below doing srcpix for img 3.2!
+#------------ enter shift
+#============ exit shift
+#------------ enter JacobiRot
+kappa_ext = 0.8, gamma_ext=1.06, phi=80 (deg)
+now phi looks more normal =1.39626 (RAD)
+#============ exit JacobiRot
+#------------ enter MakeVecCtr
+fixed bin size = 1.666667e-02
+the number of bins = 55
+#============ exit MakeVecCtr
+#------------ enter MakeVecCtr
+fixed bin size = 1.666667e-02
+the number of bins = 23
+#============ exit MakeVecCtr
+#------------ below doing srcpix for img 3.1!
+#------------ enter shift
+#============ exit shift
+#------------ enter JacobiRot
+kappa_ext = 1.1, gamma_ext=0.97, phi=80 (deg)
+now phi looks more normal =1.39626 (RAD)
+#============ exit JacobiRot
+#------------ enter MakeVecCtr
+fixed bin size = 2.000000e-02
+the number of bins = 34
+#============ exit MakeVecCtr
+#------------ enter MakeVecCtr
+fixed bin size = 2.000000e-02
+the number of bins = 36
+#============ exit MakeVecCtr
+Elapsed time is 1.888682 seconds.
+----------------------------------------------------------
+|  This is the diary for plotting 3.tot_pix_rot2.ps!    |
+|  Now we are working on MACS0717 - srcpix for totsys 3! |
+----------------------------------------------------------
+#------------ below doing srcpix for img 3.3!
+#------------ enter MakeVecCtr
+fixed bin size = 4.166666e-02
+the number of bins = 30
+#============ exit MakeVecCtr
+#------------ enter MakeVecCtr
+fixed bin size = 2.083333e-02
+the number of bins = 31
+#============ exit MakeVecCtr
+#------------ below doing srcpix for img 3.2!
+#------------ enter shift
+#============ exit shift
+#------------ enter JacobiRot
+kappa_ext = 0.8, gamma_ext=1.06, phi=80 (deg)
+now phi looks more normal =1.39626 (RAD)
+#============ exit JacobiRot
+#------------ enter MakeVecCtr
+fixed bin size = 1.666667e-02
+the number of bins = 55
+#============ exit MakeVecCtr
+#------------ enter MakeVecCtr
+fixed bin size = 1.666667e-02
+the number of bins = 23
+#============ exit MakeVecCtr
+#------------ below doing srcpix for img 3.1!
+#------------ enter shift
+#============ exit shift
+#------------ enter JacobiRot
+kappa_ext = 0.8, gamma_ext=0.97, phi=80 (deg)
+now phi looks more normal =1.39626 (RAD)
+#============ exit JacobiRot
+#------------ enter MakeVecCtr
+fixed bin size = 2.000000e-02
+the number of bins = 42
+#============ exit MakeVecCtr
+#------------ enter MakeVecCtr
+fixed bin size = 2.000000e-02
+the number of bins = 24
+#============ exit MakeVecCtr
+Elapsed time is 1.922231 seconds.
+----------------------------------------------------------
+|  This is the diary for plotting 3.tot_pix_rot2.ps!    |
+|  Now we are working on MACS0717 - srcpix for totsys 3! |
+----------------------------------------------------------
+#------------ below doing srcpix for img 3.3!
+#------------ enter MakeVecCtr
+fixed bin size = 4.166666e-02
+the number of bins = 30
+#============ exit MakeVecCtr
+#------------ enter MakeVecCtr
+fixed bin size = 2.083333e-02
+the number of bins = 31
+#============ exit MakeVecCtr
+#------------ below doing srcpix for img 3.2!
+#------------ enter shift
+#============ exit shift
+#------------ enter JacobiRot
+kappa_ext = 0.8, gamma_ext=1.06, phi=80 (deg)
+now phi looks more normal =1.39626 (RAD)
+#============ exit JacobiRot
+#------------ enter MakeVecCtr
+fixed bin size = 1.666667e-02
+the number of bins = 55
+#============ exit MakeVecCtr
+#------------ enter MakeVecCtr
+fixed bin size = 1.666667e-02
+the number of bins = 23
+#============ exit MakeVecCtr
+#------------ below doing srcpix for img 3.1!
+#------------ enter shift
+#============ exit shift
+#------------ enter JacobiRot
+kappa_ext = 0.8, gamma_ext=0.95, phi=80 (deg)
+now phi looks more normal =1.39626 (RAD)
+#============ exit JacobiRot
+#------------ enter MakeVecCtr
+fixed bin size = 2.000000e-02
+the number of bins = 42
+#============ exit MakeVecCtr
+#------------ enter MakeVecCtr
+fixed bin size = 2.000000e-02
+the number of bins = 23
+#============ exit MakeVecCtr
+Elapsed time is 1.873183 seconds.
+----------------------------------------------------------
+|  This is the diary for plotting 3.tot_pix_rot2.ps!    |
+|  Now we are working on MACS0717 - srcpix for totsys 3! |
+----------------------------------------------------------
+#------------ below doing srcpix for img 3.3!
+#------------ enter MakeVecCtr
+fixed bin size = 4.166666e-02
+the number of bins = 30
+#============ exit MakeVecCtr
+#------------ enter MakeVecCtr
+fixed bin size = 2.083333e-02
+the number of bins = 31
+#============ exit MakeVecCtr
+#------------ below doing srcpix for img 3.2!
+#------------ enter shift
+#============ exit shift
+#------------ enter JacobiRot
+kappa_ext = 0.8, gamma_ext=1.06, phi=80 (deg)
+now phi looks more normal =1.39626 (RAD)
+#============ exit JacobiRot
+#------------ enter MakeVecCtr
+fixed bin size = 1.666667e-02
+the number of bins = 55
+#============ exit MakeVecCtr
+#------------ enter MakeVecCtr
+fixed bin size = 1.666667e-02
+the number of bins = 23
+#============ exit MakeVecCtr
+#------------ below doing srcpix for img 3.1!
+#------------ enter shift
+#============ exit shift
+#------------ enter JacobiRot
+kappa_ext = 0.8, gamma_ext=0.98, phi=80 (deg)
+now phi looks more normal =1.39626 (RAD)
+#============ exit JacobiRot
+#------------ enter MakeVecCtr
+fixed bin size = 2.000000e-02
+the number of bins = 42
+#============ exit MakeVecCtr
+#------------ enter MakeVecCtr
+fixed bin size = 2.000000e-02
+the number of bins = 24
+#============ exit MakeVecCtr
+Elapsed time is 1.932253 seconds.
+----------------------------------------------------------
+|  This is the diary for plotting 3.tot_pix_rot2.ps!    |
+|  Now we are working on MACS0717 - srcpix for totsys 3! |
+----------------------------------------------------------
+#------------ below doing srcpix for img 3.3!
+#------------ enter MakeVecCtr
+fixed bin size = 4.166666e-02
+the number of bins = 30
+#============ exit MakeVecCtr
+#------------ enter MakeVecCtr
+fixed bin size = 2.083333e-02
+the number of bins = 31
+#============ exit MakeVecCtr
+#------------ below doing srcpix for img 3.2!
+#------------ enter shift
+#============ exit shift
+#------------ enter JacobiRot
+kappa_ext = 0.8, gamma_ext=1.06, phi=80 (deg)
+now phi looks more normal =1.39626 (RAD)
+#============ exit JacobiRot
+#------------ enter MakeVecCtr
+fixed bin size = 1.666667e-02
+the number of bins = 55
+#============ exit MakeVecCtr
+#------------ enter MakeVecCtr
+fixed bin size = 1.666667e-02
+the number of bins = 23
+#============ exit MakeVecCtr
+#------------ below doing srcpix for img 3.1!
+#------------ enter shift
+#============ exit shift
+#------------ enter JacobiRot
+kappa_ext = 0.8, gamma_ext=0.97, phi=80 (deg)
+now phi looks more normal =1.39626 (RAD)
+#============ exit JacobiRot
+#------------ enter MakeVecCtr
+fixed bin size = 2.000000e-02
+the number of bins = 42
+#============ exit MakeVecCtr
+#------------ enter MakeVecCtr
+fixed bin size = 2.000000e-02
+the number of bins = 24
+#============ exit MakeVecCtr
+Elapsed time is 1.895232 seconds.
+----------------------------------------------------------
+|  This is the diary for plotting 3.tot_pix_rot2.ps!    |
+|  Now we are working on MACS0717 - srcpix for totsys 3! |
+----------------------------------------------------------
+#------------ below doing srcpix for img 3.3!
+#------------ enter MakeVecCtr
+fixed bin size = 4.166666e-02
+the number of bins = 30
+#============ exit MakeVecCtr
+#------------ enter MakeVecCtr
+fixed bin size = 2.083333e-02
+the number of bins = 31
+#============ exit MakeVecCtr
+#------------ below doing srcpix for img 3.2!
+#------------ enter shift
+#============ exit shift
+#------------ enter JacobiRot
+kappa_ext = 0.8, gamma_ext=1.06, phi=80 (deg)
+now phi looks more normal =1.39626 (RAD)
+#============ exit JacobiRot
+#------------ enter MakeVecCtr
+fixed bin size = 1.666667e-02
+the number of bins = 55
+#============ exit MakeVecCtr
+#------------ enter MakeVecCtr
+fixed bin size = 1.666667e-02
+the number of bins = 23
+#============ exit MakeVecCtr
+#------------ below doing srcpix for img 3.1!
+#------------ enter shift
+#============ exit shift
+#------------ enter JacobiRot
+kappa_ext = 0.8, gamma_ext=0.97, phi=80 (deg)
+now phi looks more normal =1.39626 (RAD)
+#============ exit JacobiRot
+#------------ enter MakeVecCtr
+fixed bin size = 2.083333e-02
+the number of bins = 40
+#============ exit MakeVecCtr
+#------------ enter MakeVecCtr
+fixed bin size = 2.083333e-02
+the number of bins = 23
+#============ exit MakeVecCtr
+Elapsed time is 1.884624 seconds.
+----------------------------------------------------------
+|  This is the diary for plotting 3.tot_pix_rot2.ps!    |
+|  Now we are working on MACS0717 - srcpix for totsys 3! |
+----------------------------------------------------------
+#------------ below doing srcpix for img 3.3!
+#------------ enter MakeVecCtr
+fixed bin size = 4.166666e-02
+the number of bins = 30
+#============ exit MakeVecCtr
+#------------ enter MakeVecCtr
+fixed bin size = 2.083333e-02
+the number of bins = 31
+#============ exit MakeVecCtr
+#------------ below doing srcpix for img 3.2!
+#------------ enter shift
+#============ exit shift
+#------------ enter JacobiRot
+kappa_ext = 0.8, gamma_ext=1.06, phi=80 (deg)
+now phi looks more normal =1.39626 (RAD)
+#============ exit JacobiRot
+#------------ enter MakeVecCtr
+fixed bin size = 1.666667e-02
+the number of bins = 55
+#============ exit MakeVecCtr
+#------------ enter MakeVecCtr
+fixed bin size = 1.666667e-02
+the number of bins = 23
+#============ exit MakeVecCtr
+#------------ below doing srcpix for img 3.1!
+#------------ enter shift
+#============ exit shift
+#------------ enter JacobiRot
+kappa_ext = 0.8, gamma_ext=0.98, phi=80 (deg)
+now phi looks more normal =1.39626 (RAD)
+#============ exit JacobiRot
+#------------ enter MakeVecCtr
+fixed bin size = 2.083333e-02
+the number of bins = 40
+#============ exit MakeVecCtr
+#------------ enter MakeVecCtr
+fixed bin size = 2.083333e-02
+the number of bins = 23
+#============ exit MakeVecCtr
+Elapsed time is 1.887344 seconds.
+----------------------------------------------------------
+|  This is the diary for plotting 3.tot_pix_rot2.ps!    |
+|  Now we are working on MACS0717 - srcpix for totsys 3! |
+----------------------------------------------------------
+#------------ below doing srcpix for img 3.3!
+#------------ enter MakeVecCtr
+fixed bin size = 4.166666e-02
+the number of bins = 30
+#============ exit MakeVecCtr
+#------------ enter MakeVecCtr
+fixed bin size = 2.083333e-02
+the number of bins = 31
+#============ exit MakeVecCtr
+#------------ below doing srcpix for img 3.2!
+#------------ enter shift
+#============ exit shift
+#------------ enter JacobiRot
+kappa_ext = 0.8, gamma_ext=1.06, phi=80 (deg)
+now phi looks more normal =1.39626 (RAD)
+#============ exit JacobiRot
+#------------ enter MakeVecCtr
+fixed bin size = 1.666667e-02
+the number of bins = 55
+#============ exit MakeVecCtr
+#------------ enter MakeVecCtr
+fixed bin size = 1.666667e-02
+the number of bins = 23
+#============ exit MakeVecCtr
+#------------ below doing srcpix for img 3.1!
+#------------ enter shift
+#============ exit shift
+#------------ enter JacobiRot
+kappa_ext = 0.8, gamma_ext=0.99, phi=80 (deg)
+now phi looks more normal =1.39626 (RAD)
+#============ exit JacobiRot
+#------------ enter MakeVecCtr
+fixed bin size = 2.083333e-02
+the number of bins = 40
+#============ exit MakeVecCtr
+#------------ enter MakeVecCtr
+fixed bin size = 2.083333e-02
+the number of bins = 23
+#============ exit MakeVecCtr
+Elapsed time is 1.922079 seconds.
+----------------------------------------------------------
+|  This is the diary for plotting 3.tot_pix_rot2.ps!    |
+|  Now we are working on MACS0717 - srcpix for totsys 3! |
+----------------------------------------------------------
+#------------ below doing srcpix for img 3.3!
+#------------ enter MakeVecCtr
+fixed bin size = 4.166666e-02
+the number of bins = 30
+#============ exit MakeVecCtr
+#------------ enter MakeVecCtr
+fixed bin size = 2.083333e-02
+the number of bins = 31
+#============ exit MakeVecCtr
+#------------ below doing srcpix for img 3.2!
+#------------ enter shift
+#============ exit shift
+#------------ enter JacobiRot
+kappa_ext = 0.8, gamma_ext=1.06, phi=80 (deg)
+now phi looks more normal =1.39626 (RAD)
+#============ exit JacobiRot
+#------------ enter MakeVecCtr
+fixed bin size = 1.666667e-02
+the number of bins = 55
+#============ exit MakeVecCtr
+#------------ enter MakeVecCtr
+fixed bin size = 1.666667e-02
+the number of bins = 23
+#============ exit MakeVecCtr
+#------------ below doing srcpix for img 3.1!
+#------------ enter shift
+#============ exit shift
+#------------ enter JacobiRot
+kappa_ext = 0.8, gamma_ext=0.96, phi=80 (deg)
+now phi looks more normal =1.39626 (RAD)
+#============ exit JacobiRot
+#------------ enter MakeVecCtr
+fixed bin size = 2.083333e-02
+the number of bins = 40
+#============ exit MakeVecCtr
+#------------ enter MakeVecCtr
+fixed bin size = 2.083333e-02
+the number of bins = 23
+#============ exit MakeVecCtr
+Elapsed time is 1.900257 seconds.

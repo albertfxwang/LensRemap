@@ -1,0 +1,44 @@
+----------------------------------------------------------
+|  This is diary in the plotting of: 4.tot_pix_rot1.ps! |
+|  Now we are working on MACS0717 - srcpix for totsys 4! |
+----------------------------------------------------------
+#------------ below doing srcpix for img 4.3!
+#------------ enter MakeVecCtr
+fixed bin size = 3.333333e-02
+the number of bins = 43
+#============ exit MakeVecCtr
+#------------ enter MakeVecCtr
+fixed bin size = 3.333333e-02
+the number of bins = 44
+#============ exit MakeVecCtr
+#------------ below doing srcpix for img 4.2!
+#------------ enter shift
+#============ exit shift
+#------------ enter shift
+kappa_ext = 1.1, gamma_ext=0.1, phi=-10
+now phi looks more normal =-0.174533
+#============ exit shift
+#------------ enter MakeVecCtr
+fixed bin size = 3.333333e-02
+the number of bins = 46
+#============ exit MakeVecCtr
+#------------ enter MakeVecCtr
+fixed bin size = 3.333333e-02
+the number of bins = 25
+#============ exit MakeVecCtr
+#------------ below doing srcpix for img 4.1!
+#------------ enter shift
+#============ exit shift
+#------------ enter shift
+kappa_ext = 0.8, gamma_ext=0.05, phi=-20
+now phi looks more normal =-0.349066
+#============ exit shift
+#------------ enter MakeVecCtr
+fixed bin size = 3.333333e-02
+the number of bins = 64
+#============ exit MakeVecCtr
+#------------ enter MakeVecCtr
+fixed bin size = 3.333333e-02
+the number of bins = 59
+#============ exit MakeVecCtr
+Elapsed time is 2.233634 seconds.

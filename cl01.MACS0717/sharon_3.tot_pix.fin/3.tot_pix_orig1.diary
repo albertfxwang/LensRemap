@@ -1,0 +1,640 @@
+----------------------------------------------------------
+|  This is the diary for plotting 3.tot_pix_orig1.ps!    |
+|  Now we are working on MACS0717 - srcpix for totsys 3! |
+----------------------------------------------------------
+#------------ below doing srcpix for img 3.3!
+#------------ enter MakeVecCtr
+fixed bin size = 2.777778e-02
+the number of bins = 45
+#============ exit MakeVecCtr
+#------------ enter MakeVecCtr
+fixed bin size = 2.777778e-02
+the number of bins = 23
+#============ exit MakeVecCtr
+#------------ below doing srcpix for img 3.2!
+#------------ enter MakeVecCtr
+fixed bin size = 2.777778e-02
+the number of bins = 22
+#============ exit MakeVecCtr
+#------------ enter MakeVecCtr
+fixed bin size = 2.777778e-02
+the number of bins = 23
+#============ exit MakeVecCtr
+#------------ below doing srcpix for img 3.1!
+#------------ enter MakeVecCtr
+fixed bin size = 2.777778e-02
+the number of bins = 22
+#============ exit MakeVecCtr
+#------------ enter MakeVecCtr
+fixed bin size = 2.777778e-02
+the number of bins = 32
+#============ exit MakeVecCtr
+Elapsed time is 1.817063 seconds.
+----------------------------------------------------------
+|  This is the diary for plotting 3.tot_pix_orig1.ps!    |
+|  Now we are working on MACS0717 - srcpix for totsys 3! |
+----------------------------------------------------------
+#------------ below doing srcpix for img 3.3!
+#------------ enter MakeVecCtr
+fixed bin size = 2.000000e-02
+the number of bins = 61
+#============ exit MakeVecCtr
+#------------ enter MakeVecCtr
+fixed bin size = 2.500000e-02
+the number of bins = 25
+#============ exit MakeVecCtr
+#------------ below doing srcpix for img 3.2!
+#------------ enter MakeVecCtr
+fixed bin size = 1.666667e-02
+the number of bins = 35
+#============ exit MakeVecCtr
+#------------ enter MakeVecCtr
+fixed bin size = 1.666667e-02
+the number of bins = 38
+#============ exit MakeVecCtr
+#------------ below doing srcpix for img 3.1!
+#------------ enter MakeVecCtr
+fixed bin size = 3.333333e-02
+the number of bins = 18
+#============ exit MakeVecCtr
+#------------ enter MakeVecCtr
+fixed bin size = 2.173913e-02
+the number of bins = 40
+#============ exit MakeVecCtr
+Elapsed time is 1.835012 seconds.
+----------------------------------------------------------
+|  This is the diary for plotting 3.tot_pix_orig1.ps!    |
+|  Now we are working on MACS0717 - srcpix for totsys 3! |
+----------------------------------------------------------
+#------------ below doing srcpix for img 3.3!
+#------------ enter MakeVecCtr
+fixed bin size = 3.333333e-02
+the number of bins = 38
+#============ exit MakeVecCtr
+#------------ enter MakeVecCtr
+fixed bin size = 2.173913e-02
+the number of bins = 29
+#============ exit MakeVecCtr
+#------------ below doing srcpix for img 3.2!
+#------------ enter MakeVecCtr
+fixed bin size = 1.666667e-02
+the number of bins = 35
+#============ exit MakeVecCtr
+#------------ enter MakeVecCtr
+fixed bin size = 1.666667e-02
+the number of bins = 38
+#============ exit MakeVecCtr
+#------------ below doing srcpix for img 3.1!
+#------------ enter MakeVecCtr
+fixed bin size = 2.000000e-02
+the number of bins = 29
+#============ exit MakeVecCtr
+#------------ enter MakeVecCtr
+fixed bin size = 2.500000e-02
+the number of bins = 36
+#============ exit MakeVecCtr
+Elapsed time is 1.865287 seconds.
+----------------------------------------------------------
+|  This is the diary for plotting 3.tot_pix_orig1.ps!    |
+|  Now we are working on MACS0717 - srcpix for totsys 3! |
+----------------------------------------------------------
+#------------ below doing srcpix for img 3.3!
+#------------ enter MakeVecCtr
+fixed bin size = 3.846154e-02
+the number of bins = 34
+#============ exit MakeVecCtr
+#------------ enter MakeVecCtr
+fixed bin size = 2.000000e-02
+the number of bins = 32
+#============ exit MakeVecCtr
+#------------ below doing srcpix for img 3.2!
+#------------ enter MakeVecCtr
+fixed bin size = 1.515151e-02
+the number of bins = 39
+#============ exit MakeVecCtr
+#------------ enter MakeVecCtr
+fixed bin size = 1.515151e-02
+the number of bins = 42
+#============ exit MakeVecCtr
+#------------ below doing srcpix for img 3.1!
+#------------ enter MakeVecCtr
+fixed bin size = 1.666667e-02
+the number of bins = 35
+#============ exit MakeVecCtr
+#------------ enter MakeVecCtr
+fixed bin size = 2.000000e-02
+the number of bins = 44
+#============ exit MakeVecCtr
+Elapsed time is 1.852165 seconds.
+----------------------------------------------------------
+|  This is the diary for plotting 3.tot_pix_orig1.ps!    |
+|  Now we are working on MACS0717 - srcpix for totsys 3! |
+----------------------------------------------------------
+#------------ below doing srcpix for img 3.3!
+#------------ enter MakeVecCtr
+fixed bin size = 3.846154e-02
+the number of bins = 34
+#============ exit MakeVecCtr
+#------------ enter MakeVecCtr
+fixed bin size = 2.000000e-02
+the number of bins = 32
+#============ exit MakeVecCtr
+#------------ below doing srcpix for img 3.2!
+#------------ enter MakeVecCtr
+fixed bin size = 1.562500e-02
+the number of bins = 37
+#============ exit MakeVecCtr
+#------------ enter MakeVecCtr
+fixed bin size = 1.562500e-02
+the number of bins = 40
+#============ exit MakeVecCtr
+#------------ below doing srcpix for img 3.1!
+#------------ enter MakeVecCtr
+fixed bin size = 1.666667e-02
+the number of bins = 35
+#============ exit MakeVecCtr
+#------------ enter MakeVecCtr
+fixed bin size = 2.083333e-02
+the number of bins = 42
+#============ exit MakeVecCtr
+Elapsed time is 1.999732 seconds.
+----------------------------------------------------------
+|  This is the diary for plotting 3.tot_pix_orig1.ps!    |
+|  Now we are working on MACS0717 - srcpix for totsys 3! |
+----------------------------------------------------------
+#------------ below doing srcpix for img 3.3!
+#------------ enter MakeVecCtr
+fixed bin size = 3.846154e-02
+the number of bins = 34
+#============ exit MakeVecCtr
+#------------ enter MakeVecCtr
+fixed bin size = 2.000000e-02
+the number of bins = 32
+#============ exit MakeVecCtr
+#------------ below doing srcpix for img 3.2!
+#------------ enter MakeVecCtr
+fixed bin size = 1.562500e-02
+the number of bins = 37
+#============ exit MakeVecCtr
+#------------ enter MakeVecCtr
+fixed bin size = 1.562500e-02
+the number of bins = 40
+#============ exit MakeVecCtr
+#------------ below doing srcpix for img 3.1!
+#------------ enter MakeVecCtr
+fixed bin size = 1.785714e-02
+the number of bins = 32
+#============ exit MakeVecCtr
+#------------ enter MakeVecCtr
+fixed bin size = 2.083333e-02
+the number of bins = 42
+#============ exit MakeVecCtr
+Elapsed time is 1.834906 seconds.
+----------------------------------------------------------
+|  This is the diary for plotting 3.tot_pix_orig1.ps!    |
+|  Now we are working on MACS0717 - srcpix for totsys 3! |
+----------------------------------------------------------
+#------------ below doing srcpix for img 3.3!
+#------------ enter MakeVecCtr
+fixed bin size = 3.846154e-02
+the number of bins = 34
+#============ exit MakeVecCtr
+#------------ enter MakeVecCtr
+fixed bin size = 2.000000e-02
+the number of bins = 32
+#============ exit MakeVecCtr
+#------------ below doing srcpix for img 3.2!
+#------------ enter MakeVecCtr
+fixed bin size = 1.562500e-02
+the number of bins = 37
+#============ exit MakeVecCtr
+#------------ enter MakeVecCtr
+fixed bin size = 1.562500e-02
+the number of bins = 40
+#============ exit MakeVecCtr
+#------------ below doing srcpix for img 3.1!
+#------------ enter MakeVecCtr
+fixed bin size = 1.785714e-02
+the number of bins = 32
+#============ exit MakeVecCtr
+#------------ enter MakeVecCtr
+fixed bin size = 2.272727e-02
+the number of bins = 39
+#============ exit MakeVecCtr
+Elapsed time is 1.864657 seconds.
+----------------------------------------------------------
+|  This is the diary for plotting 3.tot_pix_orig1.ps!    |
+|  Now we are working on MACS0717 - srcpix for totsys 3! |
+----------------------------------------------------------
+#------------ below doing srcpix for img 3.3!
+#------------ enter MakeVecCtr
+fixed bin size = 3.846154e-02
+the number of bins = 34
+#============ exit MakeVecCtr
+#------------ enter MakeVecCtr
+fixed bin size = 2.000000e-02
+the number of bins = 32
+#============ exit MakeVecCtr
+#------------ below doing srcpix for img 3.2!
+#------------ enter MakeVecCtr
+fixed bin size = 1.562500e-02
+the number of bins = 37
+#============ exit MakeVecCtr
+#------------ enter MakeVecCtr
+fixed bin size = 1.562500e-02
+the number of bins = 40
+#============ exit MakeVecCtr
+#------------ below doing srcpix for img 3.1!
+#------------ enter MakeVecCtr
+fixed bin size = 1.851852e-02
+the number of bins = 31
+#============ exit MakeVecCtr
+#------------ enter MakeVecCtr
+fixed bin size = 2.272727e-02
+the number of bins = 39
+#============ exit MakeVecCtr
+Elapsed time is 1.849911 seconds.
+----------------------------------------------------------
+|  This is the diary for plotting 3.tot_pix_orig1.ps!    |
+|  Now we are working on MACS0717 - srcpix for totsys 3! |
+----------------------------------------------------------
+#------------ below doing srcpix for img 3.3!
+#------------ enter MakeVecCtr
+fixed bin size = 3.846154e-02
+the number of bins = 34
+#============ exit MakeVecCtr
+#------------ enter MakeVecCtr
+fixed bin size = 2.000000e-02
+the number of bins = 32
+#============ exit MakeVecCtr
+#------------ below doing srcpix for img 3.2!
+#------------ enter MakeVecCtr
+fixed bin size = 1.562500e-02
+the number of bins = 37
+#============ exit MakeVecCtr
+#------------ enter MakeVecCtr
+fixed bin size = 1.562500e-02
+the number of bins = 40
+#============ exit MakeVecCtr
+#------------ below doing srcpix for img 3.1!
+#------------ enter MakeVecCtr
+fixed bin size = 1.923077e-02
+the number of bins = 30
+#============ exit MakeVecCtr
+#------------ enter MakeVecCtr
+fixed bin size = 2.272727e-02
+the number of bins = 39
+#============ exit MakeVecCtr
+Elapsed time is 1.864221 seconds.
+----------------------------------------------------------
+|  This is the diary for plotting 3.tot_pix_orig1.ps!    |
+|  Now we are working on MACS0717 - srcpix for totsys 3! |
+----------------------------------------------------------
+#------------ below doing srcpix for img 3.3!
+#------------ enter MakeVecCtr
+fixed bin size = 3.846154e-02
+the number of bins = 34
+#============ exit MakeVecCtr
+#------------ enter MakeVecCtr
+fixed bin size = 2.000000e-02
+the number of bins = 32
+#============ exit MakeVecCtr
+#------------ below doing srcpix for img 3.2!
+#------------ enter MakeVecCtr
+fixed bin size = 1.562500e-02
+the number of bins = 37
+#============ exit MakeVecCtr
+#------------ enter MakeVecCtr
+fixed bin size = 1.562500e-02
+the number of bins = 40
+#============ exit MakeVecCtr
+#------------ below doing srcpix for img 3.1!
+#------------ enter MakeVecCtr
+fixed bin size = 1.851852e-02
+the number of bins = 31
+#============ exit MakeVecCtr
+#------------ enter MakeVecCtr
+fixed bin size = 2.000000e-02
+the number of bins = 44
+#============ exit MakeVecCtr
+Elapsed time is 1.868265 seconds.
+----------------------------------------------------------
+|  This is the diary for plotting 3.tot_pix_orig1.ps!    |
+|  Now we are working on MACS0717 - srcpix for totsys 3! |
+----------------------------------------------------------
+#------------ below doing srcpix for img 3.3!
+#------------ enter MakeVecCtr
+fixed bin size = 3.846154e-02
+the number of bins = 34
+#============ exit MakeVecCtr
+#------------ enter MakeVecCtr
+fixed bin size = 2.000000e-02
+the number of bins = 32
+#============ exit MakeVecCtr
+#------------ below doing srcpix for img 3.2!
+#------------ enter MakeVecCtr
+fixed bin size = 1.562500e-02
+the number of bins = 37
+#============ exit MakeVecCtr
+#------------ enter MakeVecCtr
+fixed bin size = 1.562500e-02
+the number of bins = 40
+#============ exit MakeVecCtr
+#------------ below doing srcpix for img 3.1!
+#------------ enter MakeVecCtr
+fixed bin size = 1.785714e-02
+the number of bins = 32
+#============ exit MakeVecCtr
+#------------ enter MakeVecCtr
+fixed bin size = 2.000000e-02
+the number of bins = 44
+#============ exit MakeVecCtr
+Elapsed time is 1.876969 seconds.
+----------------------------------------------------------
+|  This is the diary for plotting 3.tot_pix_orig1.ps!    |
+|  Now we are working on MACS0717 - srcpix for totsys 3! |
+----------------------------------------------------------
+#------------ below doing srcpix for img 3.3!
+#------------ enter MakeVecCtr
+fixed bin size = 3.846154e-02
+the number of bins = 34
+#============ exit MakeVecCtr
+#------------ enter MakeVecCtr
+fixed bin size = 2.000000e-02
+the number of bins = 32
+#============ exit MakeVecCtr
+#------------ below doing srcpix for img 3.2!
+#------------ enter MakeVecCtr
+fixed bin size = 1.562500e-02
+the number of bins = 37
+#============ exit MakeVecCtr
+#------------ enter MakeVecCtr
+fixed bin size = 1.562500e-02
+the number of bins = 40
+#============ exit MakeVecCtr
+#------------ below doing srcpix for img 3.1!
+#------------ enter MakeVecCtr
+fixed bin size = 1.851852e-02
+the number of bins = 31
+#============ exit MakeVecCtr
+#------------ enter MakeVecCtr
+fixed bin size = 1.851852e-02
+the number of bins = 47
+#============ exit MakeVecCtr
+Elapsed time is 1.836095 seconds.
+----------------------------------------------------------
+|  This is the diary for plotting 3.tot_pix_orig1.ps!    |
+|  Now we are working on MACS0717 - srcpix for totsys 3! |
+----------------------------------------------------------
+#------------ below doing srcpix for img 3.3!
+#------------ enter MakeVecCtr
+fixed bin size = 3.846154e-02
+the number of bins = 34
+#============ exit MakeVecCtr
+#------------ enter MakeVecCtr
+fixed bin size = 2.000000e-02
+the number of bins = 32
+#============ exit MakeVecCtr
+#------------ below doing srcpix for img 3.2!
+#------------ enter MakeVecCtr
+fixed bin size = 1.515151e-02
+the number of bins = 39
+#============ exit MakeVecCtr
+#------------ enter MakeVecCtr
+fixed bin size = 1.515151e-02
+the number of bins = 42
+#============ exit MakeVecCtr
+#------------ below doing srcpix for img 3.1!
+#------------ enter MakeVecCtr
+fixed bin size = 1.851852e-02
+the number of bins = 31
+#============ exit MakeVecCtr
+#------------ enter MakeVecCtr
+fixed bin size = 1.851852e-02
+the number of bins = 47
+#============ exit MakeVecCtr
+Elapsed time is 1.882028 seconds.
+----------------------------------------------------------
+|  This is the diary for plotting 3.tot_pix_orig1.ps!    |
+|  Now we are working on MACS0717 - srcpix for totsys 3! |
+----------------------------------------------------------
+#------------ below doing srcpix for img 3.3!
+#------------ enter MakeVecCtr
+fixed bin size = 4.166666e-02
+the number of bins = 30
+#============ exit MakeVecCtr
+#------------ enter MakeVecCtr
+fixed bin size = 2.000000e-02
+the number of bins = 32
+#============ exit MakeVecCtr
+#------------ below doing srcpix for img 3.2!
+#------------ enter MakeVecCtr
+fixed bin size = 1.515151e-02
+the number of bins = 39
+#============ exit MakeVecCtr
+#------------ enter MakeVecCtr
+fixed bin size = 1.515151e-02
+the number of bins = 42
+#============ exit MakeVecCtr
+#------------ below doing srcpix for img 3.1!
+#------------ enter MakeVecCtr
+fixed bin size = 1.851852e-02
+the number of bins = 31
+#============ exit MakeVecCtr
+#------------ enter MakeVecCtr
+fixed bin size = 1.851852e-02
+the number of bins = 47
+#============ exit MakeVecCtr
+Elapsed time is 1.856037 seconds.
+----------------------------------------------------------
+|  This is the diary for plotting 3.tot_pix_orig1.ps!    |
+|  Now we are working on MACS0717 - srcpix for totsys 3! |
+----------------------------------------------------------
+#------------ below doing srcpix for img 3.3!
+#------------ enter MakeVecCtr
+fixed bin size = 4.166666e-02
+the number of bins = 30
+#============ exit MakeVecCtr
+#------------ enter MakeVecCtr
+fixed bin size = 2.083333e-02
+the number of bins = 31
+#============ exit MakeVecCtr
+#------------ below doing srcpix for img 3.2!
+#------------ enter MakeVecCtr
+fixed bin size = 1.515151e-02
+the number of bins = 39
+#============ exit MakeVecCtr
+#------------ enter MakeVecCtr
+fixed bin size = 1.515151e-02
+the number of bins = 42
+#============ exit MakeVecCtr
+#------------ below doing srcpix for img 3.1!
+#------------ enter MakeVecCtr
+fixed bin size = 1.851852e-02
+the number of bins = 31
+#============ exit MakeVecCtr
+#------------ enter MakeVecCtr
+fixed bin size = 1.851852e-02
+the number of bins = 47
+#============ exit MakeVecCtr
+Elapsed time is 1.874814 seconds.
+----------------------------------------------------------
+|  This is the diary for plotting 3.tot_pix_orig1.ps!    |
+|  Now we are working on MACS0717 - srcpix for totsys 3! |
+----------------------------------------------------------
+#------------ below doing srcpix for img 3.3!
+#------------ enter MakeVecCtr
+fixed bin size = 4.166666e-02
+the number of bins = 30
+#============ exit MakeVecCtr
+#------------ enter MakeVecCtr
+fixed bin size = 2.173913e-02
+the number of bins = 29
+#============ exit MakeVecCtr
+#------------ below doing srcpix for img 3.2!
+#------------ enter MakeVecCtr
+fixed bin size = 1.515151e-02
+the number of bins = 39
+#============ exit MakeVecCtr
+#------------ enter MakeVecCtr
+fixed bin size = 1.515151e-02
+the number of bins = 42
+#============ exit MakeVecCtr
+#------------ below doing srcpix for img 3.1!
+#------------ enter MakeVecCtr
+fixed bin size = 1.851852e-02
+the number of bins = 31
+#============ exit MakeVecCtr
+#------------ enter MakeVecCtr
+fixed bin size = 1.851852e-02
+the number of bins = 47
+#============ exit MakeVecCtr
+Elapsed time is 1.884116 seconds.
+----------------------------------------------------------
+|  This is the diary for plotting 3.tot_pix_orig1.ps!    |
+|  Now we are working on MACS0717 - srcpix for totsys 3! |
+----------------------------------------------------------
+#------------ below doing srcpix for img 3.3!
+#------------ enter MakeVecCtr
+fixed bin size = 4.166666e-02
+the number of bins = 30
+#============ exit MakeVecCtr
+#------------ enter MakeVecCtr
+fixed bin size = 2.083333e-02
+the number of bins = 31
+#============ exit MakeVecCtr
+#------------ below doing srcpix for img 3.2!
+#------------ enter MakeVecCtr
+fixed bin size = 1.515151e-02
+the number of bins = 39
+#============ exit MakeVecCtr
+#------------ enter MakeVecCtr
+fixed bin size = 1.515151e-02
+the number of bins = 42
+#============ exit MakeVecCtr
+#------------ below doing srcpix for img 3.1!
+#------------ enter MakeVecCtr
+fixed bin size = 1.851852e-02
+the number of bins = 31
+#============ exit MakeVecCtr
+#------------ enter MakeVecCtr
+fixed bin size = 1.851852e-02
+the number of bins = 47
+#============ exit MakeVecCtr
+Elapsed time is 1.854747 seconds.
+----------------------------------------------------------
+|  This is the diary for plotting 3.tot_pix_orig1.ps!    |
+|  Now we are working on MACS0717 - srcpix for totsys 3! |
+----------------------------------------------------------
+#------------ below doing srcpix for img 3.3!
+#------------ enter MakeVecCtr
+fixed bin size = 4.166666e-02
+the number of bins = 30
+#============ exit MakeVecCtr
+#------------ enter MakeVecCtr
+fixed bin size = 2.083333e-02
+the number of bins = 31
+#============ exit MakeVecCtr
+#------------ below doing srcpix for img 3.2!
+#------------ enter MakeVecCtr
+fixed bin size = 1.515151e-02
+the number of bins = 39
+#============ exit MakeVecCtr
+#------------ enter MakeVecCtr
+fixed bin size = 1.515151e-02
+the number of bins = 42
+#============ exit MakeVecCtr
+#------------ below doing srcpix for img 3.1!
+#------------ enter MakeVecCtr
+fixed bin size = 1.851852e-02
+the number of bins = 31
+#============ exit MakeVecCtr
+#------------ enter MakeVecCtr
+fixed bin size = 1.851852e-02
+the number of bins = 47
+#============ exit MakeVecCtr
+Elapsed time is 1.918267 seconds.
+----------------------------------------------------------
+|  This is the diary for plotting 3.tot_pix_orig1.ps!    |
+|  Now we are working on MACS0717 - srcpix for totsys 3! |
+----------------------------------------------------------
+#------------ below doing srcpix for img 3.3!
+#------------ enter MakeVecCtr
+fixed bin size = 4.166666e-02
+the number of bins = 30
+#============ exit MakeVecCtr
+#------------ enter MakeVecCtr
+fixed bin size = 2.083333e-02
+the number of bins = 31
+#============ exit MakeVecCtr
+#------------ below doing srcpix for img 3.2!
+#------------ enter MakeVecCtr
+fixed bin size = 1.515151e-02
+the number of bins = 39
+#============ exit MakeVecCtr
+#------------ enter MakeVecCtr
+fixed bin size = 1.515151e-02
+the number of bins = 42
+#============ exit MakeVecCtr
+#------------ below doing srcpix for img 3.1!
+#------------ enter MakeVecCtr
+fixed bin size = 1.851852e-02
+the number of bins = 31
+#============ exit MakeVecCtr
+#------------ enter MakeVecCtr
+fixed bin size = 1.851852e-02
+the number of bins = 47
+#============ exit MakeVecCtr
+Elapsed time is 1.864338 seconds.
+----------------------------------------------------------
+|  This is the diary for plotting 3.tot_pix_orig1.ps!    |
+|  Now we are working on MACS0717 - srcpix for totsys 3! |
+----------------------------------------------------------
+#------------ below doing srcpix for img 3.3!
+#------------ enter MakeVecCtr
+fixed bin size = 4.166666e-02
+the number of bins = 30
+#============ exit MakeVecCtr
+#------------ enter MakeVecCtr
+fixed bin size = 2.083333e-02
+the number of bins = 31
+#============ exit MakeVecCtr
+#------------ below doing srcpix for img 3.2!
+#------------ enter MakeVecCtr
+fixed bin size = 1.515151e-02
+the number of bins = 39
+#============ exit MakeVecCtr
+#------------ enter MakeVecCtr
+fixed bin size = 1.515151e-02
+the number of bins = 42
+#============ exit MakeVecCtr
+#------------ below doing srcpix for img 3.1!
+#------------ enter MakeVecCtr
+fixed bin size = 1.851852e-02
+the number of bins = 31
+#============ exit MakeVecCtr
+#------------ enter MakeVecCtr
+fixed bin size = 1.851852e-02
+the number of bins = 47
+#============ exit MakeVecCtr
+Elapsed time is 1.884769 seconds.

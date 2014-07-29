@@ -1,6 +1,6 @@
 function [vector,nelem]=MakeVecCtr(x,x_ctr,binsize)
 %------------------------------------------------------------------------------
-% MakeVec function
+% MakeVecCtr function
 % Description: make a column vector in terms of the range of the input vector x
 %              and more importantly the central value x_ctr
 % Input  :
@@ -9,7 +9,7 @@ function [vector,nelem]=MakeVecCtr(x,x_ctr,binsize)
 %     By : Xin Wang                     July 2014
 % Reliable: 1
 %------------------------------------------------------------------------------
-fprintf('#-------------------------------- enter MakeVecCtr\n')
+fprintf('#------------ enter MakeVecCtr\n')
 xmin=min(x);
 xmax=max(x);
 if x_ctr>xmax || x_ctr<xmin
@@ -26,4 +26,4 @@ else
     nelem=numel(vector);
     fprintf('the number of bins = %d\n',nelem)
 end
-fprintf('#================================ exit MakeVecCtr\n')
+fprintf('#============ exit MakeVecCtr\n')

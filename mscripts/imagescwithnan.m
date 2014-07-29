@@ -16,6 +16,8 @@ function [h, hcb] = imagescwithnan(x,y,a, cm, nanclr, hidenan, clims)
 % Author:      yuk     (http://stackoverflow.com/users/163080/yuk)
 % Modified by: Zertrin (http://stackoverflow.com/users/862188/zertrin)
 % Last modification: 10 May 2013
+% <<<140728>>> NOTE: this plotting command can not do multiple times with
+%                    "hold on"; only show the last time
  
 %# find minimum and maximum
 if exist('clims','var')

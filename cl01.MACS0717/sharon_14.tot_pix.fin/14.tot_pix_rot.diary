@@ -1,0 +1,88 @@
+----------------------------------------------------------
+|  This is the diary for plotting 14.tot_pix_rot.ps!    |
+|  Now we are working on MACS0717 - srcpix for totsys 14! |
+----------------------------------------------------------
+#------------ below doing srcpix for img 14.2!
+#------------ enter MakeVecCtr
+fixed bin size = 3.846154e-02
+the number of bins = 27
+#============ exit MakeVecCtr
+#------------ enter MakeVecCtr
+fixed bin size = 3.125000e-02
+the number of bins = 26
+#============ exit MakeVecCtr
+#------------ below doing srcpix for img 14.3!
+#------------ enter shift
+#============ exit shift
+#------------ enter JacobiRot
+kappa_ext = 1.9, gamma_ext=0.3, phi=15 (deg)
+now phi looks more normal =0.261799 (RAD)
+#============ exit JacobiRot
+#------------ enter MakeVecCtr
+fixed bin size = 1.923077e-02
+the number of bins = 31
+#============ exit MakeVecCtr
+#------------ enter MakeVecCtr
+fixed bin size = 2.272727e-02
+the number of bins = 36
+#============ exit MakeVecCtr
+#------------ below doing srcpix for img 14.1!
+#------------ enter shift
+#============ exit shift
+#------------ enter JacobiRot
+kappa_ext = 0.98, gamma_ext=0.73, phi=55 (deg)
+now phi looks more normal =0.959931 (RAD)
+#============ exit JacobiRot
+#------------ enter MakeVecCtr
+fixed bin size = 2.083333e-02
+the number of bins = 60
+#============ exit MakeVecCtr
+#------------ enter MakeVecCtr
+fixed bin size = 1.724138e-02
+the number of bins = 60
+#============ exit MakeVecCtr
+Elapsed time is 2.097823 seconds.
+----------------------------------------------------------
+|  This is the diary for plotting 14.tot_pix_rot.ps!    |
+|  Now we are working on MACS0717 - srcpix for totsys 14! |
+----------------------------------------------------------
+#------------ below doing srcpix for img 14.2!
+#------------ enter MakeVecCtr
+fixed bin size = 3.846154e-02
+the number of bins = 27
+#============ exit MakeVecCtr
+#------------ enter MakeVecCtr
+fixed bin size = 3.125000e-02
+the number of bins = 26
+#============ exit MakeVecCtr
+#------------ below doing srcpix for img 14.3!
+#------------ enter shift
+#============ exit shift
+#------------ enter JacobiRot
+kappa_ext = 1.9, gamma_ext=0.3, phi=15 (deg)
+now phi looks more normal =0.261799 (RAD)
+#============ exit JacobiRot
+#------------ enter MakeVecCtr
+fixed bin size = 1.923077e-02
+the number of bins = 31
+#============ exit MakeVecCtr
+#------------ enter MakeVecCtr
+fixed bin size = 2.272727e-02
+the number of bins = 36
+#============ exit MakeVecCtr
+#------------ below doing srcpix for img 14.1!
+#------------ enter shift
+#============ exit shift
+#------------ enter JacobiRot
+kappa_ext = 0.98, gamma_ext=0.73, phi=55 (deg)
+now phi looks more normal =0.959931 (RAD)
+#============ exit JacobiRot
+#------------ enter MakeVecCtr
+fixed bin size = 2.083333e-02
+the number of bins = 60
+#============ exit MakeVecCtr
+#------------ enter MakeVecCtr
+fixed bin size = 1.724138e-02
+the number of bins = 60
+#============ exit MakeVecCtr
+Elapsed time is 2.069549 seconds.

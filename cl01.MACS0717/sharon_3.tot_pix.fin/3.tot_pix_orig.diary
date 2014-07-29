@@ -1,0 +1,32 @@
+----------------------------------------------------------
+|  This is the diary for plotting 3.tot_pix_orig.ps!    |
+|  Now we are working on MACS0717 - srcpix for totsys 3! |
+----------------------------------------------------------
+#------------ below doing srcpix for img 3.3!
+#------------ enter MakeVecCtr
+fixed bin size = 4.166666e-02
+the number of bins = 30
+#============ exit MakeVecCtr
+#------------ enter MakeVecCtr
+fixed bin size = 2.083333e-02
+the number of bins = 31
+#============ exit MakeVecCtr
+#------------ below doing srcpix for img 3.2!
+#------------ enter MakeVecCtr
+fixed bin size = 1.515151e-02
+the number of bins = 39
+#============ exit MakeVecCtr
+#------------ enter MakeVecCtr
+fixed bin size = 1.515151e-02
+the number of bins = 42
+#============ exit MakeVecCtr
+#------------ below doing srcpix for img 3.1!
+#------------ enter MakeVecCtr
+fixed bin size = 1.851852e-02
+the number of bins = 31
+#============ exit MakeVecCtr
+#------------ enter MakeVecCtr
+fixed bin size = 1.851852e-02
+the number of bins = 47
+#============ exit MakeVecCtr
+Elapsed time is 1.877297 seconds.
