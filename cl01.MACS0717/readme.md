@@ -3,6 +3,7 @@
 remapping multiple images detected in the field of MACS0717
 
 naming conventions:
+
     1. "src plane img"/"lens plane img" refer to the surface brightness (SB) profiles of distant galaxies on the 
     src/lens plane.
 
@@ -25,7 +26,9 @@ scaling records:
     scales for sys14 tot_pix_fin
         scale=[2.4 2.9; 1.3 1.6; 2.6 2.2];  scale_tot=[3.0 2.7];
 
-<<<140729>>> how to fine-tune scales
+7/29/2014
+--------- how to fine-tune scales
+
     first pick the same value for both alpha,beta (x,y) binsizes, see how img is pixelized and how many bins there are.  
     If the resulted y direction has much more bins, it means the count drops are more spread out and a small binsize is 
     more probable to lead to hollow pixels (along x direction!!!). As a result, tune down the y-scale a little bit.
