@@ -19,12 +19,10 @@ naming conventions:
 
 scaling records:
 
-    scales for sys3 fin
+    scales for sys3 tot_pix_fin
         scale=[2.4 2.4; 3.0 3.0; 1.2 2.4];  scale_tot=[3.7 3.7];
-    scales for sys4 fin
+    scales for sys4 tot_pix_fin
         scale, scale_tot = all 1.3
-    scales for sys14 tot_pix_rot
-        scale=[2.4 2.9; 1.3 1.6; 2.6 2.2];
     scales for sys14 tot_pix_fin
         scale=[2.4 2.9; 1.3 1.6; 2.6 2.2];  scale_tot=[3.0 2.7];
 
