@@ -17,6 +17,10 @@ naming conventions:
 
     4. if there is no _fin.ps figures, use _fin with the biggest number as the final result
 
+to-do list:
+
+    1. <<<140731>>> \mu_tot=\mu_ctr \cdot \mu_eff
+
 scaling records:
 
     scales for sys3 tot_pix_fin
