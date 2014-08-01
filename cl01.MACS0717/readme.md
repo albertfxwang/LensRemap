@@ -19,7 +19,11 @@ naming conventions:
 
 to-do list:
 
-    1. <<<140731>>> \mu_tot=\mu_ctr \cdot \mu_eff
+    1. <<<140731>>> mu_tot= mu_ctr * mu_ext  =>  the total effective magnification should include the multiplication by 
+    mu_ext= 1/[(1-kappa_ext)^2-|gamma_ext|^2]. So you should add the calculation of mu_ext in srcpix_tot...m
+
+    2. <<<140731>>> there seems no clear dependence of reading in the magnification map, if the mag_ctr can be given in 
+    as direct values in the catalog used to cut out image/lensmodel postage stamps
 
 scaling records:
 
