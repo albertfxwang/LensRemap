@@ -23,7 +23,9 @@ to-do list:
     mu_ext= 1/[(1-kappa_ext)^2-|gamma_ext|^2]. So you should add the calculation of mu_ext in srcpix_tot...m
 
     2. <<<140731>>> there seems no clear dependence of reading in the magnification map, if the mag_ctr can be given in 
-    as direct values in the catalog used to cut out image/lensmodel postage stamps
+    as direct values in the catalog used to cut out image/lensmodel postage stamps. In the meantime, you could put the 
+    1-sigma error range for mu_ctr (which can be given by Dan''s webtool) in the catalog as well. So a calculation on 
+    the 1-sigma range for mu_tot can also be done.
 
 scaling records:
 
