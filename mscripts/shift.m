@@ -11,7 +11,7 @@ function [alpha_shift,beta_shift]=shift(alpha_in,beta_in,ctr_in,ctr_shift)
 %------------------------------------------------------------------------------
 fprintf('#------------ enter shift\n')
 %------------ check whether alpha,beta_in are vectors
-if ndims(alpha_in)+ndims(beta_in)>4
+if min(size(alpha_in))+min(size(beta_in))>2
     fprintf('ERR: input alpha/beta are not vectors!\n')
 end
 

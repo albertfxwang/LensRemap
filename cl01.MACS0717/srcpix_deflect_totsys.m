@@ -92,9 +92,10 @@ for i=1:N_img
     clear absdiff_alpha absdiff_beta diff_alpha diff_beta
 end
 src_cnt_pix(src_cnt_pix == 0) = NaN;
-srcpix3_SB = src_cnt_pix./times_pix;    
+srcpix3_SB = src_cnt_pix./times_pix;
 srcpix3_dalpha= vec_alpha-ref_alpha;
 srcpix3_dbeta=  vec_beta-ref_beta;
+% here the number in variable names has nothing to do with the value of "num". same thing below
 
 %------------ sub-plotting
 subplot(2,2,1);
