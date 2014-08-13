@@ -17,8 +17,12 @@ end
 
 delta= ctr_shift-ctr_in;
 alpha_shift=alpha_in+delta(1);
+fprintf('In (a,b) space, shifted img Eastward by %g arcsec!\n',delta(1))
 beta_shift= beta_in+delta(2);
+fprintf('In (a,b) space, shifted img Northward by %g arcsec!\n',delta(2))
+
 fprintf('#============ exit shift\n')
+
 %----------------------------- no use anymore ----------------------------------%
 % indx_alpha= find(ismember(alpha_in,ctr_in(1)));
 % indx_beta=  find(ismember(beta_in,ctr_in(2)));

@@ -1,0 +1,57 @@
+----------------------------------------------------------
+|  This is the diary for plotting 14.tot_pix_defl1.ps!    |
+|  Now we are working on MACS0717 - srcpix for totsys 14! |
+----------------------------------------------------------
+#------------------------ below doing srcpix for img 14.2!
+#------------ enter MakeVecCtr
+fixed bin size = 3.846154e-02
+the number of bins = 27
+#============ exit MakeVecCtr
+#------------ enter MakeVecCtr
+fixed bin size = 3.125000e-02
+the number of bins = 26
+#============ exit MakeVecCtr
+#------------------------ below doing srcpix for img 14.3!
+#------------ enter shift
+In (a,b) space, shifted img Eastward by -0.297271 arcsec!
+In (a,b) space, shifted img Northward by 0.195279 arcsec!
+#============ exit shift
+#------------ enter JacobiRot
+kappa_ext = 1.9, gamma_ext=0.3, phi=15 (deg)
+now phi looks more normal =0.261799 (RAD)
+#============ exit JacobiRot
+#------------ enter MakeVecCtr
+fixed bin size = 1.923077e-02
+the number of bins = 31
+#============ exit MakeVecCtr
+#------------ enter MakeVecCtr
+fixed bin size = 2.272727e-02
+the number of bins = 36
+#============ exit MakeVecCtr
+#------------------------ below doing srcpix for img 14.1!
+#------------ enter shift
+In (a,b) space, shifted img Eastward by -0.138414 arcsec!
+In (a,b) space, shifted img Northward by 0.265218 arcsec!
+#============ exit shift
+#------------ enter JacobiRot
+kappa_ext = 0.98, gamma_ext=0.73, phi=55 (deg)
+now phi looks more normal =0.959931 (RAD)
+#============ exit JacobiRot
+#------------ enter MakeVecCtr
+fixed bin size = 2.083333e-02
+the number of bins = 60
+#============ exit MakeVecCtr
+#------------ enter MakeVecCtr
+fixed bin size = 1.724138e-02
+the number of bins = 60
+#============ exit MakeVecCtr
+#------------------------ below doing srcpix for totsys 14!
+#------------ enter MakeVecCtr
+fixed bin size = 1.666667e-02
+the number of bins = 38
+#============ exit MakeVecCtr
+#------------ enter MakeVecCtr
+fixed bin size = 1.851852e-02
+the number of bins = 40
+#============ exit MakeVecCtr
+Elapsed time is 4.279640 seconds.

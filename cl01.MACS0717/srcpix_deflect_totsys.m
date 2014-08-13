@@ -1,4 +1,5 @@
 % pixelize the src plane in terms of all multiple images within one system
+%<<<140811>>> changed all variable names to my updated naming conventions
 
 clear all; clc; tic
 
@@ -8,8 +9,8 @@ PlotParams;
 sys= '14';
 mat_dir= 'sharon_sys14.mat';      % the folder containing .mat files
 mat_tail='_deflect.mat';
-pic_name=[sys '.tot_pix_fin.ps'];
-diary([sys,'.tot_pix_fin.diary']);
+pic_name=[sys '.tot_pix_defl1.ps'];
+diary([sys,'.tot_pix_defl1.diary']);
 num_img=3;
 
 fprintf('----------------------------------------------------------\n')
@@ -20,13 +21,13 @@ fprintf('----------------------------------------------------------\n')
 %------------ the pixel scale of the RGB img given by the Python command
 % fitstools.get_pixscale('MACS0717_F814WF105WF140W_R.fits')  already in unit of arcsec!!!
 img_pixscale=0.049999997703084283;
-%------------ the 1-over-ratio for src_pixscale, 1st column: alpha, 2nd column: beta, 
+%------------ the 1-over-ratio for src_pixscale, 1st column: a, 2nd column: b, 
 % the ordering of rows follow their names, not their appearances in the next section afterwards
 scale=[2.4 2.9; 1.3 1.6; 2.6 2.2];  
 scale_tot=[3.0 2.7];
 % *NOTE: the scale for totsys can be much higher than individual img
 
-%------------ the center of src plane img, 1st column: alpha, 2nd column: beta
+%------------ the center of src plane img, 1st column: a, 2nd column: b
 src_ctr=zeros(num_img,2);
 
 %------------ the Jacobi matrix of external kappa and shear fields 
@@ -43,67 +44,67 @@ num=2;
 if num>num_img
     fprintf('ERR: num=%d is out of range of num_img=%d',num,num_img)
 end
-fprintf(['#------------ below doing srcpix for img ',sys,'.',num2str(num),'!\n'])
+fprintf(['#------------------------ below doing srcpix for img ',sys,'.',num2str(num),'!\n'])
 %------------ NOTE: the following way to load .mat file in as a struct
 load((fullfile(mat_dir,[sys '.' num2str(num) mat_tail])))
 
-src_alpha= reshape(RA0_src,N_img,1)*cos(ref_dec/180.*pi)*3600.;           % alpha
-src_beta=  reshape(DEC0_src,N_img,1)*3600.;       % beta      <=>     DEC in arcsec
-src_cnt=   reshape(img,N_img,1);
-ctr_alpha= ctr_ra*cos(ref_dec/180.*pi)*3600.;     % alpha_ctr
-ctr_beta=  ctr_dec*3600.;                         % beta_ctr
-src_ctr(num,1)= ctr_alpha;
-src_ctr(num,2)= ctr_beta;
-ref_alpha= ref_ra*cos(ref_dec/180.*pi)*3600.;     % alpha_ref
-ref_beta=  ref_dec*3600.;                         % beta_ref
+src_a=  reshape(RA0_src,N_img,1)*cos(ref_dec/180.*pi)*3600.;  % a
+src_b=  reshape(DEC0_src,N_img,1)*3600.;       % b
+src_cnt=reshape(img,N_img,1);
+ctr_a=  ctr_ra*cos(ref_dec/180.*pi)*3600.;     % a_ctr
+ctr_b=  ctr_dec*3600.;                         % b_ctr
+src_ctr(num,1)= ctr_a;
+src_ctr(num,2)= ctr_b;
+ref_a=  ref_ra*cos(ref_dec/180.*pi)*3600.;     % a_ref
+ref_b=  ref_dec*3600.;                         % b_ref
 %------------ records the indices of which src plane pixels cnts go into
-indx_alpha = zeros(N_img,1);
-indx_beta = zeros(N_img,1);
+indx_a = zeros(N_img,1);
+indx_b = zeros(N_img,1);
 
 %%------------ set up the common ctr for all img
 ctr_common=[src_ctr(num,1) src_ctr(num,2)];
 
 %%%------------ saving data for the combined subplot
-a3_N=N_img;
-a3_src_alpha=src_alpha;
-a3_src_beta=src_beta;
-a3_src_cnt=src_cnt;
+img0_N=N_img;
+img0_src_a=src_a;
+img0_src_b=src_b;
+img0_src_cnt=src_cnt;
 
-scale_alpha=scale(num,1);
-scale_beta=scale(num,2);
-binsize_alpha= img_pixscale/scale_alpha;
-binsize_beta=  img_pixscale/scale_beta;
-[vec_alpha,N_alpha]=MakeVecCtr(src_alpha,src_ctr(num,1),binsize_alpha);
-[vec_beta,N_beta]=  MakeVecCtr(src_beta,src_ctr(num,2),binsize_beta);
-src_cnt_pix = zeros(N_beta,N_alpha);
-times_pix = zeros(N_beta,N_alpha);
+scale_a=scale(num,1);
+scale_b=scale(num,2);
+binsize_a= img_pixscale/scale_a;
+binsize_b= img_pixscale/scale_b;
+[vec_a,N_a]= MakeVecCtr(src_a,src_ctr(num,1),binsize_a);
+[vec_b,N_b]= MakeVecCtr(src_b,src_ctr(num,2),binsize_b);
+src_cnt_pix= zeros(N_b,N_a);
+times_pix=   zeros(N_b,N_a);
 
 %------------ interlacing
 for i=1:N_img
-    absdiff_alpha=  abs(vec_alpha-src_alpha(i));
-    absdiff_beta=   abs(vec_beta-src_beta(i));
-    [diff_alpha,indx_alpha(i)]= min(absdiff_alpha);
-    [diff_beta,indx_beta(i)]=   min(absdiff_beta);
-    if diff_alpha==binsize_alpha/2. || diff_beta==binsize_beta/2.
+    absdiff_a=  abs(vec_a-src_a(i));
+    absdiff_b=  abs(vec_b-src_b(i));
+    [diff_a,indx_a(i)]= min(absdiff_a);
+    [diff_b,indx_b(i)]= min(absdiff_b);
+    if diff_a==binsize_a/2. || diff_b==binsize_b/2.
         fprintf('this point sitting on boundary: i=%d',i)
     end
-    src_cnt_pix(indx_beta(i),indx_alpha(i))=src_cnt_pix(indx_beta(i),indx_alpha(i))+src_cnt(i);
-    times_pix(indx_beta(i),indx_alpha(i))=  times_pix(indx_beta(i),indx_alpha(i))+1;
-    clear absdiff_alpha absdiff_beta diff_alpha diff_beta
+    src_cnt_pix(indx_b(i),indx_a(i))=src_cnt_pix(indx_b(i),indx_a(i))+src_cnt(i);
+    times_pix(indx_b(i),indx_a(i))=  times_pix(indx_b(i),indx_a(i))+1;
+    clear absdiff_a absdiff_b diff_a diff_b
 end
 src_cnt_pix(src_cnt_pix == 0) = NaN;
-srcpix3_SB = src_cnt_pix./times_pix;
-srcpix3_dalpha= vec_alpha-ref_alpha;
-srcpix3_dbeta=  vec_beta-ref_beta;
+srcpix0_SB= src_cnt_pix./times_pix;
+srcpix0_da= vec_a-ref_a;
+srcpix0_db= vec_b-ref_b;
 % here the number in variable names has nothing to do with the value of "num". same thing below
 
 %------------ sub-plotting
 subplot(2,2,1);
-imagescwithnan(srcpix3_dalpha,srcpix3_dbeta,srcpix3_SB,jet,[1 1 1],true)
+imagescwithnan(srcpix0_da,srcpix0_db,srcpix0_SB,jet,[1 1 1],true)
 axis xy
 colorbar
-xlabel('d\alpha [arcsec]','FontSize',lab_fontsize);
-ylabel('d\beta [arcsec]','FontSize',lab_fontsize);
+xlabel('da [arcsec]','FontSize',lab_fontsize);
+ylabel('db [arcsec]','FontSize',lab_fontsize);
 title(['MACS0717 img ',sys,'.',num2str(num),' on the pixelized src plane'])
 set(gca,'FontSize',axes_fontsize,'LineWidth',lw_gca,'XDir','Reverse'); 
 axis(macs0717.sys14ar);
@@ -115,76 +116,76 @@ num=3;
 if num>num_img
     fprintf('ERR: num=%d is out of range of num_img=%d',num,num_img)
 end
-fprintf(['#------------ below doing srcpix for img ',sys,'.',num2str(num),'!\n'])
+fprintf(['#------------------------ below doing srcpix for img ',sys,'.',num2str(num),'!\n'])
 %------------ NOTE: the following way to load .mat file in as a struct
 load((fullfile(mat_dir,[sys '.' num2str(num) mat_tail])))
 
-src0_alpha= reshape(RA0_src,N_img,1)*cos(ref_dec/180.*pi)*3600.;           % alpha
-src0_beta=  reshape(DEC0_src,N_img,1)*3600.;       % beta      <=>     DEC in arcsec
-src_cnt=   reshape(img,N_img,1);
-ctr_alpha= ctr_ra*cos(ref_dec/180.*pi)*3600.;     % alpha_ctr
-ctr_beta=  ctr_dec*3600.;                         % beta_ctr
-src_ctr(num,1)= ctr_alpha;
-src_ctr(num,2)= ctr_beta;
-ref_alpha= ref_ra*cos(ref_dec/180.*pi)*3600.;     % alpha_ref
-ref_beta=  ref_dec*3600.;                         % beta_ref
+src0_a= reshape(RA0_src,N_img,1)*cos(ref_dec/180.*pi)*3600.;  % a
+src0_b= reshape(DEC0_src,N_img,1)*3600.;       % b
+src_cnt=reshape(img,N_img,1);
+ctr_a=  ctr_ra*cos(ref_dec/180.*pi)*3600.;     % a_ctr
+ctr_b=  ctr_dec*3600.;                         % b_ctr
+src_ctr(num,1)= ctr_a;
+src_ctr(num,2)= ctr_b;
+ref_a=  ref_ra*cos(ref_dec/180.*pi)*3600.;     % a_ref
+ref_b=  ref_dec*3600.;                         % b_ref
 %------------ records the indices of which src plane pixels cnts go into
-indx_alpha = zeros(N_img,1);
-indx_beta = zeros(N_img,1);
+indx_a = zeros(N_img,1);
+indx_b = zeros(N_img,1);
 
 %%------------ shift the center point to match ctr_common
-[src1_alpha,src1_beta]= shift(src0_alpha,src0_beta,src_ctr(num,:),ctr_common);
+[src1_a,src1_b]= shift(src0_a,src0_b,src_ctr(num,:),ctr_common);
 %------------ the following two lines are only for the shift plot
-% src_alpha=src1_alpha;
-% src_beta=src1_beta;
+% src_a=src1_a;
+% src_b=src1_b;
 %%------------ Jacobi-rotate img
-[src_alpha,src_beta]=   JacobiRot(src1_alpha,src1_beta,ctr_common,a3_jacobi);
+[src_a,src_b]=   JacobiRot(src1_a,src1_b,ctr_common,a3_jacobi);
 
 %%%------------ saving data for the combined subplot
-a2_N=N_img;
-a2_src_alpha=src_alpha;
-a2_src_beta=src_beta;
-a2_src_cnt=src_cnt;
+img1_N=N_img;
+img1_src_a=src_a;
+img1_src_b=src_b;
+img1_src_cnt=src_cnt;
 
-scale_alpha=scale(num,1);
-scale_beta=scale(num,2);
-binsize_alpha= img_pixscale/scale_alpha;
-binsize_beta=  img_pixscale/scale_beta;
-[vec_alpha,N_alpha]=MakeVecCtr(src_alpha,ctr_common(1),binsize_alpha);
-[vec_beta,N_beta]=  MakeVecCtr(src_beta,ctr_common(2),binsize_beta);
+scale_a=scale(num,1);
+scale_b=scale(num,2);
+binsize_a= img_pixscale/scale_a;
+binsize_b= img_pixscale/scale_b;
+[vec_a,N_a]= MakeVecCtr(src_a,ctr_common(1),binsize_a);
+[vec_b,N_b]= MakeVecCtr(src_b,ctr_common(2),binsize_b);
 %------------ the following four lines are only for the orig plot
-% src_alpha=src0_alpha;
-% src_beta=src0_beta;
-% [vec_alpha,N_alpha]=MakeVecCtr(src_alpha,src_ctr(num,1),binsize_alpha);
-% [vec_beta,N_beta]=  MakeVecCtr(src_beta,src_ctr(num,2),binsize_beta);
-src_cnt_pix = zeros(N_beta,N_alpha);
-times_pix = zeros(N_beta,N_alpha);
+% src_a=src0_a;
+% src_b=src0_b;
+% [vec_a,N_a]=MakeVecCtr(src_a,src_ctr(num,1),binsize_a);
+% [vec_b,N_b]=  MakeVecCtr(src_b,src_ctr(num,2),binsize_b);
+src_cnt_pix = zeros(N_b,N_a);
+times_pix = zeros(N_b,N_a);
 
 %------------ interlacing
 for i=1:N_img
-    absdiff_alpha=  abs(vec_alpha-src_alpha(i));
-    absdiff_beta=   abs(vec_beta-src_beta(i));
-    [diff_alpha,indx_alpha(i)]= min(absdiff_alpha);
-    [diff_beta,indx_beta(i)]=   min(absdiff_beta);
-    if diff_alpha==binsize_alpha/2. || diff_beta==binsize_beta/2.
+    absdiff_a= abs(vec_a-src_a(i));
+    absdiff_b= abs(vec_b-src_b(i));
+    [diff_a,indx_a(i)]= min(absdiff_a);
+    [diff_b,indx_b(i)]= min(absdiff_b);
+    if diff_a==binsize_a/2. || diff_b==binsize_b/2.
         fprintf('this point sitting on boundary: i=%d',i)
     end
-    src_cnt_pix(indx_beta(i),indx_alpha(i))=src_cnt_pix(indx_beta(i),indx_alpha(i))+src_cnt(i);
-    times_pix(indx_beta(i),indx_alpha(i))=  times_pix(indx_beta(i),indx_alpha(i))+1;
-    clear absdiff_alpha absdiff_beta diff_alpha diff_beta
+    src_cnt_pix(indx_b(i),indx_a(i))=src_cnt_pix(indx_b(i),indx_a(i))+src_cnt(i);
+    times_pix(indx_b(i),indx_a(i))=  times_pix(indx_b(i),indx_a(i))+1;
+    clear absdiff_a absdiff_b diff_a diff_b
 end
 src_cnt_pix(src_cnt_pix == 0) = NaN;
-srcpix2_SB = src_cnt_pix./times_pix;    
-srcpix2_dalpha= vec_alpha-ref_alpha;
-srcpix2_dbeta=  vec_beta-ref_beta;
+srcpix1_SB= src_cnt_pix./times_pix;    
+srcpix1_da= vec_a-ref_a;
+srcpix1_db= vec_b-ref_b;
 
 %------------ sub-plotting
 subplot(2,2,2)
-imagescwithnan(srcpix2_dalpha,srcpix2_dbeta,srcpix2_SB,jet,[1 1 1],true)
+imagescwithnan(srcpix1_da,srcpix1_db,srcpix1_SB,jet,[1 1 1],true)
 axis xy
 colorbar
-xlabel('d\alpha [arcsec]','FontSize',lab_fontsize);
-% ylabel('d\beta [arcsec]','FontSize',lab_fontsize);
+xlabel('da [arcsec]','FontSize',lab_fontsize);
+% ylabel('db [arcsec]','FontSize',lab_fontsize);
 title(['MACS0717 img ',sys,'.',num2str(num),' on the pixelized src plane'])
 set(gca,'FontSize',axes_fontsize,'LineWidth',lw_gca,'XDir','Reverse'); 
 axis(macs0717.sys14ar);
@@ -196,76 +197,76 @@ num=1;
 if num>num_img
     fprintf('ERR: num=%d is out of range of num_img=%d',num,num_img)
 end
-fprintf(['#------------ below doing srcpix for img ',sys,'.',num2str(num),'!\n'])
+fprintf(['#------------------------ below doing srcpix for img ',sys,'.',num2str(num),'!\n'])
 %------------ NOTE: the following way to load .mat file in as a struct
 load((fullfile(mat_dir,[sys '.' num2str(num) mat_tail])))
 
-src0_alpha= reshape(RA0_src,N_img,1)*cos(ref_dec/180.*pi)*3600.;           % alpha
-src0_beta=  reshape(DEC0_src,N_img,1)*3600.;       % beta      <=>     DEC in arcsec
-src_cnt=   reshape(img,N_img,1);
-ctr_alpha= ctr_ra*cos(ref_dec/180.*pi)*3600.;     % alpha_ctr
-ctr_beta=  ctr_dec*3600.;                         % beta_ctr
-src_ctr(num,1)= ctr_alpha;
-src_ctr(num,2)= ctr_beta;
-ref_alpha= ref_ra*cos(ref_dec/180.*pi)*3600.;     % alpha_ref
-ref_beta=  ref_dec*3600.;                         % beta_ref
+src0_a= reshape(RA0_src,N_img,1)*cos(ref_dec/180.*pi)*3600.;  % a
+src0_b= reshape(DEC0_src,N_img,1)*3600.;       % b 
+src_cnt=reshape(img,N_img,1);
+ctr_a=  ctr_ra*cos(ref_dec/180.*pi)*3600.;     % a_ctr
+ctr_b=  ctr_dec*3600.;                         % b_ctr
+src_ctr(num,1)= ctr_a;
+src_ctr(num,2)= ctr_b;
+ref_a=  ref_ra*cos(ref_dec/180.*pi)*3600.;     % a_ref
+ref_b=  ref_dec*3600.;                         % b_ref
 %------------ records the indices of which src plane pixels cnts go into
-indx_alpha = zeros(N_img,1);
-indx_beta = zeros(N_img,1);
+indx_a = zeros(N_img,1);
+indx_b = zeros(N_img,1);
 
 %%------------ shift the center point to match ctr_common
-[src1_alpha,src1_beta]= shift(src0_alpha,src0_beta,src_ctr(num,:),ctr_common);
+[src1_a,src1_b]= shift(src0_a,src0_b,src_ctr(num,:),ctr_common);
 %------------ the following two lines are only for the shift plot
-% src_alpha=src1_alpha;
-% src_beta=src1_beta;
+% src_a=src1_a;
+% src_b=src1_b;
 %%------------ Jacobi-rotate img
-[src_alpha,src_beta]=   JacobiRot(src1_alpha,src1_beta,ctr_common,a1_jacobi);
+[src_a,src_b]=   JacobiRot(src1_a,src1_b,ctr_common,a1_jacobi);
 
 %%%------------ saving data for the combined subplot
-a1_N=N_img;
-a1_src_alpha=src_alpha;
-a1_src_beta=src_beta;
-a1_src_cnt=src_cnt;
+img2_N=N_img;
+img2_src_a=src_a;
+img2_src_b=src_b;
+img2_src_cnt=src_cnt;
 
-scale_alpha=scale(num,1);
-scale_beta=scale(num,2);
-binsize_alpha= img_pixscale/scale_alpha;
-binsize_beta=  img_pixscale/scale_beta;
-[vec_alpha,N_alpha]=MakeVecCtr(src_alpha,ctr_common(1),binsize_alpha);
-[vec_beta,N_beta]=  MakeVecCtr(src_beta,ctr_common(2),binsize_beta);
+scale_a=scale(num,1);
+scale_b=scale(num,2);
+binsize_a= img_pixscale/scale_a;
+binsize_b= img_pixscale/scale_b;
+[vec_a,N_a]= MakeVecCtr(src_a,ctr_common(1),binsize_a);
+[vec_b,N_b]= MakeVecCtr(src_b,ctr_common(2),binsize_b);
 %------------ the following four lines are only for the orig plot
-% src_alpha=src0_alpha;
-% src_beta=src0_beta;
-% [vec_alpha,N_alpha]=MakeVecCtr(src_alpha,src_ctr(num,1),binsize_alpha);
-% [vec_beta,N_beta]=  MakeVecCtr(src_beta,src_ctr(num,2),binsize_beta);
-src_cnt_pix = zeros(N_beta,N_alpha);
-times_pix = zeros(N_beta,N_alpha);
+% src_a=src0_a;
+% src_b=src0_b;
+% [vec_a,N_a]=MakeVecCtr(src_a,src_ctr(num,1),binsize_a);
+% [vec_b,N_b]=  MakeVecCtr(src_b,src_ctr(num,2),binsize_b);
+src_cnt_pix = zeros(N_b,N_a);
+times_pix = zeros(N_b,N_a);
 
 %------------ interlacing
 for i=1:N_img
-    absdiff_alpha=  abs(vec_alpha-src_alpha(i));
-    absdiff_beta=   abs(vec_beta-src_beta(i));
-    [diff_alpha,indx_alpha(i)]= min(absdiff_alpha);
-    [diff_beta,indx_beta(i)]=   min(absdiff_beta);
-    if diff_alpha==binsize_alpha/2. || diff_beta==binsize_beta/2.
+    absdiff_a= abs(vec_a-src_a(i));
+    absdiff_b= abs(vec_b-src_b(i));
+    [diff_a,indx_a(i)]= min(absdiff_a);
+    [diff_b,indx_b(i)]= min(absdiff_b);
+    if diff_a==binsize_a/2. || diff_b==binsize_b/2.
         fprintf('this point sitting on boundary: i=%d',i)
     end
-    src_cnt_pix(indx_beta(i),indx_alpha(i))=src_cnt_pix(indx_beta(i),indx_alpha(i))+src_cnt(i);
-    times_pix(indx_beta(i),indx_alpha(i))=  times_pix(indx_beta(i),indx_alpha(i))+1;
-    clear absdiff_alpha absdiff_beta diff_alpha diff_beta
+    src_cnt_pix(indx_b(i),indx_a(i))=src_cnt_pix(indx_b(i),indx_a(i))+src_cnt(i);
+    times_pix(indx_b(i),indx_a(i))=  times_pix(indx_b(i),indx_a(i))+1;
+    clear absdiff_a absdiff_b diff_a diff_b
 end
 src_cnt_pix(src_cnt_pix == 0) = NaN;
-srcpix1_SB = src_cnt_pix./times_pix;    
-srcpix1_dalpha= vec_alpha-ref_alpha;
-srcpix1_dbeta=  vec_beta-ref_beta;
+srcpix2_SB = src_cnt_pix./times_pix;    
+srcpix2_da= vec_a-ref_a;
+srcpix2_db=  vec_b-ref_b;
 
 %------------ sub-plotting
 subplot(2,2,3)
-imagescwithnan(srcpix1_dalpha,srcpix1_dbeta,srcpix1_SB,jet,[1 1 1],true)
+imagescwithnan(srcpix2_da,srcpix2_db,srcpix2_SB,jet,[1 1 1],true)
 axis xy
 colorbar
-xlabel('d\alpha [arcsec]','FontSize',lab_fontsize);
-ylabel('d\beta [arcsec]','FontSize',lab_fontsize);
+xlabel('da [arcsec]','FontSize',lab_fontsize);
+ylabel('db [arcsec]','FontSize',lab_fontsize);
 title(['MACS0717 img ',sys,'.',num2str(num),' on the pixelized src plane'])
 set(gca,'FontSize',axes_fontsize,'LineWidth',lw_gca,'XDir','Reverse'); 
 axis(macs0717.sys14ar);
@@ -273,63 +274,64 @@ axis(macs0717.sys14ar);
 
 %%%-------------------------------------------------------------------------------
 % subplotting the combined pixelized src plane img
-%------------ set up ranges in alpha,beta using macs0717.sys-ar
-alpha_range=macs0717.sys14ar(1:2)+ref_alpha;
-beta_range= macs0717.sys14ar(3:4)+ref_beta;
+fprintf(['#------------------------ below doing srcpix for totsys ',sys,'!\n'])
+%------------ set up ranges in a,b using macs0717.sys-ar
+a_range= macs0717.sys14ar(1:2)+ref_a;
+b_range= macs0717.sys14ar(3:4)+ref_b;
 
-binsize_alpha= img_pixscale/scale_tot(1);
-binsize_beta=  img_pixscale/scale_tot(2);
-[vec_alpha,N_alpha]=MakeVecCtr(alpha_range,ctr_common(1),binsize_alpha);
-[vec_beta,N_beta]=  MakeVecCtr(beta_range,ctr_common(2),binsize_beta);
-src_cnt_pix = zeros(N_beta,N_alpha);
-times_pix = zeros(N_beta,N_alpha);
-for i=1:a1_N
-    absdiff_alpha=  abs(vec_alpha-a1_src_alpha(i));
-    absdiff_beta=   abs(vec_beta-a1_src_beta(i));
-    [diff_alpha,indx_alpha(i)]= min(absdiff_alpha);
-    [diff_beta,indx_beta(i)]=   min(absdiff_beta);
-    if diff_alpha==binsize_alpha/2. || diff_beta==binsize_beta/2.
+binsize_a= img_pixscale/scale_tot(1);
+binsize_b= img_pixscale/scale_tot(2);
+[vec_a,N_a]=MakeVecCtr(a_range,ctr_common(1),binsize_a);
+[vec_b,N_b]=MakeVecCtr(b_range,ctr_common(2),binsize_b);
+src_cnt_pix=zeros(N_b,N_a);
+times_pix=  zeros(N_b,N_a);
+for i=1:img0_N
+    absdiff_a= abs(vec_a-img0_src_a(i));
+    absdiff_b= abs(vec_b-img0_src_b(i));
+    [diff_a,indx_a(i)]= min(absdiff_a);
+    [diff_b,indx_b(i)]= min(absdiff_b);
+    if diff_a==binsize_a/2. || diff_b==binsize_b/2.
         fprintf('this point sitting on boundary: i=%d',i)
     end
-    src_cnt_pix(indx_beta(i),indx_alpha(i))=src_cnt_pix(indx_beta(i),indx_alpha(i))+a1_src_cnt(i);
-    times_pix(indx_beta(i),indx_alpha(i))=  times_pix(indx_beta(i),indx_alpha(i))+1;
-    clear absdiff_alpha absdiff_beta diff_alpha diff_beta
+    src_cnt_pix(indx_b(i),indx_a(i))=src_cnt_pix(indx_b(i),indx_a(i))+img0_src_cnt(i);
+    times_pix(indx_b(i),indx_a(i))=  times_pix(indx_b(i),indx_a(i))+1;
+    clear absdiff_a absdiff_b diff_a diff_b
 end
-for i=1:a2_N
-    absdiff_alpha=  abs(vec_alpha-a2_src_alpha(i));
-    absdiff_beta=   abs(vec_beta-a2_src_beta(i));
-    [diff_alpha,indx_alpha(i)]= min(absdiff_alpha);
-    [diff_beta,indx_beta(i)]=   min(absdiff_beta);
-    if diff_alpha==binsize_alpha/2. || diff_beta==binsize_beta/2.
+for i=1:img1_N
+    absdiff_a= abs(vec_a-img1_src_a(i));
+    absdiff_b= abs(vec_b-img1_src_b(i));
+    [diff_a,indx_a(i)]= min(absdiff_a);
+    [diff_b,indx_b(i)]= min(absdiff_b);
+    if diff_a==binsize_a/2. || diff_b==binsize_b/2.
         fprintf('this point sitting on boundary: i=%d',i)
     end
-    src_cnt_pix(indx_beta(i),indx_alpha(i))=src_cnt_pix(indx_beta(i),indx_alpha(i))+a2_src_cnt(i);
-    times_pix(indx_beta(i),indx_alpha(i))=  times_pix(indx_beta(i),indx_alpha(i))+1;
-    clear absdiff_alpha absdiff_beta diff_alpha diff_beta
+    src_cnt_pix(indx_b(i),indx_a(i))=src_cnt_pix(indx_b(i),indx_a(i))+img1_src_cnt(i);
+    times_pix(indx_b(i),indx_a(i))=  times_pix(indx_b(i),indx_a(i))+1;
+    clear absdiff_a absdiff_b diff_a diff_b
 end
-for i=1:a3_N
-    absdiff_alpha=  abs(vec_alpha-a3_src_alpha(i));
-    absdiff_beta=   abs(vec_beta-a3_src_beta(i));
-    [diff_alpha,indx_alpha(i)]= min(absdiff_alpha);
-    [diff_beta,indx_beta(i)]=   min(absdiff_beta);
-    if diff_alpha==binsize_alpha/2. || diff_beta==binsize_beta/2.
+for i=1:img2_N
+    absdiff_a= abs(vec_a-img2_src_a(i));
+    absdiff_b= abs(vec_b-img2_src_b(i));
+    [diff_a,indx_a(i)]= min(absdiff_a);
+    [diff_b,indx_b(i)]= min(absdiff_b);
+    if diff_a==binsize_a/2. || diff_b==binsize_b/2.
         fprintf('this point sitting on boundary: i=%d',i)
     end
-    src_cnt_pix(indx_beta(i),indx_alpha(i))=src_cnt_pix(indx_beta(i),indx_alpha(i))+a3_src_cnt(i);
-    times_pix(indx_beta(i),indx_alpha(i))=  times_pix(indx_beta(i),indx_alpha(i))+1;
-    clear absdiff_alpha absdiff_beta diff_alpha diff_beta
+    src_cnt_pix(indx_b(i),indx_a(i))=src_cnt_pix(indx_b(i),indx_a(i))+img2_src_cnt(i);
+    times_pix(indx_b(i),indx_a(i))=  times_pix(indx_b(i),indx_a(i))+1;
+    clear absdiff_a absdiff_b diff_a diff_b
 end
 src_cnt_pix(src_cnt_pix == 0) = NaN;
-srcpix_tot_SB = src_cnt_pix./times_pix;    
-srcpix_tot_dalpha= vec_alpha-ref_alpha;
-srcpix_tot_dbeta=  vec_beta-ref_beta;
+srcpix_tot_SB= src_cnt_pix./times_pix;    
+srcpix_tot_da= vec_a-ref_a;
+srcpix_tot_db= vec_b-ref_b;
 
 %------------ sub-plotting
 subplot(2,2,4)
-imagescwithnan(srcpix_tot_dalpha,srcpix_tot_dbeta,srcpix_tot_SB,jet,[1 1 1],true)
+imagescwithnan(srcpix_tot_da,srcpix_tot_db,srcpix_tot_SB,jet,[1 1 1],true)
 axis xy
 colorbar
-xlabel('d\alpha [arcsec]','FontSize',lab_fontsize);
+xlabel('da [arcsec]','FontSize',lab_fontsize);
 title(['MACS0717 combined img ',sys,' on the pixelized src plane'])
 set(gca,'FontSize',axes_fontsize,'LineWidth',lw_gca,'XDir','Reverse'); 
 axis(macs0717.sys14ar);
@@ -346,3 +348,10 @@ diary off
 % leg_end = legend(['\kappa_{ext}=',num2str(jacobi_1.kappa)],['|\gamma_{ext}|=',num2str(jacobi_1.gamma)],...
 %     ['\phi=',num2str(jacobi_1.phi)],3);
 % set(leg_end,'Box','off','FontSize',axes_fontsize);
+
+%<<<140812>>> the matlab part of this software ends at spitting out a
+%             deflection angle correction parameter files recording the
+%             values for del_deflection, and A_ext. Then python script can
+%             take advantage of this file, read it in and make corrected
+%             postage stamps for alpha_1,2
+% deflcorrpar_name=[sys '.tot_pix_fin.']
