@@ -3,17 +3,17 @@
 #----------------------------
 #   PURPOSE/DESCRIPTION
 #----------------------------
-# make true postage stamps of deflection angle maps based on original lens models
+# make corrected deflection angle postage stamps based on an original lens model and my tweaking
 #----------------------------
 #   EXAMPLES/USAGE
 #----------------------------
-# bash> ./corrdefl.py ./z1.855_SLimgPeak.cat ./imgF140W_z1.855peak_fullfits imgF140Wz1.855_sharon_corrdefl -v
+# $ ./corrdefl.py ./z1.855_SLimgPeak.cat ./imgF140W_z1.855peak_fullfits imgF140Wz1.855_sharon_corrdefl -v
 #----------------------------
 #   INPUTS
 #----------------------------
-# img_coord     : the file containing WCS coord info of multiple images
-# imgstamp_dir  : the folder containing fits postage stamps cut from full FoV HST image, which provide mesh grid
-# lenstamp_dir  : the folder containing all fits postage stamps of corrected deflection angles
+# img_coord     : the file containing WCS coordinates (RA/DEC) of the centers of all multiple images
+# imgstamp_dir  : the folder containing fits postage stamps cut from full FoV HST image, which provide mesh grids
+# lenstamp_dir  : the folder containing all fits postage stamps of corrected deflection angle results
 #----------------------------
 #   OPTIONAL INPUTS
 #----------------------------
@@ -43,9 +43,9 @@ import utils
 # Managing arguments with argparse (see http://docs.python.org/howto/argparse.html)
 parser = argparse.ArgumentParser()
 # ---- required arguments ---- :
-parser.add_argument("img_coord", type=str, help="the file containing WCS coord info of multiple images")
-parser.add_argument("imgstamp_dir", type=str, help="containing fits postage stamps cut from full FoV HST image, which provide mesh grid")
-parser.add_argument("lenstamp_dir", type=str, help="containing all fits postage stamps of corrected deflection angles")
+parser.add_argument("img_coord",   type=str, help="the file containing RA/DEC of the centers of all multiple images")
+parser.add_argument("imgstamp_dir",type=str, help="containing postage stamps of multiple images")
+parser.add_argument("lenstamp_dir",type=str, help="containing postage stamps of corrected deflection angle results")
 # ---- optional arguments ----
 parser.add_argument("-v", "--verbose", action="store_true", help="Print verbose comments")
 parser.add_argument("--stop", action="store_true", help="Stopping program before end for debugging")
@@ -78,7 +78,7 @@ str(rad), str((rad*2)**2))
     # read in the true deflection angle ASCII file calculated by matlab one by one
     truedefl_name= args.lenstamp_dir+'/'+str(id)+truedefl_root
     truedefl_dat = np.genfromtxt(truedefl_name, dtype=None, comments='#')
-    assert (utils.closenough(ra,truedefl_dat[0,0]) and utils.closenough(dec,truedefl_dat[0,1])), "RA/DEC don't match!"
+    assert (utils.closenough(ra,truedefl_dat[0,0]) and utils.closenough(dec,truedefl_dat[0,1])), "ERR: RA/DEC don't match!"
     alpha1_corr=truedefl_dat[1:,0].reshape(2*rad,2*rad)
     alpha2_corr=truedefl_dat[1:,1].reshape(2*rad,2*rad)
     #-------------------------------------------------------------------------------

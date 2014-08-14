@@ -3,18 +3,17 @@
 #----------------------------
 #   PURPOSE/DESCRIPTION
 #----------------------------
-# cut off postage stamps of strongly lensed multiple images from RGB fits files
+# cut off postage stamps of strongly lensed multiple images from full FoV HST fits (RGB) image
 #----------------------------
 #   EXAMPLES/USAGE
 #----------------------------
-# bash> ./cutimg.py ./z1.855_SLimgPeak.cat ./obsHSTimg.fits.cat.reg/MACS0717_F814WF105WF140W_R.fits
-# ./imgF140W_z1.855peak_fullfits -v
+# $ ./cutimg.py ./z1.855_SLimgPeak.cat ./obsHSTimg.fits.cat.reg/MACS0717_F814WF105WF140W_R.fits ./imgF140W_z1.855peak_fullfits -v
 #----------------------------
 #   INPUTS
 #----------------------------
-# img_coord     : file containing WCS coord info of multiple images
-# img_obsfits   : the RGB fits image to be cut from
-# stamp_dir     : the folder containing all postage stamps
+# img_coord     : the file containing WCS coordinates (RA/DEC) of the centers of all multiple images
+# img_obsfits   : the full FoV HST fits (RGB) image to be cut postage stamps from
+# stamp_dir     : the folder containing all resulted postage stamps
 #----------------------------
 #   OPTIONAL INPUTS
 #----------------------------
@@ -43,9 +42,9 @@ import lensmap
 # Managing arguments with argparse (see http://docs.python.org/howto/argparse.html)
 parser = argparse.ArgumentParser()
 # ---- required arguments ---- :
-parser.add_argument("img_coord", type=str, help="coordinates in pixel space for the SL images to be cut out")
-parser.add_argument("img_obsfits", type=str, help="the RGB fits image to be cut from")
-parser.add_argument("stamp_dir", type=str, help="the folder containing all postage stamps")
+parser.add_argument("img_coord",  type=str, help="the file containing RA/DEC of the centers of all multiple images")
+parser.add_argument("img_obsfits",type=str, help="the full FoV HST fits (RGB) image to be cut postage stamps from")
+parser.add_argument("stamp_dir",  type=str, help="the folder containing all resulted postage stamps")
 # ---- optional arguments ----
 parser.add_argument("-v", "--verbose", action="store_true", help="Print verbose comments")
 parser.add_argument("--stop", action="store_true", help="Stopping program before end for debugging")
