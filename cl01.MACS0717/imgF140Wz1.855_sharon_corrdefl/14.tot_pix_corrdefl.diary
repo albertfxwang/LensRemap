@@ -1,5 +1,5 @@
 ----------------------------------------------------------
-|  This is the diary for plotting 14.tot_pix_defl1.ps!    |
+|  This is the diary for plotting 14.tot_pix_corrdefl.ps!    |
 |  Now we are working on MACS0717 - srcpix for totsys 14! |
 ----------------------------------------------------------
 #------------------------ below doing srcpix for img 14.2!
@@ -54,4 +54,4 @@ the number of bins = 38
 fixed bin size = 1.851852e-02
 the number of bins = 40
 #============ exit MakeVecCtr
-Elapsed time is 4.279640 seconds.
+Elapsed time is 2.723637 seconds.

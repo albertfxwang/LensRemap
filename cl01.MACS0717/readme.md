@@ -26,14 +26,23 @@ To-do List:
     lens model cover larger RA/DEC ranges than those from HST RGB image. If pix_img < pix_lensmodel, the values of "rad" 
     can be the same. Design a subroutine to check the ranges.
 
-Scaling Records:
+Scaling and JacobiRot Records (only for tot_pix_fin, i.e., the final result):
 
-    scales for sys3 tot_pix_fin
-        scale=[2.4 2.4; 3.0 3.0; 1.2 2.4];  scale_tot=[3.7 3.7];
-    scales for sys4 tot_pix_fin
-        scale, scale_tot = all 1.3
-    scales for sys14 tot_pix_fin
-        scale=[2.4 2.9; 1.3 1.6; 2.6 2.2];  scale_tot=[3.0 2.7];
+  * sys14:  scale=[2.4 2.9; 1.3 1.6; 2.6 2.2];  scale_tot=[3.0 2.7];
+            img0=2;  img1=3;  img2=1;
+            img1_jacobi=struct('kappa',1.9,'gamma',0.3,'phi',15);           
+            img2_jacobi=struct('kappa',0.98,'gamma',0.73,'phi',55);
+    
+  * sys3:   scale=[2.4 2.4; 3.0 3.0; 1.2 2.4];  scale_tot=[3.7 3.7];
+            img0=3;  img1=2;  img2=1;
+            img1_jacobi=struct('kappa',0.8,'gamma',1.06,'phi',80);
+            img2_jacobi=struct('kappa',0.8,'gamma',0.96,'phi',80);
+
+  * sys4:   scale=[1.9 1.9; 1.3 1.6; 1.5 1.5];  scale_tot=[2.2 2.2];
+            img0=3;  img1=2;  img2=1;
+            img1_jacobi=struct('kappa',-0.15,'gamma',0.15,'phi',-20);
+            img2_jacobi=struct('kappa',0.05,'gamma',0.15,'phi',-30);
+
 
 7/29/2014
 ---------
@@ -51,7 +60,14 @@ when tuning the _rot plot:
     3. after fixing the individual img scales for _rot, those scales should be still used by the _fin plot. The only 
     scale needs to tune is scale_tot
 
-8/12/2014
+8/14/2014
 ---------
+* created folder "obsHSTimg.fits.cat.reg/", which contains the HST full FoV fits image to be cut SL multiple images 
+  postage stamps from. From now on, for each full FoV fits image and each catalog, the folders named "img..." contains 
+  only the postage stamps given by the executable python script "cutimg.py". The names should denote which full FoV fits 
+  image those stamps are from. 
+* There should always be only one .cat file at the cluster main folder level, to function as the catalog all procedures 
+  are based upon.
+
 
 

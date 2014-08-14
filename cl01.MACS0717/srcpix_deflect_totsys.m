@@ -6,12 +6,18 @@ clear all; clc; tic
 addpath ../mscripts/
 PlotParams;
 
-sys= '14';
-mat_dir= 'sharon_sys14.mat';      % the folder containing .mat files
+sys= '4';
+axial_range= macs0717.sys4ar;
+mat_dir= 'sharon_sys4_trial0';      % the folder containing .mat files
 mat_tail='_deflect.mat';
-pic_name=[sys '.tot_pix_defl1.ps'];
-diary([sys,'.tot_pix_defl1.diary']);
+pic_name=[sys '.tot_pix_corrdefl.ps'];
+corrdefl_dir=  'imgF140Wz1.855_sharon_corrdefl';
+corrdefl_tail= '_truedefl.dat';
+diary(fullfile(corrdefl_dir,[sys,'.tot_pix_corrdefl.diary']));
+
 num_img=3;
+%------------ the center of src plane img, 1st column: a, 2nd column: b
+src_ctr=zeros(num_img,2);
 
 fprintf('----------------------------------------------------------\n')
 fprintf(['|  This is the diary for plotting ',pic_name,'!    |\n'])
@@ -21,18 +27,18 @@ fprintf('----------------------------------------------------------\n')
 %------------ the pixel scale of the RGB img given by the Python command
 % fitstools.get_pixscale('MACS0717_F814WF105WF140W_R.fits')  already in unit of arcsec!!!
 img_pixscale=0.049999997703084283;
+
 %------------ the 1-over-ratio for src_pixscale, 1st column: a, 2nd column: b, 
-% the ordering of rows follow their names, not their appearances in the next section afterwards
-scale=[2.4 2.9; 1.3 1.6; 2.6 2.2];  
-scale_tot=[3.0 2.7];
+% the ordering of rows follow their names, not their appearances, which are denoted by img0->1->2...
+scale=[1.9 1.9; 1.3 1.6; 1.5 1.5];  
+scale_tot=[2.2 2.2];
 % *NOTE: the scale for totsys can be much higher than individual img
-
-%------------ the center of src plane img, 1st column: a, 2nd column: b
-src_ctr=zeros(num_img,2);
-
+img0=3;  
+img1=2;  
+img2=1;
 %------------ the Jacobi matrix of external kappa and shear fields 
-a3_jacobi=struct('kappa',1.9,'gamma',0.3,'phi',15);
-a1_jacobi=struct('kappa',0.98,'gamma',0.73,'phi',55);
+img1_jacobi=struct('kappa',-0.15,'gamma',0.15,'phi',-20);
+img2_jacobi=struct('kappa',0.05,'gamma',0.15,'phi',-30);
 
 %------------ set the handle for plotting
 h=figure(1);
@@ -40,7 +46,7 @@ h=figure(1);
 %% getting remapped results for each img and plotting figures as well!!!
 %-------------------------------------------------------------------------------
 % first of all, srcpix the img which has the smallest magnification
-num=2;
+num=img0;
 if num>num_img
     fprintf('ERR: num=%d is out of range of num_img=%d',num,num_img)
 end
@@ -107,12 +113,28 @@ xlabel('da [arcsec]','FontSize',lab_fontsize);
 ylabel('db [arcsec]','FontSize',lab_fontsize);
 title(['MACS0717 img ',sys,'.',num2str(num),' on the pixelized src plane'])
 set(gca,'FontSize',axes_fontsize,'LineWidth',lw_gca,'XDir','Reverse'); 
-axis(macs0717.sys14ar);
+axis(axial_range);
+
+%%%%------------ write corrdefl ASCII file
+alpha_src=src_a/3600./cos(ref_dec/180.*pi);
+delta_src=src_b/3600.;
+truedefl_1=(alpha_src-img_ra)*60.*cos(ref_dec/180.*pi);
+truedefl_2=(img_dec-delta_src)*60.;
+truedefl=[truedefl_1 truedefl_2];
+
+fid=fopen((fullfile(corrdefl_dir,[sys '.' num2str(num) corrdefl_tail])),'wt');
+fprintf(fid,'#-------------------------------------------------------------------------------\n');
+fprintf(fid,'# RA\t\t DEC\t\n');
+fprintf(fid,'%12.7f\t %12.7f\n',img_ctr(1),img_ctr(2));
+fprintf(fid,'#-------------------------------------------------------------------------------\n');
+fprintf(fid,'# alpha_1,true\t alpha_2,true\n');
+fprintf(fid,'%12.7f\t %12.7f\n',truedefl');
+fclose(fid);
 
 
 %-------------------------------------------------------------------------------
 % srcpix another img
-num=3;
+num=img1;
 if num>num_img
     fprintf('ERR: num=%d is out of range of num_img=%d',num,num_img)
 end
@@ -139,7 +161,7 @@ indx_b = zeros(N_img,1);
 % src_a=src1_a;
 % src_b=src1_b;
 %%------------ Jacobi-rotate img
-[src_a,src_b]=   JacobiRot(src1_a,src1_b,ctr_common,a3_jacobi);
+[src_a,src_b]=   JacobiRot(src1_a,src1_b,ctr_common,img1_jacobi);
 
 %%%------------ saving data for the combined subplot
 img1_N=N_img;
@@ -188,12 +210,28 @@ xlabel('da [arcsec]','FontSize',lab_fontsize);
 % ylabel('db [arcsec]','FontSize',lab_fontsize);
 title(['MACS0717 img ',sys,'.',num2str(num),' on the pixelized src plane'])
 set(gca,'FontSize',axes_fontsize,'LineWidth',lw_gca,'XDir','Reverse'); 
-axis(macs0717.sys14ar);
+axis(axial_range);
+
+%%%%------------ write corrdefl ASCII file
+alpha_src=src_a/3600./cos(ref_dec/180.*pi);
+delta_src=src_b/3600.;
+truedefl_1=(alpha_src-img_ra)*60.*cos(ref_dec/180.*pi);
+truedefl_2=(img_dec-delta_src)*60.;
+truedefl=[truedefl_1 truedefl_2];
+
+fid=fopen((fullfile(corrdefl_dir,[sys '.' num2str(num) corrdefl_tail])),'wt');
+fprintf(fid,'#-------------------------------------------------------------------------------\n');
+fprintf(fid,'# RA\t\t DEC\t\n');
+fprintf(fid,'%12.7f\t %12.7f\n',img_ctr(1),img_ctr(2));
+fprintf(fid,'#-------------------------------------------------------------------------------\n');
+fprintf(fid,'# alpha_1,true\t alpha_2,true\n');
+fprintf(fid,'%12.7f\t %12.7f\n',truedefl');
+fclose(fid);
 
 
 %-------------------------------------------------------------------------------
 % srcpix another img
-num=1;
+num=img2;
 if num>num_img
     fprintf('ERR: num=%d is out of range of num_img=%d',num,num_img)
 end
@@ -220,7 +258,7 @@ indx_b = zeros(N_img,1);
 % src_a=src1_a;
 % src_b=src1_b;
 %%------------ Jacobi-rotate img
-[src_a,src_b]=   JacobiRot(src1_a,src1_b,ctr_common,a1_jacobi);
+[src_a,src_b]=   JacobiRot(src1_a,src1_b,ctr_common,img2_jacobi);
 
 %%%------------ saving data for the combined subplot
 img2_N=N_img;
@@ -269,15 +307,31 @@ xlabel('da [arcsec]','FontSize',lab_fontsize);
 ylabel('db [arcsec]','FontSize',lab_fontsize);
 title(['MACS0717 img ',sys,'.',num2str(num),' on the pixelized src plane'])
 set(gca,'FontSize',axes_fontsize,'LineWidth',lw_gca,'XDir','Reverse'); 
-axis(macs0717.sys14ar);
+axis(axial_range);
+
+%%%%------------ write corrdefl ASCII file
+alpha_src=src_a/3600./cos(ref_dec/180.*pi);
+delta_src=src_b/3600.;
+truedefl_1=(alpha_src-img_ra)*60.*cos(ref_dec/180.*pi);
+truedefl_2=(img_dec-delta_src)*60.;
+truedefl=[truedefl_1 truedefl_2];
+
+fid=fopen((fullfile(corrdefl_dir,[sys '.' num2str(num) corrdefl_tail])),'wt');
+fprintf(fid,'#-------------------------------------------------------------------------------\n');
+fprintf(fid,'# RA\t\t DEC\t\n');
+fprintf(fid,'%12.7f\t %12.7f\n',img_ctr(1),img_ctr(2));
+fprintf(fid,'#-------------------------------------------------------------------------------\n');
+fprintf(fid,'# alpha_1,true\t alpha_2,true\n');
+fprintf(fid,'%12.7f\t %12.7f\n',truedefl');
+fclose(fid);
 
 
 %%%-------------------------------------------------------------------------------
 % subplotting the combined pixelized src plane img
 fprintf(['#------------------------ below doing srcpix for totsys ',sys,'!\n'])
 %------------ set up ranges in a,b using macs0717.sys-ar
-a_range= macs0717.sys14ar(1:2)+ref_a;
-b_range= macs0717.sys14ar(3:4)+ref_b;
+a_range= axial_range(1:2)+ref_a;
+b_range= axial_range(3:4)+ref_b;
 
 binsize_a= img_pixscale/scale_tot(1);
 binsize_b= img_pixscale/scale_tot(2);
@@ -334,13 +388,13 @@ colorbar
 xlabel('da [arcsec]','FontSize',lab_fontsize);
 title(['MACS0717 combined img ',sys,' on the pixelized src plane'])
 set(gca,'FontSize',axes_fontsize,'LineWidth',lw_gca,'XDir','Reverse'); 
-axis(macs0717.sys14ar);
+axis(axial_range);
 
 
 %% end-up work for the figure
 set(gcf, 'PaperUnits','inches');
 set(gcf, 'PaperPosition',[ 0 0 8 6]);
-print(h,'-dpsc2',pic_name);
+print(h,'-dpsc2',fullfile(corrdefl_dir,pic_name));
 toc
 diary off
 

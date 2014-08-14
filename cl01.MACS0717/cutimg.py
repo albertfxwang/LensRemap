@@ -7,18 +7,20 @@
 #----------------------------
 #   EXAMPLES/USAGE
 #----------------------------
-# bash> ./cut_img.py ../z1.855_SLimg.cat MACS0717_F814WF105WF140W_R.fits -v
+# bash> ./cutimg.py ./z1.855_SLimgPeak.cat ./obsHSTimg.fits.cat.reg/MACS0717_F814WF105WF140W_R.fits
+# ./imgF140W_z1.855peak_fullfits -v
 #----------------------------
 #   INPUTS
 #----------------------------
-# img_coord        : file containing WCS coord info of multiple images
-# img_obsfits      : the RGB fits image to be cut from
+# img_coord     : file containing WCS coord info of multiple images
+# img_obsfits   : the RGB fits image to be cut from
+# stamp_dir     : the folder containing all postage stamps
 #----------------------------
 #   OPTIONAL INPUTS
 #----------------------------
-# --verbose        : set "-v" to get info/messages printed to the screen
-# --stop           : stoppping program before end for de-bugging
-# --help           : Printing help menu
+# --verbose     : set "-v" to get info/messages printed to the screen
+# --stop        : stoppping program before end for de-bugging
+# --help        : Printing help menu
 #----------------------------
 #   REVISION HISTORY
 #----------------------------
@@ -35,6 +37,7 @@ import pylab as pl
 import matplotlib.pyplot as plt   # importing plotting packages
 import pdb                 # for debugging with pdb.set_trace()
 import fitstools
+import lensmap
 
 #-------------------------------------------------------------------------------------------------------------
 # Managing arguments with argparse (see http://docs.python.org/howto/argparse.html)
@@ -42,6 +45,7 @@ parser = argparse.ArgumentParser()
 # ---- required arguments ---- :
 parser.add_argument("img_coord", type=str, help="coordinates in pixel space for the SL images to be cut out")
 parser.add_argument("img_obsfits", type=str, help="the RGB fits image to be cut from")
+parser.add_argument("stamp_dir", type=str, help="the folder containing all postage stamps")
 # ---- optional arguments ----
 parser.add_argument("-v", "--verbose", action="store_true", help="Print verbose comments")
 parser.add_argument("--stop", action="store_true", help="Stopping program before end for debugging")
@@ -61,8 +65,14 @@ rads = dat['f3']
 #-------------------------------------------------------------------------------------------------------------
 # Reading observed RGB fits full HST image
 img_name=args.img_obsfits
-img = pf.open(args.img_obsfits)[0].data.copy()
 print 'The HST fits image to be cut is %s' % img_name
+hdu = pf.open(img_name)
+img = hdu[0].data.copy()
+del hdu[0].header['DATE']
+del hdu[0].header['DATAMAX']
+del hdu[0].header['DATAMIN']
+crpix1 = hdu[0].header['CRPIX1']
+crpix2 = hdu[0].header['CRPIX2']
 
 for ii in xrange(Nobj):
     #--------------------------------------------------------------------------
@@ -70,11 +80,11 @@ for ii in xrange(Nobj):
     ra=float(RAs[ii])
     dec=float(DECs[ii])
     rad=float(rads[ii])
-    stampname= str(id)+'_cut.dat'
-    raname   = str(id)+'_ra.dat'
-    decname  = str(id)+'_dec.dat'
-    plotname = str(id)+'_cut.png'
-    fitsname = str(id)+'_cut.fits'
+    stampname= args.stamp_dir+'/'+str(id)+'_cut.dat'
+    raname   = args.stamp_dir+'/'+str(id)+'_ra.dat'
+    decname  = args.stamp_dir+'/'+str(id)+'_dec.dat'
+    plotname = args.stamp_dir+'/'+str(id)+'_cut.png'
+    fitsname = args.stamp_dir+'/'+str(id)+'_cut.fits'
     #-------------------------------------------------------------------------- 
     # make .dat files
     (x,y)=fitstools.coords2pix(img_name,(ra,dec))   # NOTE this usage - tuple !!
@@ -104,7 +114,10 @@ for ii in xrange(Nobj):
 #    pl.ion()
 #    pl.show()
     #-------------------------------------------------------------------------- 
-    # write fits files, but useless since no valid header information
+    # write fits files, with valid header information <<<140814>>>
+    hdu[0].header['CRPIX1'] = crpix1+rad+-int(x)
+    hdu[0].header['CRPIX2'] = crpix2+rad+-int(y)
+    lensmap.savefits(hdu,cut,fitsname)
 #    pf.PrimaryHDU(cut).writeto(fitsname,clobber=True)
 
 #-------------------------------------------------------------------------------------------------------------
