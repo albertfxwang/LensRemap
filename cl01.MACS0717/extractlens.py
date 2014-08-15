@@ -7,7 +7,7 @@
 ----------------------------
    EXAMPLES/USAGE
 ----------------------------
- bash> python extractlens.py
+ $ python extractlens.py
 ----------------------------
    INPUTS
 ----------------------------

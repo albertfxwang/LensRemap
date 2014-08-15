@@ -1,7 +1,8 @@
 %% color and linewidth schemes
 
-lab_fontsize =12; 
-axes_fontsize =10;
+lab_fontsize=   12; 
+axes_fontsize=  10;
+marker_size=    15;
 color = {'b','r','m','g','c','k','y'};
 solid = {'-b','-r','-m','-g','-c','-k','-y'};
 dot = {':b',':r',':m',':g',':c',':k'};
