@@ -1,10 +1,10 @@
-function [alpha_rot,beta_rot]=JacobiRot(alpha_in,beta_in,ctr_in,jacobi)
+function [alpha_rot,beta_rot]=antiJacobiRot(alpha_in,beta_in,ctr_in,bcratio,rotparam)
 %------------------------------------------------------------------------------
-% JacobiRot function
-% Description: rotate/distort the alpha/beta vector in terms of the Jacobi
-%              matrix given by external kappa and gamma fields
+% antiJacobiRot function
+% Description: rotate/distort the alpha/beta vector in terms of the anti-Jacobi
+%              matrix in the form of [[a, b], [c, a]]
 % Input  :
-% Output :
+% Output : 
 % Tested : Matlab R2011a
 %     By : Xin Wang                     July 2014
 % Reliable: 1
@@ -24,23 +24,16 @@ beta_rot=zeros(N,1);
 dalpha= alpha_in-ctr_in(1);
 dbeta= beta_in-ctr_in(2);
 
-%------------ constructing Jacobi matrix
-k=jacobi.kappa;
-g=jacobi.gamma;
-phi=jacobi.phi;
-fprintf('kappa_ext = %g, gamma_ext=%g, phi=%g (deg)\n',k,g,phi)
-phi = phi*pi/180.;
-fprintf('now phi looks more normal =%g (RAD)\n',phi)
-A1=(1-k)*eye(2);
-A2=g*[cos(2*phi) sin(2*phi); sin(2*phi) -cos(2*phi)];
-A=A1-A2;
-
-%------------ check whether ctr_in(1,2) really are members of alpha_in,beta_in  => they are NOT!
+%------------ constructing anti-Jacobi matrix
+a=rotparam.a;
+c=rotparam.c;
+antimat=[a c*bcratio; c a];
+fprintf('a = %g, c = %g, bcratio = %g\n',a,c,bcratio)
 
 for i=1:N
-    temp_rot=A*[dalpha(i); dbeta(i)];
+    temp_rot=antimat*[dalpha(i); dbeta(i)];
     alpha_rot(i)=temp_rot(1)+ctr_in(1);
     beta_rot(i)=temp_rot(2)+ctr_in(2);
     clear temp_rot
 end
-fprintf('#============ exit JacobiRot\n')
+fprintf('#============ exit antiJacobiRot\n')

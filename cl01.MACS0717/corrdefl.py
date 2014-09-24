@@ -29,15 +29,15 @@
 #----------------------------
 import argparse            # argument managing
 import sys                 # enabling arguments to code
-import os                  # enabling command line runs and executing other Python scripts with os.system('string')
-import pyfits as pf
+#import os                  # enabling command line runs and executing other Python scripts with os.system('string')
+#import pyfits as pf
 import numpy as np         # enable opening with genfromtxt
-import pylab as pl
-import matplotlib.pyplot as plt   # importing plotting packages
+#import pylab as pl
+#import matplotlib.pyplot as plt   # importing plotting packages
 import pdb                 # for debugging with pdb.set_trace()
-import fitstools
-import lensmap
-import utils
+#import fitstools as ft
+import lensmap as lm
+import statutils as su
 
 #-------------------------------------------------------------------------------------------------------------
 # Managing arguments with argparse (see http://docs.python.org/howto/argparse.html)
@@ -78,7 +78,7 @@ str(rad), str((rad*2)**2))
     # read in the true deflection angle ASCII file calculated by matlab one by one
     truedefl_name= args.lenstamp_dir+'/'+str(id)+truedefl_root
     truedefl_dat = np.genfromtxt(truedefl_name, dtype=None, comments='#')
-    assert (utils.closenough(ra,truedefl_dat[0,0]) and utils.closenough(dec,truedefl_dat[0,1])), "ERR: RA/DEC don't match!"
+    assert (su.closenuf(ra,truedefl_dat[0,0]) and su.closenuf(dec,truedefl_dat[0,1])), "ERR: RA/DEC don't match!"
     alpha1_corr=truedefl_dat[1:,0].reshape(2*rad,2*rad)
     alpha2_corr=truedefl_dat[1:,1].reshape(2*rad,2*rad)
     #-------------------------------------------------------------------------------
@@ -86,8 +86,8 @@ str(rad), str((rad*2)**2))
     imgstamp_name= args.imgstamp_dir+'/'+str(id)+imgstamp_root
     corralpha1_name= args.lenstamp_dir+'/'+str(id)+corralpha1_root
     corralpha2_name= args.lenstamp_dir+'/'+str(id)+corralpha2_root
-    lensmap.replfitsval(file_in=imgstamp_name,file_out=corralpha1_name,newdata=alpha1_corr)
-    lensmap.replfitsval(file_in=imgstamp_name,file_out=corralpha2_name,newdata=alpha2_corr)
+    lm.replVal(file_in=imgstamp_name,file_out=corralpha1_name,newdata=alpha1_corr)
+    lm.replVal(file_in=imgstamp_name,file_out=corralpha2_name,newdata=alpha2_corr)
 
 #-------------------------------------------------------------------------------------------------------------
 if args.stop: pdb.set_trace()

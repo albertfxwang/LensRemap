@@ -5,34 +5,34 @@ remapping multiple images detected in the field of MACS0717
 
 Naming Conventions:
 
-    1. "src plane img"/"lens plane img" refer to the surface brightness (SB) profiles of distant galaxies on the 
+    1. "src plane img"/"lens plane img" refer to the surface brightness (SB) profiles of distant galaxies on the
     src/lens plane.
-    2. "src"/"img" are the short-form equivanlences of item 1. So if "img" is used independently (from "plane"), it 
+    2. "src"/"img" are the short-form equivanlences of item 1. So if "img" is used independently (from "plane"), it
     refers to SB profile on the lens plane.
-    3. when plotting .ps figures, there are some surfices, some with numbers some without, e.g., _fin1.ps, _fin2.ps, 
-    _fin.ps . Note that the truly final results are those w/o numbers, in this case _fin.ps! Moreover, their 
+    3. when plotting .ps figures, there are some surfices, some with numbers some without, e.g., _fin1.ps, _fin2.ps,
+    _fin.ps . Note that the truly final results are those w/o numbers, in this case _fin.ps! Moreover, their
     corresponding diary files record all important info in tweaking the images.
     4. if there is no _fin.ps figures, use _fin with the biggest number as the final result
 
 To-do List:
 
-    1. <<<140731>>> mu_tot= mu_ctr * mu_ext  =>  the total effective magnification should include the multiplication by 
+    1. <<<140731>>> mu_tot= mu_ctr * mu_ext  =>  the total effective magnification should include the multiplication by
     mu_ext= 1/[(1-kappa_ext)^2-|gamma_ext|^2]. So you should add the calculation of mu_ext in srcpix_tot...m
-    2.  <<<140731>>> there seems no clear dependence of reading in the magnification map, if the mag_ctr can be given in 
-    as direct values in the catalog used to cut out image/lensmodel postage stamps. In the meantime, you could put the 
-    1-sigma error range for mu_ctr (which can be given by Dan''s webtool) in the catalog as well. So a calculation on 
+    2. <<<140731>>> there seems no clear dependence of reading in the magnification map, if the mag_ctr can be given in
+    as direct values in the catalog used to cut out image/lensmodel postage stamps. In the meantime, you could put the
+    1-sigma error range for mu_ctr (which can be given by Dan''s webtool) in the catalog as well. So a calculation on
     the 1-sigma range for mu_tot can also be done.
-    3. <<<140812>>> in cutting postage stamps from HST RGB image .fits and lens model .fits, be sure that the ones from 
-    lens model cover larger RA/DEC ranges than those from HST RGB image. If pix_img < pix_lensmodel, the values of "rad" 
+    3. <<<140812>>> in cutting postage stamps from HST RGB image .fits and lens model .fits, be sure that the ones from
+    lens model cover larger RA/DEC ranges than those from HST RGB image. If pix_img < pix_lensmodel, the values of "rad"
     can be the same. Design a subroutine to check the ranges.
 
 Scaling and JacobiRot Records (only for tot_pix_fin, i.e., the final result):
 
   * sys14:  scale=[2.4 2.9; 1.3 1.6; 2.6 2.2];  scale_tot=[3.0 2.7];
             img0=2;  img1=3;  img2=1;
-            img1_jacobi=struct('kappa',1.9,'gamma',0.3,'phi',15);           
+            img1_jacobi=struct('kappa',1.9,'gamma',0.3,'phi',15);
             img2_jacobi=struct('kappa',0.98,'gamma',0.73,'phi',55);
-    
+
   * sys3:   scale=[2.4 2.4; 3.0 3.0; 1.2 2.4];  scale_tot=[3.7 3.7];
             img0=3;  img1=2;  img2=1;
             img1_jacobi=struct('kappa',0.8,'gamma',1.06,'phi',80);
@@ -48,26 +48,29 @@ Scaling and JacobiRot Records (only for tot_pix_fin, i.e., the final result):
 ---------
 how to fine-tune scales
 
-    first pick the same value for both alpha,beta (x,y) binsizes, see how img is pixelized and how many bins there are.  
-    If the resulted y direction has much more bins, it means the count drops are more spread out and a small binsize is 
+    first pick the same value for both alpha,beta (x,y) binsizes, see how img is pixelized and how many bins there are.
+    If the resulted y direction has much more bins, it means the count drops are more spread out and a small binsize is
     more probable to lead to hollow pixels (along x direction!!!). As a result, tune down the y-scale a little bit.
 
 when tuning the _rot plot:
-    
-    1. before this whole process, do not use the same axial ranges. 1st of all, try to obtain the appropriate ar. when 
+
+    1. before this whole process, do not use the same axial ranges. 1st of all, try to obtain the appropriate ar. when
     doing this, you can comment out the ylabel of 2nd subplot
     2. tuning the rotation!
-    3. after fixing the individual img scales for _rot, those scales should be still used by the _fin plot. The only 
+    3. after fixing the individual img scales for _rot, those scales should be still used by the _fin plot. The only
     scale needs to tune is scale_tot
 
 8/14/2014
 ---------
-* created folder "obsHSTimg.fits.cat.reg/", which contains the HST full FoV fits image to be cut SL multiple images 
-  postage stamps from. From now on, for each full FoV fits image and each catalog, the folders named "img..." contains 
-  only the postage stamps given by the executable python script "cutimg.py". The names should denote which full FoV fits 
-  image those stamps are from. 
-* There should always be only one .cat file at the cluster main folder level, to function as the catalog all procedures 
+* created folder "obsHSTimg.fits.cat.reg/", which contains the HST full FoV fits image to be cut SL multiple images
+  postage stamps from. From now on, for each full FoV fits image and each catalog, the folders named "img..." contains
+  only the postage stamps given by the executable python script "cutimg.py". The names should denote which full FoV fits
+  image those stamps are from.
+* There should always be only one .cat file at the cluster main folder level, to function as the catalog all procedures
   are based upon.
 
-
+9/24/2014
+---------
+* Re-arrange this folder such that all rslts drawn from the erroneous _JacobiRot_ are put under "0..wrongJacobiRot/"
+* The matlab script doing the correct tweak is called "srcpix_antiJacobi_totsys.m"
 

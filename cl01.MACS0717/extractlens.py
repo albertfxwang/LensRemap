@@ -20,9 +20,9 @@ __author__ = "Xin Wang (UCSB)"
 # IMPORTING MODULES
 import numpy as np
 import pyfits as pf
-import pylab as pl
-import matplotlib.pyplot as plt
-import fitstools
+#import pylab as pl
+#import matplotlib.pyplot as plt
+import fitstools as ft
 
 #-------------------------------------------------------------------------------------------------------------
 # some input/output file names
@@ -74,10 +74,10 @@ for ii in xrange(Nobj):
     lensra_stamp = loc+str(id)+'_lensra.dat'
     lensdec_stamp= loc+str(id)+'_lensdec.dat'
     #-------------------------------------------------------------------------- make .dat files
-    lens_xy=fitstools.coords2pix(mag_name,(ra,dec))
+    lens_xy=ft.coords2pix(mag_name,(ra,dec))
     print 'processing img %s: (RA=%s, DEC=%s)  <=>  (x=%s, y=%s)' % (str(id), str(ra), str(dec), str(lens_xy[0]), str(lens_xy[1]))
     #<<<140607>>> the chopped size (2*rad) is plausible as long as the lens fitting pixel is larger than the HST image pixel
-    alpha1 = alpha1_tot[lens_xy[1]-rad:lens_xy[1]+rad,lens_xy[0]-rad:lens_xy[0]+rad]  
+    alpha1 = alpha1_tot[lens_xy[1]-rad:lens_xy[1]+rad,lens_xy[0]-rad:lens_xy[0]+rad]
     alpha2 = alpha2_tot[lens_xy[1]-rad:lens_xy[1]+rad,lens_xy[0]-rad:lens_xy[0]+rad]
 #    kappa  =  kappa_tot[lens_xy[1]-rad:lens_xy[1]+rad,lens_xy[0]-rad:lens_xy[0]+rad]
 #    gamma1 = gamma1_tot[lens_xy[1]-rad:lens_xy[1]+rad,lens_xy[0]-rad:lens_xy[0]+rad]
@@ -86,10 +86,10 @@ for ii in xrange(Nobj):
 
     lens_x = np.arange(int(lens_xy[0]-rad+1),int(lens_xy[0]+rad+1))
     lens_y = np.arange(int(lens_xy[1]-rad+1),int(lens_xy[1]+rad+1))
-    lens_wcs=fitstools.pix2coords(mag_name,(lens_x,lens_y))
+    lens_wcs=ft.pix2coords(mag_name,(lens_x,lens_y))
 
     # output ASCII files for all relevant quantities to feed into matlab
-    np.savetxt(alpha1_stamp ,alpha1,fmt='%s') 
+    np.savetxt(alpha1_stamp ,alpha1,fmt='%s')
     np.savetxt(alpha2_stamp ,alpha2,fmt='%s')
 #    np.savetxt(kappa_stamp  ,kappa,fmt='%s')
 #    np.savetxt(gamma1_stamp ,gamma1,fmt='%s')
