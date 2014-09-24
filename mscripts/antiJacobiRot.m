@@ -9,7 +9,7 @@ function [alpha_rot,beta_rot]=antiJacobiRot(alpha_in,beta_in,ctr_in,bcratio,rotp
 %     By : Xin Wang                     July 2014
 % Reliable: 1
 %------------------------------------------------------------------------------
-fprintf('#------------ enter JacobiRot\n')
+fprintf('#------------ enter antiJacobiRot\n')
 %------------ check whether alpha,beta_in are vectors
 if min(size(alpha_in))+min(size(beta_in))>2
     fprintf('ERR: input alpha/beta are not vectors!\n')

@@ -59,6 +59,6 @@ for i in xrange(Nphi):
 #-------------------------------------------------------------------------------------------------------------
 # Save rslt to output_file
 tot_model= np.concatenate((mag_model[:,None], kappa_model[:,None], gamma_model[:,None], phi_model[:,None]), axis=1)
-np.savetxt(output_file, tot_model, fmt='%2.6e')
+np.savetxt(output_file, tot_model, fmt='%3.6e')
 
 

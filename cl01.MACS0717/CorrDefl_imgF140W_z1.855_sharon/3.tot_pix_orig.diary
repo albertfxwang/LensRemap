@@ -1,0 +1,126 @@
+----------------------------------------------------------
+|  This is the diary for plotting 3.tot_pix_orig.ps!    |
+|  Now we are working on MACS0717 - srcpix for totsys 3! |
+----------------------------------------------------------
+#------------------------ below doing srcpix for img 3.3!
+#------------ enter MakeVecCtr
+fixed bin size = 4.166666e-02
+the number of bins = 30
+#============ exit MakeVecCtr
+#------------ enter MakeVecCtr
+fixed bin size = 2.083333e-02
+the number of bins = 31
+#============ exit MakeVecCtr
+#------------------------ below doing srcpix for img 3.2!
+#------------ enter shift
+In (a,b) space, shifted img Eastward by -0.220403 arcsec!
+In (a,b) space, shifted img Northward by -0.278335 arcsec!
+#============ exit shift
+#------------ enter antiJacobiRot
+a = 1, c = 0, bcratio = 0.750448
+#============ exit antiJacobiRot
+#------------ enter MakeVecCtr
+fixed bin size = 1.666667e-02
+the number of bins = 35
+#============ exit MakeVecCtr
+#------------ enter MakeVecCtr
+fixed bin size = 1.666667e-02
+the number of bins = 38
+#============ exit MakeVecCtr
+#------------ enter calcTrueVal
+mu_model=14.1201, kappa_model=0.70217, gamma_model=0.133723, phi_model=144.257 (deg)
+mu_true=14.1201, kappa_true=0.70217, gamma_true=0.133723, phi_true=54.2566 (deg)
+#============ exit calcTrueVal
+#------------------------ below doing srcpix for img 3.1!
+#------------ enter shift
+In (a,b) space, shifted img Eastward by -0.159531 arcsec!
+In (a,b) space, shifted img Northward by -0.354148 arcsec!
+#============ exit shift
+#------------ enter antiJacobiRot
+a = 1, c = 0, bcratio = 0.206112
+#============ exit antiJacobiRot
+#------------ enter MakeVecCtr
+fixed bin size = 2.083333e-02
+the number of bins = 28
+#============ exit MakeVecCtr
+#------------ enter MakeVecCtr
+fixed bin size = 2.083333e-02
+the number of bins = 42
+#============ exit MakeVecCtr
+#------------ enter calcTrueVal
+mu_model=-9.265, kappa_model=0.861403, gamma_model=0.35657, phi_model=142.412 (deg)
+mu_true=-9.265, kappa_true=0.861403, gamma_true=0.35657, phi_true=52.4119 (deg)
+#============ exit calcTrueVal
+#------------------------ below doing srcpix for totsys 3!
+#------------ enter MakeVecCtr
+fixed bin size = 1.351351e-02
+the number of bins = 35
+#============ exit MakeVecCtr
+#------------ enter MakeVecCtr
+fixed bin size = 1.351351e-02
+the number of bins = 24
+#============ exit MakeVecCtr
+Elapsed time is 2.353046 seconds.
+----------------------------------------------------------
+|  This is the diary for plotting 3.tot_pix_orig.ps!    |
+|  Now we are working on MACS0717 - srcpix for totsys 3! |
+----------------------------------------------------------
+#------------------------ below doing srcpix for img 3.3!
+#------------ enter MakeVecCtr
+fixed bin size = 4.166666e-02
+the number of bins = 30
+#============ exit MakeVecCtr
+#------------ enter MakeVecCtr
+fixed bin size = 2.083333e-02
+the number of bins = 31
+#============ exit MakeVecCtr
+#------------------------ below doing srcpix for img 3.2!
+#------------ enter shift
+In (a,b) space, shifted img Eastward by -0.220403 arcsec!
+In (a,b) space, shifted img Northward by -0.278335 arcsec!
+#============ exit shift
+#------------ enter antiJacobiRot
+a = 1, c = 0, bcratio = 0.750448
+#============ exit antiJacobiRot
+#------------ enter MakeVecCtr
+fixed bin size = 1.666667e-02
+the number of bins = 35
+#============ exit MakeVecCtr
+#------------ enter MakeVecCtr
+fixed bin size = 1.666667e-02
+the number of bins = 38
+#============ exit MakeVecCtr
+#------------ enter calcTrueVal
+mu_model=14.1201, kappa_model=0.70217, gamma_model=0.133723, phi_model=144.257 (deg)
+mu_true=14.1201, kappa_true=0.70217, gamma_true=0.133723, phi_true=54.2566 (deg)
+#============ exit calcTrueVal
+#------------------------ below doing srcpix for img 3.1!
+#------------ enter shift
+In (a,b) space, shifted img Eastward by -0.159531 arcsec!
+In (a,b) space, shifted img Northward by -0.354148 arcsec!
+#============ exit shift
+#------------ enter antiJacobiRot
+a = 1, c = 0, bcratio = 0.206112
+#============ exit antiJacobiRot
+#------------ enter MakeVecCtr
+fixed bin size = 2.083333e-02
+the number of bins = 28
+#============ exit MakeVecCtr
+#------------ enter MakeVecCtr
+fixed bin size = 2.083333e-02
+the number of bins = 42
+#============ exit MakeVecCtr
+#------------ enter calcTrueVal
+mu_model=-9.265, kappa_model=0.861403, gamma_model=0.35657, phi_model=142.412 (deg)
+mu_true=-9.265, kappa_true=0.861403, gamma_true=0.35657, phi_true=52.4119 (deg)
+#============ exit calcTrueVal
+#------------------------ below doing srcpix for totsys 3!
+#------------ enter MakeVecCtr
+fixed bin size = 1.351351e-02
+the number of bins = 35
+#============ exit MakeVecCtr
+#------------ enter MakeVecCtr
+fixed bin size = 1.351351e-02
+the number of bins = 24
+#============ exit MakeVecCtr
+Elapsed time is 2.338625 seconds.

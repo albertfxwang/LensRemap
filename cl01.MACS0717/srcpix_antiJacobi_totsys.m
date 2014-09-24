@@ -1,19 +1,25 @@
 % pixelize the src plane in terms of all multiple images within one system
-%<<<140811>>> changed all variable names to my updated naming conventions
+%<<<140811>>> Changed all variable names to my updated naming conventions
+%<<<140924>>> Use _antiJacobiRot_ instead of _JacobiRot_ to do the tweak
 
 clear all; clc; tic
 
 addpath ../mscripts/
 PlotParams;
 
-sys= '4';
-axial_range= macs0717.sys4ar;
-mat_dir= 'sharon_sys4_trial0';      % the folder containing .mat files
-mat_tail='_deflect.mat';
-pic_name=[sys '.tot_pix_corrdefl.ps'];
-corrdefl_dir=  'imgF140Wz1.855_sharon_corrdefl';
-corrdefl_tail= '_truedefl.dat';
-diary(fullfile(corrdefl_dir,[sys,'.tot_pix_corrdefl.diary']));
+sys= '3';
+axial_range= macs0717.sys3ar;
+mat_dir= 'z1.855_sharon_deflect';      % the folder containing .mat files
+mat_extsn='_deflect.mat';
+corrdefl_dir=  'CorrDefl_imgF140W_z1.855_sharon';
+diary(fullfile(corrdefl_dir,[sys,'.tot_pix_orig.diary']));
+pic_name=[sys '.tot_pix_orig.ps'];
+flag_wrtTDdat = false;
+% corrdefl_extsn= '_truedefl.dat';
+
+LMtot = importdata('z1.855_sharon_LMkgphi.dat', ' ', 2);
+LMvals = LMtot.data(:,2:end);
+LMnames= LMtot.data(:,1);
 
 num_img=3;
 %------------ the center of src plane img, 1st column: a, 2nd column: b
@@ -30,15 +36,14 @@ img_pixscale=0.049999997703084283;
 
 %------------ the 1-over-ratio for src_pixscale, 1st column: a, 2nd column: b, 
 % the ordering of rows follow their names, not their appearances, which are denoted by img0->1->2...
-scale=[1.9 1.9; 1.3 1.6; 1.5 1.5];  
-scale_tot=[2.2 2.2];
+scale=[2.4 2.4; 3.0 3.0; 1.2 2.4];  scale_tot=[3.7 3.7];
+
 % *NOTE: the scale for totsys can be much higher than individual img
-img0=3;  
-img1=2;  
-img2=1;
-%------------ the Jacobi matrix of external kappa and shear fields 
-img1_jacobi=struct('kappa',-0.15,'gamma',0.15,'phi',-20);
-img2_jacobi=struct('kappa',0.05,'gamma',0.15,'phi',-30);
+img0=3;  img1=2;  img2=1;
+
+%------------ the anti-Jacobi matrix for the correct tweak 
+img1_antiJ=struct('a',1,'c',0);
+img2_antiJ=struct('a',1,'c',0);
 
 %------------ set the handle for plotting
 h=figure(1);
@@ -52,7 +57,7 @@ if num>num_img
 end
 fprintf(['#------------------------ below doing srcpix for img ',sys,'.',num2str(num),'!\n'])
 %------------ NOTE: the following way to load .mat file in as a struct
-load((fullfile(mat_dir,[sys '.' num2str(num) mat_tail])))
+load((fullfile(mat_dir,[sys '.' num2str(num) mat_extsn])))
 
 src_a=  reshape(RA0_src,N_img,1)*cos(ref_dec/180.*pi)*3600.;  % a
 src_b=  reshape(DEC0_src,N_img,1)*3600.;       % b
@@ -115,6 +120,7 @@ title(['MACS0717 img ',sys,'.',num2str(num),' on the pixelized src plane'])
 set(gca,'FontSize',axes_fontsize,'LineWidth',lw_gca,'XDir','Reverse'); 
 axis(axial_range);
 
+if flag_wrtTDdat
 %%%%------------ write corrdefl ASCII file
 alpha_src=src_a/3600./cos(ref_dec/180.*pi);
 delta_src=src_b/3600.;
@@ -122,7 +128,7 @@ truedefl_1=(alpha_src-img_ra)*60.*cos(ref_dec/180.*pi);
 truedefl_2=(img_dec-delta_src)*60.;
 truedefl=[truedefl_1 truedefl_2];
 
-fid=fopen((fullfile(corrdefl_dir,[sys '.' num2str(num) corrdefl_tail])),'wt');
+fid=fopen((fullfile(corrdefl_dir,[sys '.' num2str(num) corrdefl_extsn])),'wt');
 fprintf(fid,'#-------------------------------------------------------------------------------\n');
 fprintf(fid,'# RA\t\t DEC\t\n');
 fprintf(fid,'%12.7f\t %12.7f\n',img_ctr(1),img_ctr(2));
@@ -130,17 +136,29 @@ fprintf(fid,'#------------------------------------------------------------------
 fprintf(fid,'# alpha_1,true\t alpha_2,true\n');
 fprintf(fid,'%12.7f\t %12.7f\n',truedefl');
 fclose(fid);
-
+end
 
 %-------------------------------------------------------------------------------
 % srcpix another img
 num=img1;
+antiJparam=img1_antiJ;
+
 if num>num_img
     fprintf('ERR: num=%d is out of range of num_img=%d',num,num_img)
 end
 fprintf(['#------------------------ below doing srcpix for img ',sys,'.',num2str(num),'!\n'])
 %------------ NOTE: the following way to load .mat file in as a struct
-load((fullfile(mat_dir,[sys '.' num2str(num) mat_tail])))
+load((fullfile(mat_dir,[sys '.' num2str(num) mat_extsn])))
+
+imgname=str2double([sys '.' num2str(num)]);
+indx=find(ismember(LMnames,imgname));
+km=LMvals(indx,2);
+gm=LMvals(indx,3);
+phim=LMvals(indx,4);
+modelVal=struct('kappa',km,'gamma',gm,'phi',phim);
+
+%------------ Calc b/c from kappa_model, gamma_model, phi_model
+bcratio=(1-km-gm*cos(2*phim/180.0*pi))/(1-km+gm*cos(2*phim/180.0*pi));
 
 src0_a= reshape(RA0_src,N_img,1)*cos(ref_dec/180.*pi)*3600.;  % a
 src0_b= reshape(DEC0_src,N_img,1)*3600.;       % b
@@ -160,8 +178,8 @@ indx_b = zeros(N_img,1);
 %------------ the following two lines are only for the shift plot
 % src_a=src1_a;
 % src_b=src1_b;
-%%------------ Jacobi-rotate img
-[src_a,src_b]=   JacobiRot(src1_a,src1_b,ctr_common,img1_jacobi);
+%%------------ anti-Jacobi tweaking img
+[src_a,src_b]=   antiJacobiRot(src1_a,src1_b,ctr_common,bcratio,antiJparam);
 
 %%%------------ saving data for the combined subplot
 img1_N=N_img;
@@ -200,6 +218,7 @@ src_cnt_pix(src_cnt_pix == 0) = NaN;
 srcpix1_SB= src_cnt_pix./times_pix;    
 srcpix1_da= vec_a-ref_a;
 srcpix1_db= vec_b-ref_b;
+trueVal1=calcTrueVal(modelVal,bcratio,antiJparam);
 
 %------------ sub-plotting
 subplot(2,2,2)
@@ -212,6 +231,7 @@ title(['MACS0717 img ',sys,'.',num2str(num),' on the pixelized src plane'])
 set(gca,'FontSize',axes_fontsize,'LineWidth',lw_gca,'XDir','Reverse'); 
 axis(axial_range);
 
+if flag_wrtTDdat
 %%%%------------ write corrdefl ASCII file
 alpha_src=src_a/3600./cos(ref_dec/180.*pi);
 delta_src=src_b/3600.;
@@ -219,7 +239,7 @@ truedefl_1=(alpha_src-img_ra)*60.*cos(ref_dec/180.*pi);
 truedefl_2=(img_dec-delta_src)*60.;
 truedefl=[truedefl_1 truedefl_2];
 
-fid=fopen((fullfile(corrdefl_dir,[sys '.' num2str(num) corrdefl_tail])),'wt');
+fid=fopen((fullfile(corrdefl_dir,[sys '.' num2str(num) corrdefl_extsn])),'wt');
 fprintf(fid,'#-------------------------------------------------------------------------------\n');
 fprintf(fid,'# RA\t\t DEC\t\n');
 fprintf(fid,'%12.7f\t %12.7f\n',img_ctr(1),img_ctr(2));
@@ -227,17 +247,30 @@ fprintf(fid,'#------------------------------------------------------------------
 fprintf(fid,'# alpha_1,true\t alpha_2,true\n');
 fprintf(fid,'%12.7f\t %12.7f\n',truedefl');
 fclose(fid);
+end
 
 
 %-------------------------------------------------------------------------------
 % srcpix another img
 num=img2;
+antiJparam=img2_antiJ;
+
 if num>num_img
     fprintf('ERR: num=%d is out of range of num_img=%d',num,num_img)
 end
 fprintf(['#------------------------ below doing srcpix for img ',sys,'.',num2str(num),'!\n'])
 %------------ NOTE: the following way to load .mat file in as a struct
-load((fullfile(mat_dir,[sys '.' num2str(num) mat_tail])))
+load((fullfile(mat_dir,[sys '.' num2str(num) mat_extsn])))
+
+imgname=str2double([sys '.' num2str(num)]);
+indx=find(ismember(LMnames,imgname));
+km=LMvals(indx,2);
+gm=LMvals(indx,3);
+phim=LMvals(indx,4);
+modelVal=struct('kappa',km,'gamma',gm,'phi',phim);
+
+%------------ Calc b/c from kappa_model, gamma_model, phi_model
+bcratio=(1-km-gm*cos(2*phim/180.0*pi))/(1-km+gm*cos(2*phim/180.0*pi));
 
 src0_a= reshape(RA0_src,N_img,1)*cos(ref_dec/180.*pi)*3600.;  % a
 src0_b= reshape(DEC0_src,N_img,1)*3600.;       % b 
@@ -257,8 +290,8 @@ indx_b = zeros(N_img,1);
 %------------ the following two lines are only for the shift plot
 % src_a=src1_a;
 % src_b=src1_b;
-%%------------ Jacobi-rotate img
-[src_a,src_b]=   JacobiRot(src1_a,src1_b,ctr_common,img2_jacobi);
+%%------------ anti-Jacobi tweaking img
+[src_a,src_b]=   antiJacobiRot(src1_a,src1_b,ctr_common,bcratio,antiJparam);
 
 %%%------------ saving data for the combined subplot
 img2_N=N_img;
@@ -297,6 +330,7 @@ src_cnt_pix(src_cnt_pix == 0) = NaN;
 srcpix2_SB = src_cnt_pix./times_pix;    
 srcpix2_da= vec_a-ref_a;
 srcpix2_db=  vec_b-ref_b;
+trueVal2=calcTrueVal(modelVal,bcratio,antiJparam);
 
 %------------ sub-plotting
 subplot(2,2,3)
@@ -309,6 +343,7 @@ title(['MACS0717 img ',sys,'.',num2str(num),' on the pixelized src plane'])
 set(gca,'FontSize',axes_fontsize,'LineWidth',lw_gca,'XDir','Reverse'); 
 axis(axial_range);
 
+if flag_wrtTDdat
 %%%%------------ write corrdefl ASCII file
 alpha_src=src_a/3600./cos(ref_dec/180.*pi);
 delta_src=src_b/3600.;
@@ -316,7 +351,7 @@ truedefl_1=(alpha_src-img_ra)*60.*cos(ref_dec/180.*pi);
 truedefl_2=(img_dec-delta_src)*60.;
 truedefl=[truedefl_1 truedefl_2];
 
-fid=fopen((fullfile(corrdefl_dir,[sys '.' num2str(num) corrdefl_tail])),'wt');
+fid=fopen((fullfile(corrdefl_dir,[sys '.' num2str(num) corrdefl_extsn])),'wt');
 fprintf(fid,'#-------------------------------------------------------------------------------\n');
 fprintf(fid,'# RA\t\t DEC\t\n');
 fprintf(fid,'%12.7f\t %12.7f\n',img_ctr(1),img_ctr(2));
@@ -324,6 +359,7 @@ fprintf(fid,'#------------------------------------------------------------------
 fprintf(fid,'# alpha_1,true\t alpha_2,true\n');
 fprintf(fid,'%12.7f\t %12.7f\n',truedefl');
 fclose(fid);
+end
 
 
 %%%-------------------------------------------------------------------------------

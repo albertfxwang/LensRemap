@@ -1,0 +1,63 @@
+----------------------------------------------------------
+|  This is the diary for plotting 4.tot_pix_CorrDefl.ps!    |
+|  Now we are working on MACS0717 - srcpix for totsys 4! |
+----------------------------------------------------------
+#------------------------ below doing srcpix for img 4.3!
+#------------ enter MakeVecCtr
+fixed bin size = 3.333333e-02
+the number of bins = 43
+#============ exit MakeVecCtr
+#------------ enter MakeVecCtr
+fixed bin size = 3.333333e-02
+the number of bins = 44
+#============ exit MakeVecCtr
+#------------------------ below doing srcpix for img 4.2!
+#------------ enter shift
+In (a,b) space, shifted img Eastward by 0.0812395 arcsec!
+In (a,b) space, shifted img Northward by -0.140565 arcsec!
+#============ exit shift
+#------------ enter antiJacobiRot
+a = 1.1, c = 0.12, bcratio = 1.88931
+#============ exit antiJacobiRot
+#------------ enter MakeVecCtr
+fixed bin size = 4.166666e-02
+the number of bins = 38
+#============ exit MakeVecCtr
+#------------ enter MakeVecCtr
+fixed bin size = 4.166666e-02
+the number of bins = 19
+#============ exit MakeVecCtr
+#------------ enter calcTrueVal
+mu_model=3.12375, kappa_model=0.393556, gamma_model=0.21828, phi_model=105.613 (deg)
+mu_true=2.641, kappa_true=0.313295, gamma_true=0.304825, phi_true=113.05 (deg)
+#============ exit calcTrueVal
+#------------------------ below doing srcpix for img 4.1!
+#------------ enter shift
+In (a,b) space, shifted img Eastward by 0.169158 arcsec!
+In (a,b) space, shifted img Northward by -0.207971 arcsec!
+#============ exit shift
+#------------ enter antiJacobiRot
+a = 0.85, c = 0.05, bcratio = 2.42644
+#============ exit antiJacobiRot
+#------------ enter MakeVecCtr
+fixed bin size = 3.125000e-02
+the number of bins = 68
+#============ exit MakeVecCtr
+#------------ enter MakeVecCtr
+fixed bin size = 3.125000e-02
+the number of bins = 61
+#============ exit MakeVecCtr
+#------------ enter calcTrueVal
+mu_model=-5.86068, kappa_model=0.737745, gamma_model=0.489292, phi_model=128.553 (deg)
+mu_true=-8.18035, kappa_true=0.736227, gamma_true=0.437973, phi_true=127.74 (deg)
+#============ exit calcTrueVal
+#------------------------ below doing srcpix for totsys 4!
+#------------ enter MakeVecCtr
+fixed bin size = 2.500000e-02
+the number of bins = 52
+#============ exit MakeVecCtr
+#------------ enter MakeVecCtr
+fixed bin size = 2.500000e-02
+the number of bins = 52
+#============ exit MakeVecCtr
+Elapsed time is 2.670547 seconds.

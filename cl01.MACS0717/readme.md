@@ -12,12 +12,18 @@ Naming Conventions:
     3. when plotting .ps figures, there are some surfices, some with numbers some without, e.g., _fin1.ps, _fin2.ps,
     _fin.ps . Note that the truly final results are those w/o numbers, in this case _fin.ps! Moreover, their
     corresponding diary files record all important info in tweaking the images.
-    4. if there is no _fin.ps figures, use _fin with the biggest number as the final result
+    4. if there is no _fin.ps figures, use _fin with the biggest number as the final result.
+    5. the names of files created under folder "CorrDefl_"
+        1) "pix_CorrDefl.png/.ps" : for one total sys, on pixelized src plane
+        2) "src_TrueDefl.png/.ps" : for one total sys, just discrete src points
+        3) "_truedefl.dat"        : for one idvd img, the corrected values of alpha
+        4) "_corrdefl.png"        : for one idvd img, ds9 scrnshot, four panels, incl. corrected alpha map stamps
 
 To-do List:
 
-    1. <<<140731>>> mu_tot= mu_ctr * mu_ext  =>  the total effective magnification should include the multiplication by
-    mu_ext= 1/[(1-kappa_ext)^2-|gamma_ext|^2]. So you should add the calculation of mu_ext in srcpix_tot...m
+    WRONG! 1. <<<140731>>> mu_tot= mu_ctr * mu_ext  =>  the total effective magnification should include the
+    multiplication by mu_ext= 1/[(1-kappa_ext)^2-|gamma_ext|^2]. So you should add the calculation of mu_ext in
+    srcpix_tot...m
     2. <<<140731>>> there seems no clear dependence of reading in the magnification map, if the mag_ctr can be given in
     as direct values in the catalog used to cut out image/lensmodel postage stamps. In the meantime, you could put the
     1-sigma error range for mu_ctr (which can be given by Dan''s webtool) in the catalog as well. So a calculation on
@@ -26,23 +32,26 @@ To-do List:
     lens model cover larger RA/DEC ranges than those from HST RGB image. If pix_img < pix_lensmodel, the values of "rad"
     can be the same. Design a subroutine to check the ranges.
 
-Scaling and JacobiRot Records (only for tot_pix_fin, i.e., the final result):
+Scaling and JacobiRot Records (only for tot_pix_fin, i.e., the final result):   <=  WRONG!
 
   * sys14:  scale=[2.4 2.9; 1.3 1.6; 2.6 2.2];  scale_tot=[3.0 2.7];
             img0=2;  img1=3;  img2=1;
             img1_jacobi=struct('kappa',1.9,'gamma',0.3,'phi',15);
             img2_jacobi=struct('kappa',0.98,'gamma',0.73,'phi',55);
-
   * sys3:   scale=[2.4 2.4; 3.0 3.0; 1.2 2.4];  scale_tot=[3.7 3.7];
             img0=3;  img1=2;  img2=1;
             img1_jacobi=struct('kappa',0.8,'gamma',1.06,'phi',80);
             img2_jacobi=struct('kappa',0.8,'gamma',0.96,'phi',80);
-
   * sys4:   scale=[1.9 1.9; 1.3 1.6; 1.5 1.5];  scale_tot=[2.2 2.2];
             img0=3;  img1=2;  img2=1;
             img1_jacobi=struct('kappa',-0.15,'gamma',0.15,'phi',-20);
             img2_jacobi=struct('kappa',0.05,'gamma',0.15,'phi',-30);
 
+### Correct tweaking records using anti-Jacobi matrix
+ * sys4:    scale=[1.6 1.6; 1.2 1.2; 1.5 1.5]; scale_tot=[2.0 2.0];
+            img0=3; img1=2; img2=1;
+            img1_antiJ=struct('a',1.1,'c',0.12); img2_antiJ=struct('a',0.85,'c',0.05);
+ * sys3:    stuck on 2*phi
 
 7/29/2014
 ---------
