@@ -20,10 +20,13 @@ LensRemap
 ---------
   The notations for image coordinates have undergone some changes, which are partly reflected by the headers of my 
   matlab/python scripts. To avoid any further ambiguity I write down the most up-to-date notations as follows.
+
     * pixel space (Cartesian): (x, y), in unit of pixel
     * WCS space (non-Cartesian): (RA, Dec) \defeq (\alpha, \delta), in unit of degrees or hms(for RA)/dms(for Dec)
     * arcmin/arcsec space (Cartesian): (a, b), in unit of arcmin or arcsec
+
   The conversion btw WCS space and `arcsec` space is (assuming WCS is in unit of deg)
     > a = alpha * 3600 * cos(delta_ref)
+
     > b = delta * 3600
 
