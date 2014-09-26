@@ -26,7 +26,7 @@ LensRemap
   * arcmin/arcsec space (Cartesian): (a, b), in unit of arcmin or arcsec
 
   The conversion btw WCS space and `arcsec` space is (assuming WCS is in unit of deg)
-
   > a = alpha * 3600 * cos(delta_ref)
+
   > b = delta * 3600
 
