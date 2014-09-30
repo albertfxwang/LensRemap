@@ -100,14 +100,14 @@ when tuning the _rot plot:
   * During my re-tweaking, I found out that the previous efforts are not totally in vain, because 
     ``test_wrongTweak.diary'' was heavily based on for the calculation of b given the values of a, d, q_+/- and c. For 
     instance, see the case for img 14.3
-  ```python
-  In [26]: a=-1.1598; d=-0.64019; q_posi=-7.75464; q_nega=-3.11533;
-  
-  In [27]: c=-0.15; b=(a+c*q_nega-d)/q_posi
-  
-  In [28]: b
-  Out[28]: 0.006745703217686434
-  ```
+```python
+In [26]: a=-1.1598; d=-0.64019; q_posi=-7.75464; q_nega=-3.11533;
+
+In [27]: c=-0.15; b=(a+c*q_nega-d)/q_posi
+
+In [28]: b
+Out[28]: 0.006745703217686434
+```
 
 
 
