@@ -1,20 +1,20 @@
+#!/usr/bin/env python2.7
+# -*- coding: utf-8 -*-
 """
 ----------------------------
    PURPOSE/DESCRIPTION
 ----------------------------
- plotting corrected deflection angle stamps with fits image using ds9
+ Plot corrected deflection angle stamps with fits image using ds9 (someone calls this ``Montage'')
 ----------------------------
    EXAMPLES/USAGE
 ----------------------------
- $ python plotCorrDefl.py
+ $ ./pyplotCorrDefl.py
 ----------------------------
    INPUTS
 ----------------------------
  you will need to modify the path/file name variables at "some input/output file names and paths"
  to run this script successfully
 """
-#-------------------------------------------------------------------------------------------------------------
-__author__ = "Xin Wang (UCSB)"
 #-------------------------------------------------------------------------------------------------------------
 # IMPORTING MODULES
 import numpy as np
@@ -31,7 +31,7 @@ img_coord =     workdir+'z1.855_SLimgPeak.cat'
 imgstamp_dir=   'imgF140W_z1.855peak_fullfits/'
 imgstamp_root=  '_cut.fits'
 
-corralpha_dir=  'CorrDefl_imgF140Wz1.855Sharon/'
+corralpha_dir=  'CorrDefl_imgF140W_z1.855_sharon/'
 corralpha1_root='_corralpha1.fits'
 corralpha2_root='_corralpha2.fits'
 rsltimg_root=   '_corrdefl.png'

@@ -1,0 +1,87 @@
+----------------------------------------------------------
+|  This is the diary for plotting 4.tot_pix_fin.ps!     |
+|  Now we are working on MACS0717 - srcpix for totsys 4! |
+----------------------------------------------------------
+
+#------------------------ below doing srcpix for img 4.3!
+#------------ enter MakeVecCtr
+fixed bin size = 3.333333e-02
+the number of bins = 43
+#============ exit MakeVecCtr
+#------------ enter MakeVecCtr
+fixed bin size = 3.333333e-02
+the number of bins = 44
+#============ exit MakeVecCtr
+
+#------------------------ below doing srcpix for img 4.2!
+#------------ enter calcq
+mu_model=3.12375, kappa_model=0.393556, gamma_model=0.21828, phi_model=105.613 (deg)
+ratios: q_+ = -3.70974, q_- = -7.00886
+#============ exit calcq
+#------------ enter update_d
+RSLT: d has been updated to 1.53213
+#============ exit update_d
+#------------ enter calcReal_kgphi
+kappa_model=0.393556, gamma_model=0.21828, phi_model=105.613 (deg), mu_model=3.12375
+kappa_real=0.239974, gamma_real=0.266989, phi_real=123.225 (deg), mu_real=1.97489
+#============ exit calcReal_kgphi
+#------------ enter shift
+In (a,b) space, shifted img Eastward by 0.0812395 arcsec!
+In (a,b) space, shifted img Northward by -0.140565 arcsec!
+#============ exit shift
+#------------ enter conJacobiRot
+The rotation matrix is
+         1.05          0.3
+         0.09       1.5321
+
+#============ exit conJacobiRot
+#------------ enter MakeVecCtr
+fixed bin size = 4.166666e-02
+the number of bins = 35
+#============ exit MakeVecCtr
+#------------ enter MakeVecCtr
+fixed bin size = 4.166666e-02
+the number of bins = 25
+#============ exit MakeVecCtr
+
+#------------------------ below doing srcpix for img 4.1!
+#------------ enter calcq
+mu_model=-5.86068, kappa_model=0.737745, gamma_model=0.489292, phi_model=128.553 (deg)
+ratios: q_+ = -0.320947, q_- = -0.778758
+#============ exit calcq
+#------------ enter update_d
+RSLT: d has been updated to 0.201002
+#============ exit update_d
+#------------ enter calcReal_kgphi
+kappa_model=0.737745, gamma_model=0.489292, phi_model=128.553 (deg), mu_model=-5.86068
+kappa_real=0.850309, gamma_real=0.387673, phi_real=149.767 (deg), mu_real=-7.81964
+#============ exit calcReal_kgphi
+#------------ enter shift
+In (a,b) space, shifted img Eastward by 0.169158 arcsec!
+In (a,b) space, shifted img Northward by -0.207971 arcsec!
+#============ exit shift
+#------------ enter conJacobiRot
+The rotation matrix is
+         0.98        -0.85
+         0.65        0.201
+
+#============ exit conJacobiRot
+#------------ enter MakeVecCtr
+fixed bin size = 2.631579e-02
+the number of bins = 182
+#============ exit MakeVecCtr
+#------------ enter MakeVecCtr
+fixed bin size = 2.631579e-02
+the number of bins = 52
+#============ exit MakeVecCtr
+
+#------------------------ below doing srcpix for totsys 4!
+#------------ enter MakeVecCtr
+fixed bin size = 2.631579e-02
+the number of bins = 49
+#============ exit MakeVecCtr
+#------------ enter MakeVecCtr
+fixed bin size = 2.631579e-02
+the number of bins = 49
+#============ exit MakeVecCtr
+Elapsed time is 2.758741 seconds.

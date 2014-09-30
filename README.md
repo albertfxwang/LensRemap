@@ -26,3 +26,5 @@ The conversion btw WCS space and `arcsec` space is (assuming WCS is in unit of d
 > a = alpha * 3600 * cos(delta_ref)  <br />
 > b = delta * 3600    <br />
 
+* NOTE: there shouldn't be a combination of (alpha, beta). When you see this, think of it as (a, b)
+

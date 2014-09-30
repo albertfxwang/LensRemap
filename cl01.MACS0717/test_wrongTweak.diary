@@ -1,0 +1,134 @@
+-------- start of checking extJacobian matrix --------
+
+---- below is for img 3.1 ----
+#------------ enter calcJacobiMat
+input lensing param: kappa=0.8, gamma=0.96, phi=80 (deg)  => mu=-1.1343
+The corresponding Jacobian matrix is
+       1.1021     -0.32834
+     -0.32834      -0.7021
+
+#============ exit calcJacobiMat
+#------------ enter calcq
+mu_model=-9.265, kappa_model=0.861403, gamma_model=0.35657, phi_model=142.412 (deg)
+ratios: q_+ = -0.666734, q_- = -0.137422
+#============ exit calcq
+#------------ enter update_d
+RSLT: d has been updated to 0.928311
+#============ exit update_d
+#------------ enter calcReal_kgphi
+kappa_model=0.861403, gamma_model=0.35657, phi_model=142.412 (deg), mu_model=-9.265
+kappa_real=0.980402, gamma_real=0.314919, phi_real=142.412 (deg), mu_real=-10.1225
+#============ exit calcReal_kgphi
+For img 3.1, d_ext= -0.7021, d_con= 0.92831, with percentage diff= 1.7563
+Moreover, kappa_real=0.980402, gamma_real=0.314919, phi_real=142.412, mu_real=-10.1225
+
+---- below is for img 3.2 ----
+#------------ enter calcJacobiMat
+input lensing param: kappa=0.8, gamma=1.06, phi=80 (deg)  => mu=-0.92285
+The corresponding Jacobian matrix is
+       1.1961     -0.36254
+     -0.36254     -0.79607
+
+#============ exit calcJacobiMat
+#------------ enter calcq
+mu_model=14.1201, kappa_model=0.70217, gamma_model=0.133723, phi_model=144.257 (deg)
+ratios: q_+ = -2.68362, q_- = -2.01392
+#============ exit calcq
+#------------ enter update_d
+RSLT: d has been updated to 0.953279
+#============ exit update_d
+#------------ enter calcReal_kgphi
+kappa_model=0.70217, gamma_model=0.133723, phi_model=144.257 (deg), mu_model=14.1201
+kappa_real=0.731054, gamma_real=0.0298405, phi_real=144.257 (deg), mu_real=13.9975
+#============ exit calcReal_kgphi
+For img 3.2, d_ext= -0.79607, d_con= 0.95328, with percentage diff= 1.8351
+Moreover, kappa_real=0.731054, gamma_real=0.0298405, phi_real=144.257, mu_real=13.9975
+
+---- below is for img 4.1 ----
+#------------ enter calcJacobiMat
+input lensing param: kappa=0.05, gamma=0.15, phi=-30 (deg)  => mu=1.13636
+The corresponding Jacobian matrix is
+        0.875       0.1299
+       0.1299        1.025
+
+#============ exit calcJacobiMat
+#------------ enter calcq
+mu_model=-5.86068, kappa_model=0.737745, gamma_model=0.489292, phi_model=128.553 (deg)
+ratios: q_+ = -0.320947, q_- = -0.778758
+#============ exit calcq
+#------------ enter update_d
+RSLT: d has been updated to 0.815529
+#============ exit update_d
+#------------ enter calcReal_kgphi
+kappa_model=0.737745, gamma_model=0.489292, phi_model=128.553 (deg), mu_model=-5.86068
+kappa_real=0.71312, gamma_real=0.44853, phi_real=128.553 (deg), mu_real=-8.41191
+#============ exit calcReal_kgphi
+For img 4.1, d_ext= 1.025, d_con= 0.81553, with percentage diff= 0.25685
+Moreover, kappa_real=0.71312, gamma_real=0.44853, phi_real=128.553, mu_real=-8.41191
+
+---- below is for img 4.2 ----
+#------------ enter calcJacobiMat
+input lensing param: kappa=-0.15, gamma=0.15, phi=-20 (deg)  => mu=0.769231
+The corresponding Jacobian matrix is
+       1.0351     0.096418
+     0.096418       1.2649
+
+#============ exit calcJacobiMat
+#------------ enter calcq
+mu_model=3.12375, kappa_model=0.393556, gamma_model=0.21828, phi_model=105.613 (deg)
+ratios: q_+ = -3.70974, q_- = -7.00886
+#============ exit calcq
+#------------ enter update_d
+RSLT: d has been updated to 0.716999
+#============ exit update_d
+#------------ enter calcReal_kgphi
+kappa_model=0.393556, gamma_model=0.21828, phi_model=105.613 (deg), mu_model=3.12375
+kappa_real=0.428129, gamma_real=0.304016, phi_real=105.613 (deg), mu_real=4.26239
+#============ exit calcReal_kgphi
+For img 4.2, d_ext= 1.2649, d_con= 0.717, with percentage diff= 0.76417
+Moreover, kappa_real=0.428129, gamma_real=0.304016, phi_real=105.613, mu_real=4.26239
+
+---- below is for img 14.1 ----
+#------------ enter calcJacobiMat
+input lensing param: kappa=0.98, gamma=0.73, phi=55 (deg)  => mu=-1.87793
+The corresponding Jacobian matrix is
+      0.26967     -0.68598
+     -0.68598     -0.22967
+
+#============ exit calcJacobiMat
+#------------ enter calcq
+mu_model=-5.65343, kappa_model=0.820461, gamma_model=0.457294, phi_model=120.887 (deg)
+ratios: q_+ = 0.0911681, q_- = -0.982355
+#============ exit calcq
+#------------ enter update_d
+RSLT: d has been updated to 1.00609
+#============ exit update_d
+#------------ enter calcReal_kgphi
+kappa_model=0.820461, gamma_model=0.457294, phi_model=120.887 (deg), mu_model=-5.65343
+kappa_real=1.2415, gamma_real=0.151919, phi_real=120.887 (deg), mu_real=28.374
+#============ exit calcReal_kgphi
+For img 14.1, d_ext= -0.22967, d_con= 1.0061, with percentage diff= 1.2283
+Moreover, kappa_real=1.2415, gamma_real=0.151919, phi_real=120.887, mu_real=28.374
+
+---- below is for img 14.3 ----
+#------------ enter calcJacobiMat
+input lensing param: kappa=1.9, gamma=0.3, phi=15 (deg)  => mu=1.38889
+The corresponding Jacobian matrix is
+      -1.1598        -0.15
+        -0.15     -0.64019
+
+#============ exit calcJacobiMat
+#------------ enter calcq
+mu_model=4.70182, kappa_model=0.47915, gamma_model=0.242076, phi_model=168.34 (deg)
+ratios: q_+ = -7.75464, q_- = -3.11533
+#============ exit calcq
+#------------ enter update_d
+RSLT: d has been updated to -1.8557
+#============ exit update_d
+#------------ enter calcReal_kgphi
+kappa_model=0.47915, gamma_model=0.242076, phi_model=168.34 (deg), mu_model=4.70182
+kappa_real=1.87704, gamma_real=0.562344, phi_real=78.3396 (deg), mu_real=2.20768
+#============ exit calcReal_kgphi
+For img 14.3, d_ext= -0.64019, d_con= -1.8557, with percentage diff= -0.65501
+Moreover, kappa_real=1.87704, gamma_real=0.562344, phi_real=78.3396, mu_real=2.20768
+======== stop of checking extJacobian matrix ========

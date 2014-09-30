@@ -2,7 +2,8 @@ function [alpha_shift,beta_shift]=shift(alpha_in,beta_in,ctr_in,ctr_shift)
 %------------------------------------------------------------------------------
 % shift function
 % Description: shift the alpha/beta vector in terms of the difference in
-%              the center point
+%              the center point positions of multiple images
+% NOTE   : by "alpha/beta" I really mean that it's "a/b"
 % Input  :
 % Output : 
 % Tested : Matlab R2011a

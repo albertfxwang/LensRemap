@@ -1,21 +1,24 @@
 % pixelize the src plane in terms of all multiple images within one system
 %<<<140811>>> Changed all variable names to my updated naming conventions
 %<<<140924>>> Use _antiJacobiRot_ instead of _JacobiRot_ to do the tweak
+%<<<140929>>> Use _conJacobiRot_ instead of _antiJacobiRot_ to do the tweak
+%             finally proven by rigourous math
 
 clear all; clc; tic
 
 addpath ../mscripts/
 PlotParams;
 
-sys= '3';
-axial_range= macs0717.sys3ar;
+sys= '14';
+axial_range= macs0717.sys14ar;
+
 mat_dir= 'z1.855_sharon_deflect';      % the folder containing .mat files
 mat_extsn='_deflect.mat';
 corrdefl_dir=  'CorrDefl_imgF140W_z1.855_sharon';
-diary(fullfile(corrdefl_dir,[sys,'.tot_pix_orig.diary']));
-pic_name=[sys '.tot_pix_orig.ps'];
-flag_wrtTDdat = false;
-% corrdefl_extsn= '_truedefl.dat';
+diary(fullfile(corrdefl_dir,[sys,'.tot_pix_fin.diary']));
+pic_name=[sys '.tot_pix_fin.ps'];
+flag_wrtTDdat = true;
+corrdefl_extsn= '_truedefl.dat';
 
 LMtot = importdata('z1.855_sharon_LMkgphi.dat', ' ', 2);
 LMvals = LMtot.data(:,2:end);
@@ -36,26 +39,26 @@ img_pixscale=0.049999997703084283;
 
 %------------ the 1-over-ratio for src_pixscale, 1st column: a, 2nd column: b, 
 % the ordering of rows follow their names, not their appearances, which are denoted by img0->1->2...
-scale=[2.4 2.4; 3.0 3.0; 1.2 2.4];  scale_tot=[3.7 3.7];
+scale=[2.5 3.0; 1.3 1.6; 2.4 1.2];  scale_tot=[2.6 2.6];
 
 % *NOTE: the scale for totsys can be much higher than individual img
-img0=3;  img1=2;  img2=1;
+img0=2;  img1=3;  img2=1;
 
-%------------ the anti-Jacobi matrix for the correct tweak 
-img1_antiJ=struct('a',1,'c',0);
-img2_antiJ=struct('a',1,'c',0);
+%------------ the con-Jacobi matrix parameters for the correct tweak 
+img1_conJ=struct('a',-1.3,'b',0.0,'c',-0.2,'d',NaN);
+img2_conJ=struct('a',0.8,'b',-0.35,'c',0.28,'d',NaN);
 
 %------------ set the handle for plotting
 h=figure(1);
 
-%% getting remapped results for each img and plotting figures as well!!!
+%% Get remapped results for each img and plot figures as well
 %-------------------------------------------------------------------------------
 % first of all, srcpix the img which has the smallest magnification
 num=img0;
 if num>num_img
     fprintf('ERR: num=%d is out of range of num_img=%d',num,num_img)
 end
-fprintf(['#------------------------ below doing srcpix for img ',sys,'.',num2str(num),'!\n'])
+fprintf(['\n#------------------------ below doing srcpix for img ',sys,'.',num2str(num),'!\n'])
 %------------ NOTE: the following way to load .mat file in as a struct
 load((fullfile(mat_dir,[sys '.' num2str(num) mat_extsn])))
 
@@ -141,24 +144,25 @@ end
 %-------------------------------------------------------------------------------
 % srcpix another img
 num=img1;
-antiJparam=img1_antiJ;
+conJnod=img1_conJ;
 
+fprintf(['\n#------------------------ below doing srcpix for img ',sys,'.',num2str(num),'!\n'])
 if num>num_img
     fprintf('ERR: num=%d is out of range of num_img=%d',num,num_img)
 end
-fprintf(['#------------------------ below doing srcpix for img ',sys,'.',num2str(num),'!\n'])
-%------------ NOTE: the following way to load .mat file in as a struct
-load((fullfile(mat_dir,[sys '.' num2str(num) mat_extsn])))
-
+%------------ calc the con-Jacobian matrix and real values for all lensing quantities
 imgname=str2double([sys '.' num2str(num)]);
 indx=find(ismember(LMnames,imgname));
-km=LMvals(indx,2);
-gm=LMvals(indx,3);
-phim=LMvals(indx,4);
-modelVal=struct('kappa',km,'gamma',gm,'phi',phim);
+km=LMvals(indx,1);
+gm=LMvals(indx,2);
+phim=LMvals(indx,3);
+lens_model=struct('kappa',km,'gamma',gm,'phi',phim);
+ratioq=calcq(lens_model);
+conJparam=update_d(ratioq,conJnod);
+lens_real=calcReal_kgphi(lens_model,ratioq,conJparam);
 
-%------------ Calc b/c from kappa_model, gamma_model, phi_model
-bcratio=(1-km-gm*cos(2*phim/180.0*pi))/(1-km+gm*cos(2*phim/180.0*pi));
+%------------ load the .mat file
+load((fullfile(mat_dir,[sys '.' num2str(num) mat_extsn])))
 
 src0_a= reshape(RA0_src,N_img,1)*cos(ref_dec/180.*pi)*3600.;  % a
 src0_b= reshape(DEC0_src,N_img,1)*3600.;       % b
@@ -178,8 +182,8 @@ indx_b = zeros(N_img,1);
 %------------ the following two lines are only for the shift plot
 % src_a=src1_a;
 % src_b=src1_b;
-%%------------ anti-Jacobi tweaking img
-[src_a,src_b]=   antiJacobiRot(src1_a,src1_b,ctr_common,bcratio,antiJparam);
+%%------------ con-Jacobi rotating img
+[src_a,src_b]=   conJacobiRot(src1_a,src1_b,ctr_common,conJparam);
 
 %%%------------ saving data for the combined subplot
 img1_N=N_img;
@@ -218,7 +222,6 @@ src_cnt_pix(src_cnt_pix == 0) = NaN;
 srcpix1_SB= src_cnt_pix./times_pix;    
 srcpix1_da= vec_a-ref_a;
 srcpix1_db= vec_b-ref_b;
-trueVal1=calcTrueVal(modelVal,bcratio,antiJparam);
 
 %------------ sub-plotting
 subplot(2,2,2)
@@ -253,24 +256,25 @@ end
 %-------------------------------------------------------------------------------
 % srcpix another img
 num=img2;
-antiJparam=img2_antiJ;
+conJnod=img2_conJ;
 
 if num>num_img
     fprintf('ERR: num=%d is out of range of num_img=%d',num,num_img)
 end
-fprintf(['#------------------------ below doing srcpix for img ',sys,'.',num2str(num),'!\n'])
-%------------ NOTE: the following way to load .mat file in as a struct
-load((fullfile(mat_dir,[sys '.' num2str(num) mat_extsn])))
-
+fprintf(['\n#------------------------ below doing srcpix for img ',sys,'.',num2str(num),'!\n'])
+%------------ calc the con-Jacobian matrix and real values for all lensing quantities
 imgname=str2double([sys '.' num2str(num)]);
 indx=find(ismember(LMnames,imgname));
-km=LMvals(indx,2);
-gm=LMvals(indx,3);
-phim=LMvals(indx,4);
-modelVal=struct('kappa',km,'gamma',gm,'phi',phim);
+km=LMvals(indx,1);
+gm=LMvals(indx,2);
+phim=LMvals(indx,3);
+lens_model=struct('kappa',km,'gamma',gm,'phi',phim);
+ratioq=calcq(lens_model);
+conJparam=update_d(ratioq,conJnod);
+lens_real=calcReal_kgphi(lens_model,ratioq,conJparam);
 
-%------------ Calc b/c from kappa_model, gamma_model, phi_model
-bcratio=(1-km-gm*cos(2*phim/180.0*pi))/(1-km+gm*cos(2*phim/180.0*pi));
+%------------ NOTE: the following way to load .mat file in as a struct
+load((fullfile(mat_dir,[sys '.' num2str(num) mat_extsn])))
 
 src0_a= reshape(RA0_src,N_img,1)*cos(ref_dec/180.*pi)*3600.;  % a
 src0_b= reshape(DEC0_src,N_img,1)*3600.;       % b 
@@ -290,8 +294,8 @@ indx_b = zeros(N_img,1);
 %------------ the following two lines are only for the shift plot
 % src_a=src1_a;
 % src_b=src1_b;
-%%------------ anti-Jacobi tweaking img
-[src_a,src_b]=   antiJacobiRot(src1_a,src1_b,ctr_common,bcratio,antiJparam);
+%%------------ con-Jacobi rotating img
+[src_a,src_b]=   conJacobiRot(src1_a,src1_b,ctr_common,conJparam);
 
 %%%------------ saving data for the combined subplot
 img2_N=N_img;
@@ -330,7 +334,6 @@ src_cnt_pix(src_cnt_pix == 0) = NaN;
 srcpix2_SB = src_cnt_pix./times_pix;    
 srcpix2_da= vec_a-ref_a;
 srcpix2_db=  vec_b-ref_b;
-trueVal2=calcTrueVal(modelVal,bcratio,antiJparam);
 
 %------------ sub-plotting
 subplot(2,2,3)
@@ -364,7 +367,7 @@ end
 
 %%%-------------------------------------------------------------------------------
 % subplotting the combined pixelized src plane img
-fprintf(['#------------------------ below doing srcpix for totsys ',sys,'!\n'])
+fprintf(['\n#------------------------ below doing srcpix for totsys ',sys,'!\n'])
 %------------ set up ranges in a,b using macs0717.sys-ar
 a_range= axial_range(1:2)+ref_a;
 b_range= axial_range(3:4)+ref_b;
@@ -445,3 +448,6 @@ diary off
 %             take advantage of this file, read it in and make corrected
 %             postage stamps for alpha_1,2
 % deflcorrpar_name=[sys '.tot_pix_fin.']
+
+%<<<140929>>> ------------ Calc b/c from kappa_model, gamma_model, phi_model
+% bcratio=(1-km-gm*cos(2*phim/180.0*pi))/(1-km+gm*cos(2*phim/180.0*pi));

@@ -5,12 +5,12 @@ clear all; clc; tic
 addpath ../mscripts/
 PlotParams;
 
-sys= '3';
-imgID=  {'3.1'; '3.2'; '3.3' };
+sys= '14';
+imgID=  {'14.1'; '14.2'; '14.3' };
 num_img=length(imgID);
 
 pic_name=[sys '.tot_src_truedefl.ps'];
-truedefl_dir= 'CorrDefl_imgF140Wz1.855Sharon';      % the folder containing *_truedefl.dat files
+truedefl_dir= 'CorrDefl_imgF140W_z1.855_sharon';      % the folder containing *_truedefl.dat files
 truedefl_root='_truedefl.dat';
 % diary(fullfile(truedefl_dir,[sys,'.tot_src_truedefl.diary']));
 imgstamp_dir= 'imgF140W_z1.855peak_fullfits';
@@ -83,7 +83,7 @@ set(gca,'FontSize',axes_fontsize,'LineWidth',lw_gca,'XDir','Reverse');
 ax = gca;
 hbar = colorbar('EastOutside');
 axes(hbar);
-ylabel('Counts','FontSize',lab_fontsize);
+% ylabel('Counts','FontSize',lab_fontsize);     in unit of surface brightness, not counts 
 set(gca,'FontSize',axes_fontsize);
 axes(ax);
 axis([-Inf,Inf,-Inf,Inf]);

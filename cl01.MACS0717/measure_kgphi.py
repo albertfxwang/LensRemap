@@ -1,8 +1,8 @@
-#!/usr/bin/env python
+#!/usr/bin/env python2.7
 # -*- coding: utf-8 -*-
 """
 ----------------------------
-    PURPOSE/DESCRIPTION
+   PURPOSE/DESCRIPTION
 ----------------------------
  Interpolate values of kappa_model, gamma_model, phi_model for img centers based on the original lens model
 ----------------------------

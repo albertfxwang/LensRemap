@@ -1,4 +1,5 @@
 #!/usr/bin/env python2.7
+# -*- coding: utf-8 -*-
 #+
 #----------------------------
 #   PURPOSE/DESCRIPTION
@@ -7,7 +8,7 @@
 #----------------------------
 #   EXAMPLES/USAGE
 #----------------------------
-# $ ./corrdefl.py ./z1.855_SLimgPeak.cat ./imgF140W_z1.855peak_fullfits imgF140Wz1.855_sharon_corrdefl -v
+# $ ./corrdefl.py ./z1.855_SLimgPeak.cat ./imgF140W_z1.855peak_fullfits CorrDefl_imgF140W_z1.855_sharon -v
 #----------------------------
 #   INPUTS
 #----------------------------
