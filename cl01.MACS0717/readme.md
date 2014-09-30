@@ -1,10 +1,9 @@
-%: vim: linebreak smartindent formatoptions+=twa
+%: vim: wrap linebreak smartindent formatoptions+=twa
 
 remapping multiple images detected in the field of MACS0717
 ===================
 
-Naming Conventions:
-
+### Naming Conventions:
     1. "src plane img"/"lens plane img" refer to the surface brightness (SB) profiles of distant galaxies on the
     src/lens plane.
     2. "src"/"img" are the short-form equivanlences of item 1. So if "img" is used independently (from "plane"), it
@@ -19,9 +18,8 @@ Naming Conventions:
         3) "_truedefl.dat"        : for one idvd img, the corrected values of alpha
         4) "_corrdefl.png"        : for one idvd img, ds9 scrnshot, four panels, incl. corrected alpha map stamps
 
-To-do List:
-
-    WRONG! 1. <<<140731>>> mu_tot= mu_ctr * mu_ext  =>  the total effective magnification should include the
+### To-do List:
+    `WRONG` 1. <<<140731>>> mu_tot= mu_ctr * mu_ext  =>  the total effective magnification should include the
     multiplication by mu_ext= 1/[(1-kappa_ext)^2-|gamma_ext|^2]. So you should add the calculation of mu_ext in
     srcpix_tot...m
     2. <<<140731>>> there seems no clear dependence of reading in the magnification map, if the mag_ctr can be given in
@@ -32,8 +30,7 @@ To-do List:
     lens model cover larger RA/DEC ranges than those from HST RGB image. If pix_img < pix_lensmodel, the values of "rad"
     can be the same. Design a subroutine to check the ranges.
 
-Scaling and JacobiRot Records (only for tot_pix_fin, i.e., the final result):   <=  WRONG!
-
+`WRONG` Scaling and JacobiRot Records (only for tot_pix_fin, i.e., the final result):
   * sys14:  scale=[2.4 2.9; 1.3 1.6; 2.6 2.2];  scale_tot=[3.0 2.7];
             img0=2;  img1=3;  img2=1;
             img1_jacobi=struct('kappa',1.9,'gamma',0.3,'phi',15);
@@ -47,22 +44,21 @@ Scaling and JacobiRot Records (only for tot_pix_fin, i.e., the final result):   
             img1_jacobi=struct('kappa',-0.15,'gamma',0.15,'phi',-20);
             img2_jacobi=struct('kappa',0.05,'gamma',0.15,'phi',-30);
 
-### Correct tweaking records using anti-Jacobi matrix
- * sys4:    scale=[1.6 1.6; 1.2 1.2; 1.5 1.5]; scale_tot=[2.0 2.0];
+`WRONG` Correct tweaking records using anti-Jacobi matrix
+  * sys4:    scale=[1.6 1.6; 1.2 1.2; 1.5 1.5]; scale_tot=[2.0 2.0];
             img0=3; img1=2; img2=1;
             img1_antiJ=struct('a',1.1,'c',0.12); img2_antiJ=struct('a',0.85,'c',0.05);
- * sys3:    stuck on 2*phi
+  * sys3:    stuck on 2*phi
+
 
 7/29/2014
 ---------
 how to fine-tune scales
-
     first pick the same value for both alpha,beta (x,y) binsizes, see how img is pixelized and how many bins there are.
     If the resulted y direction has much more bins, it means the count drops are more spread out and a small binsize is
     more probable to lead to hollow pixels (along x direction!!!). As a result, tune down the y-scale a little bit.
 
 when tuning the _rot plot:
-
     1. before this whole process, do not use the same axial ranges. 1st of all, try to obtain the appropriate ar. when
     doing this, you can comment out the ylabel of 2nd subplot
     2. tuning the rotation!
@@ -71,15 +67,15 @@ when tuning the _rot plot:
 
 8/14/2014
 ---------
-* created folder "obsHSTimg.fits.cat.reg/", which contains the HST full FoV fits image to be cut SL multiple images
-  postage stamps from. From now on, for each full FoV fits image and each catalog, the folders named "img..." contains
-  only the postage stamps given by the executable python script "cutimg.py". The names should denote which full FoV fits
-  image those stamps are from.
-* There should always be only one .cat file at the cluster main folder level, to function as the catalog all procedures
-  are based upon.
+  * created folder "obsHSTimg.fits.cat.reg/", which contains the HST full FoV fits image to be cut SL multiple images
+    postage stamps from. From now on, for each full FoV fits image and each catalog, the folders named "img..." contains
+    only the postage stamps given by the executable python script "cutimg.py". The names should denote which full FoV fits
+    image those stamps are from.
+  * There should always be only one .cat file at the cluster main folder level, to function as the catalog all procedures
+    are based upon.
 
 9/24/2014
 ---------
-* Re-arrange this folder such that all rslts drawn from the erroneous _JacobiRot_ are put under "0..wrongJacobiRot/"
-* The matlab script doing the correct tweak is called "srcpix_antiJacobi_totsys.m"
+  * Re-arrange this folder such that all rslts drawn from the erroneous _JacobiRot_ are put under "0..wrongJacobiRot/"
+  * The matlab script doing the correct tweak is called "srcpix_antiJacobi_totsys.m"
 
