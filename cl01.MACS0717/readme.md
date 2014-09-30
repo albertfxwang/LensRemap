@@ -13,8 +13,8 @@ remapping multiple images detected in the field of MACS0717
     corresponding diary files record all important info in tweaking the images.
     4. if there is no _fin.ps figures, use _fin with the biggest number as the final result.
     5. the names of files created under folder "CorrDefl_"
-        1) "pix_CorrDefl.png/.ps" : for one total sys, on pixelized src plane
-        2) "src_TrueDefl.png/.ps" : for one total sys, just discrete src points
+        1) "pix_CorrDefl.png/.ps" or "pix_fin.png/.ps" : for one total sys, on pixelized src plane
+        2) "src_truedefl.png/.ps" : for one total sys, just discrete src points
         3) "_truedefl.dat"        : for one idvd img, the corrected values of alpha
         4) "_corrdefl.png"        : for one idvd img, ds9 scrnshot, four panels, incl. corrected alpha map stamps
 
@@ -50,13 +50,28 @@ remapping multiple images detected in the field of MACS0717
             img1_antiJ=struct('a',1.1,'c',0.12); img2_antiJ=struct('a',0.85,'c',0.05);
   * sys3:    stuck on 2*phi
 
+### Scales of src plane pixels and values of con-Jacobian matrix for tweaking
+  * sys3:   scale=[2.0 2.0; 3.0 3.0; 1.2 2.4];  scale_tot=[3.0 3.0];
+            img0=3;  img1=2;  img2=1;
+            img1_conJ=struct('a',1.2,'b',-1.1,'c',-0.5,'d',NaN);
+            img2_conJ=struct('a',1.2,'b',-1.05,'c',+0.85,'d',NaN);
+  * sys4:   scale=[1.9 1.9; 1.2 1.2; 1.5 1.5];  scale_tot=[1.9 1.9];
+            img0=3;  img1=2;  img2=1;
+            img1_conJ=struct('a',1.05,'b',0.3,'c',0.09,'d',NaN);
+            img2_conJ=struct('a',0.98,'b',-0.85,'c',0.65,'d',NaN);
+  * sys14:  scale=[2.5 3.0; 1.3 1.6; 2.4 1.2];  scale_tot=[2.6 2.6];
+            img0=2;  img1=3;  img2=1;
+            img1_conJ=struct('a',-1.3,'b',0.0,'c',-0.2,'d',NaN);
+            img2_conJ=struct('a',0.8,'b',-0.35,'c',0.28,'d',NaN);
+
 
 7/29/2014
 ---------
 how to fine-tune scales
-    first pick the same value for both alpha,beta (x,y) binsizes, see how img is pixelized and how many bins there are.
-    If the resulted y direction has much more bins, it means the count drops are more spread out and a small binsize is
-    more probable to lead to hollow pixels (along x direction!!!). As a result, tune down the y-scale a little bit.
+    1. first pick the same value for both alpha,beta (x,y) binsizes, see how img is pixelized and how many bins there 
+    are.
+    2. If the resulted y direction has much more bins, it means the count drops are more spread out and a small binsize 
+    is more probable to lead to hollow pixels (along x direction!!!). As a result, tune down the y-scale a little bit.
 
 when tuning the _rot plot:
     1. before this whole process, do not use the same axial ranges. 1st of all, try to obtain the appropriate ar. when
@@ -78,4 +93,21 @@ when tuning the _rot plot:
 ---------
   * Re-arrange this folder such that all rslts drawn from the erroneous _JacobiRot_ are put under "0..wrongJacobiRot/"
   * The matlab script doing the correct tweak is called "srcpix_antiJacobi_totsys.m"
+
+9/29/2014
+---------
+  * Finally completed the correction of deflection angle maps based upon the mathematically rigourous tweaking method
+  * During my re-tweaking, I found out that the previous efforts are not totally in vain, because 
+    ``test_wrongTweak.diary'' was heavily based on for the calculation of b given the values of a, d, q_+/- and c. For 
+    instance, see the case for img 14.3
+  ```python
+  In [26]: a=-1.1598; d=-0.64019; q_posi=-7.75464; q_nega=-3.11533;
+  
+  In [27]: c=-0.15; b=(a+c*q_nega-d)/q_posi
+  
+  In [28]: b
+  Out[28]: 0.006745703217686434
+  ```
+
+
 
