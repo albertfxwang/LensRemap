@@ -14,7 +14,7 @@ mat_dir= 'z1.855_sharon_deflect';      % the folder containing .mat files
 mat_extsn='_deflect.mat';
 corrdefl_dir=  'CorrDefl_imgF140W_z1.855_sharon/durows';
 diary(fullfile(corrdefl_dir,[sys,'_durows_fin.diary']));
-pic_name=[sys '_durows_fin.ps'];
+pic_name=[sys '_durows_fin.eps'];
 
 LMtot = importdata('z1.855_sharon_LMkgphi.dat', ' ', 2);
 LMvals = LMtot.data(:,2:end);
@@ -114,6 +114,7 @@ axis xy
 colorbar('off')
 colormap(flipud(gray))
 xlabel('arcseconds','FontSize',lab_fontsize);
+title(['corrected arc ',sys,'.',num2str(num)]);
 set(gca,'FontSize',axes_fontsize,'LineWidth',lw_gca,'XDir','Reverse'); 
 axis(axial_range);
 
@@ -123,7 +124,7 @@ imagescwithnan(srcpix0_da,srcpix0_db,srcpix0_SB,jet,[1 1 1],true)
 axis xy
 colorbar('off')
 colormap(flipud(gray))
-title(['arc ',sys,'.',num2str(num)]);
+title(['original arc ',sys,'.',num2str(num)]);
 set(gca,'FontSize',axes_fontsize,'LineWidth',lw_gca,'XDir','Reverse'); 
 axis(axial_range);
 
@@ -196,13 +197,14 @@ srcpix1_SB= src_cnt_pix./times_pix;
 srcpix1_da= vec_a-ref_a;
 srcpix1_db= vec_b-ref_b;
 
-%------------ sub-plotting
+%------------ sub-plotting      post
 subplot(2,num_colm,num+num_colm);
 imagescwithnan(srcpix1_da,srcpix1_db,srcpix1_SB,jet,[1 1 1],true)
 axis xy
 colorbar('off')
 colormap(flipud(gray))
 xlabel('arcseconds','FontSize',lab_fontsize);
+title(['corrected arc ',sys,'.',num2str(num)]);
 set(gca,'FontSize',axes_fontsize,'LineWidth',lw_gca,'XDir','Reverse'); 
 axis(axial_range);
 
@@ -233,13 +235,13 @@ srcpix1_SB= src_cnt_pix./times_pix;
 srcpix1_da= vec_a-ref_a;
 srcpix1_db= vec_b-ref_b;
 
-%------------ sub-plotting
+%------------ sub-plotting      pre
 subplot(2,num_colm,num);
 imagescwithnan(srcpix1_da,srcpix1_db,srcpix1_SB,jet,[1 1 1],true)
 axis xy
 colorbar('off')
 colormap(flipud(gray))
-title(['arc ',sys,'.',num2str(num)]);
+title(['original arc ',sys,'.',num2str(num)]);
 set(gca,'FontSize',axes_fontsize,'LineWidth',lw_gca,'XDir','Reverse'); 
 axis(axial_range);
 
@@ -312,7 +314,7 @@ srcpix2_SB = src_cnt_pix./times_pix;
 srcpix2_da= vec_a-ref_a;
 srcpix2_db= vec_b-ref_b;
 
-%------------ sub-plotting
+%------------ sub-plotting      post
 subplot(2,num_colm,num+num_colm);
 imagescwithnan(srcpix2_da,srcpix2_db,srcpix2_SB,jet,[1 1 1],true)
 axis xy
@@ -320,11 +322,12 @@ colorbar('off')
 colormap(flipud(gray))
 xlabel('arcseconds','FontSize',lab_fontsize);
 ylabel('arcseconds','FontSize',lab_fontsize);
+title(['corrected arc ',sys,'.',num2str(num)]);
 set(gca,'FontSize',axes_fontsize,'LineWidth',lw_gca,'XDir','Reverse'); 
 axis(axial_range);
 
 %-------------------------------------------------------------------------------
-% the following subsection is for post-tweak img
+% the following subsection is for pre-tweak img
 src_a=src0_a;
 src_b=src0_b;
 [vec_a,N_a]=MakeVecCtr(src_a,src_ctr(num,1),binsize_a);
@@ -350,14 +353,14 @@ srcpix2_SB = src_cnt_pix./times_pix;
 srcpix2_da= vec_a-ref_a;
 srcpix2_db= vec_b-ref_b;
 
-%------------ sub-plotting
+%------------ sub-plotting      pre
 subplot(2,num_colm,num);
 imagescwithnan(srcpix2_da,srcpix2_db,srcpix2_SB,jet,[1 1 1],true)
 axis xy
 colorbar('off')
 colormap(flipud(gray))
 ylabel('arcseconds','FontSize',lab_fontsize);
-title(['arc ',sys,'.',num2str(num)]);
+title(['original arc ',sys,'.',num2str(num)]);
 set(gca,'FontSize',axes_fontsize,'LineWidth',lw_gca,'XDir','Reverse'); 
 axis(axial_range);
 
@@ -430,37 +433,38 @@ axis(axial_range);
 %% over-plottiong SB isophote contours on every panel except the one of # num_colm
 da_up=2; db_up=2;
 sb_isophote=[75, 120, 170];
-sb_contour1=contourc(srcpix_tot_da,srcpix_tot_db,srcpix_tot_SB,[sb_isophote(1) sb_isophote(1)]);
+% sb_contour1=contourc(srcpix_tot_da,srcpix_tot_db,srcpix_tot_SB,[sb_isophote(1) sb_isophote(1)]);
 sb_contour2=contourc(srcpix_tot_da,srcpix_tot_db,srcpix_tot_SB,[sb_isophote(2) sb_isophote(2)]);
-sb_contour3=contourc(srcpix_tot_da,srcpix_tot_db,srcpix_tot_SB,[sb_isophote(3) sb_isophote(3)]);
-indx1=find(sb_contour1(1,:)<da_up & sb_contour1(2,:)<db_up);
+% sb_contour3=contourc(srcpix_tot_da,srcpix_tot_db,srcpix_tot_SB,[sb_isophote(3) sb_isophote(3)]);
+% indx1=find(sb_contour1(1,:)<da_up & sb_contour1(2,:)<db_up);
 indx2=find(sb_contour2(1,:)<da_up & sb_contour2(2,:)<db_up);
-indx3=find(sb_contour3(1,:)<da_up & sb_contour3(2,:)<db_up);
+% indx3=find(sb_contour3(1,:)<da_up & sb_contour3(2,:)<db_up);
 
 for j=1:num_colm*2
     if j~=num_colm
         subplot(2,num_colm,j);
         hold on
-        plot(sb_contour1(1,indx1),sb_contour1(2,indx1),solid{2},'LineWidth',lw3)
+%         plot(sb_contour1(1,indx1),sb_contour1(2,indx1),solid{2},'LineWidth',lw3)
         plot(sb_contour2(1,indx2),sb_contour2(2,indx2),solid{2},'LineWidth',lw3)
-        plot(sb_contour3(1,indx3),sb_contour3(2,indx3),solid{2},'LineWidth',lw3)
+%         plot(sb_contour3(1,indx3),sb_contour3(2,indx3),solid{2},'LineWidth',lw3)
         hold off
     end
 end
 
-subplot(2,num_colm,num_colm*2);
-hold on
-text(0.1,2.2,'source plane reconstruction given by','HorizontalAlignment','center','FontSize',9)
-text(0.1,1.95,'top row: the original lens model','HorizontalAlignment','center','FontSize',9)
-text(0.1,1.7,'bottom row: the corrected lens model','HorizontalAlignment','center','FontSize',9)
-hold off
+% subplot(2,num_colm,num_colm*2);       so sad I spent some time tuning this
+% hold on
+% text(0.1,2.2,'source plane reconstruction given by','HorizontalAlignment','center','FontSize',9)
+% text(0.1,1.95,'top row: the original lens model','HorizontalAlignment','center','FontSize',9)
+% text(0.1,1.7,'bottom row: the corrected lens model','HorizontalAlignment','center','FontSize',9)
+% hold off
 
 %% end-up work for the figure
 tightfig(h);
 set(gcf, 'PaperUnits','inches');
 set(gcf, 'PaperPosition',[ 0 0 9 4.5]);
 
-print(h,'-dpsc2',fullfile(corrdefl_dir,pic_name));
+% print(h,'-dpsc2',fullfile(corrdefl_dir,pic_name));
+print(h,'-depsc2',fullfile(corrdefl_dir,pic_name));
 toc
 diary off
 
