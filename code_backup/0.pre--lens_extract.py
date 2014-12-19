@@ -1,6 +1,6 @@
 """
 ----------------------------
-    PURPOSE/DESCRIPTION
+    PURPOSE/DESCRIPTION/and more
 ----------------------------
  using python to extract data of lens and SL multiple images, for MACS0717
 ----------------------------
