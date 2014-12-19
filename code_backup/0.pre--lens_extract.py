@@ -1,6 +1,6 @@
 """
 ----------------------------
-    PURPOSE/DESCRIPTION
+    PURPOSE/
 ----------------------------
  using python to extract data of lens and SL multiple images, for MACS0717
 ----------------------------
@@ -87,7 +87,7 @@ f.close()
 
 # below is the chopped maps of lensing quantities for specific image cuts
 #<<<140607>>> the chopped size (2*rad) is plausible as long as the lens fitting pixel is larger than the HST image pixel
-alpha1 = alpha1_tot[lens_xy[1]-rad:lens_xy[1]+rad,lens_xy[0]-rad:lens_xy[0]+rad]  
+alpha1 = alpha1_tot[lens_xy[1]-rad:lens_xy[1]+rad,lens_xy[0]-rad:lens_xy[0]+rad]
 alpha2 = alpha2_tot[lens_xy[1]-rad:lens_xy[1]+rad,lens_xy[0]-rad:lens_xy[0]+rad]
 #gamma1 = gamma1_tot[lens_xy[1]-rad:lens_xy[1]+rad,lens_xy[0]-rad:lens_xy[0]+rad]
 #gamma2 = gamma2_tot[lens_xy[1]-rad:lens_xy[1]+rad,lens_xy[0]-rad:lens_xy[0]+rad]
@@ -124,7 +124,7 @@ pl.show()
 
 #-------------------------------------------------------------------------------------------------------------
 # output ASCII files for all relevant quantities to feed into matlab
-np.savetxt('alpha1.dat',alpha1,fmt='%s') 
+np.savetxt('alpha1.dat',alpha1,fmt='%s')
 np.savetxt('alpha2.dat',alpha2,fmt='%s')
 #np.savetxt('gamma1.dat',gamma1,fmt='%s')
 #np.savetxt('gamma2.dat',gamma2,fmt='%s')
@@ -141,7 +141,7 @@ np.savetxt('img_dec.dat',img_wcs_tot[1],fmt='%s')
 #-------------------------------------------------------------------------------------------------------------
 """     codes for the other four images, temporarily here
 """
-"""   tryout material 
+"""   tryout material
 ----------------------------
 minus_one = np.zeros((1024,1024))
 minus_one[:,:] = -1.0
@@ -154,7 +154,7 @@ print "new=", new
 
 file_type = ('alpha1_rs','alpha2_rs','gamma1_rs','gamma2_rs','kappa_rs','mag_rs')
 num_type = len(file_type)
-for i in range(0,num_type):    
+for i in range(0,num_type):
 ----------------------------
 # 12.1
 x = 2711.7556
